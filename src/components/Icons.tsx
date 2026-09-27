@@ -16,7 +16,10 @@ const base = (p: SVGProps<SVGSVGElement>) => ({
 export const Check = (p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M5 12.5l4.2 4.2L19 7" /></svg>
 )
-export const ArrowDown = (p: SVGProps<SVGSVGElement>) => (
+export const Plus = (p: SVGProps<SVGSVGElement>) => (
+  <svg {...base(p)}><path d="M12 5v14M5 12h14" /></svg>
+)
+export const ArrowDown =(p: SVGProps<SVGSVGElement>) => (
   <svg {...base(p)}><path d="M12 5v14M6 13l6 6 6-6" /></svg>
 )
 export const Close = (p: SVGProps<SVGSVGElement>) => (

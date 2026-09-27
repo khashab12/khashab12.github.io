@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../lib/lang'
 import { Reveal, SectionTitle } from './Reveal'
-import { Cart, Check, Pin, Target, WhatsApp } from './Icons'
+import { Cart, Check, Pin, Plus, Target, WhatsApp } from './Icons'
 
 // Sample palettes for the live preview (taken from the concept designs).
 const PALETTES = [
@@ -76,6 +76,10 @@ export function Services() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-5 flex items-start gap-2 border-t border-line pt-4 text-sm leading-relaxed text-muted">
+                <Plus width={16} height={16} className="mt-[0.2rem] shrink-0 text-accent-strong" />
+                <span className="min-w-0">{s.menu.extras}</span>
+              </p>
             </div>
             <div className="flex flex-col gap-3">
               <MenuPreview p={PALETTES[palette]} />

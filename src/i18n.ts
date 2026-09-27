@@ -34,12 +34,12 @@ const ar = {
     title: 'عنّي',
     body: [
       'أنا محمد، مطوّر واجهات أمامية مقيم في القاهرة، وطالب هندسة إلكترونيات واتصالات في جامعة ٦ أكتوبر.',
-      'أصمّم وأبني مواقع ومنيوهات رقمية للكافيهات والمطاعم في مصر والرياض، وأدير إعلاناتها. أفضّل أن ترى الشغل بنفسك قبل أن تدفع، لذلك أبدأ دائمًا بنموذج مجاني بألوانك وشعارك.',
+      'أصمّم وأبني مواقع ومنيوهات رقمية للكافيهات والمطاعم في مصر والسعودية، وأدير إعلاناتها. أفضّل أن ترى الشغل بنفسك قبل أن تدفع، لذلك أبدأ دائمًا بنموذج مجاني بألوانك وشعارك.',
     ],
     facts: [
       { label: 'الدراسة', value: 'هندسة إلكترونيات واتصالات — جامعة ٦ أكتوبر' },
       { label: 'العمل', value: 'مطوّر واجهات أمامية' },
-      { label: 'المكان', value: 'القاهرة · أعمل مع أماكن في مصر والرياض' },
+      { label: 'المكان', value: 'القاهرة · أعمل مع أماكن في مصر والسعودية' },
     ],
   },
   services: {
@@ -47,6 +47,7 @@ const ar = {
     menu: {
       title: 'موقع ومنيو إلكتروني لمكانك',
       body: 'صفحة سريعة على الجوال، مصممة بألوان وشعار البراند الخاص بك.',
+      extras: 'وأي إضافة يحتاجها مكانك، زي الطلب والدفع من الموقع نفسه أو أي طريقة تناسبك لاستلام الطلبات، نضيفها بسعر منفصل.',
       features: ['المنيو كامل بالأسعار', 'موقع المكان على الخريطة', 'زر طلب عبر واتساب', 'رابط تقييم جوجل', 'عربي وإنجليزي', 'السعرات الحرارية', 'وضع ليلي'],
       paletteLabel: 'جرّب ألوانًا مختلفة',
       preview: {
@@ -157,12 +158,12 @@ const en: Dict = {
     title: 'About',
     body: [
       'I’m Mohamed, a frontend developer based in Cairo and an Electronics & Communications Engineering student at October 6 University.',
-      'I design and build websites and digital menus for cafés and restaurants in Egypt and Riyadh, and run their ads. I’d rather you see the work before you pay, so I always start with a free demo in your colors and logo.',
+      'I design and build websites and digital menus for cafés and restaurants in Egypt and Saudi Arabia, and run their ads. I’d rather you see the work before you pay, so I always start with a free demo in your colors and logo.',
     ],
     facts: [
       { label: 'Study', value: 'Electronics & Communications Eng. — October 6 University' },
       { label: 'Work', value: 'Frontend developer' },
-      { label: 'Based in', value: 'Cairo · working with places in Egypt and Riyadh' },
+      { label: 'Based in', value: 'Cairo · working with places in Egypt and Saudi Arabia' },
     ],
   },
   services: {
@@ -170,6 +171,7 @@ const en: Dict = {
     menu: {
       title: 'Website + digital menu for your place',
       body: 'A fast, phone-first page designed in your brand colors and logo.',
+      extras: 'Need something extra, like ordering and paying on the site itself or any other way to receive orders? I can add it, priced separately.',
       features: ['Full menu with prices', 'Location on the map', 'WhatsApp order button', 'Google review link', 'Arabic & English', 'Calories', 'Dark mode'],
       paletteLabel: 'Try a different palette',
       preview: {
