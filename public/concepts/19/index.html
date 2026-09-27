@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#141414">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Alexandria:wght@300;500;700;800&family=Tajawal:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Alexandria:wght@300;500;700;800&family=Tajawal:wght@400;500;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Alexandria:wght@300;500;700;800&family=Tajawal:wght@400;500;700&display=swap"></noscript>
 <style>
 :root{
   --paper:#f6f3ee; --ink:#141414; --soft:#6b6760; --rule:#141414; --red:#c8321f; --leaf:#3d4a34; --card:#fffdf9;
@@ -146,5 +146,8 @@ $("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem("C
 $("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
 apply();
 </script>
+<script>(function(){if(window.parent===window)return;var s=0,t=0;function send(m){try{parent.postMessage(m,"*")}catch(e){}}
+addEventListener("scroll",function(){if(!s){s=1;send("concept-scrolled")}},{passive:true});
+addEventListener("pointerdown",function(){if(!t){t=1;send("concept-touched")}},{passive:true})})()</script>
 </body>
 </html>

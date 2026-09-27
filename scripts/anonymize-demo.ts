@@ -208,8 +208,22 @@ function anonymize(slug: string, entry: DemoEntry): { html: string; config: Reco
   for (const [from, to] of identifyingTexts(config)) html = html.split(from).join(to)
   for (const phrase of entry.phrases ?? []) html = html.replace(phrasePattern(phrase), '')
   html = replaceNames(html, entry.names, label)
+  html = html.replace(/<\/body>/i, `${VIEWER_BRIDGE}\n</body>`)
+  // Google Fonts must not block rendering: the menu is drawn by an inline script that would
+  // otherwise wait for this cross-origin stylesheet (a white screen on slow connections).
+  html = html.replace(
+    /<link\s+rel="stylesheet"\s+href="(https:\/\/fonts\.googleapis\.com\/[^"]+)"\s*\/?>/g,
+    `<link rel="stylesheet" href="$1" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="$1"></noscript>`,
+  )
   return { html, config }
 }
+
+// The portfolio shows each concept in a sandboxed iframe (no same-origin access), so the page
+// tells the viewer itself when the visitor first scrolls or touches it; the viewer then hides
+// its "scroll" hint. Harmless when the page is opened on its own.
+const VIEWER_BRIDGE = `<script>(function(){if(window.parent===window)return;var s=0,t=0;function send(m){try{parent.postMessage(m,"*")}catch(e){}}
+addEventListener("scroll",function(){if(!s){s=1;send("concept-scrolled")}},{passive:true});
+addEventListener("pointerdown",function(){if(!t){t=1;send("concept-touched")}},{passive:true})})()</script>`
 
 async function capture(dirs: { n: number; dir: string }[]) {
   const { chromium } = await import('playwright-core')

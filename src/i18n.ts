@@ -103,6 +103,7 @@ const ar = {
     prev: 'النموذج السابق',
     next: 'النموذج التالي',
     newTab: 'فتح في صفحة كاملة',
+    scrollHint: 'اسحب لتحت',
     concept: (n: number) => `Concept ${n}`,
   },
   testimonials: {
@@ -225,6 +226,7 @@ const en: Dict = {
     prev: 'Previous concept',
     next: 'Next concept',
     newTab: 'Open full page',
+    scrollHint: 'Scroll',
     concept: (n: number) => `Concept ${n}`,
   },
   testimonials: {
