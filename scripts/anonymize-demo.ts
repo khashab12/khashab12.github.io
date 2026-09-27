@@ -208,7 +208,8 @@ function anonymize(slug: string, entry: DemoEntry): { html: string; config: Reco
   for (const [from, to] of identifyingTexts(config)) html = html.split(from).join(to)
   for (const phrase of entry.phrases ?? []) html = html.replace(phrasePattern(phrase), '')
   html = replaceNames(html, entry.names, label)
-  html = html.replace(/<\/body>/i, `${VIEWER_BRIDGE}\n</body>`)
+  // In <head> so it listens from the start, even while the rest of the page is still loading.
+  html = html.replace(/<head>/i, `<head>\n${VIEWER_BRIDGE}`)
   // Google Fonts must not block rendering: the menu is drawn by an inline script that would
   // otherwise wait for this cross-origin stylesheet (a white screen on slow connections).
   html = html.replace(

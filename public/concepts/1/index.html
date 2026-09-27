@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+<script>(function(){if(window.parent===window)return;var s=0,t=0;function send(m){try{parent.postMessage(m,"*")}catch(e){}}
+addEventListener("scroll",function(){if(!s){s=1;send("concept-scrolled")}},{passive:true});
+addEventListener("pointerdown",function(){if(!t){t=1;send("concept-touched")}},{passive:true})})()</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Concept 1</title>
@@ -139,8 +142,5 @@ $("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KE
 $("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
 apply();
 </script>
-<script>(function(){if(window.parent===window)return;var s=0,t=0;function send(m){try{parent.postMessage(m,"*")}catch(e){}}
-addEventListener("scroll",function(){if(!s){s=1;send("concept-scrolled")}},{passive:true});
-addEventListener("pointerdown",function(){if(!t){t=1;send("concept-touched")}},{passive:true})})()</script>
 </body>
 </html>
