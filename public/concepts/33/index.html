@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 33</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#b0673c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:wght@500;600;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--copper:#b0673c;--copper2:#c98a5a;--char:#2b2a2e;--paper:#f7f4ef;--card:#ffffff;--ink:#2b2a2e;--soft:#6f6a66;--line:#e5ddd3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#141315;--card:#1f1d20;--ink:#f3ede6;--soft:#b8b0a8;--line:#35323a}}
+:root[data-theme="dark"]{--paper:#141315;--card:#1f1d20;--ink:#f3ede6;--soft:#b8b0a8;--line:#35323a}
+body{background:var(--paper);color:var(--ink);font-family:"Tajawal","Cormorant Garamond",sans-serif;font-size:16px}
+html[lang=en] body{font-family:"Cormorant Garamond","Tajawal",serif;font-size:17px}
+.demo-note{background:var(--char);color:#fff}
+
+header{position:relative;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1.5rem;background:linear-gradient(155deg,transparent 72%,var(--char) 72%),#fbfaf8;overflow:hidden}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:linear-gradient(155deg,transparent 72%,#000 72%),#1f1d20}}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--char);color:#fff;border:0;border-radius:2px;padding:.25rem .9rem;cursor:pointer;min-height:36px;font-size:.8rem}
+#logo{display:inline-block;padding:.6rem 1.2rem;background:#fbfaf8;border-radius:50% 50% 8px 8px/40% 40% 8px 8px;border:1.5px solid var(--copper)}
+.cups{font-size:1.6rem;line-height:1}
+.sv{font:700 2.4rem/1 "Playfair Display",serif;color:var(--char);letter-spacing:.04em;direction:ltr}
+.sv3{font:600 .72rem "Cormorant Garamond";letter-spacing:.3em;color:var(--copper);margin-top:.3rem;direction:ltr}
+.heart{display:block;width:10px;height:10px;margin:.3rem auto 0;background:var(--copper);transform:rotate(45deg)}
+.info{position:relative;font-size:.82rem;color:var(--soft);margin:.9rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar-in{max-width:560px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:3px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:3px;padding:.3rem .9rem;cursor:pointer;min-height:36px;font:500 .84rem "Tajawal"}
+.chip[aria-pressed="true"]{background:var(--copper);border-color:var(--copper);color:#fff}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--copper);outline-offset:2px}
+main{max-width:560px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{margin-top:1.7rem;scroll-margin-top:120px}
+
+h2{margin:0 0 .6rem;display:flex;justify-content:space-between;align-items:center;background:var(--char);color:#fff;padding:.35rem 1.2rem;font:700 1rem "Tajawal";clip-path:polygon(4% 0,100% 0,96% 100%,0 100%)}
+h2 small{font:600 .95rem "Cormorant Garamond";letter-spacing:.06em;direction:ltr}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{background:var(--copper)}}
+.row{display:grid;grid-template-columns:1fr auto;gap:0 .8rem;padding:.5rem .2rem;border-bottom:1px solid var(--line)}
+.nm{font-weight:600}
+.org{display:inline-block;margin-inline-start:.35rem;font:700 .65rem "Tajawal";color:#fff;background:var(--copper);border-radius:999px;padding:0 .45rem;vertical-align:2px}
+.pr{font:700 1.05rem "Cormorant Garamond";direction:ltr;text-align:end;white-space:nowrap}
+html[lang=ar] .pr{font:700 1rem "Tajawal"}
+.pr small{font-size:.66rem;font-weight:500;margin-inline-start:.2rem;color:var(--soft)}
+.kc{grid-column:1/-1;font-size:.72rem;color:var(--soft)}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 33</span></div>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 33","nameAr":"Concept 33","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#b0673c","onPrimary":"#ffffff","secondary":"#2b2a2e","background":"#f7f4ef","accent":"#b0673c"},"fonts":{"display":"Playfair Display","body":"Tajawal"},"pattern":"diagonal banners","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"drip","ar":"القهوة المقطرة","en":"Drip Coffee","items":[{"ar":"V60 سعودي","en":"Saudi V60","oAr":"سعودي","oEn":"Saudi","p":22,"c":34},{"ar":"V60 يمني","en":"Yemeni V60","oAr":"يمني","oEn":"Yemeni","p":20,"c":20},{"ar":"V60","en":"V60","oAr":"كولومبي · إثيوبي","oEn":"Colombian · Ethiopian","p":16,"c":24},{"ar":"قهوة اليوم","en":"Coffee of the Day","p":11,"c":5},{"ar":"قهوة اليوم لتر","en":"Coffee of the Day 1L","p":28,"c":27}]},{"id":"dripice","ar":"القهوة المقطرة الباردة","en":"Iced Drip","items":[{"ar":"آيس V60 سعودي","en":"Saudi V60 Ice","oAr":"سعودي","oEn":"Saudi","p":24,"c":10},{"ar":"آيس V60 يمني","en":"Yemen V60 Ice","oAr":"يمني","oEn":"Yemeni","p":22,"c":7},{"ar":"آيس V60","en":"V60 Ice","oAr":"كولومبي · إثيوبي","oEn":"Colombian · Ethiopian","p":18},{"ar":"قهوة اليوم باردة","en":"Today's Coffee (iced)","p":12,"c":5}]},{"id":"hot","ar":"المشروبات الحارة","en":"Hot Drinks","items":[{"ar":"فلات وايت","en":"Flat White","p":15,"c":110},{"ar":"لاتيه","en":"Latte","p":15,"c":140},{"ar":"كابتشينو","en":"Cappuccino","p":15,"c":130},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":16,"c":250},{"ar":"ماتشا لاتيه","en":"Matcha Latte","p":18,"c":220},{"ar":"كورتادو","en":"Cortado","p":12,"c":70},{"ar":"أمريكانو","en":"Americano","p":14,"c":5},{"ar":"إسبريسو","en":"Espresso","p":10,"c":5}]},{"id":"cold","ar":"المشروبات الباردة","en":"Cold Drinks","items":[{"ar":"آيس سبانش لاتيه","en":"Ice Spanish Latte","p":16,"c":150},{"ar":"آيس ماتشا لاتيه","en":"Ice Matcha Latte","p":20,"c":220},{"ar":"آيس كورتادو","en":"Iced Cortado","p":16,"c":70},{"ar":"شاي مثلج باشن فروت","en":"Fruit Iced Tea (passion fruit)","p":16,"c":70},{"ar":"آيس لاتيه","en":"Ice Latte","p":16,"c":150},{"ar":"آيس ماتشا فراولة","en":"Iced Strawberry Matcha","p":22},{"ar":"ألفريدو","en":"Alfredo","p":13,"c":7},{"ar":"كركديه","en":"Karkadeh","p":20,"c":200},{"ar":"آيس فلات وايت","en":"Iced Flat White","p":18},{"ar":"آيس تي خوخ","en":"Ice Tea Peach","p":18}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "", "cal": "سعرة"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "cal": "cal"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 33-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2><span>${esc(c.ar)}</span><small>${esc(c.en)}</small></h2>${body}</section>`; }
+function item(i){ const o=L(i,"oAr","oEn"); return `<div class="row"><span class="nm">${esc(L(i,"ar","en"))}${o?`<span class="org">${esc(o)}</span>`:""}</span><span class="pr">${fmt(i.p)}<small>${cur()}</small></span>${i.c!=null?`<span class="kc">${fmt(i.c)} ${T[lang].cal}</span>`:""}</div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

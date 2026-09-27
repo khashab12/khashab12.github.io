@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 18</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141210">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700;800&family=Cairo:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --sand:#e9dccb; --card:#f3eadf; --ink:#141210; --soft:#6b5a48; --line:#141210;
+  --en:"League Spartan","Cairo",system-ui,sans-serif; --ar:"Cairo",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#171411;--card:#221e19;--ink:#efe3d3;--soft:#b3a28e;--line:#efe3d3}}
+:root[data-theme="dark"]{--sand:#171411;--card:#221e19;--ink:#efe3d3;--soft:#b3a28e;--line:#efe3d3}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:150px}
+body{margin:0;overflow-x:hidden;background:var(--sand);color:var(--ink);font-family:var(--ar);line-height:1.5;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+html[lang=en] body{font-family:var(--en)}
+.demo-note{background:var(--ink);color:var(--sand);text-align:center;font-size:.8rem;padding:.45rem 1rem}
+
+
+header{position:relative;max-width:640px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 1.1rem) 1.2rem 1.2rem;overflow:hidden}
+.curve{position:absolute;top:-10px;inset-inline-start:-30px;width:120px;height:120px;color:var(--ink)}
+.row1{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
+.lang{background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:999px;padding:.3rem .9rem;font:600 .82rem var(--ar);cursor:pointer;min-height:36px}
+.lockup{display:flex;flex-direction:column;align-items:center;gap:.1rem}
+.badge{width:78px;height:78px;border-radius:50%;border:2px solid var(--ink);display:grid;place-items:center}
+.badge svg{width:56px;height:56px;color:var(--ink)}
+.word{font:800 2.3rem/1 var(--en);letter-spacing:.02em;direction:ltr}
+.moto{font:700 .62rem var(--en);letter-spacing:.06em;direction:ltr}
+h1.menu{font:800 clamp(3.6rem,20vw,5.4rem)/.9 var(--en);letter-spacing:.02em;margin:1.2rem 0 .3rem;direction:ltr;text-align:start}
+html[dir=rtl] h1.menu{text-align:right}
+.info{margin:0;color:var(--soft);font-size:.9rem}
+
+
+.bar{position:sticky;top:0;z-index:5;background:var(--sand);border-bottom:2px solid var(--line)}
+.bar-in{max-width:640px;margin:0 auto;padding:.6rem 1.2rem .45rem}
+.tools{display:flex;gap:.6rem;align-items:center}
+.search{flex:1}
+.search input{width:100%;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:.55rem 1rem;font:1rem var(--ar)}
+.size{display:flex;border:1.5px solid var(--ink);border-radius:999px;overflow:hidden;direction:ltr}
+.size button{background:none;border:0;color:var(--ink);font:800 .9rem var(--en);padding:.5rem .85rem;cursor:pointer;min-height:40px}
+.size button[aria-pressed="true"]{background:var(--ink);color:var(--sand)}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.55rem 0 .1rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:0;background:none;color:var(--soft);font:700 .86rem var(--ar);padding:.3rem .2rem;cursor:pointer;min-height:36px;text-transform:uppercase}
+html[lang=en] .chip{font-family:var(--en);letter-spacing:.03em}
+.chip[aria-pressed="true"]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--ink)}
+.lang:focus-visible,.chip:focus-visible,.size button:focus-visible,.search input:focus-visible{outline:3px solid var(--soft);outline-offset:2px}
+
+
+main{max-width:640px;margin:0 auto;padding:.4rem 1.2rem 2rem}
+section{padding-top:1.6rem}
+h2{margin:0 0 .9rem;font:800 1.15rem var(--ar);text-transform:uppercase;display:inline-flex;flex-direction:column;gap:.3rem}
+html[lang=en] h2{font-family:var(--en);letter-spacing:.02em;font-size:1.25rem}
+h2::after{content:"";display:block;height:3px;width:calc(100% + 18px);background:
+  radial-gradient(circle at calc(100% - 5px) 50%,transparent 3px,var(--line) 3.5px,var(--line) 5px,transparent 5.5px) no-repeat,
+  linear-gradient(var(--line),var(--line)) 0 50%/calc(100% - 10px) 3px no-repeat;height:11px}
+html[dir=rtl] h2::after{transform:scaleX(-1)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.card{background:var(--card);border-radius:14px;padding:.8rem .8rem .7rem;display:flex;flex-direction:column;justify-content:space-between;min-height:104px;border:1px solid color-mix(in srgb,var(--ink) 10%,transparent)}
+.nm{font:700 1rem/1.3 var(--ar)}
+html[lang=en] .nm{font-family:var(--en);text-transform:uppercase;font-weight:500;letter-spacing:.01em}
+.pk{display:inline-block;margin-top:.3rem;font:700 .66rem var(--ar);border:1.2px solid var(--ink);border-radius:999px;padding:0 .45rem;width:max-content}
+.pr{margin-top:.6rem;display:flex;align-items:baseline;gap:.25rem;direction:ltr;justify-content:flex-end}
+html[dir=rtl] .pr{justify-content:flex-start}
+.pr b{font:800 1.35rem var(--en)}
+.pr small{font:600 .72rem var(--en);color:var(--soft)}
+.pr .sz{font:800 .62rem var(--en);color:var(--sand);background:var(--ink);border-radius:4px;padding:0 .3rem;margin-inline-end:.2rem}
+.note{color:var(--soft);font-size:.8rem;text-align:center;margin:1.8rem 0 0}
+.empty{text-align:center;color:var(--soft);padding:3rem 1rem}
+footer{max-width:640px;margin:0 auto;padding:1rem 1.2rem 2.4rem;color:var(--soft);font-size:.84rem;text-align:center}
+footer strong{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+<header>
+    <div class="row1">
+    <button class="lang" id="langBtn">English</button>
+    <div class="lockup" aria-label="Concept 18 Specialty Coffee"><span class="concept-wm" style="display:block;font-family:'League Spartan',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 18</span></div>
+  </div>
+  <h1 class="menu">MENU</h1>
+  <p class="info" id="info"></p>
+</header>
+<div class="bar"><div class="bar-in">
+  <div class="tools">
+    <div class="search"><input id="q" type="search" aria-label="Search"></div>
+    <div class="size" role="group" aria-label="Size"><button id="szM" aria-pressed="true">M</button><button id="szL" aria-pressed="false">L</button></div>
+  </div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 18","nameAr":"Concept 18","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"القاهرة","en":"Cairo"},"logo":"","colors":{"primary":"#141210","onPrimary":"#efe3d3","secondary":"#6b5a48","background":"#e9dccb","accent":"#141210"},"fonts":{"display":"League Spartan","body":"Cairo"},"pattern":"none","currency":{"ar":"ج.م","en":"L.E"},"demoBanner":false,"credit":"محمد","categories":[{"id":"classic","en":"Classics Coffee","ar":"قهوة كلاسيك","items":[{"en":"Latte","ar":"لاتيه","p":105},{"en":"Espresso","ar":"إسبريسو","p":70,"pl":80},{"en":"Americano","ar":"أمريكانو","p":90},{"en":"Cappuccino","ar":"كابتشينو","p":105},{"en":"Cortado","ar":"كورتادو","p":95},{"en":"Spanish Latte","ar":"سبانش لاتيه","p":145},{"en":"Macchiato","ar":"ماكياتو","p":85},{"en":"Flat White","ar":"فلات وايت","p":105},{"en":"Mocha (Dark / White)","ar":"موكا (دارك / وايت)","p":145},{"en":"Turkish Coffee","ar":"قهوة تركي","p":45,"pl":60},{"en":"French Coffee","ar":"قهوة فرنساوي","p":85},{"en":"Hazelnut Coffee","ar":"قهوة بندق","p":90},{"en":"Hot Chocolate","ar":"هوت شوكليت","p":150},{"en":"Pistachio Latte","ar":"لاتيه فستق","p":170}]},{"id":"drips","en":"Speciality Drips","ar":"قهوة مختصة","items":[{"en":"V60","ar":"V60","p":170},{"en":"Cold Brew","ar":"كولد برو","p":155},{"en":"Aeropress","ar":"إيروبرس","p":165}]},{"id":"signature","en":"Signature Coffee","ar":"سيجنتشر كوفي","items":[{"en":"Strawberry Chocolate","ar":"فراولة شوكليت","p":150,"pl":175},{"en":"Salted Caramel","ar":"سولتد كراميل","p":165,"pl":190},{"en":"Peanut Butter","ar":"بينت بتر","p":155,"pl":180},{"en":"Orange","ar":"أورانج","p":145,"pl":170},{"en":"Bueno","ar":"بوينو","p":170,"pl":195}]},{"id":"matcha","en":"Signature Matcha","ar":"ماتشا","items":[{"en":"Mango Matcha","ar":"ماتشا مانجا","p":150,"pl":175},{"en":"Blueberry Matcha","ar":"ماتشا بلوبيري","p":160,"pl":185},{"en":"Biscoff Matcha","ar":"ماتشا بسكوف","p":150,"pl":175},{"en":"Matcha Latte","ar":"ماتشا لاتيه","p":125,"pl":150},{"en":"Peach Matcha","ar":"ماتشا خوخ","p":145,"pl":170},{"en":"Coconut Matcha","ar":"ماتشا جوز هند","p":160,"pl":185}]},{"id":"frappe","en":"Frappe","ar":"فرابيه","items":[{"en":"Vanilla","ar":"فانيليا","p":135,"pl":160},{"en":"Caramel","ar":"كراميل","p":150,"pl":175},{"en":"Mocha","ar":"موكا","p":150,"pl":175},{"en":"Tiramisu","ar":"تيراميسو","p":170,"pl":195},{"en":"Pistachio","ar":"فستق","p":180,"pl":205},{"en":"Lotus","ar":"لوتس","p":165,"pl":190}]},{"id":"shakes","en":"Milk Shakes","ar":"ميلك شيك","items":[{"en":"Vanilla","ar":"فانيليا","p":125,"pl":150},{"en":"Blueberry","ar":"بلوبيري","p":145,"pl":170},{"en":"Strawberry","ar":"فراولة","p":145,"pl":170},{"en":"Oreo","ar":"أوريو","p":145,"pl":170},{"en":"Mango","ar":"مانجا","p":145,"pl":170}]},{"id":"mojito","en":"Signature Mojitos","ar":"موهيتو","items":[{"en":"Pomegranate","ar":"رمان","p":120,"pl":145},{"en":"Strawberry / Blueberry","ar":"فراولة / بلوبيري","p":120,"pl":145},{"en":"Fancy Lychee Plum","ar":"فانسي ليتشي برقوق","p":130,"pl":155},{"en":"Apple Purple","ar":"أبل بيربل","p":130,"pl":155}]},{"id":"smoothies","en":"Smoothies","ar":"سموذي","items":[{"en":"Lemon Mint","ar":"ليمون نعناع","p":125,"pl":150},{"en":"Passion Fruit","ar":"باشن فروت","p":125,"pl":150},{"en":"Watermelon","ar":"بطيخ","p":125,"pl":150},{"en":"Peach","ar":"خوخ","p":125,"pl":150},{"en":"Mango / Strawberry","ar":"مانجا / فراولة","p":125,"pl":150},{"en":"Blueberry","ar":"بلوبيري","p":125,"pl":150}]},{"id":"winter","en":"Signature Winters","ar":"مشروبات الشتا","items":[{"en":"Batata","ar":"بطاطا","p":150},{"en":"Hot Chocolate","ar":"هوت شوكليت","p":190},{"en":"Whipped Crunchy Lotus","ar":"لوتس كرانشي بالكريمة","p":195},{"en":"Belela","ar":"بليلة","p":95},{"en":"Sahlab / Sahlab Mekassarat","ar":"سحلب / سحلب مكسرات","p":95,"pl":125},{"en":"Homs El Sham","ar":"حمص الشام","p":95}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {
+  ar:{dir:"rtl",lang:"English",search:"دوّر على مشروب…",pick:"الأكتر طلباً",empty:"مفيش حاجة بالاسم ده، جرّب كلمة تانية.",all:"الكل",
+      note:"كل الأسعار شاملة الضريبة والخدمة",demo:"نسخة تجريبية للعرض",credit:n=>`منيو ديجيتال من تصميم <strong>${n}</strong>`},
+  en:{dir:"ltr",lang:"العربية",search:"Find a drink…",pick:"Top pick",empty:"Nothing matches that. Try another word.",all:"All",
+      note:"All prices include taxes and service",demo:"Demo version",credit:n=>`Digital menu designed by <strong>${n}</strong>`}
+};
+let lang="ar", active="all", query="", size="M";
+try{const s=localStorage.getItem("Concept 18-lang");if(s==="ar"||s==="en")lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const cur=()=> (C.currency||{ar:"ج.م",en:"L.E"})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+function price(i){
+  const two = i.pl!=null;
+  const v = (size==="L" && two) ? i.pl : i.p;
+  return `<div class="pr">${two?`<span class="sz">${size}</span>`:""}<b>${v}</b><small>${cur()}</small></div>`;
+}
+function renderChips(){
+  const cats=[{id:"all",ar:T[lang].all,en:T[lang].all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0;
+  for(const c of C.categories){
+    const items=c.items.filter(i=>!q||[i.ar,i.en].join(" ").toLowerCase().includes(q));
+    if(!items.length) continue; n+=items.length;
+    html+=`<section id="cat-${esc(c.id)}"><h2>${esc(L(c,"ar","en"))}</h2><div class="grid">`+
+      items.map(i=>`<div class="card"><div><div class="nm">${esc(L(i,"ar","en"))}</div>${i.pick?`<span class="pk">${T[lang].pick}</span>`:""}</div>${price(i)}</div>`).join("")+`</div></section>`;
+  }
+  $("menu").innerHTML=n?html+`<p class="note">${T[lang].note}</p>`:`<p class="empty">${T[lang].empty}</p>`;
+}
+function setSize(s){size=s;$("szM").setAttribute("aria-pressed",s==="M");$("szL").setAttribute("aria-pressed",s==="L");renderMenu();}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("info").textContent=L(C.info||{},"ar","en");
+  $("credit").innerHTML=t.credit(esc(lang==="en"?"Mohamed":(C.credit||"محمد")));
+  renderChips(); renderMenu();
+}
+$("szM").onclick=()=>setSize("M"); $("szL").onclick=()=>setSize("L");
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem("Concept 18-lang",lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

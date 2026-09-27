@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 36</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2f4a26">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italianno&family=Aref+Ruqaa:wght@400;700&family=Playfair+Display:wght@500;700&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--velvet:#2f4a26;--velvet2:#3f6b2e;--gold:#c9a24c;--gold2:#e2c77e;--cream:#f5efdf;--ink:#1f2a1a;--soft:#6a705e;--card:#fbf7ec}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#141c11;--ink:#f1ead6;--soft:#b9b69e;--card:#1d2818}}
+:root[data-theme="dark"]{--cream:#141c11;--ink:#f1ead6;--soft:#b9b69e;--card:#1d2818}
+body{background:var(--cream);color:var(--ink);font-family:"Tajawal",system-ui,sans-serif}
+.demo-note{background:var(--gold);color:#1f2a1a;font-weight:500}
+header{background:radial-gradient(120% 90% at 50% 0%,var(--velvet2),var(--velvet) 70%);color:var(--cream);padding:calc(env(safe-area-inset-top,0px) + 1.2rem) 1.2rem 0;text-align:center;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.035) 0 2px,transparent 2px 7px);pointer-events:none}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .9rem);inset-inline-end:1rem;z-index:2;background:transparent;color:var(--gold2);border:1px solid var(--gold);border-radius:999px;padding:.25rem .85rem;cursor:pointer;min-height:36px;font-size:.82rem}
+
+.arch{position:relative;z-index:1;width:min(300px,78vw);margin:1.6rem auto 0;border:2px solid var(--gold);border-bottom:0;border-radius:150px 150px 0 0;padding:2.2rem 1rem 1.6rem}
+.arch::before{content:"";position:absolute;inset:8px 8px 0;border:1px solid rgba(201,162,76,.5);border-bottom:0;border-radius:142px 142px 0 0}
+#logo{display:inline-block;padding:.3rem .8rem;background:var(--velvet)}
+.crown{width:54px;height:40px;color:var(--gold);display:block;margin:0 auto}
+.word{font:400 4.2rem/0.9 "Italianno",cursive;color:var(--gold2);margin:0;direction:ltr}
+.cof{font:500 .78rem "Playfair Display",serif;letter-spacing:.5em;color:var(--gold);margin:.1rem 0 0;direction:ltr;padding-inline-start:.5em}
+.ar-name{font:700 1.5rem "Aref Ruqaa",serif;color:var(--gold2);margin:.6rem 0 0}
+.info{font-size:.82rem;color:#d9d3bb;margin:.3rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:1px solid rgba(201,162,76,.5)}
+.bar-in{max-width:560px;margin:0 auto;padding:.65rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--gold);background:var(--card);color:var(--ink);border-radius:999px;padding:.6rem 1.1rem;font:inherit}
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:.55rem 0 .1rem;scrollbar-width:none;justify-content:flex-start}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:0;background:none;color:var(--soft);font:500 .95rem "Tajawal";padding:.3rem .6rem;cursor:pointer;min-height:36px;border-radius:999px}
+.chip[aria-pressed="true"]{background:var(--velvet);color:var(--gold2)}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+main{max-width:560px;margin:0 auto;padding:.4rem 1.2rem 1.5rem}
+section{margin-top:1.6rem;background:var(--card);border:1px solid rgba(201,162,76,.55);border-radius:120px 120px 18px 18px;padding:2rem 1.2rem 1rem;position:relative;scroll-margin-top:120px}
+section::before{content:"";position:absolute;inset:6px;border:1px solid rgba(201,162,76,.25);border-radius:114px 114px 13px 13px;pointer-events:none}
+h2{margin:0 0 .6rem;text-align:center;font:700 1.6rem "Aref Ruqaa",serif;color:var(--velvet2)}
+html[lang=en] h2{font:500 1.4rem "Playfair Display",serif;letter-spacing:.06em}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:var(--gold2)}}
+:root[data-theme="dark"] h2{color:var(--gold2)}
+.orn{display:block;width:90px;height:10px;margin:-.3rem auto .6rem;color:var(--gold)}
+.it{display:flex;align-items:baseline;gap:.5rem;padding:.55rem 0}
+.it+.it{border-top:1px dashed rgba(201,162,76,.35)}
+.nm{font-weight:500;font-size:1.02rem}
+.dots{flex:1;border-bottom:1px dotted var(--soft);opacity:.5;transform:translateY(-.25rem)}
+.pr{font:700 1.02rem "Playfair Display",serif;color:var(--velvet2);white-space:nowrap}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pr{color:var(--gold2)}}
+:root[data-theme="dark"] .pr{color:var(--gold2)}
+.pr small{font:400 .7rem "Tajawal";color:var(--soft);margin-inline-start:.15rem}
+.cal{font-size:.72rem;color:var(--soft);margin:-.35rem 0 .2rem}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div class="arch">
+    <div id="logo"><span class="concept-wm" style="display:block;font-family:'Aref Ruqaa',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 36</span></div>
+    <p class="ar-name" id="arName"></p>
+    <p class="info" id="info"></p>
+  </div>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 36","nameAr":"Concept 36","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#2f4a26","onPrimary":"#f5efdf","secondary":"#3f6b2e","background":"#f5efdf","accent":"#c9a24c"},"fonts":{"display":"Aref Ruqaa","body":"Tajawal"},"pattern":"none","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":true,"credit":"محمد","categories":[{"id":"hot","ar":"مشروبات حارة","en":"Hot Drinks","items":[{"ar":"إسبريسو","en":"Espresso","p":10,"cal":5},{"ar":"أمريكانو","en":"Americano","p":12,"cal":10},{"ar":"فلات وايت","en":"Flat White","p":15,"cal":110},{"ar":"لاتيه","en":"Latte","p":16,"cal":150},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":18,"cal":240},{"ar":"قهوة سعودية","en":"Saudi Coffee","p":15,"cal":10}]},{"id":"cold","ar":"مشروبات باردة","en":"Cold Drinks","items":[{"ar":"آيس لاتيه","en":"Iced Latte","p":17,"cal":140},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":19,"cal":230},{"ar":"آيس ماتشا لاتيه","en":"Iced Matcha Latte","p":20,"cal":180},{"ar":"كولد برو","en":"Cold Brew","p":17,"cal":5}]},{"id":"mojito","ar":"موهيتو","en":"Mojitos","items":[{"ar":"موهيتو كلاسيك","en":"Classic Mojito","p":16,"cal":120},{"ar":"موهيتو فراولة","en":"Strawberry Mojito","p":18,"cal":150},{"ar":"موهيتو باشن فروت","en":"Passion Fruit Mojito","p":18,"cal":150}]},{"id":"dessert","ar":"حلا","en":"Desserts","items":[{"ar":"كيكة تيراميسو","en":"Tiramisu Cake","p":22,"cal":380},{"ar":"دونات شوكولاتة","en":"Chocolate Glazed Donut","p":10,"cal":280},{"ar":"كوكيز","en":"Cookie","p":9,"cal":210}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبغى تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "نسخة تجريبية — الأصناف والأسعار أمثلة وتتغير لمنيو Concept 36 الحقيقي", "note": "", "kcal": "سعرة"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "Demo — items and prices are samples, to be replaced with Concept 36's real menu", "note": "", "kcal": "kcal"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 36-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+const ORN=`<svg class="orn" viewBox="0 0 90 10" aria-hidden="true"><path d="M0 5 H34 M56 5 H90" stroke="currentColor" stroke-width="1"/><path d="M45 1 L49 5 L45 9 L41 5 Z" fill="currentColor"/></svg>`;
+function hero(){ $("arName").textContent=lang==="ar"?"Concept 36":""; $("arName").hidden=lang!=="ar"; $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${esc(L(c,"ar","en"))}</h2>${ORN}${body}</section>`; }
+function item(i){ return `<div class="it"><span class="nm">${esc(L(i,"ar","en"))}</span><span class="dots"></span><span class="pr">${fmt(i.p)}<small>${cur()}</small></span></div>${i.cal!=null?`<p class="cal">${fmt(i.cal)} ${T[lang].kcal}</p>`:""}`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

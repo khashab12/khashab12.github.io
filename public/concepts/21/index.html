@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 21</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1d6a2c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Marhey:wght@400;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap">
+<style>
+:root{
+  --green:#1d6a2c; --deep:#14471f; --cream:#efe6d2; --paper:#f7efdc; --lime:#a8c43c; --wood:#8a5a32; --wood2:#6b4324;
+  --ink:#1f2a1d; --muted:#5e6a57; --page:#efe6d2; --line:#d9ccb0;
+  --hand:"Marhey","IBM Plex Sans Arabic",system-ui,sans-serif; --body:"IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#0e1c11;--muted:#b9c4b1;--line:#2b3d2d}}
+:root[data-theme="dark"]{--page:#0e1c11;--muted:#b9c4b1;--line:#2b3d2d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:130px}
+body{margin:0;background:var(--page);color:var(--ink);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased;
+  padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{background:var(--lime);color:#172006;text-align:center;font-size:.82rem;padding:.45rem 1rem;font-weight:500}
+
+
+header{position:relative;background:var(--green);color:#fff;padding:calc(env(safe-area-inset-top,0px) + 2.2rem) 1rem 3.4rem;text-align:center;overflow:hidden}
+.palm{position:absolute;bottom:22px;width:120px;height:150px;opacity:.22;color:#fff}
+.palm.l{inset-inline-start:-18px}.palm.r{inset-inline-end:-18px;transform:scaleX(-1)}
+.logo{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;width:132px;height:132px;border:2px solid rgba(255,255,255,.85);border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(255,255,255,.08)}
+.logo b{font:400 2.55rem/0.9 "Bebas Neue",sans-serif;letter-spacing:.02em}
+.logo small{font:600 .56rem/1 var(--body);letter-spacing:.32em;margin-top:.25rem}
+.brand-ar{font:700 1.7rem/1.2 var(--hand);margin:.9rem 0 0}
+.motto{margin:.25rem 0 0;font-size:.95rem;opacity:.85}
+.info{margin:.3rem 0 0;font-size:.85rem;opacity:.75}
+.tri{position:absolute;left:0;right:0;bottom:0;height:26px;color:var(--page)}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .9rem);inset-inline-end:1rem;z-index:2;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.8);border-radius:999px;padding:.3rem .9rem;font:500 .85rem var(--body);cursor:pointer;min-height:36px}
+
+
+.bar{position:sticky;top:0;z-index:5;background:var(--page);padding:.7rem 0 .5rem;border-bottom:1px solid var(--line)}
+.search{max-width:560px;margin:0 auto;padding:0 1rem}
+.search input{width:100%;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);border-radius:10px;padding:.65rem 1rem;font:1rem var(--body)}
+.chips{display:flex;gap:.5rem;justify-content:center;overflow-x:auto;padding:.6rem 1rem .1rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1.5px solid var(--green);background:transparent;color:var(--green);border-radius:999px;padding:.35rem 1rem;font:600 .9rem var(--hand);cursor:pointer;min-height:38px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{color:var(--lime);border-color:var(--lime)}}
+:root[data-theme="dark"] .chip{color:var(--lime);border-color:var(--lime)}
+.chip[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.lang:focus-visible,.chip:focus-visible,.search input:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+
+
+main{max-width:520px;margin:0 auto;padding:1.2rem 1.1rem 2rem}
+.scroll{position:relative;margin:1rem 0 2rem;padding-top:38px}
+.string{position:absolute;top:0;left:50%;transform:translateX(-50%);width:62%;height:44px;color:#7a6a55}
+.rod{position:relative;height:14px;border-radius:7px;background:linear-gradient(180deg,#a26d40,var(--wood) 55%,var(--wood2));box-shadow:0 2px 3px rgba(0,0,0,.25);margin:0 -10px;z-index:1}
+.sheet{--muted:#5e6a57;background:var(--paper);color:var(--ink);padding:1.4rem 1.2rem 1.5rem;margin:0 2px;box-shadow:0 10px 22px -12px rgba(40,30,10,.45);
+  background-image:radial-gradient(rgba(120,90,40,.05) 1px,transparent 1px);background-size:6px 6px}
+.title{display:flex;align-items:flex-end;justify-content:space-between;gap:.6rem;margin-bottom:.6rem}
+.title h2{margin:0;font:700 clamp(2.4rem,12vw,3.2rem)/1 var(--hand);color:transparent;
+  background:repeating-linear-gradient(135deg,var(--lime) 0 3px,#6f8f1f 3px 5px);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-stroke:1.2px var(--deep)}
+html[lang=en] .title h2{font-family:"Bebas Neue",sans-serif;letter-spacing:.04em;font-size:clamp(3rem,15vw,4rem)}
+.badge{border:1.5px solid var(--ink);outline:1.5px solid var(--ink);outline-offset:2px;padding:.05rem .45rem;font:700 .8rem var(--hand);white-space:nowrap}
+.badge em{font-style:normal;color:#b3261e}
+.row{display:grid;grid-template-columns:auto 1fr auto;gap:0 .55rem;align-items:baseline;padding:.42rem 0}
+.row::before{content:"-";font:600 1rem var(--hand);color:var(--muted)}
+.nm{font:500 1.08rem/1.35 var(--hand)}
+.nm .pk{display:inline-block;margin-inline-start:.4rem;font:600 .68rem var(--body);background:var(--green);color:#fff;border-radius:4px;padding:0 .4rem;vertical-align:middle}
+.pr{font:700 1.2rem/1 var(--hand);color:var(--deep);white-space:nowrap}
+.pr small{font:600 .62rem var(--body);color:var(--green);margin-inline-start:.15rem}
+.dsc{grid-column:2/4;font-size:.84rem;color:var(--muted);margin:0}
+.icons{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;text-align:center;margin-top:.3rem}
+.ic svg{width:64px;height:64px;display:block;margin:0 auto .2rem}
+.ic .nm{display:block;font-size:1.25rem}
+.ic .pr{display:block;font-size:1rem;margin-top:.1rem}
+.ic .dsc{display:block;font-size:.72rem}
+.free{text-decoration:line-through;text-decoration-color:#b3261e;margin-inline-start:.2rem;font-size:.7rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:1.2rem 1rem 2.4rem}
+footer strong{color:inherit}
+.tri-foot{height:18px;color:var(--green);opacity:.5;margin-bottom:1rem}
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+<header>
+  <svg class="palm l" viewBox="0 0 120 150" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M60 150 C62 110 60 80 58 52"/><path d="M58 52 C40 40 20 42 6 56"/><path d="M58 52 C44 30 30 22 12 22"/><path d="M58 52 C60 30 70 14 88 8"/><path d="M58 52 C78 40 98 42 114 52"/><path d="M58 52 C72 54 88 66 96 84"/><path d="M58 52 C44 58 32 72 28 90"/></g></svg>
+  <svg class="palm r" viewBox="0 0 120 150" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M60 150 C62 110 60 80 58 52"/><path d="M58 52 C40 40 20 42 6 56"/><path d="M58 52 C44 30 30 22 12 22"/><path d="M58 52 C60 30 70 14 88 8"/><path d="M58 52 C78 40 98 42 114 52"/><path d="M58 52 C72 54 88 66 96 84"/></g></svg>
+  <button class="lang" id="langBtn">English</button>
+  <div class="logo" aria-label="Concept 21 Coffee Bar"><span class="concept-wm" style="display:block;font-family:'Marhey',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 21</span><span id="logoName" hidden></span></div>
+  <p class="brand-ar" id="brandAr"></p>
+  <p class="motto" id="motto"></p>
+  <p class="info" id="info"></p>
+  <svg class="tri" preserveAspectRatio="none" viewBox="0 0 400 26" aria-hidden="true"><defs><pattern id="tp" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M0 26 L13 6 L26 26 Z" fill="currentColor"/></pattern></defs><rect width="400" height="26" fill="url(#tp)"/></svg>
+</header>
+<div class="bar">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div>
+<main id="menu"></main>
+<footer>
+  <svg class="tri-foot" width="160" viewBox="0 0 160 18" aria-hidden="true"><path d="M0 18 L9 4 L18 18 Z M26 18 L35 4 L44 18 Z M52 18 L61 4 L70 18 Z M78 18 L87 4 L96 18 Z M104 18 L113 4 L122 18 Z M130 18 L139 4 L148 18 Z" fill="currentColor"/></svg>
+  <p id="updated"></p><p id="credit"></p>
+</footer>
+<script>
+const CONFIG = {"name":"Concept 21","nameAr":"Concept 21","tagline":{"ar":"كوفي بار","en":"Coffee Bar"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#1d6a2c","onPrimary":"#ffffff","secondary":"#14471f","background":"#efe6d2","accent":"#a8c43c"},"fonts":{"display":"Marhey","body":"IBM Plex Sans Arabic"},"pattern":"none","currency":{"ar":"ر.س","en":"SR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"drinks","ar":"حار وبارد","en":"Hot & Cold","items":[{"ar":"قهوة اليوم","en":"Coffee of the Day","p":10,"pick":true},{"ar":"إسبريسو","en":"Espresso","p":10},{"ar":"امريكانو","en":"Americano","p":10},{"ar":"V60","en":"V60","p":15},{"ar":"لاتيه / لاتيه قرفة","en":"Latte / Cinnamon","p":15},{"ar":"سبانيش لاتيه","en":"Spanish Latte","p":15},{"ar":"هوت تشوكولت","en":"Hot Chocolate","p":15},{"ar":"ماتشا","en":"Matcha","dAr":"فراولة، فانيلا","dEn":"Strawberry, Vanilla","p":20,"pick":true},{"ar":"شاي","en":"Tea","dAr":"أحمر، أخضر، أعشاب","dEn":"Red, Green, Herbal","p":10},{"ar":"أيس تي، سلوشي","en":"Coolers","dEn":"Ice Tea, Slushy","p":20,"pick":true},{"ar":"بيرة","en":"Non-Alcoholic Beer","dAr":"لاقر ١٥ ريال · IPA ٢٠ ريال","dEn":"Lager 15 SR · IPA 20 SR","p":15}]},{"id":"more","ar":"وأكثر","en":"And More","items":[{"ar":"بايتس","en":"Bites","dAr":"٥ – ٨ – ١٠ ريال حسب الصنف","dEn":"5 – 8 – 10 SR depending on the bite","p":5,"from":true,"icon":"bites"},{"ar":"كيس بن","en":"Bean Bag","p":50,"icon":"bag"},{"ar":"موية","en":"Water","p":0,"free":true,"icon":"water"}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const ICONS = {
+  water:`<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 14 h24 l-3 42 a3 3 0 0 1-3 3 h-12 a3 3 0 0 1-3-3 Z" fill="#6f7f95" stroke="#1f2a1d" stroke-width="2"/><path d="M20 14 h24 l-.8 10 h-22.4 Z" fill="#e2b93b" stroke="#1f2a1d" stroke-width="2"/></svg>`,
+  bites:`<svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="22" cy="24" rx="15" ry="11" fill="#e98aa6" stroke="#1f2a1d" stroke-width="2"/><ellipse cx="22" cy="24" rx="5" ry="3.4" fill="#f7efdc" stroke="#1f2a1d" stroke-width="2"/><path d="M36 20 c6-8 18-6 22 2 c-4 4-8 4-11 2 c-3 4-8 4-11-4Z" fill="#d9913a" stroke="#1f2a1d" stroke-width="2"/><path d="M22 44 h20 l-3 14 h-14 Z" fill="#9b5a3c" stroke="#1f2a1d" stroke-width="2"/><circle cx="32" cy="41" r="8" fill="#6b3a2a" stroke="#1f2a1d" stroke-width="2"/></svg>`,
+  bag:`<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 12 h28 l4 46 h-36 Z" fill="#6d6f73" stroke="#1f2a1d" stroke-width="2"/><path d="M18 12 l4-5 h20 l4 5" fill="#4d4f52" stroke="#1f2a1d" stroke-width="2"/><circle cx="32" cy="34" r="10" fill="#f7efdc" stroke="#1f2a1d" stroke-width="2"/><ellipse cx="29" cy="33" rx="2.4" ry="3.4" fill="#6b3a2a"/><ellipse cx="35.5" cy="35" rx="2.4" ry="3.4" fill="#6b3a2a"/></svg>`
+};
+const STRING = `<svg class="string" viewBox="0 0 200 44" preserveAspectRatio="none" aria-hidden="true"><path d="M4 42 L100 4 L196 42" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="100" cy="4" r="3" fill="#55483a"/></svg>`;
+const T = {
+  ar:{dir:"rtl",lang:"English",search:"دوّر على مشروبك…",pick:"ننصح فيه",empty:"ما لقينا شي بهالاسم، جرّب كلمة ثانية.",all:"الكل",
+      title:"منيو",badge:'<em>حار</em> & بارد',motto:"",free:"مجاناً",from:"من",
+      note:`نسخة تجريبية للعرض`,updated:"الأسعار من منيو المحل",credit:n=>`منيو ديجيتال من تصميم <strong>${n}</strong>`},
+  en:{dir:"ltr",lang:"العربية",search:"Find your drink…",pick:"Our pick",empty:"Nothing matches that. Try another word.",all:"All",
+      title:"MENU",badge:'<em>HOT</em> & COLD',motto:"",free:"Free",from:"from",
+      note:`Demo version`,updated:"Prices from the in-store menu",credit:n=>`Digital menu designed by <strong>${n}</strong>`}
+};
+let lang="ar", active="all", query="";
+try{const s=localStorage.getItem("Concept 21-lang");if(s==="ar"||s==="en")lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"ر.س",en:"SR"})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+function price(i){
+  if(i.free) return `${T[lang].free}<span class="free">${cur()}</span>`;
+  return `${i.from?`<small>${T[lang].from}</small> `:""}${fmt(i.p)}<small>${cur()}</small>`;
+}
+function renderHero(){
+  $("brandAr").textContent = lang==="ar" ? (C.nameAr||"") : "";
+  $("brandAr").hidden = lang!=="ar";
+  $("motto").innerHTML = `<bdi dir="ltr">${T[lang].motto}</bdi>`;
+  $("info").textContent = L(C.info||{},"ar","en");
+}
+function renderChips(){
+  const cats=[{id:"all",ar:T[lang].all,en:T[lang].all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    const iconic = items.every(i=>i.icon);
+    let body="";
+    if(iconic){
+      body=`<div class="icons">`+items.map(i=>{const d=L(i,"dAr","dEn");return `<div class="ic">${ICONS[i.icon]||""}<span class="nm">${esc(L(i,"ar","en"))}</span><span class="pr">${price(i)}</span>${d?`<span class="dsc">${esc(d)}</span>`:""}</div>`}).join("")+`</div>`;
+    } else {
+      body=items.map(i=>{const d=L(i,"dAr","dEn");return `<div class="row"><span class="nm">${esc(L(i,"ar","en"))}${i.pick?`<span class="pk">${T[lang].pick}</span>`:""}</span><span class="pr">${price(i)}</span>${d?`<p class="dsc">${esc(d)}</p>`:""}</div>`}).join("");
+    }
+    const head = ci===0 ? `<div class="title"><h2>${T[lang].title}</h2><span class="badge">${T[lang].badge}</span></div>`
+                        : `<div class="title"><h2 style="font-size:2.1rem">${esc(L(c,"ar","en"))}</h2></div>`;
+    html+=`<section class="scroll" id="cat-${esc(c.id)}" aria-label="${esc(L(c,"ar","en"))}">${STRING}<div class="rod"></div><div class="sheet">${head}${body}</div><div class="rod"></div></section>`;
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.note;
+  $("updated").textContent=t.updated; $("credit").innerHTML=t.credit(esc(lang==="en"?"Mohamed":(C.credit||"محمد")));
+  renderHero(); renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem("Concept 21-lang",lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

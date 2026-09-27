@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 20</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#6b2e14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Alexandria:wght@300;400;600&family=League+Spartan:wght@300;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--brown:#6b2e14;--brown2:#8a3f1f;--cream:#f2e7da;--card:#fbf5ee;--red:#b33a2a;--ink:#3a1f12;--soft:#86695a;--line:#e3d2c1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--cream:#150d09;--card:#21150f;--ink:#f2e7da;--soft:#c2a998;--line:#3b2a20}}
+:root[data-theme="dark"]{--cream:#150d09;--card:#21150f;--ink:#f2e7da;--soft:#c2a998;--line:#3b2a20}
+body{background:var(--cream);color:var(--ink);font-family:"Alexandria",system-ui,sans-serif}
+.demo-note{background:var(--brown);color:#f2e7da}
+header{position:relative;background:var(--brown);color:#f2e7da;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1.4rem;overflow:hidden}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:#f2e7da;color:var(--brown);border:0;border-radius:2px;padding:.25rem .9rem;cursor:pointer;min-height:36px;font-size:.8rem;z-index:2}
+.big{font:300 3.4rem/1 "League Spartan";letter-spacing:.18em;margin-inline-end:-.18em;direction:ltr}
+#logo{display:inline-block;padding:.2rem 1rem .5rem;background:var(--brown)}
+.cal{font:700 3.4rem/1 "Aref Ruqaa",serif;color:#2a0f06;text-shadow:0 1px 0 rgba(255,255,255,.12)}
+.info{font-size:.8rem;color:#e6cdbb;margin:.6rem 0 0}
+
+.wmk{position:fixed;inset:auto 0 0 0;height:70vh;display:grid;place-items:center;font:700 44vw/1 "League Spartan";color:var(--ink);opacity:.05;pointer-events:none;z-index:0;direction:ltr;letter-spacing:-.04em}
+.bar{position:sticky;top:0;z-index:5;background:var(--cream);border-bottom:1px solid var(--line)}
+.bar-in{max-width:560px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:2px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--brown);background:none;color:var(--ink);border-radius:2px;padding:.3rem .9rem;cursor:pointer;min-height:36px;font-size:.84rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{border-color:var(--soft)}}
+.chip[aria-pressed="true"]{background:var(--brown);border-color:var(--brown);color:#f2e7da}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+main{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{margin-top:1.7rem;scroll-margin-top:120px}
+
+h2{margin:0 0 .6rem;display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:.35rem 0;border-block:1px solid var(--red);font:600 1.1rem "Alexandria"}
+h2 small{font:300 1rem "League Spartan";letter-spacing:.2em;color:var(--soft);direction:ltr}
+.it{display:grid;grid-template-columns:1fr auto;gap:0 .8rem;padding:.55rem 0}
+.nm{font-weight:600}
+.en{display:block;font:500 .7rem "League Spartan";letter-spacing:.1em;color:var(--soft);text-transform:uppercase;direction:ltr;text-align:start}
+html[lang=en] .en{display:none}
+.tg{font-size:.7rem;color:var(--red);margin-inline-start:.3rem;font-weight:400}
+.pr{text-align:end;font:600 1.05rem "League Spartan";direction:ltr}
+.pr small{font-size:.65rem;font-weight:500;margin-inline-start:.15rem}
+.kc{display:block;font:400 .66rem "League Spartan";color:var(--soft);letter-spacing:.05em}
+.kcal{margin-top:1.8rem;font-size:.75rem;color:var(--soft);line-height:1.7}
+.foot{position:relative;z-index:1;text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<div class="wmk" aria-hidden="true">Concept 20</div>
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'League Spartan',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 20</span></div>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 20","nameAr":"Concept 20","tagline":{"ar":"قهوة مختصة","en":"Specialty coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#6b2e14","onPrimary":"#f2e7da","secondary":"#b33a2a","background":"#f2e7da","accent":"#b33a2a"},"fonts":{"display":"League Spartan","body":"Alexandria"},"pattern":"Concept 20 watermark","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"drip","ar":"القهوة المقطرة","en":"Drip Coffee","items":[{"ar":"قهوة اليوم صغير","en":"Small Coffee of the Day","tAr":"حار / بارد","tEn":"hot / iced","p":5.75,"c":3},{"ar":"قهوة اليوم كبير","en":"Large Coffee of the Day","tAr":"حار / بارد","tEn":"hot / iced","p":7.75,"c":3},{"ar":"V60","en":"V60","tAr":"حار","tEn":"hot","p":9.75,"c":3},{"ar":"V60","en":"V60","tAr":"بارد","tEn":"iced","p":10.75,"c":3},{"ar":"بوكس قهوة اليوم ١ لتر حار","en":"Today's Coffee Box 1L Hot","tAr":"٥ أكواب","tEn":"5 cups","p":29.9,"c":12},{"ar":"بوكس قهوة اليوم ١ لتر بارد","en":"Today's Coffee Box 1L Iced","tAr":"٨ أكواب","tEn":"8 cups","p":33.9,"c":15}]},{"id":"cold","ar":"المشروبات الباردة","en":"Cold Drinks","items":[{"ar":"كركديه","en":"Iced Hibiscus","p":10.75,"c":88},{"ar":"ماء","en":"Water","tAr":"٣٣٠ مل","tEn":"330 ml","p":1,"c":0}]},{"id":"dessert","ar":"الحلى","en":"Desserts","items":[{"ar":"سان سباستيان","en":"San Sebastian","p":16.9,"c":400},{"ar":"بودينق شوكليت","en":"Chocolate Pudding","p":13.9,"c":370},{"ar":"وافل","en":"Waffle","p":10.9,"c":290},{"ar":"كوكنت مانجو","en":"Coconut Mango","p":14.75,"c":420}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "دوّر على قهوتك…", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "", "cal": "سعرة", "k": "متوسط الاحتياج اليومي من السعرات للبالغين: الرجال ٢٥٠٠ سعرة تقريباً، النساء ٢٠٠٠ سعرة تقريباً. قد تختلف الاحتياجات اليومية حسب العمر والنشاط البدني."}, "en": {"dir": "ltr", "lang": "العربية", "search": "Find your coffee…", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "cal": "CAL", "k": "Average daily calorie needs for adults: men about 2,500, women about 2,000. Needs vary with age and physical activity."}};
+let lang="ar", active="all", query="";
+const KEY="Concept 20-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2><span>${esc(c.ar)}</span><small>${esc(c.en)}</small></h2>${body}</section>`; }
+function item(i){ const tg=L(i,"tAr","tEn"); return `<div class="it"><span><span class="nm">${esc(L(i,"ar","en"))}${tg?`<span class="tg">${esc(tg)}</span>`:""}</span><span class="en">${esc(i.en)}</span></span><span class="pr">${fmt(i.p)}<small>${cur()}</small><span class="kc">${fmt(i.c)} ${T[lang].cal}</span></span></div>`; }
+function afterRender(){ if(query.trim()) return; $("menu").insertAdjacentHTML("beforeend",`<p class="kcal">${T[lang].k}</p>`); }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

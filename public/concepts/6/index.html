@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 6</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5a3f2a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Reem+Kufi:wght@400;500;600;700&family=Almarai:wght@400;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--paper:#efe6d4;--paper2:#e7dcc6;--brown:#5a3f2a;--ring:#6b4f36;--ink:#2a211a;--soft:#86735f;--line:#cbbb9f;--mark:rgba(90,63,42,.07)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1b1612;--paper2:#241d17;--brown:#d9bf9a;--ring:#b08d66;--ink:#efe3cf;--soft:#b3a088;--line:#3d3228;--mark:rgba(239,227,207,.045)}}
+:root[data-theme="dark"]{--paper:#1b1612;--paper2:#241d17;--brown:#d9bf9a;--ring:#b08d66;--ink:#efe3cf;--soft:#b3a088;--line:#3d3228;--mark:rgba(239,227,207,.045)}
+
+body{background:var(--paper);color:var(--ink);font-family:"Reem Kufi","Almarai",system-ui,sans-serif;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='90'%3E%3Ctext x='10' y='40' font-family='Reem Kufi,sans-serif' font-size='22' fill='%235a3f2a' fill-opacity='.07'%3E%D8%A8%D9%8A%D8%A7%D9%86%D9%8E%3C/text%3E%3C/svg%3E")}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background-image:none}}
+:root[data-theme="dark"] body{background-image:none}
+html[lang=en] body{font-family:"Playfair Display","Reem Kufi",serif}
+.demo-note{background:var(--brown);color:var(--paper)}
+header{position:relative;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3.2rem) 1.2rem 1.4rem}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:none;color:var(--brown);border:1px solid var(--brown);border-radius:2px;padding:.25rem .95rem;cursor:pointer;min-height:36px;font-size:.8rem;z-index:2}
+#logo{display:inline-block;padding:.5rem 1.2rem;background:#efe6d4;color:#2a211a}
+
+.cal{font:500 3rem/1.1 "Reem Kufi";color:#2a211a;direction:rtl}
+.en{font:700 1.5rem/1 "Playfair Display";letter-spacing:.02em;margin-top:.3rem;direction:ltr}
+.sp{font:500 .56rem "Playfair Display";letter-spacing:.28em;margin-top:.25rem;color:#6b5a48;direction:ltr}
+.tg{font:500 1rem "Playfair Display";font-style:italic;color:var(--soft);margin:.7rem 0 0;direction:ltr}
+.info{font-size:.8rem;color:var(--soft);margin:.25rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar-in{max-width:520px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:0;border-bottom:1.5px solid var(--brown);background:transparent;color:var(--ink);border-radius:0;padding:.5rem .2rem;font:inherit}
+.chips{display:flex;gap:1.1rem;overflow-x:auto;padding:.55rem 0 .15rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:0;border-bottom:2px solid transparent;background:none;color:var(--soft);padding:.3rem .1rem;cursor:pointer;min-height:36px;font-size:.92rem}
+.chip[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--brown)}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+main{max-width:520px;margin:0 auto;padding:.5rem 1.4rem 1.5rem}
+section{margin-top:2.1rem;scroll-margin-top:120px}
+
+h2{text-align:center;margin:0 auto .7rem;width:fit-content;min-width:60%;padding:0 .8rem .35rem;border-bottom:1.5px solid var(--ink);font:600 1.25rem "Reem Kufi"}
+h2 small{display:block;font:500 .82rem "Playfair Display";font-style:italic;color:var(--soft);direction:ltr}
+.row{display:grid;grid-template-columns:1fr 3.4rem;align-items:baseline;gap:.8rem;padding:.4rem 0}
+.nm{font-size:1.08rem;letter-spacing:.01em}
+.nm .e{display:block;font:500 .8rem "Playfair Display";color:var(--soft);direction:ltr;text-align:start}
+html[dir=rtl] .nm .e{text-align:right}
+.pr{font:500 1.1rem "Playfair Display";direction:ltr;text-align:center;color:var(--brown)}
+.pr small{display:block;font:400 .6rem "Almarai";color:var(--soft)}
+.sl{margin:0 .15rem;color:var(--soft)}
+
+.sw{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem .6rem;margin-top:.4rem}
+.dz{text-align:center}
+.ring{width:78px;height:78px;margin:0 auto .45rem;border-radius:50%;border:5px solid var(--ring);display:grid;place-items:center;background:var(--paper2);color:var(--ring)}
+.ring svg{width:34px;height:34px}
+.dz b{display:block;font:700 .82rem "Playfair Display";letter-spacing:.06em;text-transform:uppercase;direction:ltr}
+.dz span{display:block;font-size:.85rem;color:var(--soft)}
+.dn{margin:.9rem 0 0;text-align:center;font-size:.76rem;color:var(--soft)}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 6</span></div>
+  <p class="tg">Specialty Coffee</p>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 6","nameAr":"Concept 6","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#5a3f2a","onPrimary":"#efe6d4","secondary":"#6b4f36","background":"#efe6d4","accent":"#6b4f36"},"fonts":{"display":"Playfair Display","body":"Reem Kufi"},"pattern":"Concept 6 watermark + ring frames","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"hot","ar":"القهوة الساخنة","en":"Hot Coffee","items":[{"ar":"اسبريسو","en":"Espresso","p":9},{"ar":"اسبريسو مكياتو","en":"Espresso Macchiato","p":12},{"ar":"القهوة المقطرة","en":"Drip Coffee","p":14},{"ar":"كورتادو","en":"Cortado","p":12},{"ar":"فلات وايت","en":"Flat White","p":14},{"ar":"كابتشينو","en":"Cappuccino","p":14},{"ar":"لاتيه","en":"Latte","p":15},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":15},{"ar":"امريكانو","en":"Americano","p":10},{"ar":"قهوة اليوم","en":"Coffee of the Day","p":9}]},{"id":"cold","ar":"القهوة الباردة","en":"Iced Coffee","items":[{"ar":"القهوة المقطرة","en":"Iced Drip Coffee","p":15},{"ar":"آيس الفريدو","en":"Iced Alfredo","p":12},{"ar":"آيس لاتيه","en":"Iced Latte","p":15},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":16},{"ar":"قهوة اليوم","en":"Iced Coffee of the Day","p":10},{"ar":"كلاسيك ماتشا","en":"Classic Matcha","p":18},{"ar":"كركدية","en":"Hibiscus","p":14}]},{"id":"box","ar":"بوكس الجمعات","en":"Gathering Boxes","items":[{"ar":"القهوة السوداء","en":"Black Coffee Box","p":65},{"ar":"جالون كركدية","en":"Hibiscus Gallon","p":69}]},{"id":"sweet","ar":"حلى Concept 6","en":"Desserts","sw":1,"items":[{"ar":"تشيز كيك بيكان","en":"Pecan Cheesecake","p":null},{"ar":"بابكا شوكولاتة","en":"Chocolate Babka","p":null},{"ar":"كنافة","en":"Kunafa","p":null},{"ar":"كوكيز","en":"Cookies","p":null},{"ar":"فلافورا","en":"Falavora","p":null},{"ar":"بسبوسة","en":"Basbousa","p":null}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "", "dn": "أسعار الحلى تنضاف لما نعتمد النسخة النهائية"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "dn": "Dessert prices get added in the final version"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 6-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+const CK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 13h16v6H4z"/><path d="M4 15.5c2 1 4 1 6 0s4-1 6 0 3 .5 4 0"/><path d="M6 13l6-6 6 6"/></svg>';
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){
+  if(c.sw) return `<section id="cat-${esc(c.id)}"><h2>${esc(c.ar)}<small>${esc(c.en)}</small></h2><div class="sw">${body}</div>${query.trim()?"":`<p class="dn">${T[lang].dn}</p>`}</section>`;
+  return `<section id="cat-${esc(c.id)}"><h2>${esc(c.ar)}<small>${esc(c.en)}</small></h2>${body}</section>`; }
+function item(i,k,c){
+  if(c.sw) return `<div class="dz"><div class="ring" aria-hidden="true">${CK}</div><b>${esc(i.en)}</b>${lang==="ar"?`<span>${esc(i.ar)}</span>`:""}</div>`;
+  return `<div class="row"><span class="nm">${esc(lang==="ar"?i.ar:i.en)}${lang==="ar"?`<span class="e">${esc(i.en)}</span>`:""}</span><span class="pr">${P(i)}<small>${cur()}</small></span></div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+node_modules
+dist
+*.local
+.DS_Store
+# Private: real brand names of the concept demos. Never commit.
+scripts/demos.map.json
+dist-ssr

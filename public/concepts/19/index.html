@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 19</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#141414">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Alexandria:wght@300;500;700;800&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#f6f3ee; --ink:#141414; --soft:#6b6760; --rule:#141414; --red:#c8321f; --leaf:#3d4a34; --card:#fffdf9;
+  --mark:"Permanent Marker","Alexandria",cursive; --display:"Alexandria","Tajawal",system-ui,sans-serif; --body:"Tajawal",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#131312;--ink:#f1ede6;--soft:#a9a49b;--rule:#f1ede6;--red:#ff6a52;--card:#1c1b19}}
+:root[data-theme="dark"]{--paper:#131312;--ink:#f1ede6;--soft:#a9a49b;--rule:#f1ede6;--red:#ff6a52;--card:#1c1b19}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:120px}
+body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{background:var(--ink);color:var(--paper);text-align:center;font-size:.8rem;padding:.45rem 1rem}
+
+
+header{max-width:620px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 1rem) 1.2rem 0;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;font:500 .72rem var(--display);letter-spacing:.18em;text-transform:uppercase;border-bottom:1.5px solid var(--rule);padding-bottom:.6rem}
+.lang{background:none;border:1.5px solid var(--ink);color:var(--ink);border-radius:0;padding:.3rem .8rem;font:500 .8rem var(--display);cursor:pointer;min-height:36px;letter-spacing:0;text-transform:none}
+.mast{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:.6rem;padding:1.2rem 0 .4rem}
+.mark{font:400 clamp(2.5rem,12.5vw,5rem)/.9 var(--mark);margin:0;letter-spacing:.01em;direction:ltr;text-align:start}
+html[dir=rtl] .mark{text-align:right}
+.sub{margin:.35rem 0 0;font:300 1rem var(--display)}
+.cart{width:92px;height:92px;color:var(--ink)}
+.cart .lamp{color:var(--red)}
+.dek{display:flex;justify-content:space-between;gap:1rem;border-top:1.5px solid var(--rule);border-bottom:6px double var(--rule);padding:.55rem 0;font-size:.85rem;color:var(--soft)}
+
+
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);padding:.65rem 0 .35rem;border-bottom:1.5px solid var(--rule)}
+.search{max-width:620px;margin:0 auto;padding:0 1.2rem}
+.search input{width:100%;border:0;border-bottom:1.5px dashed var(--soft);background:transparent;color:var(--ink);padding:.5rem .1rem;font:1rem var(--body);border-radius:0}
+.chips{display:flex;gap:1.1rem;overflow-x:auto;max-width:620px;margin:0 auto;padding:.55rem 1.2rem .1rem;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:none;border:0;color:var(--soft);font:500 .92rem var(--display);padding:.3rem 0;cursor:pointer;min-height:36px;border-bottom:2px solid transparent}
+.chip[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--red)}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+
+
+main{max-width:620px;margin:0 auto;padding:.6rem 1.2rem 2rem}
+section.cat{padding:1.8rem 0 .6rem;border-bottom:1.5px solid var(--rule)}
+.cat-head{display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;align-items:baseline;margin-bottom:.8rem}
+.num{font:800 3.2rem/1 var(--display);color:var(--red);font-feature-settings:"tnum"}
+.cat h2{margin:0;font:800 clamp(1.9rem,9vw,2.6rem)/1.05 var(--display);letter-spacing:-.01em}
+.cat .kicker{grid-column:2;margin:0;color:var(--soft);font:300 .9rem var(--display)}
+.item{display:grid;grid-template-columns:2rem 1fr auto;gap:.1rem .6rem;padding:.8rem 0;border-top:1px solid color-mix(in srgb,var(--rule) 18%,transparent)}
+.idx{font:500 .78rem var(--display);color:var(--soft);padding-top:.25rem;direction:ltr}
+.name{font:500 1.08rem/1.35 var(--display)}
+.pick{display:inline-flex;align-items:center;gap:.25rem;margin-inline-start:.45rem;font:500 .7rem var(--display);color:var(--red);vertical-align:middle}
+.pick svg{width:12px;height:14px}
+.price{font:700 1.02rem var(--display);white-space:nowrap}
+.price small{font:400 .72rem var(--display);color:var(--soft);margin-inline-start:.2rem}
+.desc{grid-column:2/4;margin:0;color:var(--soft);font-size:.88rem}
+.sketch{display:block;margin:1.6rem auto .2rem;width:190px;height:70px;color:var(--ink);opacity:.8}
+.empty{text-align:center;color:var(--soft);padding:3rem 1rem}
+footer{max-width:620px;margin:0 auto;padding:1rem 1.2rem 2.4rem;color:var(--soft);font-size:.84rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+footer strong{color:var(--ink);font-weight:700}
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+<header>
+  <div class="top"><span id="issue"></span><button class="lang" id="langBtn">English</button></div>
+  <div class="mast">
+    <div><h1 class="mark" id="mark"><span class="concept-wm" style="display:block;font-family:'Alexandria',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 19</span></h1><p class="sub" id="tag"></p></div>
+    
+    <svg class="cart" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 34 Q52 8 86 34 Z"/><path d="M52 34 V60"/><path d="M52 16 V12"/>
+      <path d="M22 60 H86 V88 H22 Z"/><path d="M22 70 H86"/><path d="M34 60 V52 H44 V60"/>
+      <circle cx="34" cy="96" r="7"/><circle cx="76" cy="96" r="7"/><path d="M86 72 H100"/>
+      <path d="M58 52 c0-3 6-3 6 0 v8 h-6z"/><path d="M64 54 h3 a2 2 0 0 1 0 5 h-3"/><path d="M60 48 q1-3 0-5 M63 48 q1-3 0-5"/>
+      <g class="lamp"><path d="M98 30 L110 30 L106 44 L102 44 Z" fill="currentColor"/><path d="M104 44 V58"/><path d="M99 58 H109"/></g>
+    </svg>
+  </div>
+  <div class="dek"><span id="info"></span><span id="est"></span></div>
+</header>
+<div class="bar">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div>
+<main id="menu"></main>
+<footer><span id="updated"></span><span id="credit"></span></footer>
+<script>
+const CONFIG = {"name":"Concept 19","nameAr":"Concept 19","tagline":{"ar":"قهوة مختصة","en":"Specialty Coffee"},"info":{"ar":"القاهرة","en":"Cairo"},"logo":"","colors":{"primary":"#141414","onPrimary":"#f6f3ee","secondary":"#3d4a34","background":"#f6f3ee","accent":"#c8321f"},"fonts":{"display":"Alexandria","body":"Tajawal"},"pattern":"none","currency":{"ar":"ج.م","en":"EGP"},"demoBanner":true,"credit":"محمد","categories":[{"id":"hot","ar":"إسبريسو بار","en":"Espresso Bar","subAr":"سخن","subEn":"Hot","items":[{"ar":"إسبريسو","en":"Espresso","p":90},{"ar":"كورتادو","en":"Cortado","p":110},{"ar":"فلات وايت","en":"Flat White","p":125},{"ar":"لاتيه","en":"Latte","p":135},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":150}]},{"id":"filter","ar":"فلتر","en":"Filter","subAr":"حبوب سينجل أوريجن","subEn":"Single origin beans","items":[{"ar":"كولومبيا سينجل أوريجن","en":"Colombia Single Origin Coffee","dAr":"V60 أو كيميكس","dEn":"V60 or Chemex","p":150,"pick":true}]},{"id":"cold","ar":"ساقع","en":"Iced","subAr":"","subEn":"","items":[{"ar":"آيس كوفي","en":"Iced Coffee","p":120},{"ar":"آيس لاتيه","en":"Iced Latte","p":140},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":155},{"ar":"آيس ماتشا لاتيه","en":"Iced Matcha Latte","p":165,"pick":true}]},{"id":"bites","ar":"حاجة جنب القهوة","en":"On the Side","subAr":"","subEn":"","items":[{"ar":"كرواسون زبدة","en":"Butter Croissant","p":85},{"ar":"كوكيز شوكولاتة","en":"Chocolate Chip Cookie","p":70},{"ar":"بنانا بريد","en":"Banana Bread","p":95}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const LAMP = `<svg viewBox="0 0 12 14" aria-hidden="true"><path d="M2 1 H10 L8.5 7 H3.5 Z" fill="currentColor"/><path d="M6 7 V12 M3 13 H9" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>`;
+const T = {
+  ar:{dir:"rtl",lang:"English",search:"دوّر في المنيو…",pick:"اختيارنا",empty:"مفيش صنف بالاسم ده، جرّب كلمة تانية.",all:"الكل",
+      issue:"المنيو · ٢٠٢٦",est:"",
+      note:"نسخة تجريبية — الأسعار والأصناف أمثلة وهتتغير لمنيو Concept 19 الحقيقي",updated:"آخر تحديث: النهارده",credit:n=>`منيو ديجيتال من تصميم <strong>${n}</strong>`},
+  en:{dir:"ltr",lang:"العربية",search:"Search the menu…",pick:"Our pick",empty:"Nothing matches that. Try another word.",all:"All",
+      issue:"The Menu · 2026",est:"",
+      note:"Demo — items and prices are samples, to be replaced with Concept 19's real menu",updated:"Updated: today",credit:n=>`Digital menu by <strong>${n}</strong>`}
+};
+let lang="ar", active="all", query="";
+try{const s=localStorage.getItem("Concept 19-lang");if(s==="ar"||s==="en")lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const two=n=>String(n).padStart(2,"0");
+const cur=()=> (C.currency||{ar:"ج.م",en:"EGP"})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+function renderHero(){
+  $("tag").textContent=L(C.tagline||{},"ar","en");
+  $("info").textContent=L(C.info||{},"ar","en");
+  $("issue").textContent=T[lang].issue; $("est").textContent=T[lang].est;
+}
+function renderChips(){
+  const cats=[{id:"all",ar:T[lang].all,en:T[lang].all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    const sub=L(c,"subAr","subEn");
+    html+=`<section class="cat" id="cat-${esc(c.id)}"><div class="cat-head"><span class="num">${two(ci+1)}</span><h2>${esc(L(c,"ar","en"))}</h2>${sub?`<p class="kicker">${esc(sub)}</p>`:""}</div>`;
+    for(const i of items){k++;const d=L(i,"dAr","dEn");
+      html+=`<div class="item"><span class="idx">${two(k)}</span><div class="name">${esc(L(i,"ar","en"))}${i.pick?`<span class="pick">${LAMP}${T[lang].pick}</span>`:""}</div><div class="price">${fmt(i.p)}<small>${cur()}</small></div>${d?`<p class="desc">${esc(d)}</p>`:""}</div>`;}
+    html+="</section>";
+  });
+  html+=`<svg class="sketch" viewBox="0 0 190 70" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M20 60 H170"/><path d="M60 60 V40 h26 v20"/><path d="M86 44 h5 a4 4 0 0 1 0 9 h-5"/><path d="M68 34 q3-6 0-12 M78 34 q3-6 0-12"/><path d="M120 60 c-2-10 4-18 10-20 c6 2 12 10 10 20"/><path d="M130 40 v-8"/><path d="M40 60 q-4-20 6-30"/><path d="M40 60 q6-18-4-28"/></svg>`;
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.note;
+  $("updated").textContent=t.updated; $("credit").innerHTML=t.credit(esc(lang==="en"?"Mohamed":(C.credit||"محمد")));
+  renderHero(); renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem("Concept 19-lang",lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

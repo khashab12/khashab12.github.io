@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 12</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3a2418">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=El+Messiri:wght@400;500;600;700&family=Lato:wght@400;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--parch:#f3e8d2;--parch2:#eadbbd;--band:#faf3e4;--gold:#b0833a;--gold2:#d4b06a;--wood:#3a2418;--ink:#3b2616;--soft:#8a6e52;--line:#dcc9a3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--parch:#1a120c;--parch2:#231811;--band:#2a1d14;--ink:#f1e2c6;--soft:#c2a883;--line:#4a3525;--gold:#d4b06a}}
+:root[data-theme="dark"]{--parch:#1a120c;--parch2:#231811;--band:#2a1d14;--ink:#f1e2c6;--soft:#c2a883;--line:#4a3525;--gold:#d4b06a}
+body{background:radial-gradient(ellipse at 50% 0,var(--band),transparent 60%),var(--parch);color:var(--ink);font-family:"El Messiri","Cormorant Garamond",system-ui,serif}
+html[lang=en] body{font-family:"Cormorant Garamond","El Messiri",serif;font-size:17.5px}
+.demo-note{background:var(--wood);color:var(--gold2)}
+
+header{position:relative;text-align:center;background:var(--wood);color:#f3e8d2;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1.6rem;border-bottom:3px double var(--gold2)}
+header::before{content:"";position:absolute;inset:.6rem;border:1px solid rgba(212,176,106,.35);pointer-events:none}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + 1rem);inset-inline-end:1.2rem;background:var(--gold2);color:var(--wood);border:0;border-radius:2px;padding:.25rem .95rem;cursor:pointer;min-height:36px;font-size:.8rem;z-index:2}
+#logo{display:inline-block;padding:.5rem;background:var(--wood)}
+
+.seal{width:118px;height:118px;border-radius:50%;display:grid;place-items:center;margin:0 auto;
+ background:radial-gradient(circle at 35% 30%,#f1d58f,#c99a45 45%,#9c7128 80%);box-shadow:inset 0 0 0 5px rgba(120,82,25,.45),inset 0 0 0 9px rgba(241,213,143,.5),0 3px 10px rgba(0,0,0,.4);
+ clip-path:polygon(50% 0,58% 4%,67% 2%,73% 8%,82% 8%,85% 16%,93% 20%,93% 29%,99% 36%,96% 45%,100% 53%,95% 61%,97% 70%,90% 76%,88% 85%,79% 88%,74% 96%,65% 95%,57% 100%,49% 96%,40% 99%,33% 94%,24% 95%,19% 88%,10% 85%,9% 76%,2% 70%,4% 61%,0 52%,4% 44%,1% 35%,7% 29%,7% 20%,15% 16%,18% 8%,27% 8%,33% 2%,42% 4%)}
+.seal b{font:700 1.45rem/1 "Cormorant Garamond";color:#4a2f10;letter-spacing:.04em;text-shadow:0 1px 0 rgba(255,236,190,.6);direction:ltr}
+.seal i{display:block;font:600 .56rem "Lato";font-style:normal;letter-spacing:.3em;color:#5a3a14;margin-top:.15rem;direction:ltr}
+.ar{font:600 1.5rem "El Messiri";margin:.8rem 0 0;color:var(--gold2)}
+.tg{font:600 1.35rem "Cormorant Garamond";font-style:italic;margin:.8rem 0 0;color:#e4c98c;direction:ltr}
+.info{font-size:.8rem;color:#bba583;margin:.35rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--parch);border-bottom:1px solid var(--line)}
+.bar-in{max-width:560px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--line);background:var(--band);color:var(--ink);border-radius:3px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--gold);background:none;color:var(--ink);border-radius:3px;padding:.3rem .95rem;cursor:pointer;min-height:36px;font-size:.86rem}
+.chip[aria-pressed="true"]{background:var(--wood);border-color:var(--wood);color:var(--gold2)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--gold2);color:#1a120c}}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+main{max-width:560px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{margin-top:2rem;scroll-margin-top:120px}
+
+h2{display:flex;align-items:center;justify-content:center;gap:.7rem;margin:0 0 .7rem;font:700 1.25rem "El Messiri";color:var(--ink);text-align:center}
+h2::before,h2::after{content:"";flex:1;height:7px;background:radial-gradient(circle,var(--gold) 2.2px,transparent 2.6px) center/14px 7px repeat-x}
+h2 small{display:block;font:600 .9rem "Cormorant Garamond";font-style:italic;color:var(--soft);direction:ltr}
+.hd{display:flex;justify-content:flex-end;gap:0;padding:0 .9rem .25rem;font-size:.72rem;color:var(--soft)}
+.hd span{width:3.3rem;text-align:center}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:.8rem;padding:.6rem .9rem;border-radius:6px}
+.row:nth-child(odd of .row){background:var(--band)}
+.nm .a{display:block;font-weight:600;font-size:1.02rem}
+.nm .e{display:block;font:600 .9rem "Cormorant Garamond";color:var(--soft);direction:ltr;text-align:start}
+html[dir=rtl] .nm .e{text-align:right}
+.pr{display:flex;font:700 1.1rem "Cormorant Garamond";direction:ltr;white-space:nowrap;color:var(--gold)}
+.pr span{width:3.3rem;text-align:center}
+.pr small{font:400 .64rem "Lato";color:var(--soft);margin-inline-start:.3rem}
+.tools{display:block;width:100%;max-width:340px;margin:2rem auto 0;color:var(--gold)}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 12</span></div>
+  <p class="tg">Specialty Coffee · Riyadh</p>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 12","nameAr":"Concept 12","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#3a2418","onPrimary":"#f3e8d2","secondary":"#b0833a","background":"#f3e8d2","accent":"#d4b06a"},"fonts":{"display":"Cormorant Garamond","body":"El Messiri"},"pattern":"Ottoman parchment + gold seal","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"hot","ar":"المشروبات الساخنة","en":"Hot Drinks","items":[{"ar":"قهوة اليوم","en":"Coffee of the Day","p":10},{"ar":"إسبريسو","en":"Espresso","p":8},{"ar":"أمريكانو","en":"Americano","p":12},{"ar":"كورتادو","en":"Cortado","p":15},{"ar":"كابتشينو","en":"Cappuccino","p":18},{"ar":"فلات وايت","en":"Flat White","p":17},{"ar":"لاتيه","en":"Latte","p":18},{"ar":"قهوة تركية","en":"Turkish Coffee","p":18},{"ar":"شاي تركي","en":"Turkish Tea","p":7}]},{"id":"cold","ar":"المشروبات الباردة","en":"Cold Drinks","items":[{"ar":"ألفريدو","en":"Alfredo","p":13},{"ar":"آيس لاتيه","en":"Iced Latte","p":20},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":23},{"ar":"كولد برو","en":"Cold Brew","p":24},{"ar":"كولد برو جرة","en":"Cold Brew Jar","p":30},{"ar":"مياه","en":"Water","p":4}]},{"id":"matcha","ar":"الماتشا","en":"Matcha","items":[{"ar":"ماتشا كلاسيك","en":"Classic Matcha","p":28},{"ar":"ماتشا ورد","en":"Rose Matcha","p":30},{"ar":"ماتشا زعفران","en":"Saffron Matcha","p":30},{"ar":"إضافة ماتشا","en":"Extra Matcha","p":7},{"ar":"إضافة كريمة","en":"Extra Cream","p":4}]},{"id":"specialty","ar":"القهوة المختصة","en":"Specialty Coffee","two":1,"items":[{"ar":"مزاج Concept 12","en":"Concept 12 Mood","p":24,"p2":26},{"ar":"بن يمني","en":"Yemeni","p":19,"p2":20},{"ar":"بن إندونيسي","en":"Indonesian","p":19,"p2":20},{"ar":"بن كوستاريكا","en":"Costa Rica","p":18,"p2":19},{"ar":"بن إثيوبي","en":"Ethiopian","p":18,"p2":19}]},{"id":"sweet","ar":"الحلويات","en":"Desserts","items":[{"ar":"تريليتشا كراميل","en":"Caramel Trileçe","p":27},{"ar":"تريليتشا فراولة","en":"Strawberry Trileçe","p":27},{"ar":"بقلاوة السلطانة بالحليب","en":"Sultan's Milk Baklava","p":27},{"ar":"كنافة السلطانة بالحليب","en":"Sultan's Milk Kunafa","p":27},{"ar":"تراميسو إسطنبول","en":"Istanbul Tiramisu","p":35}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "", "h": "حار", "i": "بارد"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "h": "Hot", "i": "Iced"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 12-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+const TOOLS='<svg viewBox="0 0 340 90" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M20 78h300"/><path d="M40 50h34l-4 26H44z"/><path d="M74 54l46-22"/><path d="M50 42c0-6 6-6 6-12M60 42c0-6 6-6 6-12"/><path d="M140 78c-8 0-12-10-8-24 3-10 8-14 8-22h14c0 8 5 12 8 22 4 14 0 24-8 24z"/><path d="M147 24v8M143 24h8"/><path d="M162 50c10 0 12 14 0 16"/><path d="M188 78V46h28v32M184 46h36M196 46V36h12v10M202 36v-8h14"/><path d="M196 62h12"/><path d="M240 60h26l-3 18h-20z"/><path d="M234 78h38"/><path d="M266 64c7 0 7 10 0 10"/><path d="M290 40h22l-6 16h-10z"/><path d="M292 56h18l-2 22h-14z"/></svg>';
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ const hd=c.two?`<div class="hd"><span>${T[lang].h}</span><span>${T[lang].i}</span></div>`:""; return `<section id="cat-${esc(c.id)}"><h2><span>${esc(c.ar)}<small>${esc(c.en)}</small></span></h2>${hd}${body}</section>`; }
+function item(i){ const pr=i.p2!=null?`<span>${fmt(i.p)}</span><span>${fmt(i.p2)}</span>`:`<span>${fmt(i.p)}&nbsp;<small>${cur()}</small></span>`; return `<div class="row"><span class="nm"><span class="a">${esc(lang==="ar"?i.ar:i.en)}</span>${lang==="ar"?`<span class="e">${esc(i.en)}</span>`:""}</span><span class="pr">${pr}</span></div>`; }
+function afterRender(){ if(query.trim()) return; $("menu").insertAdjacentHTML("beforeend",TOOLS.replace('<svg','<svg class="tools"')); }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

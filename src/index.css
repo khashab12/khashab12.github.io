@@ -1,0 +1,113 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #eef2f0;
+  --color-surface: #ffffff;
+  --color-ink: #0f2a2b;
+  --color-ink-2: #1a3b3c;
+  --color-muted: #54696a;
+  --color-line: #d6e0dd;
+  --color-accent: #0b6e5f;
+  --color-accent-strong: #085449;
+  --color-accent-soft: #d3e9e3;
+  --color-saffron: #e3a33b;
+  --color-whatsapp: #117a43;
+
+  --font-display: 'Readex Pro', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans Arabic', system-ui, sans-serif;
+
+  --animate-marquee: marquee var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(var(--marquee-dir, -1) * (100% + var(--gap))));
+    }
+  }
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  html[lang='en'] body {
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: var(--color-accent-soft);
+  }
+}
+
+/* In RTL the copies are laid out leftwards, so the track moves right to stay seamless. */
+[dir='rtl'] .marquee {
+  --marquee-dir: 1;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hero entrance runs in CSS so it starts on first paint, before any JS chunk loads. */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+@keyframes hero-phone {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+@layer components {
+  .hero-rise {
+    animation: hero-rise 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hero-phone {
+    animation: hero-phone 0.8s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-rise,
+  .hero-phone {
+    animation: none;
+  }
+}

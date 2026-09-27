@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 13</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#8b5a36">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=El+Messiri:wght@500;600;700&family=Almarai:wght@400;700&display=swap">
+<style>
+:root{
+  --sand:#f3e8d4; --dune:#e2c9a2; --dune2:#c7955c; --clay:#8b5a36; --bark:#4a2e1b; --card:#fbf4e8; --ink:#3a2415; --soft:#7a5e48; --line:#e3d3b8;
+  --latin:"Marcellus","El Messiri",serif; --arD:"El Messiri","Almarai",serif; --body:"Almarai",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sand:#1b130d;--card:#261b13;--ink:#f3e8d4;--soft:#c9b394;--line:#3a2a1d}}
+:root[data-theme="dark"]{--sand:#1b130d;--card:#261b13;--ink:#f3e8d4;--soft:#c9b394;--line:#3a2a1d}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;background:var(--sand);color:var(--ink);font-family:var(--body);line-height:1.55;-webkit-font-smoothing:antialiased;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.demo-note{background:var(--bark);color:#f3e8d4;text-align:center;font-size:.8rem;padding:.45rem 1rem}
+
+
+.hero{position:relative;background:#efe0c4;color:var(--bark);text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3.4rem) 1rem 0;overflow:hidden}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .9rem);inset-inline-end:1rem;background:rgba(251,244,232,.7);color:var(--bark);border:1px solid var(--clay);border-radius:999px;padding:.3rem .85rem;font:700 .8rem var(--body);cursor:pointer;min-height:36px;z-index:2}
+.wordmark{font:400 clamp(2.8rem,15vw,4rem)/1 var(--latin);letter-spacing:.14em;margin:.8rem 0 0;color:var(--clay);direction:ltr}
+.sub{font:400 .78rem var(--latin);letter-spacing:.42em;margin:.35rem 0 0;color:var(--bark);direction:ltr}
+.ar-name{font:600 1.15rem var(--arD);margin:.5rem 0 0}
+.info{font-size:.82rem;color:#7a5e48;margin:.2rem 0 0}
+.land{display:block;width:calc(100% + 2rem);height:150px;margin:.6rem -1rem 0}
+.lock{display:inline-block;padding:.4rem 1rem .6rem;background:#efe0c4}
+
+
+.search{max-width:560px;margin:-22px auto 0;padding:0 1rem;position:relative;z-index:2}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:16px;padding:.8rem 1rem;font:1rem var(--body);box-shadow:0 8px 20px -14px rgba(74,46,27,.6)}
+
+
+main{max-width:560px;margin:0 auto;padding:.4rem 1rem 1.5rem}
+section{padding-top:1.4rem}
+h2{margin:0 0 .5rem;font:600 1.5rem var(--arD);color:var(--clay);display:flex;align-items:center;gap:.5rem}
+html[lang=en] h2{font-family:var(--latin);letter-spacing:.08em;text-transform:uppercase;font-size:1.3rem}
+h2 svg{width:26px;height:26px;color:var(--clay)}
+.item{width:100%;display:grid;grid-template-columns:44px 1fr auto;gap:.8rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:.7rem .8rem;margin-bottom:.55rem;text-align:start;color:inherit;font:inherit;cursor:pointer;min-height:64px}
+.dot{width:44px;height:44px;border-radius:50%;background:var(--dune);display:grid;place-items:center;color:var(--bark)}
+.dot svg{width:24px;height:24px}
+.nm{font-weight:700;font-size:1rem;display:block}
+.meta{font-size:.78rem;color:var(--soft)}
+.pr{font:700 1.05rem var(--body);color:var(--clay);white-space:nowrap}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pr,:root:not([data-theme="light"]) h2,:root:not([data-theme="light"]) h2 svg{color:var(--dune2)}}
+:root[data-theme="dark"] .pr,:root[data-theme="dark"] h2,:root[data-theme="dark"] h2 svg{color:var(--dune2)}
+.pr small{font-size:.7rem;font-weight:400;color:var(--soft);margin-inline-start:.15rem}
+.empty{text-align:center;color:var(--soft);padding:3rem 1rem}
+footer{text-align:center;color:var(--soft);font-size:.82rem;padding:.5rem 1rem 1.5rem}
+footer strong{color:var(--ink)}
+
+
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:10;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom,0px))}
+.tab{flex:1;background:none;border:0;color:var(--soft);font:700 .72rem var(--body);display:flex;flex-direction:column;align-items:center;gap:.15rem;padding:.35rem 0;cursor:pointer;min-height:52px;border-radius:12px}
+.tab svg{width:24px;height:24px}
+.tab[aria-pressed="true"]{color:var(--clay);background:color-mix(in srgb,var(--dune) 45%,transparent)}
+
+
+.scrim{position:fixed;inset:0;background:rgba(30,18,10,.45);z-index:20;opacity:0;pointer-events:none;transition:opacity .2s}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:21;background:var(--card);border-radius:22px 22px 0 0;padding:1rem 1.2rem calc(1.4rem + env(safe-area-inset-bottom,0px));transform:translateY(105%);visibility:hidden;transition:transform .25s ease,visibility .25s;max-width:560px;margin:0 auto}
+.open .scrim{opacity:1;pointer-events:auto}.open .sheet{transform:none;visibility:visible}
+@media (prefers-reduced-motion:reduce){.sheet,.scrim{transition:none}}
+.grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:0 auto .9rem}
+.sheet h3{margin:0;font:600 1.6rem var(--arD)}
+html[lang=en] .sheet h3{font-family:var(--latin)}
+.sheet p{margin:.35rem 0 0;color:var(--soft)}
+.facts{display:flex;gap:.6rem;margin-top:1rem}
+.fact{flex:1;background:var(--sand);border-radius:14px;padding:.6rem .8rem}
+.fact b{display:block;font-size:1.25rem;color:var(--clay)}
+.fact span{font-size:.75rem;color:var(--soft)}
+.close{margin-top:1rem;width:100%;background:var(--clay);color:#fbf4e8;border:0;border-radius:14px;padding:.8rem;font:700 1rem var(--body);cursor:pointer}
+.lang:focus-visible,.tab:focus-visible,.item:focus-visible,.close:focus-visible,.search input:focus-visible{outline:3px solid var(--dune2);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+<header class="hero">
+  <button class="lang" id="langBtn">English</button>
+  <div class="lock" id="lock"><span class="concept-wm" style="display:block;font-family:'Marcellus',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 13</span></div>
+  <p class="ar-name" id="arName"></p>
+  <p class="info" id="info"></p>
+  
+  <svg class="land" viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 110 C60 80 120 86 180 104 C240 122 300 70 400 88 V150 H0Z" fill="#dcbd8f"/>
+    <path d="M0 128 C80 108 150 118 220 132 C290 146 340 112 400 118 V150 H0Z" fill="#c7955c"/>
+    <path d="M0 140 C90 128 200 150 400 136 V150 H0Z" fill="#a8703f"/>
+    <g fill="none" stroke="#4a2e1b" stroke-width="2.4" stroke-linecap="round">
+      <path d="M92 112 C94 90 92 70 88 52"/><path d="M88 52 C76 44 64 46 56 54 M88 52 C80 38 68 34 58 36 M88 52 C92 38 102 32 114 32 M88 52 C100 46 112 48 120 58 M88 52 C86 62 80 70 74 76"/>
+      <path d="M122 116 C124 92 122 78 120 64"/><path d="M120 64 C110 58 100 60 94 66 M120 64 C114 52 104 50 96 52 M120 64 C124 52 132 48 142 48 M120 64 C130 60 138 64 144 72"/>
+      <path d="M300 104 C302 84 300 66 297 50"/><path d="M297 50 C286 42 274 44 266 52 M297 50 C290 36 278 32 268 34 M297 50 C302 36 312 30 324 30 M297 50 C310 44 322 46 330 56"/>
+    </g>
+  </svg>
+</header>
+<div class="search"><input id="q" type="search" aria-label="Search"></div>
+<main id="menu"></main>
+<footer><p id="credit"></p></footer>
+<nav class="tabs" id="tabs" aria-label="Categories"></nav>
+<div id="sheetWrap"><div class="scrim" id="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle">
+    <div class="grab"></div><h3 id="shTitle"></h3><p id="shDesc"></p>
+    <div class="facts"><div class="fact"><b id="shPrice"></b><span id="shPriceL"></span></div><div class="fact"><b id="shCal"></b><span id="shCalL"></span></div></div>
+    <button class="close" id="shClose"></button>
+  </div>
+</div>
+<script>
+const CONFIG = {"name":"Concept 13","nameAr":"Concept 13","tagline":{"ar":"كوفي سبيس","en":"Coffee Space"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#8b5a36","onPrimary":"#fbf4e8","secondary":"#4a2e1b","background":"#f3e8d4","accent":"#c7955c"},"fonts":{"display":"Marcellus","body":"Almarai"},"pattern":"none","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":true,"credit":"محمد","categories":[{"id":"hot","ar":"حار","en":"Hot","icon":"cup","items":[{"ar":"قهوة اليوم","en":"Coffee of the Day","dAr":"فلتر من محصول الأسبوع","dEn":"Filter from this week's crop","p":12,"cal":5},{"ar":"إسبريسو","en":"Espresso","p":11,"cal":5},{"ar":"كورتادو","en":"Cortado","p":14,"cal":60},{"ar":"فلات وايت","en":"Flat White","p":16,"cal":110},{"ar":"لاتيه","en":"Latte","p":16,"cal":150},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":18,"cal":240},{"ar":"V60","en":"V60","dAr":"مقطّرة بيدنا","dEn":"Hand-brewed","p":18,"cal":5}]},{"id":"cold","ar":"بارد","en":"Iced","icon":"ice","items":[{"ar":"آيس لاتيه","en":"Iced Latte","p":17,"cal":130},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":19,"cal":230},{"ar":"كولد برو","en":"Cold Brew","p":18,"cal":5},{"ar":"آيس ماتشا لاتيه","en":"Iced Matcha Latte","p":21,"cal":180},{"ar":"كولد درِب بالثلج","en":"Iced Drip","dAr":"V60 على الثلج","dEn":"V60 over ice","p":19,"cal":5}]},{"id":"sweet","ar":"حلا","en":"Sweets","icon":"cake","items":[{"ar":"كوكيز","en":"Cookie","p":9,"cal":210},{"ar":"كرواسون زبدة","en":"Butter Croissant","p":12,"cal":260},{"ar":"سان سباستيان","en":"San Sebastián Cheesecake","p":24,"cal":420},{"ar":"كيكة تمر","en":"Date Cake","p":18,"cal":380}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const IC = {
+  all:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 21 C12 14 12 9 11 5"/><path d="M11 5 C8 3 5 4 3 6 M11 5 C10 2 7 1 5 2 M11 5 C12 2 15 1 18 2 M11 5 C14 4 17 5 19 8"/></svg>`,
+  cup:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 11h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M9 3c-.8 1 .8 2 0 3M12.5 3c-.8 1 .8 2 0 3"/></svg>`,
+  ice:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1.5 13h-9z"/><path d="M13 7l2-4"/><rect x="9" y="10" width="3" height="3" rx=".5"/><rect x="12.5" y="13" width="3" height="3" rx=".5"/></svg>`,
+  cake:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16V12H4z"/><path d="M4 15c2 1.5 4 1.5 6 0s4-1.5 6 0 3 1 4 0"/><path d="M12 12V8"/><path d="M12 5.5c-.7-.7-.7-1.8 0-2.5.7.7.7 1.8 0 2.5z"/></svg>`
+};
+const T = {
+  ar:{dir:"rtl",lang:"English",search:"وش تبغى تشرب اليوم؟",empty:"ما لقينا شي بهالاسم، جرّب كلمة ثانية.",all:"الكل",price:"السعر",cal:"سعرة حرارية",close:"تمام",kcal:"سعرة",
+      note:"نسخة تجريبية — الأصناف والأسعار أمثلة وتتغير لمنيو Concept 13 الحقيقي",credit:n=>`منيو ديجيتال من تصميم <strong>${n}</strong>`},
+  en:{dir:"ltr",lang:"العربية",search:"What are you drinking today?",empty:"Nothing matches that. Try another word.",all:"All",price:"Price",cal:"Calories",close:"Done",kcal:"kcal",
+      note:"Demo — items and prices are samples, to be replaced with Concept 13' real menu",credit:n=>`Digital menu designed by <strong>${n}</strong>`}
+};
+let lang="ar", active="all", query="";
+try{const s=localStorage.getItem("Concept 13-lang");if(s==="ar"||s==="en")lang=s;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"ر.س",en:"SAR"})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const ALL=[]; C.categories.forEach(c=>c.items.forEach(i=>ALL.push([c,i])));
+function renderTabs(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all,icon:"all"},...C.categories];
+  $("tabs").innerHTML=cats.map(c=>`<button class="tab" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${IC[c.icon]||IC.all}<span>${esc(L(c,"ar","en"))}</span></button>`).join("");
+  $("tabs").querySelectorAll(".tab").forEach(b=>b.onclick=()=>{active=b.dataset.id;renderTabs();renderMenu();window.scrollTo({top:document.querySelector(".search").offsetTop-10,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});});
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0;
+  C.categories.forEach(c=>{
+    if(active!=="all"&&c.id!==active) return;
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=`<section><h2>${IC[c.icon]||""}${esc(L(c,"ar","en"))}</h2>`+items.map(i=>{
+      const k=ALL.findIndex(x=>x[1]===i);
+      return `<button class="item" data-k="${k}"><span class="dot">${IC[c.icon]||""}</span><span><span class="nm">${esc(L(i,"ar","en"))}</span>${i.cal!=null?`<span class="meta">${fmt(i.cal)} ${T[lang].kcal}</span>`:""}</span><span class="pr">${fmt(i.p)}<small>${cur()}</small></span></button>`}).join("")+`</section>`;
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  $("menu").querySelectorAll(".item").forEach(b=>b.onclick=()=>openSheet(+b.dataset.k,b));
+}
+let lastBtn=null;
+function openSheet(k,btn){
+  const [c,i]=ALL[k]; lastBtn=btn;
+  $("shTitle").textContent=L(i,"ar","en"); $("shDesc").textContent=L(i,"dAr","dEn")||L(c,"ar","en");
+  $("shPrice").textContent=`${fmt(i.p)} ${cur()}`; $("shPriceL").textContent=T[lang].price;
+  $("shCal").textContent=i.cal!=null?fmt(i.cal):"—"; $("shCalL").textContent=T[lang].cal;
+  $("shClose").textContent=T[lang].close;
+  $("sheetWrap").classList.add("open"); $("shClose").focus();
+}
+function closeSheet(){$("sheetWrap").classList.remove("open"); if(lastBtn) lastBtn.focus();}
+$("scrim").onclick=closeSheet; $("shClose").onclick=closeSheet;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet();});
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.note;
+  $("arName").textContent=lang==="ar"?(C.nameAr||""):""; $("arName").hidden=lang!=="ar";
+  $("info").textContent=L(C.info||{},"ar","en");
+  $("credit").innerHTML=t.credit(esc(lang==="en"?"Mohamed":(C.credit||"محمد")));
+  renderTabs(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem("Concept 13-lang",lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

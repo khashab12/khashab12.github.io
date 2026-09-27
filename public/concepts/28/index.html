@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 28</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f3a1d">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Lalezar&family=Baloo+Bhaijaan+2:wght@500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--jungle:#1f3a1d;--leaf:#3f7a2e;--leaf2:#6aa84f;--banana:#f2c230;--bark:#5b3a21;--parch:#f5e8c8;--ink:#2b2014;--soft:#6e5c44;--card:#fbf3de}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--parch:#141f12;--ink:#f3e7c7;--soft:#c8b892;--card:#1d2b1a}}
+:root[data-theme="dark"]{--parch:#141f12;--ink:#f3e7c7;--soft:#c8b892;--card:#1d2b1a}
+body{background:var(--parch);color:var(--ink);font-family:"Fredoka","Baloo Bhaijaan 2",system-ui,sans-serif}
+html[lang=ar] body{font-family:"Baloo Bhaijaan 2","Fredoka",system-ui,sans-serif}
+.demo-note{background:var(--banana);color:#2b2014}
+header{position:relative;background:var(--jungle);color:#f5e8c8;text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3.2rem) 1.2rem 2.6rem;overflow:hidden}
+.vines{position:absolute;top:0;left:0;right:0;height:90px;pointer-events:none}
+.leaves{position:absolute;bottom:-6px;left:0;right:0;height:60px;pointer-events:none}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;z-index:2;background:var(--banana);color:#2b2014;border:0;border-radius:999px;padding:.3rem .9rem;cursor:pointer;min-height:36px;font-weight:600;font-size:.82rem}
+#logo{position:relative;z-index:1;display:inline-block;padding:.6rem 1rem;background:var(--jungle);direction:ltr}
+.the{font:600 .9rem "Fredoka";letter-spacing:.3em;color:var(--banana)}
+.word{font:700 3.1rem/.95 "Fredoka";letter-spacing:.02em;margin:.1rem 0}
+.sss{display:inline-block;margin-top:.3rem;border:1.5px solid #f5e8c8;border-radius:4px;padding:.1rem .6rem;font:600 .72rem "Fredoka";letter-spacing:.2em}
+.sign{position:relative;z-index:1;display:inline-block;margin-top:1rem;background:var(--bark);color:#f5e8c8;border-radius:8px;padding:.35rem .9rem;font:600 .95rem "Fredoka";transform:rotate(-3deg);box-shadow:0 4px 0 #3b2413}
+html[lang=ar] .sign{font:700 1rem "Baloo Bhaijaan 2"}
+.info{position:relative;z-index:1;font-size:.8rem;opacity:.8;margin:.8rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--parch);border-bottom:3px solid var(--leaf)}
+.bar-in{max-width:620px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:2px solid var(--leaf);background:var(--card);color:var(--ink);border-radius:999px;padding:.55rem 1.1rem;font:inherit}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:2px solid var(--leaf);background:var(--card);color:var(--ink);font-weight:600;font-size:.85rem;padding:.25rem .9rem;border-radius:999px;cursor:pointer;min-height:36px}
+.chip[aria-pressed="true"]{background:var(--leaf);color:#fff}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:3px solid var(--banana);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{margin-top:1.8rem;background:var(--card);border:2px dashed color-mix(in srgb,var(--bark) 45%,transparent);border-radius:16px;padding:0 1rem .8rem;scroll-margin-top:120px}
+
+h2{position:relative;display:inline-flex;align-items:center;gap:.4rem;margin:-1rem 0 .6rem;background:var(--leaf);color:#fff;border-radius:10px;padding:.35rem 1rem;font:700 1.15rem "Fredoka";text-transform:uppercase;letter-spacing:.03em;box-shadow:0 4px 0 #2a5520}
+html[lang=ar] h2{font:400 1.3rem "Lalezar";text-transform:none}
+h2 svg{width:22px;height:22px}
+.row{display:flex;align-items:baseline;gap:.5rem;padding:.4rem 0}
+.row+.row{border-top:1px dotted color-mix(in srgb,var(--bark) 35%,transparent)}
+.nm{flex:1;font-weight:500}
+.pr{font-weight:700;color:var(--leaf);white-space:nowrap;direction:ltr}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pr{color:var(--banana)}}
+:root[data-theme="dark"] .pr{color:var(--banana)}
+.pr .sl{margin:0 .15rem;opacity:.6}
+.pr small{font-size:.66rem;color:var(--soft);margin-inline-start:.2rem;font-weight:500}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <svg class="vines" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 10 C80 40 140 0 210 30 C280 60 330 10 400 26" fill="none" stroke="#5b3a21" stroke-width="5"/>
+    <g fill="#3f7a2e"><ellipse cx="60" cy="28" rx="16" ry="7" transform="rotate(30 60 28)"/><ellipse cx="120" cy="22" rx="16" ry="7" transform="rotate(-20 120 22)"/><ellipse cx="250" cy="44" rx="16" ry="7" transform="rotate(25 250 44)"/><ellipse cx="330" cy="22" rx="16" ry="7" transform="rotate(-30 330 22)"/></g>
+    <g fill="#6aa84f"><ellipse cx="170" cy="18" rx="14" ry="6" transform="rotate(15 170 18)"/><ellipse cx="370" cy="34" rx="14" ry="6" transform="rotate(20 370 34)"/></g>
+    <path d="M300 30 q10 20 -2 34 M306 30 q14 18 4 36" fill="none" stroke="#f2c230" stroke-width="6" stroke-linecap="round"/>
+  </svg>
+  <svg class="leaves" viewBox="0 0 400 60" preserveAspectRatio="none" aria-hidden="true"><g fill="#3f7a2e"><path d="M0 60 C20 20 50 10 70 30 C60 44 40 56 0 60Z"/><path d="M60 60 C90 16 130 18 140 40 C120 52 90 58 60 60Z"/><path d="M400 60 C380 18 340 10 320 32 C334 46 360 56 400 60Z"/><path d="M330 60 C300 22 262 24 256 44 C276 54 304 58 330 60Z"/></g><g fill="#6aa84f"><path d="M150 60 C170 30 200 28 214 46 C196 56 176 60 150 60Z"/><path d="M230 60 C246 36 272 34 282 50 C266 58 250 60 230 60Z"/></g></svg>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Fredoka',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 28</span></div>
+  <div><span class="sign" id="sign"></span></div>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 28","nameAr":"Concept 28","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"القاهرة","en":"Cairo"},"logo":"","colors":{"primary":"#1f3a1d","onPrimary":"#f5e8c8","secondary":"#3f7a2e","background":"#f5e8c8","accent":"#f2c230"},"fonts":{"display":"Fredoka","body":"Baloo Bhaijaan 2"},"pattern":"none","currency":{"ar":"ج.م","en":"EGP"},"demoBanner":false,"credit":"محمد","categories":[{"id":"black","ar":"كوفي تريز · بلاك","en":"Coffee Trees · Black","icon":"tree","items":[{"ar":"إسبريسو","en":"Espresso","p":90},{"ar":"أمريكانو","en":"Americano","p":100},{"ar":"لونج كوفي","en":"Long Coffee","p":100},{"ar":"قهوة تركي","en":"Turkish Coffee","p":50,"p2":80},{"ar":"قهوة فرنساوي","en":"French Coffee","p":100},{"ar":"قهوة بندق","en":"Hazelnut Coffee","p":100}]},{"id":"white","ar":"كوفي تريز · وايت","en":"Coffee Trees · White","icon":"tree","items":[{"ar":"ماكياتو","en":"Macchiato","p":90},{"ar":"كورتادو","en":"Cortado","p":100},{"ar":"فلات وايت","en":"Flat White","p":110},{"ar":"كابتشينو","en":"Cappuccino","p":120},{"ar":"لاتيه","en":"Latte","p":120},{"ar":"سولتد كراميل لاتيه","en":"Salted Caramel Latte","p":160},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":150},{"ar":"موكا","en":"Mocha","p":160},{"ar":"وايت موكا","en":"White Mocha","p":160}]},{"id":"matcha","ar":"ماتشا جانجل","en":"Matcha Jungle","icon":"leaf","items":[{"ar":"ماتشا سخن","en":"Hot Matcha","p":150},{"ar":"آيس ماتشا","en":"Iced Matcha","p":150},{"ar":"ماتشا فراولة","en":"Strawberry Matcha","p":165},{"ar":"ماتشا مانجا","en":"Mango Matcha","p":165},{"ar":"وايت شوكليت ماتشا","en":"White Chocolate Matcha","p":165},{"ar":"ماتشا موكا","en":"Matcha Mocha","p":180}]},{"id":"ice","ar":"كهف المانكي الساقع","en":"Monkey's Ice Cave","icon":"ice","items":[{"ar":"آيس أمريكانو","en":"Iced Americano","p":110},{"ar":"آيس لونج كوفي","en":"Iced Long Coffee","p":110},{"ar":"آيس لاتيه","en":"Iced Latte","p":120},{"ar":"آيس موكا","en":"Iced Mocha","p":160},{"ar":"آيس وايت موكا","en":"Iced White Mocha","p":160},{"ar":"آيس سولتد كراميل لاتيه","en":"Iced Salted Caramel Latte","p":160},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":165}]},{"id":"frappe","ar":"فرابيه مادنس","en":"Frappe Madness","icon":"banana","items":[{"ar":"فرابيه كراميل","en":"Caramel Frappe","p":160},{"ar":"فرابيه شوكليت","en":"Chocolate Frappe","p":160},{"ar":"فرابيه فانيليا","en":"Vanilla Frappe","p":160},{"ar":"فرابيه لوتس","en":"Lotus Frappe","p":160}]},{"id":"tea","ar":"عش الشاي","en":"Tea Nest","icon":"leaf","items":[{"ar":"شاي أسود","en":"Black Tea","p":50},{"ar":"شاي أخضر","en":"Green Tea","p":80},{"ar":"شاي بنكهات","en":"Flavored Tea","p":90}]},{"id":"juice","ar":"عصاير الغابة","en":"Jungle Juices","icon":"banana","items":[{"ar":"مانجا","en":"Mango","p":100},{"ar":"برتقال","en":"Orange","p":90},{"ar":"ليمون","en":"Lemon","p":85},{"ar":"ليمون نعناع","en":"Lemon Mint","p":95},{"ar":"فراولة","en":"Strawberry","p":100}]},{"id":"bakery","ar":"مانكي بيكري","en":"Monkey Bakery","icon":"banana","items":[{"ar":"كرواسون سادة","en":"Plain Croissant","p":100},{"ar":"كرواسون زعتر","en":"Zaatar Croissant","p":110},{"ar":"بان تركي وشيدر","en":"Pain Turkey and Cheddar","p":130},{"ar":"كرواسون لوز","en":"Almond Croissant","p":140},{"ar":"بان سويس","en":"Pain Suisse","p":125},{"ar":"دانيش فواكه","en":"Danish Fruit","p":140}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "دوّر في الغابة…", "empty": "مفيش حاجة بالاسم ده.", "all": "الكل", "demo": "", "note": "", "sign": " 🍌"}, "en": {"dir": "ltr", "lang": "العربية", "search": "Search the jungle…", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "sign": " 🍌"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 28-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+const ICO={
+ tree:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22V11"/><path d="M12 11c-3-1-6 0-8 2 3 1 6 0 8-2zM12 11c3-1 6 0 8 2-3 1-6 0-8-2zM12 11c-1-3 0-6 2-8 1 3 0 6-2 8z"/></svg>`,
+ ice:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M4 7l16 10M20 7L4 17"/></svg>`,
+ leaf:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20C4 10 10 4 20 4c0 10-6 16-16 16z"/><path d="M4 20L14 10"/></svg>`,
+ banana:`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 14c4 6 12 6 16-6-2 0-3 1-4 2-3 4-8 4-12 4z"/><path d="M19 8l1-3"/></svg>`
+};
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); $("sign").textContent=T[lang].sign; }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${ICO[c.icon]||ICO.leaf}${esc(L(c,"ar","en"))}</h2>${body}</section>`; }
+function item(i){ return `<div class="row"><span class="nm">${esc(L(i,"ar","en"))}</span><span class="pr">${P(i)}<small>${cur()}</small></span></div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

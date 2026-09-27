@@ -1,0 +1,420 @@
+[
+  {
+    "id": "concept-1",
+    "consent": false,
+    "concept": 1,
+    "hero": false,
+    "colors": [
+      "#1c2340",
+      "#b3262e",
+      "#e7dfcb"
+    ]
+  },
+  {
+    "id": "concept-2",
+    "consent": false,
+    "concept": 2,
+    "hero": false,
+    "colors": [
+      "#5a2a18",
+      "#e8742a",
+      "#fbe8da"
+    ]
+  },
+  {
+    "id": "concept-3",
+    "consent": false,
+    "concept": 3,
+    "hero": false,
+    "colors": [
+      "#6f8a78",
+      "#b98f3f",
+      "#f7efdd"
+    ]
+  },
+  {
+    "id": "concept-4",
+    "consent": false,
+    "concept": 4,
+    "hero": true,
+    "colors": [
+      "#1e2b52",
+      "#e2622b",
+      "#f4ecdc"
+    ]
+  },
+  {
+    "id": "concept-5",
+    "consent": false,
+    "concept": 5,
+    "hero": false,
+    "colors": [
+      "#2e4a3b",
+      "#b9bfb5",
+      "#e9ebe6"
+    ]
+  },
+  {
+    "id": "concept-6",
+    "consent": false,
+    "concept": 6,
+    "hero": false,
+    "colors": [
+      "#5a3f2a",
+      "#6b4f36",
+      "#efe6d4"
+    ]
+  },
+  {
+    "id": "concept-7",
+    "consent": false,
+    "concept": 7,
+    "hero": false,
+    "colors": [
+      "#6b1d22",
+      "#c9a27a",
+      "#f4ece2"
+    ]
+  },
+  {
+    "id": "concept-8",
+    "consent": false,
+    "concept": 8,
+    "hero": false,
+    "colors": [
+      "#1b2130",
+      "#1f4d40",
+      "#f6f3ec"
+    ]
+  },
+  {
+    "id": "concept-9",
+    "consent": false,
+    "concept": 9,
+    "hero": false,
+    "colors": [
+      "#e0553a",
+      "#ffe08a",
+      "#9fcfae"
+    ]
+  },
+  {
+    "id": "concept-10",
+    "consent": false,
+    "concept": 10,
+    "hero": false,
+    "colors": [
+      "#4a1426",
+      "#f1d9a8",
+      "#4a1426"
+    ]
+  },
+  {
+    "id": "concept-11",
+    "consent": false,
+    "concept": 11,
+    "hero": false,
+    "colors": [
+      "#2a3bd6",
+      "#f06aa8",
+      "#dcd3f2"
+    ]
+  },
+  {
+    "id": "concept-12",
+    "consent": false,
+    "concept": 12,
+    "hero": false,
+    "colors": [
+      "#3a2418",
+      "#b0833a",
+      "#f3e8d2"
+    ]
+  },
+  {
+    "id": "concept-13",
+    "consent": false,
+    "concept": 13,
+    "hero": false,
+    "colors": [
+      "#8b5a36",
+      "#4a2e1b",
+      "#f3e8d4"
+    ]
+  },
+  {
+    "id": "concept-14",
+    "consent": false,
+    "concept": 14,
+    "hero": false,
+    "colors": [
+      "#1d1d1b",
+      "#e7e1d6",
+      "#f2eee7"
+    ]
+  },
+  {
+    "id": "concept-15",
+    "consent": false,
+    "concept": 15,
+    "hero": false,
+    "colors": [
+      "#221d1a",
+      "#e9dfcf",
+      "#f5f0e7"
+    ]
+  },
+  {
+    "id": "concept-16",
+    "consent": false,
+    "concept": 16,
+    "hero": false,
+    "colors": [
+      "#1d5a45",
+      "#6b1a2a",
+      "#f6f1e7"
+    ]
+  },
+  {
+    "id": "concept-17",
+    "consent": false,
+    "concept": 17,
+    "hero": false,
+    "colors": [
+      "#2a4033",
+      "#6b2430",
+      "#faf8f6"
+    ]
+  },
+  {
+    "id": "concept-18",
+    "consent": false,
+    "concept": 18,
+    "hero": false,
+    "colors": [
+      "#141210",
+      "#6b5a48",
+      "#e9dccb"
+    ]
+  },
+  {
+    "id": "concept-19",
+    "consent": false,
+    "concept": 19,
+    "hero": false,
+    "colors": [
+      "#141414",
+      "#3d4a34",
+      "#f6f3ee"
+    ]
+  },
+  {
+    "id": "concept-20",
+    "consent": false,
+    "concept": 20,
+    "hero": false,
+    "colors": [
+      "#6b2e14",
+      "#b33a2a",
+      "#f2e7da"
+    ]
+  },
+  {
+    "id": "concept-21",
+    "consent": false,
+    "concept": 21,
+    "hero": false,
+    "colors": [
+      "#1d6a2c",
+      "#14471f",
+      "#efe6d2"
+    ]
+  },
+  {
+    "id": "concept-22",
+    "consent": false,
+    "concept": 22,
+    "hero": false,
+    "colors": [
+      "#15131c",
+      "#b5432e",
+      "#15131c"
+    ]
+  },
+  {
+    "id": "concept-23",
+    "consent": false,
+    "concept": 23,
+    "hero": false,
+    "colors": [
+      "#0d0d0d",
+      "#f2f2ee",
+      "#f2f2ee"
+    ]
+  },
+  {
+    "id": "concept-24",
+    "consent": false,
+    "concept": 24,
+    "hero": false,
+    "colors": [
+      "#5ad4dc",
+      "#6b5448",
+      "#bff0f2"
+    ]
+  },
+  {
+    "id": "concept-25",
+    "consent": false,
+    "concept": 25,
+    "hero": false,
+    "colors": [
+      "#2c2f48",
+      "#e79bb3",
+      "#f7f3ec"
+    ]
+  },
+  {
+    "id": "concept-26",
+    "consent": false,
+    "concept": 26,
+    "hero": false,
+    "colors": [
+      "#161311",
+      "#e6c7af",
+      "#e6c7af"
+    ]
+  },
+  {
+    "id": "concept-27",
+    "consent": false,
+    "concept": 27,
+    "hero": false,
+    "colors": [
+      "#b08a3e",
+      "#3a2f22",
+      "#f6f0e4"
+    ]
+  },
+  {
+    "id": "concept-28",
+    "consent": false,
+    "concept": 28,
+    "hero": false,
+    "colors": [
+      "#1f3a1d",
+      "#3f7a2e",
+      "#f5e8c8"
+    ]
+  },
+  {
+    "id": "concept-29",
+    "consent": false,
+    "concept": 29,
+    "hero": false,
+    "colors": [
+      "#34352e",
+      "#7f8c6c",
+      "#f6f1e7"
+    ]
+  },
+  {
+    "id": "concept-30",
+    "consent": false,
+    "concept": 30,
+    "hero": false,
+    "colors": [
+      "#2e2118",
+      "#7a6552",
+      "#e6d9c6"
+    ]
+  },
+  {
+    "id": "concept-31",
+    "consent": false,
+    "concept": 31,
+    "hero": false,
+    "colors": [
+      "#0b1060",
+      "#8cc63f",
+      "#f3efe4"
+    ]
+  },
+  {
+    "id": "concept-32",
+    "consent": false,
+    "concept": 32,
+    "hero": false,
+    "colors": [
+      "#56656a",
+      "#b9d4e6",
+      "#eef0ee"
+    ]
+  },
+  {
+    "id": "concept-33",
+    "consent": false,
+    "concept": 33,
+    "hero": false,
+    "colors": [
+      "#b0673c",
+      "#2b2a2e",
+      "#f7f4ef"
+    ]
+  },
+  {
+    "id": "concept-34",
+    "consent": false,
+    "concept": 34,
+    "hero": false,
+    "colors": [
+      "#4a2e1c",
+      "#c49a5f",
+      "#efe4d1"
+    ]
+  },
+  {
+    "id": "concept-35",
+    "consent": false,
+    "concept": 35,
+    "hero": false,
+    "colors": [
+      "#1f46d8",
+      "#f7d31a",
+      "#fffbea"
+    ]
+  },
+  {
+    "id": "concept-36",
+    "consent": false,
+    "concept": 36,
+    "hero": false,
+    "colors": [
+      "#2f4a26",
+      "#3f6b2e",
+      "#f5efdf"
+    ]
+  },
+  {
+    "id": "concept-37",
+    "consent": false,
+    "concept": 37,
+    "hero": false,
+    "colors": [
+      "#1f4a33",
+      "#a9c77a",
+      "#1f4a33"
+    ]
+  },
+  {
+    "id": "concept-38",
+    "consent": false,
+    "concept": 38,
+    "hero": false,
+    "colors": [
+      "#5b1e22",
+      "#c9a77c",
+      "#f4ece2"
+    ]
+  }
+]

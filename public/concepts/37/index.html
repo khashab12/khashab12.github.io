@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 37</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1f4a33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;600;800&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--green:#1f4a33;--green2:#2b6246;--matcha:#a9c77a;--light:#f4f1e6;--ink:#f4f1e6;--soft:#c9d7c6;--tile:#255a3e}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--ink:#f4f1e6}}
+body{background:var(--green);color:var(--ink);font-family:"Alexandria",system-ui,sans-serif;
+ background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 22px)}
+.demo-note{background:var(--matcha);color:var(--green)}
+header{position:relative;max-width:620px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1.2rem;text-align:center}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--light);color:var(--green);border:0;border-radius:999px;padding:.3rem .95rem;cursor:pointer;min-height:36px;font-size:.8rem;font-weight:600}
+#logo{display:inline-block;padding:.5rem;background:var(--green);border-radius:50%}
+.badge{width:130px;height:130px;border-radius:50%;background:var(--green);border:4px solid var(--light);box-shadow:0 0 0 3px var(--green),0 0 30px rgba(169,199,122,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;direction:ltr}
+.cup{width:52px;height:40px}
+.wd{font:800 1.45rem/1 "Alexandria";letter-spacing:.02em;font-style:italic;color:var(--light);margin-top:.15rem}
+.cf{font:600 .55rem "Alexandria";letter-spacing:.35em;color:var(--light)}
+.sign{margin:.9rem auto 0;display:inline-block;border:2px solid var(--light);border-radius:8px;padding:.25rem 1rem;font-weight:600;font-size:.95rem;box-shadow:0 0 18px rgba(244,241,230,.25)}
+.info{font-size:.8rem;color:var(--soft);margin:.5rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--green);border-bottom:1px solid var(--green2)}
+.bar-in{max-width:620px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:0;background:var(--light);color:var(--green);border-radius:10px;padding:.6rem 1rem;font:inherit}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.55rem 0 .2rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1.5px solid var(--soft);background:none;color:var(--ink);border-radius:10px;padding:.3rem .9rem;cursor:pointer;min-height:36px;font-size:.85rem}
+.chip[aria-pressed="true"]{background:var(--matcha);border-color:var(--matcha);color:var(--green);font-weight:600}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:3px solid var(--matcha);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{padding-top:1.7rem;scroll-margin-top:120px}
+
+h2{margin:0 0 .7rem;background:var(--light);color:var(--green);font:800 1.1rem "Alexandria";padding:.4rem .9rem;border-radius:8px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 22px rgba(244,241,230,.18)}
+h2 small{font-weight:600;font-size:.7rem;opacity:.7}
+.board{display:grid;grid-template-columns:repeat(2,1fr);gap:.55rem}
+.tile{background:var(--tile);border:1px solid var(--green2);border-radius:10px;padding:.7rem .75rem;display:flex;flex-direction:column;justify-content:space-between;min-height:84px}
+.tile.hi{border-color:var(--matcha);box-shadow:inset 0 0 0 1px var(--matcha)}
+.tn{font-weight:600;font-size:.9rem;line-height:1.35}
+.tp{align-self:flex-end;margin-top:.4rem;font:800 1.2rem "Alexandria";color:var(--matcha);direction:ltr}
+.tp small{font-size:.62rem;font-weight:600;color:var(--soft);margin-inline-start:.2rem}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Alexandria',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 37</span></div>
+  <div><span class="sign" id="sign"></span></div>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 37","nameAr":"Concept 37","tagline":{"ar":"قهوة مختصة","en":"Specialty Coffee"},"info":{"ar":"القاهرة","en":"Cairo"},"logo":"","colors":{"primary":"#1f4a33","onPrimary":"#f4f1e6","secondary":"#a9c77a","background":"#1f4a33","accent":"#a9c77a"},"fonts":{"display":"Alexandria","body":"Alexandria"},"pattern":"kiosk slats","currency":{"ar":"ج.م","en":"EGP"},"demoBanner":false,"credit":"محمد","categories":[{"id":"matcha","ar":"ماتشا","en":"Matcha","items":[{"ar":"ماتشا لاتيه سخن","en":"Hot Matcha Latte","p":105,"hi":1},{"ar":"آيس ماتشا","en":"Iced Matcha","p":105,"hi":1},{"ar":"ماتشا فرابيه","en":"Matcha Frappe","p":105},{"ar":"مانجو ماتشا","en":"Mango Matcha","p":110},{"ar":"فراولة ماتشا","en":"Strawberry Matcha","p":110},{"ar":"هاني ماتشا","en":"Honey Matcha","p":120},{"ar":"كوكونت ماتشا","en":"Coconut Matcha","p":140}]},{"id":"hot","ar":"قهوة سخنة","en":"Hot Coffee","items":[{"ar":"أمريكانو","en":"Americano","p":70},{"ar":"قهوة فرنساوي","en":"French Coffee","p":75},{"ar":"كورتادو","en":"Cortado","p":95},{"ar":"لاتيه","en":"Latte","p":100},{"ar":"كابتشينو","en":"Cappuccino","p":100},{"ar":"فلات وايت","en":"Flat White","p":100},{"ar":"سبانش لاتيه","en":"Hot Spanish Latte","p":110},{"ar":"كراميل ماكياتو","en":"Caramel Macchiato","p":110},{"ar":"موكا","en":"Mocha","p":120},{"ar":"وايت موكا","en":"White Mocha","p":120},{"ar":"لوتس لاتيه","en":"Lotus Latte","p":120},{"ar":"هاني سينامون لاتيه","en":"Honey Cinnamon Latte","p":125},{"ar":"هوت شوكليت","en":"Hot Chocolate (L)","p":125},{"ar":"شاي","en":"Tea","p":40},{"ar":"شاي أخضر","en":"Green Tea","p":45}]},{"id":"iced","ar":"قهوة ساقعة","en":"Iced Coffee","items":[{"ar":"آيس أمريكانو","en":"Iced Americano","p":80},{"ar":"آيس كراميل ماكياتو","en":"Iced Caramel Macchiato","p":100},{"ar":"آيس إسبريسو عسل وليمون","en":"Iced Espresso Honey Lemon","p":100},{"ar":"آيس لاتيه","en":"Iced Latte","p":105},{"ar":"آيس كابتشينو","en":"Iced Cappuccino","p":105},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":115},{"ar":"آيس موكا","en":"Iced Mocha","p":120},{"ar":"آيس وايت موكا","en":"Iced White Mocha","p":120}]},{"id":"frappe","ar":"فرابيه","en":"Frappe","items":[{"ar":"كوفي فرابيه","en":"Coffee Frappe","p":105},{"ar":"موكا فرابيه","en":"Mocha Frappe","p":105},{"ar":"وايت موكا فرابيه","en":"White Mocha Frappe","p":105},{"ar":"كراميل فرابيه","en":"Caramel Frappe","p":105},{"ar":"فانيليا فرابيه","en":"Vanilla Frappe","p":105}]},{"id":"tea","ar":"آيس تي","en":"Iced Tea","items":[{"ar":"آيس تي","en":"Iced Tea","p":80},{"ar":"آيس تي خوخ","en":"Iced Tea Peach","p":85},{"ar":"آيس تي ليمون","en":"Iced Tea Lemon","p":85}]},{"id":"juice","ar":"عصاير وسموذي","en":"Juice & Smoothies","items":[{"ar":"برتقال فريش","en":"Fresh Orange","p":85},{"ar":"مانجو فريش","en":"Fresh Mango","p":95},{"ar":"سموذي فراولة","en":"Strawberry Smoothie","p":80},{"ar":"سموذي بلوبيري","en":"Blueberry Smoothie","p":80},{"ar":"سموذي مانجو","en":"Mango Smoothie","p":95},{"ar":"سموذي مانجو كيوي","en":"Mango Kiwi Smoothie","p":110}]},{"id":"waffle","ar":"وافل","en":"Waffle","items":[{"ar":"وافل كراميل","en":"Waffle Caramel","p":90},{"ar":"وافل دارك شوكليت","en":"Waffle Dark Chocolate","p":90},{"ar":"وافل لوتس","en":"Waffle Lotus","p":95}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "دوّر على مشروب…", "empty": "مفيش حاجة بالاسم ده.", "all": "الكل", "demo": "", "note": "", "sign": "قهوة مختصة"}, "en": {"dir": "ltr", "lang": "العربية", "search": "Find a drink…", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "sign": "Specialty Coffee"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 37-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); $("sign").textContent=T[lang].sign; }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${esc(L(c,"ar","en"))}<small>${cur()}</small></h2><div class="board">${body}</div></section>`; }
+function item(i){ return `<div class="tile${i.hi?" hi":""}"><span class="tn">${esc(L(i,"ar","en"))}</span><span class="tp">${fmt(i.p)}<small>${cur()}</small></span></div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

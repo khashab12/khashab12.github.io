@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 2</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#5a2a18">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Lalezar&family=Changa:wght@400;500;700&family=Pacifico&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--peach:#fbe8da;--brown:#5a2a18;--orange:#e8742a;--ink:#3b1d10;--soft:#8a5a44;--card:#fff5ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--peach:#1e120c;--ink:#fbe8da;--soft:#d6a98f;--card:#2a1911}}
+:root[data-theme="dark"]{--peach:#1e120c;--ink:#fbe8da;--soft:#d6a98f;--card:#2a1911}
+body{background:var(--peach);color:var(--ink);font-family:"Changa",system-ui,sans-serif}
+.demo-note{background:var(--brown);color:#fbe8da}
+header{position:relative;max-width:620px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1rem}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--brown);color:#fbe8da;border:0;border-radius:6px;padding:.3rem .9rem;cursor:pointer;min-height:36px;font-size:.82rem}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem}
+.big{font:400 clamp(2.6rem,13vw,4rem)/.92 "Anton",sans-serif;color:var(--brown);text-transform:uppercase;margin:0;direction:ltr;text-align:start}
+html[dir=rtl] .big{text-align:right}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .big{color:#fbe8da}}
+:root[data-theme="dark"] .big{color:#fbe8da}
+.big i{display:block;font:400 2rem "Pacifico",cursive;color:var(--orange);text-transform:none;margin-top:.1rem}
+#logo{display:inline-block;padding:.4rem .6rem;background:var(--peach);text-align:center;direction:ltr;flex:0 0 auto}
+.deg{font:400 4rem/.9 "Anton",sans-serif;color:var(--brown);position:relative}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .deg{color:#fbe8da}}
+:root[data-theme="dark"] .deg{color:#fbe8da}
+.deg sup{font-size:1.2rem;vertical-align:top;margin-inline-start:.05em}
+.motto{font:500 .58rem "Changa";letter-spacing:.04em;color:var(--soft)}
+.info{margin:.8rem 0 0;font-size:.85rem;color:var(--soft);display:flex;align-items:center;gap:.4rem}
+.pin{display:inline-block;background:var(--orange);color:#fff;border-radius:999px;padding:.1rem .7rem;font-size:.8rem}
+.bar{position:sticky;top:0;z-index:5;background:var(--peach);border-bottom:3px solid var(--brown)}
+.bar-in{max-width:620px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:2px solid var(--brown);background:var(--card);color:var(--ink);border-radius:8px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.45rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:0;background:var(--card);color:var(--ink);font:400 1rem "Anton",sans-serif;letter-spacing:.03em;text-transform:uppercase;padding:.3rem .8rem;border-radius:6px;cursor:pointer;min-height:36px}
+html[lang=ar] .chip{font:400 1rem "Lalezar"}
+.chip[aria-pressed="true"]{background:var(--orange);color:#fff}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+
+section{position:relative;margin-top:1.6rem;padding:1rem 1rem .6rem;scroll-margin-top:120px}
+section::before,section::after{content:"";position:absolute;width:38px;height:38px;border-color:var(--orange);border-style:solid}
+section::before{top:0;inset-inline-start:0;border-width:4px 0 0 4px}
+html[dir=rtl] section::before{border-width:4px 4px 0 0}
+section::after{bottom:0;inset-inline-end:0;border-width:0 4px 4px 0}
+html[dir=rtl] section::after{border-width:0 0 4px 4px}
+h2{margin:0 0 .5rem;font:400 1.9rem "Anton",sans-serif;color:var(--brown);text-transform:uppercase;letter-spacing:.02em;display:inline-block;border-bottom:3px solid var(--brown);line-height:1.15}
+html[lang=ar] h2{font:400 1.8rem "Lalezar"}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) h2{color:#fbe8da;border-color:#fbe8da}}
+:root[data-theme="dark"] h2{color:#fbe8da;border-color:#fbe8da}
+.row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;padding:.4rem 0}
+.nm{font-weight:500;text-transform:uppercase;font-size:.98rem}
+html[lang=ar] .nm{text-transform:none}
+.tagp{background:var(--orange);color:#fff;border-radius:6px;padding:.05rem .55rem;font:700 .95rem "Changa";white-space:nowrap;direction:ltr}
+.tagp small{font-size:.65rem;font-weight:500;margin-inline-start:.2rem}
+.offer{background:var(--brown);color:#fbe8da;border-radius:12px;padding:1rem;margin-top:1.8rem;text-align:center}
+.offer h3{margin:0 0 .4rem;font:400 1.3rem "Anton";letter-spacing:.04em;color:var(--orange)}
+html[lang=ar] .offer h3{font:400 1.4rem "Lalezar"}
+.offer p{margin:.1rem 0}
+.offer b{display:inline-block;margin-top:.5rem;background:var(--orange);color:#fff;border-radius:6px;padding:.1rem .7rem;font-size:1.2rem}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div class="top">
+    <h1 class="big">Concept 2<i>Menu</i></h1>
+    <div id="logo"><span class="concept-wm" style="display:block;font-family:'Anton',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 2</span></div>
+  </div>
+  <p class="info"><span class="pin" id="pin"></span><span id="info"></span></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 2","nameAr":"Concept 2","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"القاهرة","en":"Cairo"},"logo":"","colors":{"primary":"#5a2a18","onPrimary":"#fbe8da","secondary":"#e8742a","background":"#fbe8da","accent":"#e8742a"},"fonts":{"display":"Anton","body":"Changa"},"pattern":"none","currency":{"ar":"ج.م","en":"EGP"},"demoBanner":false,"credit":"محمد","categories":[{"id":"coffee","ar":"قهوة","en":"Coffee","items":[{"ar":"إسبريسو","en":"Espresso","p":50,"p2":60},{"ar":"أمريكانو","en":"Americano","p":70},{"ar":"فلات وايت","en":"Flatwhite","p":85},{"ar":"كابتشينو","en":"Cappuccino","p":80},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":105},{"ar":"لاتيه","en":"Latte","p":80},{"ar":"موكا","en":"Mocha","p":115},{"ar":"قهوة تركي","en":"Turkish Coffee","p":45,"p2":55},{"ar":"قهوة تركي فرنساوي","en":"French Turkish Coffee","p":60},{"ar":"كراميل ماكياتو","en":"Caramel Macchiato","p":105}]},{"id":"icecoffee","ar":"آيس كوفي","en":"Ice-Coffee","items":[{"ar":"آيس كوفي","en":"Ice Coffee","p":105},{"ar":"آيس فرابتشينو","en":"Ice Frappuccino","p":130},{"ar":"آيس سبانش لاتيه","en":"Ice Spanish Latte","p":120}]},{"id":"frappe","ar":"فرابيه","en":"Frappe","items":[{"ar":"فرابيه فانيليا","en":"Frappe Vanilla","p":120},{"ar":"فرابيه كراميل","en":"Frappe Caramel","p":130},{"ar":"فرابيه شوكولاتة","en":"Frappe Chocolate","p":130}]},{"id":"noncoffee","ar":"مشروبات من غير قهوة","en":"Non-Coffee","items":[{"ar":"شاي","en":"Tea","p":30},{"ar":"شاي بنكهات","en":"Flavoured Tea","p":50},{"ar":"شاي أخضر","en":"Green Tea","p":40},{"ar":"هوت شوكليت","en":"Hot Chocolate","p":85}]},{"id":"icenon","ar":"عصاير فريش","en":"Ice Non-Coffee","items":[{"ar":"مانجا فريش","en":"Fresh Mango","p":80},{"ar":"برتقال فريش","en":"Fresh Orange","p":80},{"ar":"فراولة فريش","en":"Fresh Strawberry","p":80},{"ar":"جوافة فريش","en":"Fresh Guava","p":80}]},{"id":"bites","ar":"سناكس","en":"Quick Bites","items":[{"ar":"كرواسون سادة","en":"Plain Croissant","p":60},{"ar":"كرواسون جبنة","en":"Cheese Croissant","p":65},{"ar":"تشيز كيك","en":"Cheese Cake","p":100},{"ar":"كب كيك","en":"Cup Cake","p":50}]},{"id":"bev","ar":"مشروبات","en":"Beverage","items":[{"ar":"مياه صغيرة","en":"Small Water","p":15},{"ar":"بيبسي","en":"Pepsi","p":30}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "دوّر على مشروب…", "empty": "مفيش حاجة بالاسم ده.", "all": "الكل", "demo": "", "note": "", "pin": "", "offer": "عرض الصباح", "o1": "كابتشينو + كرواسون سادة", "o2": "عصير برتقال فريش + كرواسون سادة"}, "en": {"dir": "ltr", "lang": "العربية", "search": "Find a drink…", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "pin": "", "offer": "MORNING OFFER", "o1": "Cappuccino + Plain Croissant", "o2": "Fresh Orange + Plain Croissant"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 2-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); $("pin").textContent=T[lang].pin; }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${esc(L(c,"ar","en"))}</h2>${body}</section>`; }
+function item(i){ return `<div class="row"><span class="nm">${esc(L(i,"ar","en"))}</span><span class="tagp">${P(i)}<small>${cur()}</small></span></div>`; }
+function afterRender(){ if(query.trim()) return; $("menu").insertAdjacentHTML("beforeend",`<div class="offer"><h3>${T[lang].offer}</h3><p>${T[lang].o1}</p><p>${T[lang].o2}</p><b>${fmt(110)} ${cur()}</b></div>`); }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

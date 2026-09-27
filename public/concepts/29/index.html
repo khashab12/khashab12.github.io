@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 29</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#34352e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Almarai:wght@300;400;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--olive:#34352e;--olive2:#454639;--sage:#7f8c6c;--cream:#efe8da;--paper:#f6f1e7;--card:#fffdf8;--ink:#2b2b25;--soft:#7b776b;--line:#e2dacb}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171814;--card:#22231e;--ink:#eee7d8;--soft:#aaa493;--line:#34352e}}
+:root[data-theme="dark"]{--paper:#171814;--card:#22231e;--ink:#eee7d8;--soft:#aaa493;--line:#34352e}
+body{background:var(--paper);color:var(--ink);font-family:"Almarai","Cormorant Garamond",system-ui,sans-serif}
+html[lang=en] body{font-family:"Cormorant Garamond","Almarai",serif;font-size:17.5px}
+.demo-note{background:var(--sage);color:#fff}
+header{position:relative;text-align:center;background:var(--olive);color:var(--cream);padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1.5rem}
+
+header::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:
+ linear-gradient(90deg,var(--olive2) 2px,transparent 2px) 0 0/14px 14px,linear-gradient(0deg,var(--olive2) 2px,transparent 2px) 0 0/14px 14px,var(--olive)}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--cream);color:var(--olive);border:0;border-radius:999px;padding:.25rem .95rem;cursor:pointer;min-height:36px;font-size:.8rem;z-index:2}
+#logo{display:inline-grid;place-items:center;width:132px;height:132px;border-radius:50%;background:var(--olive);border:1.5px solid rgba(239,232,218,.45);box-shadow:0 0 0 6px var(--olive),0 0 0 7px rgba(239,232,218,.25)}
+.wm{font:500 2.6rem/1 "Cormorant Garamond",serif;letter-spacing:.06em;color:var(--cream);direction:ltr;margin-inline-end:-.06em}
+.tg{margin:1rem 0 0;font:600 1.15rem "Cormorant Garamond";font-style:italic;direction:ltr;color:#e3dccb}
+.info{font-size:.8rem;margin:.35rem 0 0;color:#bdb8a7}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);margin-top:14px}
+.bar-in{max-width:620px;margin:0 auto;padding:.7rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.3rem .95rem;cursor:pointer;min-height:36px;font-size:.84rem}
+.chip[aria-pressed="true"]{background:var(--olive);border-color:var(--olive);color:var(--cream)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--sage);border-color:var(--sage)}}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+section{margin-top:1.9rem;scroll-margin-top:120px}
+h2{display:flex;align-items:center;gap:.7rem;margin:0 0 .8rem;font:700 1.1rem "Almarai"}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h2 small{font:600 1.05rem "Cormorant Garamond";font-style:italic;color:var(--sage);direction:ltr}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.8rem .8rem .75rem;display:flex;flex-direction:column;gap:.35rem;min-height:112px}
+.ic{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--olive)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ic{background:#2f3029;color:var(--cream)}}
+.ic svg{width:20px;height:20px}
+.card .a{font-weight:700;font-size:.95rem;line-height:1.35}
+.card .e{font:600 .95rem "Cormorant Garamond";color:var(--soft);direction:ltr;text-align:start}
+html[dir=rtl] .card .e{text-align:right}
+.pn{margin:1.6rem 0 0;text-align:center;font-size:.78rem;color:var(--soft)}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 29</span></div>
+  <p class="tg">Specialty Coffee</p>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 29","nameAr":"Concept 29","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee","p":null},"info":{"ar":"الرياض","en":"Riyadh","p":null},"logo":"","colors":{"primary":"#34352e","onPrimary":"#efe8da","secondary":"#7f8c6c","background":"#f6f1e7","accent":"#7f8c6c"},"fonts":{"display":"Cormorant Garamond","body":"Almarai"},"pattern":"waffle grid + product cards","currency":{"ar":"ر.س","en":"SAR","p":null},"demoBanner":false,"credit":"محمد","categories":[{"id":"hot","ar":"القهوة الحارة","en":"Hot Coffee","i":"cup","items":[{"ar":"إسبريسو","en":"Espresso","p":null},{"ar":"أمريكانو","en":"Americano","p":null},{"ar":"كورتادو","en":"Cortado","p":null},{"ar":"فلات وايت","en":"Flat White","p":null},{"ar":"كابتشينو","en":"Cappuccino","p":null},{"ar":"لاتيه","en":"Latte","p":null},{"ar":"في ٦٠","en":"V60","p":null}]},{"id":"cold","ar":"القهوة الباردة","en":"Iced Coffee","i":"ice","items":[{"ar":"قهوة اليوم باردة","en":"Ice of the Day","p":null},{"ar":"آيس أمريكانو","en":"Ice Americano","p":null},{"ar":"آيس كورتادو","en":"Ice Cortado","p":null},{"ar":"آيس لاتيه","en":"Iced Latte","p":null},{"ar":"إسبريسو فريدو","en":"Espresso Freddo","p":null},{"ar":"آيس في ٦٠","en":"Ice V60","p":null},{"ar":"فانيلا لاتيه كلاود","en":"Vanilla Latte Cloud","p":null},{"ar":"آيس ماتشا كلاود","en":"Iced Matcha Cloud","i":"leaf","p":null},{"ar":"آيس كركديه","en":"Ice Karkadeh","i":"leaf","p":null}]},{"id":"bakery","ar":"المخبوزات","en":"Bakery","i":"bake","items":[{"ar":"كرواسون","en":"Croissant","p":null},{"ar":"كرواسون بيكان","en":"Pecan Croissant","p":null}]},{"id":"dessert","ar":"الحلى","en":"Desserts","i":"cake","items":[{"ar":"ديلوتشي","en":"Delucci","p":null},{"ar":"تشيز كيك شوكولاتة","en":"Chocolate Cheesecake","p":null},{"ar":"تشيز كيك بلوبيري","en":"Blueberry Cheesecake","p":null},{"ar":"تشيز مدريد","en":"Cheese Madrid","p":null},{"ar":"شو جوز الهند","en":"Coconut Choux","p":null},{"ar":"شو كراميل","en":"Caramel Choux","p":null},{"ar":"شو تيراميسو","en":"Tiramisu Choux","p":null},{"ar":"شو قهوة","en":"Coffee Choux","p":null},{"ar":"شو بلوبيري","en":"Blueberry Choux","p":null},{"ar":"تارت كريم بروليه","en":"Crème Brûlée Tart","p":null},{"ar":"تارت بيكان","en":"Pecan Tart","p":null}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "", "pn": "الأصناف من منيو المحل · الأسعار تنضاف لما نعتمد النسخة النهائية"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "", "pn": "Items from the café's menu · prices get added in the final version"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 29-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+const IC={
+ cup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c0 1.5 1.5 1.5 1.5 3M12 3.5c0 1.5 1.5 1.5 1.5 3"/></svg>',
+ ice:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6h12l-1.5 14h-9z"/><path d="M13 2l-1 4"/><rect x="9" y="10" width="3" height="3" rx=".6"/><rect x="12.5" y="13" width="3" height="3" rx=".6"/></svg>',
+ bake:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 15c2-6 5-8 9-8s7 2 9 8c-3 1.5-6 2-9 2s-6-.5-9-2z"/><path d="M8 9l1.5 7M12 7v10M16 9l-1.5 7"/></svg>',
+ cake:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16v8H4z"/><path d="M4 15.5c2 1 4 1 6 0s4-1 6 0 3 .5 4 0"/><path d="M12 5v4"/><circle cx="12" cy="4" r="1"/></svg>',
+ leaf:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 19c0-8 5-14 14-14 0 9-6 14-14 14z"/><path d="M5 19l8-8"/></svg>'};
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2><span>${esc(c.ar)}</span><small>${esc(c.en)}</small></h2><div class="grid">${body}</div></section>`; }
+function item(i,k,c){ return `<div class="card"><span class="ic" aria-hidden="true">${IC[i.i||c.i]}</span><span class="a">${esc(lang==="ar"?i.ar:i.en)}</span>${lang==="ar"?`<span class="e">${esc(i.en)}</span>`:""}</div>`; }
+function afterRender(){ if(query.trim()) return; $("menu").insertAdjacentHTML("beforeend",`<p class="pn">${T[lang].pn}</p>`); }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

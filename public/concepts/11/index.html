@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 11</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#2a3bd6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Marhey:wght@400;600;700&family=Rubik:wght@400;500;700&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--lav:#dcd3f2;--paper:#ebe5fa;--blue:#2a3bd6;--pink:#f06aa8;--ink:#2a3bd6;--soft:#5260d9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--lav:#15163a;--paper:#1d1f4d;--ink:#c9ceff;--soft:#a3aaf2;--blue:#7e8cff}}
+:root[data-theme="dark"]{--lav:#15163a;--paper:#1d1f4d;--ink:#c9ceff;--soft:#a3aaf2;--blue:#7e8cff}
+body{background:var(--lav);color:var(--ink);font-family:"Rubik","Marhey",system-ui,sans-serif;
+ background-image:radial-gradient(color-mix(in srgb,var(--blue) 14%,transparent) 1px,transparent 1.4px);background-size:7px 7px}
+html[lang=ar] body{font-family:"Marhey","Rubik",sans-serif}
+.demo-note{background:var(--blue);color:#fff}
+header{position:relative;max-width:560px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 3rem) 1.2rem 1rem;text-align:center}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:4px;padding:.25rem .85rem;cursor:pointer;min-height:36px;font-size:.8rem;box-shadow:3px 3px 0 var(--pink)}
+#logo{display:inline-block;padding:.8rem 1rem;background:var(--lav)}
+
+.word{position:relative;font:400 clamp(2.4rem,12vw,3.4rem)/1 "Permanent Marker",cursive;color:var(--blue);direction:ltr;transform:rotate(-3deg)}
+.word::before{content:attr(data-t);position:absolute;inset:0;color:var(--pink);transform:translate(3px,2px);mix-blend-mode:multiply;z-index:-1}
+.sub{font:400 1.05rem "Permanent Marker";letter-spacing:.2em;color:var(--ink);margin-top:.35rem;direction:ltr}
+.star{display:inline-block;font-size:1.4rem;color:var(--pink)}
+.arn{font:700 1.1rem "Marhey";margin:.2rem 0 0}
+.info{font-size:.82rem;color:var(--soft);margin:.4rem 0 0}
+.bar{position:sticky;top:0;z-index:5;background:var(--lav);border-bottom:2px solid var(--ink)}
+.bar-in{max-width:560px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:4px;padding:.55rem 1rem;font:inherit}
+.search input::placeholder{color:var(--soft)}
+.chips{display:flex;gap:.5rem;overflow-x:auto;padding:.55rem 0 .2rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font:400 .95rem "Permanent Marker";padding:.2rem .8rem;border-radius:4px;cursor:pointer;min-height:36px}
+html[lang=ar] .chip{font:600 .9rem "Marhey"}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:3px 3px 0 var(--pink)}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+main{max-width:560px;margin:0 auto;padding:.5rem 1.2rem 1.5rem}
+
+section{margin-top:1.6rem;background:var(--paper);border:2.5px solid var(--ink);padding:1rem 1rem .6rem;box-shadow:6px 6px 0 var(--pink);scroll-margin-top:120px;transform:rotate(-.6deg)}
+section:nth-of-type(even){transform:rotate(.6deg)}
+h2{margin:-1.9rem 0 .6rem;display:inline-block;background:var(--ink);color:var(--paper);font:400 1.5rem "Permanent Marker";padding:.1rem .8rem;transform:rotate(-2deg)}
+html[lang=ar] h2{font:700 1.3rem "Marhey"}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;padding:.42rem 0;border-bottom:1.5px dashed color-mix(in srgb,var(--ink) 35%,transparent)}
+.row:last-child{border-bottom:0}
+.nm{font-weight:500}
+.pr{font:400 1.15rem "Permanent Marker";white-space:nowrap;direction:ltr}
+.pr small{font:500 .65rem "Rubik";margin-inline-start:.2rem}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Permanent Marker',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 11</span></div>
+  <p class="info" id="info"></p>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 11","nameAr":"Concept 11","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#2a3bd6","onPrimary":"#ffffff","secondary":"#f06aa8","background":"#dcd3f2","accent":"#f06aa8"},"fonts":{"display":"Permanent Marker","body":"Marhey"},"pattern":"riso halftone","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"hot","ar":"حار","en":"Hot","items":[{"ar":"قهوة اليوم","en":"Coffee of the Day","p":10},{"ar":"V60","en":"V60","p":15},{"ar":"إسبريسو","en":"Espresso","p":11},{"ar":"ألفريدو","en":"Alfredo","p":12},{"ar":"أمريكانو","en":"Americano","p":12},{"ar":"لاتيه","en":"Latte","p":15},{"ar":"فلات وايت","en":"Flat White","p":15},{"ar":"سبانش لاتيه","en":"Spanish Latte","p":17},{"ar":"كابتشينو","en":"Cappuccino","p":15},{"ar":"كورتادو","en":"Cortado","p":13},{"ar":"هوت شوكليت ميكس","en":"Hot Chocolate Mix","p":18},{"ar":"هوت شوكليت","en":"Hot Chocolate","p":15},{"ar":"ماتشا ميكس","en":"Matcha Mix","p":18},{"ar":"ماتشا","en":"Matcha","p":15},{"ar":"شاي","en":"Tea","p":5},{"ar":"كركديه","en":"Hibiscus Tea (Karkadeh)","p":15}]},{"id":"cold","ar":"بارد","en":"Cold","items":[{"ar":"آيس أمريكانو","en":"Iced Americano","p":12},{"ar":"آيس لاتيه","en":"Iced Latte","p":17},{"ar":"آيس قهوة اليوم","en":"Iced Coffee of the Day","p":12},{"ar":"آيس V60","en":"Iced V60","p":17},{"ar":"آيس سبانش لاتيه","en":"Iced Spanish Latte","p":19},{"ar":"مويه","en":"Water","p":2}]},{"id":"snacks","ar":"سناكس","en":"Snacks","items":[{"ar":"كرواسون","en":"Croissant","p":11},{"ar":"دانش جبن وعسل","en":"Danish Cheese & Honey","p":14},{"ar":"كوكيز","en":"Cookies","p":13},{"ar":"تيراميسو","en":"Tiramisu","p":22},{"ar":"بروتين شيك","en":"Protein Shake","p":19}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تشرب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "", "note": "الأسعار بالريال السعودي"}, "en": {"dir": "ltr", "lang": "العربية", "search": "What are you having?", "empty": "Nothing matches that.", "all": "All", "demo": "", "note": "Prices in Saudi Riyal"}};
+let lang="ar", active="all", query="";
+const KEY="Concept 11-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${esc(L(c,"ar","en"))}</h2>${body}</section>`; }
+function item(i){ return `<div class="row"><span class="nm">${esc(L(i,"ar","en"))}</span><span class="pr">${fmt(i.p)}<small>${cur()}</small></span></div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>

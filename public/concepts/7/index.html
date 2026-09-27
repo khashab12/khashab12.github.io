@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Concept 7</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#6b1d22">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=El+Messiri:wght@400;500;600&family=League+Spartan:wght@400;500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.55;padding-bottom:env(safe-area-inset-bottom,0px)}
+.demo-note{text-align:center;font-size:.8rem;padding:.45rem 1rem}
+.empty{text-align:center;padding:3rem 1rem;opacity:.75}
+button{font:inherit}
+
+:root{--bur:#6b1d22;--bur2:#4d1418;--cream:#efe2cf;--gold:#c9a27a;--frame:#5a3a2a;--paper:#f4ece2;--card:#fbf6ef;--ink:#3a1216;--soft:#8a6a62;--line:#e6d6c4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#1a0b0d;--card:#261114;--ink:#f3e6d6;--soft:#c7a99c;--line:#3f2226}}
+:root[data-theme="dark"]{--paper:#1a0b0d;--card:#261114;--ink:#f3e6d6;--soft:#c7a99c;--line:#3f2226}
+body{background:var(--paper);color:var(--ink);font-family:"El Messiri","League Spartan",system-ui,sans-serif}
+html[lang=en] body{font-family:"League Spartan","El Messiri",sans-serif;font-size:17px}
+.demo-note{background:var(--gold);color:#3a1216;font-weight:500}
+
+header{position:relative;background:var(--bur);color:var(--cream);text-align:center;padding:calc(env(safe-area-inset-top,0px) + 3.2rem) 1.2rem 0;overflow:hidden}
+.lang{position:absolute;top:calc(env(safe-area-inset-top,0px) + .8rem);inset-inline-end:1rem;background:var(--cream);color:var(--bur);border:0;border-radius:2px;padding:.25rem .95rem;cursor:pointer;min-height:36px;font-size:.8rem;z-index:2}
+#logo{display:inline-block;padding:.6rem 1.2rem;background:var(--bur);direction:ltr}
+.wm{display:flex;align-items:center;justify-content:center;gap:.9rem;font:500 2rem/1 "League Spartan";letter-spacing:0;color:var(--cream)}
+.o{width:34px;height:34px;border-radius:50%;background:var(--cream);position:relative}
+.o::before{content:"";position:absolute;left:50%;top:26%;width:11px;height:11px;border-radius:50%;background:var(--bur);transform:translateX(-50%)}
+.o::after{content:"";position:absolute;left:50%;top:56%;width:4px;height:9px;border-radius:2px;background:var(--bur);transform:translateX(-50%)}
+.cf{font:400 .62rem "League Spartan";letter-spacing:.5em;margin:.45rem -.5em 0 0;opacity:.8}
+.ar{font:500 1rem "League Spartan";letter-spacing:.04em;margin:.7rem 0 0;direction:ltr}
+.info{font-size:.8rem;opacity:.8;margin:.3rem 0 0}
+.arch{margin:1.2rem auto 0;max-width:180px;height:44px;border:2px solid var(--gold);border-bottom:0;border-radius:160px 160px 0 0;background:linear-gradient(180deg,rgba(239,226,207,.12),transparent)}
+.bar{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.bar-in{max-width:620px;margin:0 auto;padding:.6rem 1.2rem .4rem}
+.search input{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:.55rem 1rem;font:inherit}
+.chips{display:flex;gap:.4rem;overflow-x:auto;padding:.5rem 0 .1rem;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;border:1px solid var(--bur);background:none;color:var(--ink);border-radius:999px;padding:.3rem .95rem;cursor:pointer;min-height:36px;font-size:.84rem}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip{border-color:var(--soft)}}
+.chip[aria-pressed="true"]{background:var(--bur);border-color:var(--bur);color:var(--cream)}
+.chip:focus-visible,.lang:focus-visible,.search input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+main{max-width:620px;margin:0 auto;padding:.5rem 1.2rem 1.5rem;display:grid;grid-template-columns:1fr;gap:1.2rem}
+@media (min-width:600px){main{grid-template-columns:1fr 1fr;align-items:start}}
+
+section{margin-top:.4rem;background:var(--card);border:7px solid var(--frame);border-radius:3px;box-shadow:inset 0 0 0 1px var(--gold);scroll-margin-top:120px}
+.pane{padding:.9rem 1rem .5rem}
+h2{margin:0;background:var(--bur);color:var(--cream);text-align:center;padding:.55rem .6rem .5rem;font:600 1.1rem "El Messiri"}
+h2 small{display:block;font:600 .8rem "Cormorant Garamond";letter-spacing:.25em;color:var(--gold);direction:ltr}
+.row{display:flex;justify-content:space-between;gap:.7rem;padding:.5rem 0;border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.nm{font-weight:500}
+.ds{display:block;font-size:.74rem;color:var(--soft)}
+.pr{font:500 1rem "League Spartan";direction:ltr;white-space:nowrap;color:var(--bur)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pr{color:var(--gold)}}
+.pr small{font-size:.64rem;color:var(--soft);margin-inline-start:.2rem}
+.sl{margin:0 .15rem;color:var(--soft)}
+.foot{text-align:center;color:var(--soft);font-size:.8rem;padding:.5rem 1rem 2.2rem}.foot strong{color:var(--ink)}
+
+</style>
+</head>
+<body>
+<div class="demo-note" id="demoNote" hidden></div>
+
+<header>
+  <button class="lang" id="langBtn">English</button>
+  <div id="logo"><span class="concept-wm" style="display:block;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(2.2rem,11vw,3.4rem);line-height:1.05;letter-spacing:-.01em;direction:ltr;white-space:nowrap">Concept 7</span></div>
+  <p class="ar"></p>
+  <p class="info" id="info"></p>
+  <div class="arch" aria-hidden="true"></div>
+</header>
+
+<div class="bar"><div class="bar-in">
+  <div class="search"><input id="q" type="search" aria-label="Search"></div>
+  <nav class="chips" id="chips" aria-label="Categories"></nav>
+</div></div>
+<main id="menu"></main>
+<footer class="foot"><p id="note"></p><p id="credit"></p></footer>
+<script>
+const CONFIG = {"name":"Concept 7","nameAr":"Concept 7","tagline":{"ar":"Specialty Coffee","en":"Specialty Coffee"},"info":{"ar":"الرياض","en":"Riyadh"},"logo":"","colors":{"primary":"#6b1d22","onPrimary":"#efe2cf","secondary":"#c9a27a","background":"#f4ece2","accent":"#c9a27a"},"fonts":{"display":"Cormorant Garamond","body":"El Messiri"},"pattern":"kiosk window panes","currency":{"ar":"ر.س","en":"SAR"},"demoBanner":false,"credit":"محمد","categories":[{"id":"cold","ar":"القهوة الباردة","en":"Cold Coffee","items":[{"ar":"في ٦٠","en":"V60","p":14},{"ar":"ايس سبانيش","en":"Iced Spanish","p":16},{"ar":"ايس لاتيه","en":"Iced Latte","p":14},{"ar":"آيس الفريدو","en":"Iced Alfredo","p":10},{"ar":"قهوة اليوم","en":"Coffee of the Day","p":8}]},{"id":"hot","ar":"القهوة الحارة","en":"Hot Coffee","items":[{"ar":"في ٦٠","en":"V60","p":14},{"ar":"اسبريسو","en":"Espresso","p":10},{"ar":"لاتيه","en":"Latte","p":14},{"ar":"كابتشينو","en":"Cappuccino","p":12},{"ar":"فلات وايت","en":"Flat White","p":13},{"ar":"ميكاتو","en":"Macchiato","p":12},{"ar":"كورتادو","en":"Cortado","p":12},{"ar":"سبانيش","en":"Spanish","p":12},{"ar":"قهوة اليوم","en":"Coffee of the Day","p":8}]},{"id":"drinks","ar":"المشروبات الباردة","en":"Cold Drinks","items":[{"ar":"ايس تي خوخ","en":"Iced Tea Peach","p":16},{"ar":"ايس تي واترميلون","en":"Iced Tea Watermelon","p":16},{"ar":"كركديه","en":"Concept 7 Bloom","p":16}]},{"id":"sweet","ar":"الحلويات","en":"Desserts","items":[{"ar":"تشيز كيك بيكان","en":"Cheesecake Pecan","p":18},{"ar":"تشيز كيك شوكليت","en":"Cheesecake Chocolate","p":18},{"ar":"كوكو مانجو","en":"Coco Mango","p":22}]}]};
+const C = CONFIG || {name:"Menu",categories:[]};
+const T = {"ar": {"dir": "rtl", "lang": "English", "search": "وش تبي تطلب؟", "empty": "ما لقينا شي بهالاسم.", "all": "الكل", "demo": "تصور تجريبي — الأصناف والأسعار أمثلة وليست منيو المحل", "note": ""}, "en": {"dir": "ltr", "lang": "العربية", "search": "What would you like?", "empty": "Nothing matches that.", "all": "All", "demo": "Demo — items and prices are examples, not the café's menu", "note": ""}};
+let lang="ar", active="all", query="";
+const KEY="Concept 7-lang";
+try{const s=localStorage.getItem(KEY);if(s==="ar"||s==="en")lang=s;}catch(e){}
+try{const u=new URLSearchParams(location.search).get("lang");if(u==="ar"||u==="en")lang=u;}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt=n=>lang==="ar"?Number(n).toLocaleString("ar-EG"):Number(n).toLocaleString("en-US");
+const cur=()=> (C.currency||{ar:"",en:""})[lang];
+const L=(o,ar,en)=> lang==="ar" ? (o[ar]||o[en]||"") : (o[en]||o[ar]||"");
+const P=i=> i.p2!=null ? `${fmt(i.p)}<span class="sl">/</span>${fmt(i.p2)}` : fmt(i.p);
+
+function hero(){ $("info").textContent=L(C.info||{},"ar","en"); }
+function section(c,ci,body){ return `<section id="cat-${esc(c.id)}"><h2>${esc(c.ar)}<small>${esc(c.en.toUpperCase())}</small></h2><div class="pane">${body}</div></section>`; }
+function item(i){ const d=L(i,"dAr","dEn"); return `<div class="row"><span><span class="nm">${esc(L(i,"ar","en"))}</span>${d?`<span class="ds">${esc(d)}</span>`:""}</span><span class="pr">${P(i)}<small>${cur()}</small></span></div>`; }
+
+function renderChips(){
+  const cats=[{id:"all",ar:T.ar.all,en:T.en.all},...C.categories];
+  $("chips").innerHTML=cats.map(c=>`<button class="chip" data-id="${esc(c.id)}" aria-pressed="${c.id===active}">${esc(L(c,"ar","en"))}</button>`).join("");
+  $("chips").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{
+    active=b.dataset.id;renderChips();
+    if(active==="all"){window.scrollTo({top:0});return;}
+    const el=$("cat-"+active); if(el) el.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+  });
+}
+function renderMenu(){
+  const q=query.trim().toLowerCase(); let html="",n=0,k=0;
+  C.categories.forEach((c,ci)=>{
+    const items=c.items.filter(i=>!q||[i.ar,i.en,i.dAr,i.dEn].join(" ").toLowerCase().includes(q));
+    if(!items.length) return; n+=items.length;
+    html+=section(c,ci,items.map(i=>item(i,++k,c)).join(""));
+  });
+  $("menu").innerHTML=n?html:`<p class="empty">${T[lang].empty}</p>`;
+  if(typeof afterRender==="function") afterRender();
+}
+function apply(){
+  const t=T[lang]; document.documentElement.lang=lang; document.documentElement.dir=t.dir;
+  $("langBtn").textContent=t.lang; $("q").placeholder=t.search;
+  const note=$("demoNote"); note.hidden=!C.demoBanner; note.textContent=t.demo;
+  $("note").textContent=t.note||"";
+  $("credit").innerHTML=(lang==="ar"?"منيو ديجيتال من تصميم ":"Digital menu designed by ")+`<strong>${lang==="en"?"Mohamed":"محمد"}</strong>`;
+  if(typeof hero==="function") hero();
+  renderChips(); renderMenu();
+}
+$("langBtn").onclick=()=>{lang=lang==="ar"?"en":"ar";try{localStorage.setItem(KEY,lang)}catch(e){}apply();};
+$("q").addEventListener("input",e=>{query=e.target.value;renderMenu();});
+apply();
+</script>
+</body>
+</html>
