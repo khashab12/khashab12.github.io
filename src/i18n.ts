@@ -95,6 +95,30 @@ const ar = {
   work: {
     title: 'الأعمال',
     realTitle: 'أعمال حقيقية',
+    featuredTitle: 'أعمال مختارة',
+    featuredNote: 'مشاريع حقيقية لعملاء، وديموهات تفاعلية تقدر تجربها بنفسك.',
+    tagReal: 'مشروع حقيقي',
+    tagDemo: 'ديمو تفاعلي',
+    tryIt: 'جرّبه',
+    featured: {
+      damas: {
+        title: 'مطعم دمس — منيو تفاعلي على شكل كتاب',
+        body: 'منيو رقمي بتقليب صفحات زي الكتاب الحقيقي لمطعم مصري في الرياض. عربي من اليمين للشمال، متجاوب مع الموبايل، وبهوية المطعم (الأحمر والذهبي).',
+        book: 'قائمة الطعام',
+      },
+      lion: {
+        title: 'Egypt Lion Auto Service — متجر Shopify لقطع غيار السيارات',
+        body: 'متجر منظّم حسب موديلات بيجو وسنين الصنع، مع تعديلات مخصّصة على الثيم (قوائم بعناوين على سطرين، صور الأقسام في المنيو).',
+      },
+      bot: {
+        title: 'بوت واتساب للمتاجر',
+        body: 'يرد على العملاء ٢٤ ساعة، ياخد الطلب كامل، ويسجّله تلقائياً في جدول.',
+      },
+      library: {
+        title: 'نموذج أولي تفاعلي — مكتبة حكايات',
+        body: 'Prototype لمكتبة رقمية للأطفال: تصنيفات، قصص مصورة، قراءة بصوت، وأسئلة بنجوم.',
+      },
+    },
     conceptsTitle: 'نماذج تصميم',
     conceptsNote: 'نماذج صمّمتها لأماكن مختلفة، معروضة بدون أسماء أو شعارات. اضغط على أي نموذج لتجرّبه.',
     open: 'جرّب النموذج',
@@ -219,6 +243,30 @@ const en: Dict = {
   work: {
     title: 'Work',
     realTitle: 'Live work',
+    featuredTitle: 'Selected work',
+    featuredNote: 'Real client projects, plus interactive demos you can try yourself.',
+    tagReal: 'Client project',
+    tagDemo: 'Interactive demo',
+    tryIt: 'Try it',
+    featured: {
+      damas: {
+        title: 'Damas Restaurant — flipbook digital menu',
+        body: 'A page-turning digital menu for an Egyptian restaurant in Riyadh. Right-to-left Arabic, fully responsive, in the restaurant’s red & gold identity.',
+        book: 'Menu',
+      },
+      lion: {
+        title: 'Egypt Lion Auto Service — Shopify auto-parts store',
+        body: 'A store organised by Peugeot model and year range, with custom theme work (two-line menu titles, collection images in the drawer).',
+      },
+      bot: {
+        title: 'WhatsApp bot for stores',
+        body: 'Answers customers 24/7, takes the full order and logs it to a sheet automatically.',
+      },
+      library: {
+        title: 'Interactive prototype — kids’ library',
+        body: 'A clickable prototype for a kids’ digital library: categories, illustrated stories, read-aloud and quizzes with stars.',
+      },
+    },
     conceptsTitle: 'Design concepts',
     conceptsNote: 'Designs I made for different places, shown without names or logos. Tap any one to try it.',
     open: 'Try it',
