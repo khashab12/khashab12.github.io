@@ -71,7 +71,7 @@ function StepVisual({ step }: { step: number }) {
     return (
       <div className="flex h-full flex-col items-center justify-center gap-4">
         <div className="grid grid-cols-7 gap-1.5" dir="ltr">
-          {Array.from({ length: 14 }, (_, i) => (
+          {Array.from({ length: 7 }, (_, i) => (
             <m.span
               key={i}
               initial={{ backgroundColor: 'rgba(238,242,240,0.12)' }}
@@ -82,7 +82,7 @@ function StepVisual({ step }: { step: number }) {
           ))}
         </div>
         <div className="flex items-center gap-3">
-          <span className="font-display text-4xl font-bold text-saffron">{formatNumber(14, lang)}</span>
+          <span className="font-display text-4xl font-bold text-saffron">{formatNumber(7, lang)}</span>
           <span className="text-paper/80">{v.days}</span>
           <span className="rounded-full bg-paper/10 px-3 py-1 text-sm text-paper">{v.free}</span>
         </div>

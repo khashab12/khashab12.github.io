@@ -78,13 +78,13 @@ const ar = {
     steps: [
       { title: 'أدرس البراند الخاص بك', body: 'الشعار، الألوان، الخطوط، وأسلوب المكان.' },
       { title: 'أبني نموذجًا بألوانك وشعارك', body: 'ترى منيو مكانك جاهزًا قبل أي التزام.' },
-      { title: 'تجرّبه ١٤ يومًا مجانًا', body: 'أي تعديل خلال فترة التجربة مجاني.' },
+      { title: 'تجرّبه ٧ أيام مجانًا', body: 'أي تعديل خلال فترة التجربة مجاني.' },
       { title: 'تختار الطريقة المناسبة لك', body: 'بعد التجربة، أحد خيارين:' },
     ],
     visual: {
       logo: 'شعارك',
       place: 'مكانك',
-      days: 'يوم',
+      days: 'أيام',
       free: 'تعديلات مجانية',
     },
     plans: [
@@ -226,7 +226,7 @@ const en: Dict = {
     steps: [
       { title: 'I study your brand', body: 'Logo, colors, type and the feel of the place.' },
       { title: 'I build a demo in your colors and logo', body: 'You see your own menu, ready, before committing to anything.' },
-      { title: 'You try it free for 14 days', body: 'Any change during the trial is free.' },
+      { title: 'You try it free for 7 days', body: 'Any change during the trial is free.' },
       { title: 'You choose what suits you', body: 'After the trial, one of two options:' },
     ],
     visual: {
