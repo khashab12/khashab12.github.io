@@ -3,7 +3,7 @@ export type Lang = 'ar' | 'en'
 
 const ar = {
   meta: {
-    title: 'محمد الخشاب — مواقع ومنيو إلكتروني للكافيهات والمطاعم',
+    title: 'محمد الخشاب — مواقع إلكترونية للعيادات والمتاجر والكافيهات وكل المشاريع',
   },
   skip: 'تخطَّ إلى المحتوى',
   nav: {
@@ -18,23 +18,24 @@ const ar = {
   hero: {
     eyebrow: 'مطوّر واجهات · القاهرة',
     name: 'محمد الخشاب',
-    line: 'أصمّم مواقع ومنيو إلكتروني للكافيهات والمطاعم، بهوية البراند الخاص بك',
-    phoneLabel: 'نموذج منيو إلكتروني يتحرك تلقائيًا',
+    line: 'أصمّم مواقع إلكترونية لمشروعك — عيادة، متجر، كافيه أو مطعم، أو أي نشاط — بهوية البراند الخاص بك، وتجيب لك عملاء أكثر',
+    phoneLabel: 'نموذج موقع يتحرك تلقائيًا',
   },
   features: [
-    'منيو بالأسعار والسعرات',
-    'موقع الفرع على الخريطة',
-    'زر طلب عبر واتساب',
-    'رابط تقييم جوجل',
+    'مواقع للعيادات',
+    'منيو للكافيهات والمطاعم',
+    'صفحات للمتاجر والبراندات',
+    'حجز وطلب عبر واتساب',
+    'الخدمات والأسعار والعروض',
+    'الفروع على الخريطة',
     'عربي / English',
-    'وضع ليلي',
     'ألوان وشعار البراند',
   ],
   about: {
     title: 'عنّي',
     body: [
       'أنا محمد، مطوّر واجهات أمامية مقيم في القاهرة، وطالب هندسة إلكترونيات واتصالات في جامعة ٦ أكتوبر.',
-      'أصمّم وأبني مواقع ومنيوهات رقمية للكافيهات والمطاعم في مصر والسعودية، وأدير إعلاناتها. أفضّل أن ترى الشغل بنفسك قبل أن تدفع، لذلك أبدأ دائمًا بنموذج مجاني بألوانك وشعارك.',
+      'أصمّم وأبني مواقع إلكترونية للمشاريع في مصر والسعودية: عيادات ومجمعات طبية، متاجر وبراندات، كافيهات ومطاعم، وأي نشاط يحتاج واجهة احترافية تجيب له عملاء. وأدير الإعلانات وأجهّز بوتات الرد على الواتساب. أفضّل أن ترى الشغل بنفسك قبل أن تدفع، لذلك أبدأ دائمًا بنموذج مجاني بألوانك وشعارك.',
     ],
     facts: [
       { label: 'الدراسة', value: 'هندسة إلكترونيات واتصالات — جامعة ٦ أكتوبر' },
@@ -45,27 +46,27 @@ const ar = {
   services: {
     title: 'الخدمات',
     menu: {
-      title: 'موقع ومنيو إلكتروني لمكانك',
-      body: 'صفحة سريعة على الجوال، مصممة بألوان وشعار البراند الخاص بك.',
-      extras: 'وأي إضافة يحتاجها مكانك، زي الطلب والدفع من الموقع نفسه أو أي طريقة تناسبك لاستلام الطلبات، نضيفها بسعر منفصل.',
-      features: ['المنيو كامل بالأسعار', 'موقع المكان على الخريطة', 'زر طلب عبر واتساب', 'رابط تقييم جوجل', 'عربي وإنجليزي', 'السعرات الحرارية', 'وضع ليلي'],
+      title: 'موقع إلكتروني لمشروعك',
+      body: 'موقع سريع على الجوال بهوية البراند الخاص بك، يعرض خدماتك أو منتجاتك أو منيوك، ويحوّل الزائر لعميل بضغطة.',
+      extras: 'وأي إضافة يحتاجها مشروعك، زي الحجز أو الطلب والدفع من الموقع نفسه، أو بوت يرد على عملائك في الواتساب، نضيفها بسعر منفصل.',
+      features: ['الخدمات أو المنتجات أو المنيو بالأسعار', 'العروض والأقسام والفروع', 'زر حجز أو طلب عبر واتساب', 'الموقع على الخريطة', 'رابط تقييم جوجل', 'عربي وإنجليزي', 'وضع ليلي'],
       paletteLabel: 'جرّب ألوانًا مختلفة',
       preview: {
-        place: 'مكانك',
-        category: 'قهوة ساخنة',
+        place: 'مشروعك',
+        category: 'الخدمات',
         items: [
-          { name: 'لاتيه', cal: '١٩٠ سعرة', price: '١٨' },
-          { name: 'كورتادو', cal: '١٢٠ سعرة', price: '١٦' },
-          { name: 'إسبريسو', cal: '١٠ سعرات', price: '١٢' },
+          { name: 'الباقة الأساسية', cal: 'الأكثر طلبًا', price: '٢٩٩' },
+          { name: 'الباقة المميزة', cal: 'عرض الشهر', price: '٤٥٠' },
+          { name: 'استشارة', cal: '٣٠ دقيقة', price: '١٥٠' },
         ],
-        order: 'اطلب عبر واتساب',
+        order: 'احجز أو اطلب عبر واتساب',
       },
     },
     ads: {
       title: 'إدارة الإعلانات',
       body: 'على كل المنصات التي يستخدمها عملاؤك.',
       platforms: ['TikTok', 'Instagram / Facebook', 'Snapchat', 'Google'],
-      points: ['استهداف الناس القريبين من مكانك', 'تصاميم إعلانية جديدة كل شهر', 'تقرير شهري واضح'],
+      points: ['استهداف الناس القريبين منك', 'تصاميم إعلانية جديدة كل شهر', 'تقرير شهري واضح'],
     },
     shopify: {
       title: 'متاجر Shopify',
@@ -77,13 +78,13 @@ const ar = {
     of: 'من',
     steps: [
       { title: 'أدرس البراند الخاص بك', body: 'الشعار، الألوان، الخطوط، وأسلوب المكان.' },
-      { title: 'أبني نموذجًا بألوانك وشعارك', body: 'ترى منيو مكانك جاهزًا قبل أي التزام.' },
+      { title: 'أبني نموذجًا بألوانك وشعارك', body: 'ترى موقع مشروعك جاهزًا قبل أي التزام.' },
       { title: 'تجرّبه ٧ أيام مجانًا', body: 'أي تعديل خلال فترة التجربة مجاني.' },
       { title: 'تختار الطريقة المناسبة لك', body: 'بعد التجربة، أحد خيارين:' },
     ],
     visual: {
       logo: 'شعارك',
-      place: 'مكانك',
+      place: 'مشروعك',
       days: 'أيام',
       free: 'تعديلات مجانية',
     },
@@ -101,6 +102,10 @@ const ar = {
     tagDemo: 'ديمو تفاعلي',
     tryIt: 'جرّبه',
     featured: {
+      tiffany: {
+        title: 'تيفاني كلينك — موقع عيادة بثلاثة فروع',
+        body: 'موقع لعيادة جلدية وتجميل وأسنان في الرياض: الخدمات والأسعار لكل فرع، العروض، الأطباء، الأسئلة الشائعة، والحجز عبر واتساب الفرع. عربي وإنجليزي، بهوية العيادة (البيج والذهبي).',
+      },
       damas: {
         title: 'مطعم دمس — منيو تفاعلي على شكل كتاب',
         body: 'منيو رقمي بتقليب صفحات زي الكتاب الحقيقي لمطعم مصري في الرياض. عربي من اليمين للشمال، متجاوب مع الموبايل، وبهوية المطعم (الأحمر والذهبي).',
@@ -136,7 +141,7 @@ const ar = {
   },
   contact: {
     title: 'تواصل معي',
-    body: 'أرسل لي اسم مكانك، وأجهّز لك نموذجًا مجانيًا بألوانك وشعارك.',
+    body: 'أرسل لي اسم مشروعك، وأجهّز لك نموذجًا مجانيًا بألوانك وشعارك.',
     whatsapp: 'واتساب',
     instagram: 'إنستقرام',
     email: 'البريد الإلكتروني',
@@ -151,7 +156,7 @@ export type Dict = typeof ar
 
 const en: Dict = {
   meta: {
-    title: 'Mohamed Elkhashab — Websites & digital menus for cafés and restaurants',
+    title: 'Mohamed Elkhashab — Websites for clinics, stores, cafés and any business',
   },
   skip: 'Skip to content',
   nav: {
@@ -166,23 +171,24 @@ const en: Dict = {
   hero: {
     eyebrow: 'Frontend developer · Cairo',
     name: 'Mohamed Elkhashab',
-    line: 'I build websites and digital menus for cafés and restaurants, in your brand’s own look',
-    phoneLabel: 'A digital menu example, scrolling automatically',
+    line: 'I build websites for your business — a clinic, a store, a café or restaurant, or anything else — in your brand’s own look, built to bring you more customers',
+    phoneLabel: 'A website example, scrolling automatically',
   },
   features: [
-    'Menu with prices & calories',
-    'Location on the map',
-    'WhatsApp order button',
-    'Google review link',
+    'Clinic websites',
+    'Café & restaurant menus',
+    'Store & brand pages',
+    'WhatsApp booking & orders',
+    'Services, prices & offers',
+    'Branches on the map',
     'Arabic / English',
-    'Dark mode',
     'Your brand colors & logo',
   ],
   about: {
     title: 'About',
     body: [
       'I’m Mohamed, a frontend developer based in Cairo and an Electronics & Communications Engineering student at October 6 University.',
-      'I design and build websites and digital menus for cafés and restaurants in Egypt and Saudi Arabia, and run their ads. I’d rather you see the work before you pay, so I always start with a free demo in your colors and logo.',
+      'I design and build websites for businesses in Egypt and Saudi Arabia: clinics and medical centers, stores and brands, cafés and restaurants, and any business that needs a professional front that brings in customers. I also run ads and set up WhatsApp auto-reply bots. I’d rather you see the work before you pay, so I always start with a free demo in your colors and logo.',
     ],
     facts: [
       { label: 'Study', value: 'Electronics & Communications Eng. — October 6 University' },
@@ -193,27 +199,27 @@ const en: Dict = {
   services: {
     title: 'Services',
     menu: {
-      title: 'Website + digital menu for your place',
-      body: 'A fast, phone-first page designed in your brand colors and logo.',
-      extras: 'Need something extra, like ordering and paying on the site itself or any other way to receive orders? I can add it, priced separately.',
-      features: ['Full menu with prices', 'Location on the map', 'WhatsApp order button', 'Google review link', 'Arabic & English', 'Calories', 'Dark mode'],
+      title: 'A website for your business',
+      body: 'A fast, phone-first site in your brand identity that shows your services, products or menu, and turns visitors into customers in one tap.',
+      extras: 'Need something extra, like booking, ordering and paying on the site itself, or a bot that answers your customers on WhatsApp? I can add it, priced separately.',
+      features: ['Services, products or menu with prices', 'Offers, sections and branches', 'WhatsApp booking / order button', 'Location on the map', 'Google review link', 'Arabic & English', 'Dark mode'],
       paletteLabel: 'Try a different palette',
       preview: {
-        place: 'Your place',
-        category: 'Hot coffee',
+        place: 'Your business',
+        category: 'Services',
         items: [
-          { name: 'Latte', cal: '190 kcal', price: '18' },
-          { name: 'Cortado', cal: '120 kcal', price: '16' },
-          { name: 'Espresso', cal: '10 kcal', price: '12' },
+          { name: 'Basic package', cal: 'Most popular', price: '299' },
+          { name: 'Premium package', cal: 'This month’s offer', price: '450' },
+          { name: 'Consultation', cal: '30 min', price: '150' },
         ],
-        order: 'Order on WhatsApp',
+        order: 'Book or order on WhatsApp',
       },
     },
     ads: {
       title: 'Ads management',
       body: 'On every platform your customers use.',
       platforms: ['TikTok', 'Instagram / Facebook', 'Snapchat', 'Google'],
-      points: ['Targeting people near your place', 'New ad creatives every month', 'A clear monthly report'],
+      points: ['Targeting people near you', 'New ad creatives every month', 'A clear monthly report'],
     },
     shopify: {
       title: 'Shopify stores',
@@ -225,13 +231,13 @@ const en: Dict = {
     of: 'of',
     steps: [
       { title: 'I study your brand', body: 'Logo, colors, type and the feel of the place.' },
-      { title: 'I build a demo in your colors and logo', body: 'You see your own menu, ready, before committing to anything.' },
+      { title: 'I build a demo in your colors and logo', body: 'You see your own site, ready, before committing to anything.' },
       { title: 'You try it free for 7 days', body: 'Any change during the trial is free.' },
       { title: 'You choose what suits you', body: 'After the trial, one of two options:' },
     ],
     visual: {
       logo: 'Your logo',
-      place: 'Your place',
+      place: 'Your business',
       days: 'days',
       free: 'Free changes',
     },
@@ -249,6 +255,10 @@ const en: Dict = {
     tagDemo: 'Interactive demo',
     tryIt: 'Try it',
     featured: {
+      tiffany: {
+        title: 'Tiffany Clinic — a three-branch clinic website',
+        body: 'A site for a dermatology, cosmetic and dental clinic in Riyadh: services and prices per branch, offers, doctors, FAQ, and booking through each branch’s WhatsApp. Arabic & English, in the clinic’s beige & gold identity.',
+      },
       damas: {
         title: 'Damas Restaurant — flipbook digital menu',
         body: 'A page-turning digital menu for an Egyptian restaurant in Riyadh. Right-to-left Arabic, fully responsive, in the restaurant’s red & gold identity.',
@@ -284,7 +294,7 @@ const en: Dict = {
   },
   contact: {
     title: 'Get in touch',
-    body: 'Send me your place’s name and I’ll prepare a free demo in your colors and logo.',
+    body: 'Send me your business’s name and I’ll prepare a free demo in your colors and logo.',
     whatsapp: 'WhatsApp',
     instagram: 'Instagram',
     email: 'Email',
