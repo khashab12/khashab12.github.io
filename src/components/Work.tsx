@@ -8,8 +8,9 @@ import { External } from './Icons'
 const ConceptModal = lazy(() => import('./ConceptModal').then((mod) => ({ default: mod.ConceptModal })))
 const INITIAL = 8
 
-type FeaturedId = 'damas' | 'lion' | 'bot' | 'library'
+type FeaturedId = 'tiffany' | 'damas' | 'lion' | 'bot' | 'library'
 const FEATURED: { id: FeaturedId; real: boolean; url?: string; img?: string; tags: string[] }[] = [
+  { id: 'tiffany', real: true, url: 'https://khashab12.github.io/menus/tiffany-t4c8/', tags: ['Clinic', 'Multi-branch', 'AR / EN', 'WhatsApp booking'] },
   { id: 'damas', real: true, url: 'https://www.ksadamas.com/', tags: ['Next.js', 'TypeScript', 'Tailwind', 'react-pageflip', 'RTL'] },
   { id: 'lion', real: true, tags: ['Shopify', 'Horizon theme', 'Liquid'] },
   { id: 'bot', real: false, url: 'https://khashab12.github.io/menus/demo-bot/', img: 'work/bot.webp', tags: ['WhatsApp', 'Automation', 'Google Sheets'] },
@@ -39,7 +40,21 @@ export function Work() {
             const body = (
               <>
                 <span className="relative block aspect-[4/3] overflow-hidden bg-line">
-                  {f.id === 'damas' ? (
+                  {f.id === 'tiffany' ? (
+                    <span className="flex h-full flex-col items-center justify-center gap-4 bg-gradient-to-br from-[#efe6dd] via-[#f6f0ea] to-[#e6d8c8]">
+                      <span className="grid size-36 place-items-center rounded-full border border-[#b89b67]/60 bg-white shadow-[0_18px_40px_rgba(113,98,83,.18)]">
+                        <span className="flex flex-col items-center leading-tight">
+                          <span className="whitespace-nowrap font-display text-lg text-[#716253]">تيفاني كلينك</span>
+                          <span className="mt-1 whitespace-nowrap text-[9px] tracking-[0.25em] text-[#9a8e82]" dir="ltr">TIFFANY CLINIC</span>
+                        </span>
+                      </span>
+                      <span className="flex flex-wrap justify-center gap-2 px-4 text-xs text-[#716253]">
+                        {['الياسمين', 'الواحة', 'قرطبة'].map((m) => (
+                          <span key={m} className="whitespace-nowrap rounded-full border border-[#b89b67]/50 bg-white/60 px-3 py-1">{m}</span>
+                        ))}
+                      </span>
+                    </span>
+                  ) : f.id === 'damas' ? (
                     <span className="flex h-full items-center justify-center bg-[#7a1416]">
                       <span className="flex h-[78%] w-[52%] flex-col items-center justify-center rounded-e-xl rounded-s-sm border-4 border-[#c9a24a] bg-[#8e1b1e] font-display text-4xl font-bold text-[#e7c873] shadow-[8px_10px_0_rgba(0,0,0,.25)]">
                         دمس
