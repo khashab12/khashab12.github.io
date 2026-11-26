@@ -540,7 +540,7 @@ grid.innerHTML=IDEAS.map((x,i)=>`<li class="reveal" style="--d:${(i%3)*90}ms" da
  <h3>${x.t}</h3><div class="en">${x.en}</div><p>${x.one}</p>
  <div class="roles soft"><div><span class="who a">عائشة</span><span>${x.a}</span></div><div><span class="who m">Two Tabs</span><span>${x.m}</span></div></div>
  <div class="foot"><span>${x.f.map(f=>`<span class="tag">${F.find(z=>z[0]===f)[1]}</span>`).join(' ')}</span><span class="more">التفاصيل ${P('<path d="M15 6l-6 6 6 6"/>').replace('<svg','<svg width="16" height="16"')}</span></div></article></li>`).join('');
-function count(){const v=$$('#grid li').filter(l=>l.style.display!=='none').length;$('#count').textContent=`${ar(v)} أفكار`}
+function count(){const v=$$('#grid li').filter(l=>l.style.display!=='none').length;$('#count').textContent=v===1?'فكرة واحدة':v===2?'فكرتين':`${ar(v)} أفكار`}
 fEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const f=b.dataset.f;
  fEl.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
  $$('#grid li').forEach(li=>{const show=f==='all'||li.dataset.f.split(' ').includes(f);
