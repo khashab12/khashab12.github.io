@@ -13,8 +13,8 @@ for pair in $SITES; do
   dir="$OUT/$id"; mkdir -p "$dir"
   curl -fsSL "$host/" -o "$dir/index.html"
   # every same-site file the page references (HTML, inline CSS/JS strings)
-  grep -oE '["'"'"'(]\.?/?(assets/[^"'"'"' )?#]+|[A-Za-z0-9_-]+\.(png|jpg|jpeg|webp|avif|svg|ico|webmanifest|json|woff2?|mp4|webm|css|js))' "$dir/index.html" \
-    | sed -E 's/^["'"'"'(]//; s#^\./##; s#^/##' | sort -u | while read -r f; do
+  grep -oE '["'"'"'(`]\.?/?([A-Za-z0-9_-]+/)*[A-Za-z0-9_.-]+\.(png|jpe?g|gif|webp|avif|svg|ico|webmanifest|json|woff2?|mp4|webm|css|js)' "$dir/index.html" \
+    | sed -E 's/^["'"'"'(`]//; s#^\./##; s#^/##' | sort -u | while read -r f; do
       [ -z "$f" ] && continue
       mkdir -p "$dir/$(dirname "$f")"
       curl -fsSL "$host/$f" -o "$dir/$f" 2>/dev/null || rm -f "$dir/$f"
