@@ -2,10 +2,10 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { AnimatePresence, m, useScroll, useTransform, type MotionValue } from 'motion/react'
 import { useLang } from '../lib/lang'
 import { formatNumber } from '../i18n'
-import { asset, concepts, demoPreview, demoUrl, demos, type Demo } from '../lib/projects'
+import { asset, concepts, demoHref, demoImage, demoUrl, demos, type Demo } from '../lib/projects'
 import { prefersCalm } from '../lib/fx'
 import { PhoneFrame } from './PhoneFrame'
-import { Reveal, SectionHead } from './Reveal'
+import { SectionHead } from './Reveal'
 import { External } from './Icons'
 import { Marquee } from './Marquee'
 
@@ -17,14 +17,10 @@ type Featured = { id: FeaturedId; by: 'mohamed' | 'yousef'; real: boolean; url?:
 /** Best first. Each card stacks over the previous one while scrolling. */
 const FEATURED: Featured[] = [
   { id: 'tiffany', by: 'mohamed', real: true, url: 'https://khashab12.github.io/menus/tiffany-t4c8/', tags: ['Clinic', 'Multi-branch', 'AR / EN', 'WhatsApp booking'], tone: '#b89b67' },
-  { id: 'volt', by: 'yousef', real: false, url: demoUrl('volt'), tags: ['E-commerce', 'Cart', 'Wishlist', 'Accounts'], tone: '#e8553a' },
   { id: 'damas', by: 'mohamed', real: true, url: 'https://www.ksadamas.com/', tags: ['Next.js', 'TypeScript', 'react-pageflip', 'RTL'], tone: '#a60e16' },
-  { id: 'rukn', by: 'yousef', real: false, url: demoUrl('rukn'), tags: ['Real estate', 'Installment calculator'], tone: '#c2702e' },
   { id: 'lion', by: 'mohamed', real: true, tags: ['Shopify', 'Horizon theme', 'Liquid'], tone: '#1d4a46' },
-]
-const MORE: { id: FeaturedId; url: string; img: string; tags: string[] }[] = [
-  { id: 'bot', url: 'https://khashab12.github.io/menus/demo-bot/', img: 'work/bot.webp', tags: ['WhatsApp', 'Automation'] },
-  { id: 'library', url: 'https://khashab12.github.io/menus/demo-library/', img: 'work/library.webp', tags: ['Prototype', 'Speech API'] },
+  { id: 'volt', by: 'yousef', real: false, url: demoUrl('volt'), tags: ['E-commerce', 'Cart', 'Wishlist', 'Accounts'], tone: '#e8553a' },
+  { id: 'rukn', by: 'yousef', real: false, url: demoUrl('rukn'), tags: ['Real estate', 'Installment calculator'], tone: '#c2702e' },
 ]
 
 function useDesk() {
@@ -125,7 +121,7 @@ function Visual({ f }: { f: Featured }) {
           <span className="size-2.5 rounded-full bg-[#28c840]" />
         </div>
         <div className="relative aspect-[16/10]">
-          <img src={demoPreview(demos.find((d) => d.id === f.id)!.img)} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
+          <img src={demoImage(demos.find((d) => d.id === f.id)!)} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover object-top" />
           <LiveScreen src={f.url!} width={1280} />
         </div>
       </div>
@@ -143,7 +139,7 @@ function StackCard({ f, i, total, progress }: { f: Featured; i: number; total: n
   const body = (
     <m.article
       style={desk ? { scale } : undefined}
-      className="glass relative grid h-full origin-top overflow-hidden rounded-[2rem] md:grid-cols-[0.9fr_1.1fr]"
+      className="glass solid relative grid h-full origin-top overflow-hidden rounded-[2rem] md:grid-cols-[0.9fr_1.1fr]"
     >
       <div aria-hidden className="pointer-events-none absolute -start-24 -top-24 size-80 rounded-full opacity-35 blur-3xl" style={{ background: f.tone }} />
       <div className="relative z-10 flex flex-col justify-between gap-6 p-6 sm:p-9">
@@ -197,14 +193,14 @@ function DemoCard({ d }: { d: Demo }) {
   const { t, lang } = useLang()
   return (
     <a
-      href={demoUrl(d.id)}
+      href={demoHref(d)}
       target="_blank"
       rel="noopener"
       data-cursor={t.work.cursorTry}
       className="glass group flex h-full w-[min(82vw,420px)] shrink-0 flex-col overflow-hidden rounded-[1.75rem] p-2 transition-transform duration-500 hover:-translate-y-1.5"
     >
       <span className="relative block aspect-[1365/918] overflow-hidden rounded-[1.25rem]">
-        <img src={demoPreview(d.img)} alt="" width={1365} height={918} loading="lazy" decoding="async" className="h-full w-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" />
+        <img src={demoImage(d)} alt="" width={1365} height={918} loading="lazy" decoding="async" className="h-full w-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" />
         <span className="glass-nav absolute start-3 top-3 rounded-full px-2.5 py-0.5 text-xs text-ink">{t.work.filters[d.cat]}</span>
       </span>
       <span className="flex flex-1 flex-col px-3 pb-3 pt-4">
@@ -222,7 +218,7 @@ function DemoCard({ d }: { d: Demo }) {
   )
 }
 
-const FILTERS = ['all', 'store', 'food', 'service'] as const
+const FILTERS = ['all', 'store', 'food', 'service', 'bot'] as const
 
 /** Pinned horizontal gallery on desktop; a native swipe rail on touch and reduced motion. */
 function DemoRail() {
@@ -233,9 +229,48 @@ function DemoRail() {
   const track = useRef<HTMLDivElement>(null)
   const [pinned, setPinned] = useState(false)
 
+  const railBox = useRef<HTMLDivElement>(null)
   useEffect(() => {
     setPinned(!prefersCalm() && matchMedia('(min-width: 900px) and (pointer: fine)').matches)
   }, [])
+
+  // Touch / narrow screens: a native swipe rail that glides to the next card every few seconds,
+  // pauses while the visitor touches it, and only runs while it is on screen.
+  useEffect(() => {
+    const box = railBox.current
+    if (pinned || !box || prefersCalm()) return
+    let visible = false
+    let pausedUntil = 0
+    const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting), { threshold: 0.4 })
+    io.observe(box)
+    const hold = () => (pausedUntil = performance.now() + 6000)
+    box.addEventListener('pointerdown', hold, { passive: true })
+    box.addEventListener('touchstart', hold, { passive: true })
+    box.addEventListener('wheel', hold, { passive: true })
+    const tick = setInterval(() => {
+      if (!visible || performance.now() < pausedUntil || document.hidden) return
+      const items = Array.from(box.querySelectorAll<HTMLElement>('.rail-item'))
+      if (items.length < 2) return
+      const mid = box.getBoundingClientRect().left + box.clientWidth / 2
+      let cur = 0
+      let best = Infinity
+      items.forEach((el, i) => {
+        const r = el.getBoundingClientRect()
+        const d = Math.abs(r.left + r.width / 2 - mid)
+        if (d < best) ((best = d), (cur = i))
+      })
+      const wrap = cur + 1 >= items.length
+      const r = items[wrap ? 0 : cur + 1].getBoundingClientRect()
+      box.scrollBy({ left: r.left + r.width / 2 - mid, behavior: wrap ? 'auto' : 'smooth' })
+    }, 3200)
+    return () => {
+      io.disconnect()
+      clearInterval(tick)
+      box.removeEventListener('pointerdown', hold)
+      box.removeEventListener('touchstart', hold)
+      box.removeEventListener('wheel', hold)
+    }
+  }, [pinned, filter])
 
   useEffect(() => {
     if (!pinned || !pin.current || !track.current) return
@@ -264,7 +299,7 @@ function DemoRail() {
   return (
     <div ref={pin} className={pinned ? 'flex min-h-svh flex-col justify-center overflow-hidden py-10' : 'py-10'}>
       <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
-        <SectionHead title={<>{t.work.demosTitle} <span className="text-muted tabular-nums">{formatNumber(demos.length, lang)}</span></>} sub={t.work.demosNote} />
+        <SectionHead title={<>{t.work.demosTitle} <span className="text-muted tabular-nums">{formatNumber(demos.filter((d) => !d.featured).length, lang)}</span></>} sub={t.work.demosNote} />
         <div role="group" aria-label={t.work.demosTitle} className="glass-soft rail mx-auto mt-8 flex w-fit max-w-full gap-1 overflow-x-auto rounded-full p-1">
           {FILTERS.map((k) => (
             <button
@@ -279,7 +314,7 @@ function DemoRail() {
           ))}
         </div>
       </div>
-      <div className={pinned ? 'mt-12' : 'rail mt-10 overflow-x-auto pb-4'}>
+      <div ref={railBox} className={pinned ? 'mt-12' : 'rail mt-10 overflow-x-auto pb-4'}>
         <div ref={track} className="flex w-max gap-4 sm:gap-5 px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-1240px)/2+1.5rem))]">
           <AnimatePresence mode="popLayout">
             {list.map((d) => (
@@ -314,33 +349,6 @@ export function Work() {
           ))}
         </ul>
 
-        <ul className="mt-6 grid gap-5 md:grid-cols-2">
-          {MORE.map((x) => {
-            const copy = t.work.featured[x.id]
-            return (
-              <li key={x.id}>
-                <Reveal className="h-full">
-                  <a href={x.url} target="_blank" rel="noopener" data-cursor={t.work.cursorTry} className="glass group grid h-full grid-cols-[0.9fr_1.1fr] gap-1 overflow-hidden rounded-[1.75rem] p-2 transition-transform duration-500 hover:-translate-y-1">
-                    <span className="relative overflow-hidden rounded-[1.25rem]">
-                      <img src={asset(x.img)} alt="" width={600} height={450} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    </span>
-                    <span className="flex flex-col p-5">
-                      <span className="flex flex-wrap gap-2">
-                        <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-ink-2">{t.work.tagDemo}</span>
-                      </span>
-                      <span className="mt-3 font-display text-lg font-bold leading-snug">{copy.title}</span>
-                      <span className="mt-1.5 text-sm text-ink-2">{copy.body}</span>
-                      <span className="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-medium text-accent-strong">
-                        {t.work.tryIt}
-                        <External width={16} height={16} />
-                      </span>
-                    </span>
-                  </a>
-                </Reveal>
-              </li>
-            )
-          })}
-        </ul>
       </div>
 
       <div className="mt-16">

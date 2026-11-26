@@ -59,10 +59,10 @@ export default function App() {
         <main id="main">
           <Hero />
           <FeatureStrip />
-          <Work />
-          <Services />
-          <HowIWork />
           <Team />
+          <Services />
+          <Work />
+          <HowIWork />
           <Testimonials />
           <Contact />
         </main>

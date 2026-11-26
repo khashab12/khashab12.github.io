@@ -1,54 +1,308 @@
 [
-  { "id": "volt", "by": "yousef", "cat": "store", "url": "https://volt-mobile-eg.surge.sh/", "img": 1, "featured": true,
-    "name": { "ar": "ڤولت — متجر موبايلات", "en": "Volt — phone store" },
-    "hook": { "ar": "زبونك يشتري من سريره", "en": "Your customer buys from bed" },
-    "body": { "ar": "سلة، مفضلة، تسجيل دخول، وفلاتر حسب الماركة والسعر.", "en": "Cart, wishlist, sign-in, and filters by brand and price." } },
-  { "id": "mazag", "by": "yousef", "cat": "food", "url": "https://mazag-coffee-eg.surge.sh/", "img": 2,
-    "name": { "ar": "مزاج — كافيه", "en": "Mazag — café" },
-    "hook": { "ar": "قائمتك في جيب كل زبون", "en": "Your menu in every customer’s pocket" },
-    "body": { "ar": "اختر مشروبك وجرّب الطلب.", "en": "Pick a drink and try ordering." } },
-  { "id": "rukn", "by": "yousef", "cat": "service", "url": "https://rukn-developments.surge.sh/", "img": 3, "featured": true,
-    "name": { "ar": "رُكن — تطوير عقاري", "en": "Rukn — real estate" },
-    "hook": { "ar": "تُباع الوحدة قبل المكالمة الأولى", "en": "The unit sells before the first call" },
-    "body": { "ar": "تصفّح المشروعات واحسب قسطك بنفسك.", "en": "Browse projects and work out your installments." } },
-  { "id": "azm", "by": "yousef", "cat": "service", "url": "https://azm-athletic.surge.sh/", "img": 4,
-    "name": { "ar": "عزم — جيم ولياقة", "en": "Azm — gym & fitness" },
-    "hook": { "ar": "جدول لا يحتاج إلى شرح", "en": "A schedule that explains itself" },
-    "body": { "ar": "الحصص على يومك، والباقات قدامك بلا التفاف.", "en": "Classes laid out by day, plans in plain sight." } },
-  { "id": "raqy", "by": "yousef", "cat": "store", "url": "https://raqy.surge.sh/", "img": 5,
-    "name": { "ar": "راقي — متجر ملابس", "en": "Raqy — clothing store" },
-    "hook": { "ar": "واجهة متجرك في جيب الزبون", "en": "Your shopfront in the customer’s pocket" },
-    "body": { "ar": "ملابس بصورها، وفلاتر، ودليل مقاسات.", "en": "Real product photos, filters and a size guide." } },
-  { "id": "ibtesama", "by": "yousef", "cat": "service", "url": "https://ibtesama-dental.surge.sh/", "img": 6,
-    "name": { "ar": "ابتسامة — عيادة أسنان", "en": "Ibtesama — dental clinic" },
-    "hook": { "ar": "الثقة تبدأ قبل الكرسي", "en": "Trust starts before the chair" },
-    "body": { "ar": "الخدمات والمعلومات واضحة، فيطمئن المريض قبل أن يدخل.", "en": "Clear services and info, so patients feel sure before they arrive." } },
-  { "id": "eish", "by": "yousef", "cat": "food", "url": "https://eish-w-melh.surge.sh/", "img": 7,
-    "name": { "ar": "عيش وملح — مطعم", "en": "Eish w Melh — restaurant" },
-    "hook": { "ar": "الطعام يُباع بالعين", "en": "Food sells through the eyes" },
-    "body": { "ar": "صور الأطباق والقائمة في صفحة واحدة.", "en": "Dish photos and the menu on one page." } },
-  { "id": "refq", "by": "yousef", "cat": "service", "url": "https://refq-vet-eg.surge.sh/", "img": 8,
-    "name": { "ar": "رفق — عيادة بيطرية", "en": "Refq — vet clinic" },
-    "hook": { "ar": "الحيوان لا ينتظر", "en": "Pets can’t wait" },
-    "body": { "ar": "الأطباء والخدمات وحجز تجريبي، وخطوات للحالات العاجلة.", "en": "Vets, services, sample booking and urgent-case steps." } },
-  { "id": "misk", "by": "yousef", "cat": "store", "url": "https://misk-perfume-eg.surge.sh/", "img": 9,
-    "name": { "ar": "مسك — متجر عطور", "en": "Misk — perfume store" },
-    "hook": { "ar": "الشاشة لا تشمّ، لكن الوصف يفعل", "en": "Screens can’t smell, but words can" },
-    "body": { "ar": "عطور وأطقم هدايا ومفضلة وطلب تجريبي.", "en": "Perfumes, gift sets, wishlist and sample ordering." } },
-  { "id": "qeshta", "by": "yousef", "cat": "food", "url": "https://qeshta-sweets-eg.surge.sh/", "img": 10,
-    "name": { "ar": "قشطة — حلويات", "en": "Qeshta — sweets" },
-    "hook": { "ar": "تُطلب التورتة بمظهرها", "en": "Cakes are ordered by their looks" },
-    "body": { "ar": "قائمة الحلويات وتورت المناسبات مع طلب تجريبي.", "en": "Sweets and occasion cakes, with sample ordering." } },
-  { "id": "mahara", "by": "yousef", "cat": "service", "url": "https://mahara-courses-eg.surge.sh/", "img": 11,
-    "name": { "ar": "مهارة — منصة كورسات", "en": "Mahara — course platform" },
-    "hook": { "ar": "خبرتك تُباع وأنت غائب", "en": "Your expertise sells while you’re away" },
-    "body": { "ar": "كورسات ومدربون وقصص خريجين في منصة واحدة.", "en": "Courses, trainers and graduate stories in one place." } },
-  { "id": "sekka", "by": "yousef", "cat": "service", "url": "https://sekka-trips-eg.surge.sh/", "img": 12,
-    "name": { "ar": "سكّة — وكالة رحلات", "en": "Sekka — travel agency" },
-    "hook": { "ar": "العميل يحسب رحلته بلا اتصال", "en": "Customers price their trip without calling" },
-    "body": { "ar": "ست وجهات في مصر وحاسبة تكلفة مع ملخص.", "en": "Six Egyptian destinations and a cost calculator." } },
-  { "id": "hekaya", "by": "yousef", "cat": "store", "url": "https://hekaya-books-eg.surge.sh/", "img": 13,
-    "name": { "ar": "حكاية — مكتبة كتب", "en": "Hekaya — bookshop" },
-    "hook": { "ar": "يُقلَّب الكتاب قبل أن يُشترى", "en": "Flip through before you buy" },
-    "body": { "ar": "٢٢ كتابًا على رف، مع بحث وفلاتر وسلة.", "en": "22 books on a shelf, with search, filters and a cart." } }
+  {
+    "id": "volt",
+    "by": "yousef",
+    "cat": "store",
+    "url": "https://volt-mobile-eg.surge.sh/",
+    "img": 1,
+    "featured": true,
+    "name": {
+      "ar": "ڤولت — متجر موبايلات",
+      "en": "Volt — phone store"
+    },
+    "hook": {
+      "ar": "زبونك يشتري من سريره",
+      "en": "Your customer buys from bed"
+    },
+    "body": {
+      "ar": "سلة، مفضلة، تسجيل دخول، وفلاتر حسب الماركة والسعر.",
+      "en": "Cart, wishlist, sign-in, and filters by brand and price."
+    }
+  },
+  {
+    "id": "mazag",
+    "by": "yousef",
+    "cat": "food",
+    "url": "https://mazag-coffee-eg.surge.sh/",
+    "img": 2,
+    "name": {
+      "ar": "مزاج — كافيه",
+      "en": "Mazag — café"
+    },
+    "hook": {
+      "ar": "قائمتك في جيب كل زبون",
+      "en": "Your menu in every customer’s pocket"
+    },
+    "body": {
+      "ar": "اختر مشروبك وجرّب الطلب.",
+      "en": "Pick a drink and try ordering."
+    }
+  },
+  {
+    "id": "rukn",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://rukn-developments.surge.sh/",
+    "img": 3,
+    "featured": true,
+    "name": {
+      "ar": "رُكن — تطوير عقاري",
+      "en": "Rukn — real estate"
+    },
+    "hook": {
+      "ar": "تُباع الوحدة قبل المكالمة الأولى",
+      "en": "The unit sells before the first call"
+    },
+    "body": {
+      "ar": "تصفّح المشروعات واحسب قسطك بنفسك.",
+      "en": "Browse projects and work out your installments."
+    }
+  },
+  {
+    "id": "azm",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://azm-athletic.surge.sh/",
+    "img": 4,
+    "name": {
+      "ar": "عزم — جيم ولياقة",
+      "en": "Azm — gym & fitness"
+    },
+    "hook": {
+      "ar": "جدول لا يحتاج إلى شرح",
+      "en": "A schedule that explains itself"
+    },
+    "body": {
+      "ar": "الحصص على يومك، والباقات قدامك بلا التفاف.",
+      "en": "Classes laid out by day, plans in plain sight."
+    }
+  },
+  {
+    "id": "raqy",
+    "by": "yousef",
+    "cat": "store",
+    "url": "https://raqy.surge.sh/",
+    "img": 5,
+    "name": {
+      "ar": "راقي — متجر ملابس",
+      "en": "Raqy — clothing store"
+    },
+    "hook": {
+      "ar": "واجهة متجرك في جيب الزبون",
+      "en": "Your shopfront in the customer’s pocket"
+    },
+    "body": {
+      "ar": "ملابس بصورها، وفلاتر، ودليل مقاسات.",
+      "en": "Real product photos, filters and a size guide."
+    }
+  },
+  {
+    "id": "ibtesama",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://ibtesama-dental.surge.sh/",
+    "img": 6,
+    "name": {
+      "ar": "ابتسامة — عيادة أسنان",
+      "en": "Ibtesama — dental clinic"
+    },
+    "hook": {
+      "ar": "الثقة تبدأ قبل الكرسي",
+      "en": "Trust starts before the chair"
+    },
+    "body": {
+      "ar": "الخدمات والمعلومات واضحة، فيطمئن المريض قبل أن يدخل.",
+      "en": "Clear services and info, so patients feel sure before they arrive."
+    }
+  },
+  {
+    "id": "eish",
+    "by": "yousef",
+    "cat": "food",
+    "url": "https://eish-w-melh.surge.sh/",
+    "img": 7,
+    "name": {
+      "ar": "عيش وملح — مطعم",
+      "en": "Eish w Melh — restaurant"
+    },
+    "hook": {
+      "ar": "الطعام يُباع بالعين",
+      "en": "Food sells through the eyes"
+    },
+    "body": {
+      "ar": "صور الأطباق والقائمة في صفحة واحدة.",
+      "en": "Dish photos and the menu on one page."
+    }
+  },
+  {
+    "id": "library",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://khashab12.github.io/menus/demo-library/",
+    "img": "work/library.webp",
+    "name": {
+      "ar": "نموذج أولي تفاعلي — مكتبة حكايات",
+      "en": "Interactive prototype — kids’ library"
+    },
+    "hook": {
+      "ar": "حكايات بصوت مسموع للأطفال",
+      "en": "Stories read aloud to kids"
+    },
+    "body": {
+      "ar": "تصنيفات، وقصص مصورة، وقراءة بصوت مسموع، وأسئلة بنجوم.",
+      "en": "Categories, illustrated stories, read-aloud and quizzes with stars."
+    }
+  },
+  {
+    "id": "refq",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://refq-vet-eg.surge.sh/",
+    "img": 8,
+    "name": {
+      "ar": "رفق — عيادة بيطرية",
+      "en": "Refq — vet clinic"
+    },
+    "hook": {
+      "ar": "الحيوان لا ينتظر",
+      "en": "Pets can’t wait"
+    },
+    "body": {
+      "ar": "الأطباء والخدمات وحجز تجريبي، وخطوات للحالات العاجلة.",
+      "en": "Vets, services, sample booking and urgent-case steps."
+    }
+  },
+  {
+    "id": "misk",
+    "by": "yousef",
+    "cat": "store",
+    "url": "https://misk-perfume-eg.surge.sh/",
+    "img": 9,
+    "name": {
+      "ar": "مسك — متجر عطور",
+      "en": "Misk — perfume store"
+    },
+    "hook": {
+      "ar": "الشاشة لا تشمّ، لكن الوصف يفعل",
+      "en": "Screens can’t smell, but words can"
+    },
+    "body": {
+      "ar": "عطور وأطقم هدايا ومفضلة وطلب تجريبي.",
+      "en": "Perfumes, gift sets, wishlist and sample ordering."
+    }
+  },
+  {
+    "id": "qeshta",
+    "by": "yousef",
+    "cat": "food",
+    "url": "https://qeshta-sweets-eg.surge.sh/",
+    "img": 10,
+    "name": {
+      "ar": "قشطة — حلويات",
+      "en": "Qeshta — sweets"
+    },
+    "hook": {
+      "ar": "تُطلب التورتة بمظهرها",
+      "en": "Cakes are ordered by their looks"
+    },
+    "body": {
+      "ar": "قائمة الحلويات وتورت المناسبات مع طلب تجريبي.",
+      "en": "Sweets and occasion cakes, with sample ordering."
+    }
+  },
+  {
+    "id": "mahara",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://mahara-courses-eg.surge.sh/",
+    "img": 11,
+    "name": {
+      "ar": "مهارة — منصة كورسات",
+      "en": "Mahara — course platform"
+    },
+    "hook": {
+      "ar": "خبرتك تُباع وأنت غائب",
+      "en": "Your expertise sells while you’re away"
+    },
+    "body": {
+      "ar": "كورسات ومدربون وقصص خريجين في منصة واحدة.",
+      "en": "Courses, trainers and graduate stories in one place."
+    }
+  },
+  {
+    "id": "sekka",
+    "by": "yousef",
+    "cat": "service",
+    "url": "https://sekka-trips-eg.surge.sh/",
+    "img": 12,
+    "name": {
+      "ar": "سكّة — وكالة رحلات",
+      "en": "Sekka — travel agency"
+    },
+    "hook": {
+      "ar": "العميل يحسب رحلته بلا اتصال",
+      "en": "Customers price their trip without calling"
+    },
+    "body": {
+      "ar": "ست وجهات في مصر وحاسبة تكلفة مع ملخص.",
+      "en": "Six Egyptian destinations and a cost calculator."
+    }
+  },
+  {
+    "id": "hekaya",
+    "by": "yousef",
+    "cat": "store",
+    "url": "https://hekaya-books-eg.surge.sh/",
+    "img": 13,
+    "name": {
+      "ar": "حكاية — مكتبة كتب",
+      "en": "Hekaya — bookshop"
+    },
+    "hook": {
+      "ar": "يُقلَّب الكتاب قبل أن يُشترى",
+      "en": "Flip through before you buy"
+    },
+    "body": {
+      "ar": "٢٢ كتابًا على رف، مع بحث وفلاتر وسلة.",
+      "en": "22 books on a shelf, with search, filters and a cart."
+    }
+  },
+  {
+    "id": "bot",
+    "by": "yousef",
+    "cat": "bot",
+    "url": "https://khashab12.github.io/menus/demo-bot/",
+    "img": "work/bot.webp",
+    "name": {
+      "ar": "بوت واتساب للمتاجر",
+      "en": "WhatsApp bot for stores"
+    },
+    "hook": {
+      "ar": "طلباتك تُسجَّل وأنت نائم",
+      "en": "Orders logged while you sleep"
+    },
+    "body": {
+      "ar": "يرد على العملاء ٢٤ ساعة، ويأخذ الطلب كاملًا، ويسجّله تلقائيًا في جدول.",
+      "en": "Answers customers 24/7, takes the full order and logs it to a sheet automatically."
+    }
+  },
+  {
+    "id": "sender",
+    "by": "yousef",
+    "cat": "bot",
+    "url": "https://hamalat-sender-demo.surge.sh/",
+    "img": "work/sender.webp",
+    "name": {
+      "ar": "WhatsApp Campaign Sender",
+      "en": "WhatsApp Campaign Sender"
+    },
+    "hook": {
+      "ar": "برنامج للويندوز",
+      "en": "Windows program"
+    },
+    "body": {
+      "ar": "أرسل رسالتك لقائمة عملائك من ملف إكسل، بفاصل زمني بين كل رسالة.",
+      "en": "Send your message to a customer list from an Excel file, with a delay between messages."
+    }
+  }
 ]

@@ -8,7 +8,7 @@
  *   email:     e.g. 'name@example.com'
  */
 export const team = [
-  { id: 'mohamed', whatsapp: '', instagram: '', email: '' },
+  { id: 'mohamed', whatsapp: '201559683122', instagram: '', email: '' },
   { id: 'yousef', whatsapp: '201041466567', instagram: '', email: '' },
 ]
 

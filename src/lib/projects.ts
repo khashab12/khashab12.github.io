@@ -53,9 +53,10 @@ import demosData from '../data/demos.json'
 export type Demo = {
   id: string
   by: 'mohamed' | 'yousef'
-  cat: 'store' | 'food' | 'service'
+  cat: 'store' | 'food' | 'service' | 'bot'
   url: string
-  img: number
+  /** A preview number (public/y/previews/N.webp) or a path under public/ */
+  img: number | string
   featured?: boolean
   name: Localized
   hook: Localized
@@ -68,3 +69,8 @@ export const demos = demosData as Demo[]
 export const demoPreview = (n: number) => asset(`y/previews/${n}.webp`)
 /** Our own hosted copy of a demo (mirrored, with the animation layer from scripts/polish-demos.ts). */
 export const demoUrl = (id: string) => asset(`y/${id}/index.html`)
+
+/** Card image for a demo. */
+export const demoImage = (d: Demo) => (typeof d.img === 'number' ? demoPreview(d.img) : asset(d.img))
+/** Where a demo opens: our hosted copy for mirrored demos, else its own URL. */
+export const demoHref = (d: Demo) => (typeof d.img === 'number' ? demoUrl(d.id) : d.url)

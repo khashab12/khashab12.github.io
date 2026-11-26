@@ -74,7 +74,8 @@
 .marquee-track {
   animation: marquee var(--duration, 40s) linear infinite;
 }
-.marquee:hover .marquee-track {
+.marquee:hover .marquee-track,
+.marquee.is-off .marquee-track {
   animation-play-state: paused;
 }
 
@@ -228,3 +229,16 @@ html.lenis body {
 @media (prefers-reduced-motion: reduce) {
   .ambient i, .ping, .word, .rise { animation: none; }
 }
+
+/* Phones: keep the glass, at a blur that scrolls smoothly; colour fields stay still */
+@media (pointer: coarse), (max-width: 899px) {
+  .glass { -webkit-backdrop-filter: blur(14px) saturate(160%); backdrop-filter: blur(14px) saturate(160%); }
+  .glass-soft, .glass-nav { -webkit-backdrop-filter: blur(12px) saturate(150%); backdrop-filter: blur(12px) saturate(150%); }
+  .ambient i { animation: none; filter: blur(60px); }
+}
+/* Low-end devices (set in index.html) */
+html.lite .ambient i { animation: none; }
+html.lite .glass, html.lite .glass-soft { -webkit-backdrop-filter: none; backdrop-filter: none; background-color: rgb(255 255 255 / 0.07); }
+
+/* Stacked cards must hide the card underneath: same glass edge, opaque fill */
+.glass.solid { background: linear-gradient(155deg, #1d1d21, #121214 55%, #17171a); }
