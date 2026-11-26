@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Two Tabs × عائشة — أفكار الشراكة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500&family=Readex+Pro:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: Apple-style product story for a partnership, calm dark, confident
+   IDEA: the customer journey the two of them build (ad → page → agent → booking → follow-up), told as a pinned scroll story
+   PICTURE: liquid-glass device that straightens on scroll, then a sticky stage where each step's mock screen plays
+   COLOUR and TYPE: Two Tabs tokens — #0a0a0c, mint #2fcf9f, saffron #f5b544; Readex Pro + IBM Plex Sans Arabic
+   LAYOUT: glass nav (+ mobile menu), hero, pinned story, scroll-lit statement, idea cards → detail sheet, roadmap, market, contact */
+:root{color-scheme:dark;--paper:#0a0a0c;--surface:#161618;--ink:#f5f5f7;--ink2:#b4b4ba;--muted:#86868b;--accent:#2fcf9f;--accent2:#5fe0bd;--saffron:#f5b544;--wa:#25d366;--ease:cubic-bezier(.16,1,.3,1)}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{background:var(--paper)}
+html.lock{overflow:hidden}
+body{margin:0;color:var(--ink);font:17px/1.75 'IBM Plex Sans Arabic',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3{font-family:'Readex Pro',system-ui,sans-serif;line-height:1.2;text-wrap:balance;margin:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:10px}
+::selection{background:var(--accent);color:var(--paper)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(4vw,16px)}
+
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.ambient i{position:absolute;border-radius:50%;filter:blur(90px);opacity:.55;animation:drift 26s ease-in-out infinite}
+@keyframes drift{50%{transform:translate3d(4vw,-5vh,0) scale(1.12)}}
+
+.glass{position:relative;background:linear-gradient(155deg,rgb(255 255 255/.10),rgb(255 255 255/.03) 45%,rgb(255 255 255/.05));-webkit-backdrop-filter:blur(28px) saturate(180%);backdrop-filter:blur(28px) saturate(180%);border:1px solid rgb(255 255 255/.12);box-shadow:inset 0 1px 0 rgb(255 255 255/.22),inset 0 -1px 0 rgb(255 255 255/.04),0 24px 60px -24px rgb(0 0 0/.65)}
+.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 60% at 30% -10%,rgb(255 255 255/.16),transparent 55%)}
+.soft{background:rgb(255 255 255/.05);-webkit-backdrop-filter:blur(20px) saturate(160%);backdrop-filter:blur(20px) saturate(160%);border:1px solid rgb(255 255 255/.09)}
+
+/* nav */
+header{position:fixed;inset-inline:0;top:12px;z-index:40;padding:0 12px}
+nav{position:relative;max-width:1080px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;gap:8px;border-radius:999px;padding-inline:20px 8px;background:rgb(22 22 24/.55);-webkit-backdrop-filter:blur(24px) saturate(180%);backdrop-filter:blur(24px) saturate(180%);border:1px solid rgb(255 255 255/.10);box-shadow:inset 0 1px 0 rgb(255 255 255/.14),0 10px 40px -12px rgb(0 0 0/.6)}
+.brand{font:700 1.05rem 'Readex Pro';white-space:nowrap}.brand span{color:var(--saffron)}
+.links{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.links a{display:inline-flex;min-height:40px;align-items:center;padding:0 13px;border-radius:999px;font-size:.88rem;color:var(--ink2);transition:.3s}
+.links a:hover,.links a.cur{background:rgb(255 255 255/.1);color:var(--ink)}
+.nr{display:flex;gap:6px;align-items:center}
+.burger{display:none;width:44px;height:44px;border-radius:50%;place-items:center}
+.burger i{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;transition:.4s var(--ease);box-shadow:0 6px 0 var(--ink)}
+.burger[aria-expanded=true] i{transform:translateY(3px) rotate(45deg);box-shadow:none}
+.burger[aria-expanded=true] i::after{content:'';display:block;width:18px;height:2px;background:var(--ink);transform:rotate(-90deg)}
+.menu{position:absolute;top:66px;inset-inline:0;border-radius:26px;padding:10px;display:grid;gap:2px;opacity:0;transform:translateY(-8px) scale(.98);pointer-events:none;transition:.45s var(--ease)}
+.menu.open{opacity:1;transform:none;pointer-events:auto}
+.menu a{min-height:48px;display:flex;align-items:center;padding:0 16px;border-radius:16px;color:var(--ink2)}
+.menu a:hover{background:rgb(255 255 255/.08);color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 22px;border-radius:999px;font:500 .95rem 'Readex Pro';transition:transform .4s var(--ease),background .3s;white-space:nowrap}
+.btn:hover{transform:scale(1.03)}.btn:active{transform:scale(.95)}
+.solid{background:var(--ink);color:var(--paper)}
+.wa{background:var(--wa);color:#04140a}
+.progress{position:fixed;top:0;inset-inline:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--saffron));transform-origin:right;transform:scaleX(0);z-index:50}
+
+/* hero */
+.hero{padding:132px 0 0;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:6px 16px;font-size:.9rem;color:var(--ink2)}
+.dot{position:relative;width:8px;height:8px}.dot::before,.dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--accent2)}
+.dot::before{animation:ping 1.6s cubic-bezier(0,0,.2,1) infinite}
+@keyframes ping{75%,100%{transform:scale(2.4);opacity:0}}
+h1{margin-top:26px;font-size:clamp(2.5rem,8vw,5.4rem);font-weight:700;line-height:1.06;letter-spacing:-.01em}
+h1 .m{color:var(--muted)}
+.wm{display:inline-block;overflow:hidden;padding-block:.1em;margin-block:-.1em;vertical-align:bottom}
+.w{display:inline-block;animation:wordin .9s var(--ease) both;animation-delay:calc(.15s + var(--i)*60ms)}
+@keyframes wordin{from{transform:translateY(105%);opacity:0}}
+.rise{animation:rise .9s var(--ease) both;animation-delay:calc(.45s + var(--d,0ms))}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+.lead{max-width:660px;margin:22px auto 0;font-size:clamp(1.05rem,3.4vw,1.25rem);color:var(--ink2)}
+.ctas{margin-top:32px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.duo{margin-top:26px;display:inline-flex;align-items:center;gap:10px;font-size:.9rem;color:var(--muted)}
+.av{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .78rem 'Readex Pro';color:var(--paper);box-shadow:0 0 0 2px var(--paper)}
+.av+.av{margin-inline-start:-9px}
+
+.stage3d{margin:60px auto 0;max-width:1080px;perspective:1400px}
+.device{border-radius:30px;padding:clamp(16px,3vw,32px);transform-origin:50% 100%;will-change:transform}
+.dbar{display:flex;gap:6px;margin-bottom:18px}.dbar span{width:10px;height:10px;border-radius:50%;background:rgb(255 255 255/.22)}
+.stages{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.track{position:absolute;inset-inline:7%;top:38px;height:2px;background:linear-gradient(90deg,rgb(255 255 255/.05),rgb(255 255 255/.2),rgb(255 255 255/.05))}
+.pulse{position:absolute;top:-5px;right:0;width:12px;height:12px;border-radius:50%;background:var(--accent2);box-shadow:0 0 18px 4px rgb(95 224 189/.7);animation:travel 5.5s var(--ease) infinite}
+@keyframes travel{0%{right:0;opacity:0}8%,92%{opacity:1}100%{right:100%;opacity:0}}
+.st{position:relative;text-align:center;padding:4px;border-radius:22px;transition:background .3s}
+.st:hover{background:rgb(255 255 255/.04)}
+.st .ic{width:76px;height:76px;margin:0 auto;border-radius:24px;display:grid;place-items:center;transition:transform .5s var(--ease)}
+.st:hover .ic{transform:translateY(-4px) rotate(-6deg)}
+.st svg{width:30px;height:30px}
+.st b{display:block;font:500 .98rem 'Readex Pro';margin-top:12px}
+.st small{display:block;font-size:.8rem;color:var(--muted);line-height:1.5;margin-top:3px}
+.hint{margin:16px 0 0;font-size:.8rem;color:var(--muted)}
+
+/* pinned story */
+.story{position:relative;height:560vh;margin-top:clamp(80px,12vw,150px)}
+.pin{position:sticky;top:0;height:100vh;height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:center;max-width:1180px;margin:0 auto;padding:84px max(4vw,16px) 40px}
+.txts{display:flex;flex-direction:column;gap:14px}
+.txbox{display:grid}
+.eyebrow{font-size:.9rem;color:var(--saffron);font-family:'Readex Pro'}
+.tx{grid-area:1/1;opacity:0;transform:translateY(24px);transition:.7s var(--ease);pointer-events:none}
+.tx.on{opacity:1;transform:none;pointer-events:auto}
+.tx h2{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:700;line-height:1.1}
+.tx p{color:var(--ink2);font-size:1.08rem;margin:14px 0 0;max-width:460px}
+.who{display:inline-block;margin-top:16px;font-size:.8rem;padding:3px 12px;border-radius:999px;margin-inline-end:6px}
+.who.a{background:rgb(245 181 68/.14);color:var(--saffron)}.who.m{background:rgb(47 207 159/.14);color:var(--accent2)}.who.b{background:rgb(255 255 255/.08);color:var(--ink2)}
+.tx .btn{margin-top:20px}
+.rail{display:flex;gap:4px;align-items:center;margin-inline-start:-12px}
+.rail button{height:44px;width:44px;display:grid;place-items:center}
+.rail i{width:10px;height:10px;border-radius:999px;background:rgb(255 255 255/.25);transition:.5s var(--ease)}
+.rail button.on i{width:34px;background:var(--accent2)}
+.screen{position:relative;height:min(62vh,560px);border-radius:34px;overflow:hidden}
+.vis{position:absolute;inset:0;display:grid;place-items:center;padding:clamp(18px,3vw,36px);opacity:0;transform:scale(.92) translateY(24px);transition:.8s var(--ease)}
+.vis.on{opacity:1;transform:none}
+.mock{width:min(100%,340px);border-radius:26px;padding:16px;background:rgb(10 10 12/.55);border:1px solid rgb(255 255 255/.1)}
+.row{display:flex;align-items:center;gap:10px}
+.ava{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),#e07a3f)}
+.ln{height:9px;border-radius:9px;background:rgb(255 255 255/.14)}
+.img{margin-top:12px;height:150px;border-radius:18px;background:radial-gradient(70% 90% at 70% 20%,#2fcf9f66,transparent),radial-gradient(60% 80% at 20% 90%,#f5b54466,transparent),#18181b;display:grid;place-items:center;font:700 1.4rem 'Readex Pro'}
+.cta-m{margin-top:12px;height:42px;border-radius:999px;background:var(--ink);color:var(--paper);display:grid;place-items:center;font:500 .9rem 'Readex Pro'}
+.vis.on .cta-m{animation:tap 2.4s 1s var(--ease) infinite}
+@keyframes tap{0%,60%,100%{transform:scale(1)}70%{transform:scale(.94)}80%{transform:scale(1)}}
+.bub{max-width:80%;padding:9px 14px;border-radius:18px;font-size:.92rem;line-height:1.5;margin-top:8px;opacity:0;transform:translateY(10px)}
+.bub.u{background:rgb(255 255 255/.1);margin-inline-start:auto;border-end-end-radius:6px}
+.bub.b{background:rgb(47 207 159/.18);color:#d6fff2;border-end-start-radius:6px}
+.vis.on .bub{animation:bub .5s var(--ease) forwards;animation-delay:calc(.3s + var(--n)*.7s)}
+@keyframes bub{to{opacity:1;transform:none}}
+.typing{display:inline-flex;gap:4px;padding:12px 14px;border-radius:18px;background:rgb(47 207 159/.12);margin-top:8px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--accent2);animation:tdot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tdot{50%{opacity:.25;transform:translateY(-3px)}}
+.check{width:64px;height:64px;border-radius:50%;margin:6px auto 0;display:grid;place-items:center;background:rgb(47 207 159/.18);color:var(--accent2)}
+.check path{stroke-dasharray:30;stroke-dashoffset:30}
+.vis.on .check path{animation:draw .7s .4s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.note{margin-top:12px;padding:12px 14px;border-radius:18px;background:rgb(255 255 255/.06);font-size:.88rem;display:flex;gap:10px;align-items:center;opacity:0;transform:translateY(-14px)}
+.vis.on .note{animation:bub .6s 1.2s var(--ease) forwards}
+.bars{display:grid;gap:10px;margin-top:10px}
+.bar{display:grid;grid-template-columns:5.5em 1fr;gap:10px;align-items:center;font-size:.82rem;color:var(--ink2)}
+.bar span{display:block;height:12px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));width:0;transition:width 1.2s var(--ease)}
+.vis.on .bar span{width:var(--w)}
+.bar:nth-child(2) span{transition-delay:.15s}.bar:nth-child(3) span{transition-delay:.3s}
+.sample{position:absolute;top:12px;inset-inline-end:18px;font-size:.75rem;color:var(--muted)}
+
+/* scroll-lit statement */
+.say{padding:clamp(60px,10vw,140px) 0}
+.say p{max-width:980px;margin:0 auto;text-align:center;font:700 clamp(1.7rem,4.6vw,3.3rem)/1.35 'Readex Pro';text-wrap:balance}
+.say span{color:rgb(255 255 255/.16);transition:color .4s}
+.say span.lit{color:var(--ink)}
+.say span.lit.k{color:var(--accent2)}
+
+/* sections */
+section.s{padding:clamp(60px,9vw,120px) 0 0}
+.sh{text-align:center;max-width:720px;margin:0 auto}
+.sh h2{font-size:clamp(1.9rem,5vw,3rem);font-weight:700}
+.sh p{margin:14px 0 0;color:var(--ink2)}
+.reveal{opacity:0;transform:translateY(34px) scale(.98);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0ms)}
+.reveal.in{opacity:1;transform:none}
+
+.filters{margin:30px auto 0;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.filters button{font:500 .9rem 'Readex Pro';color:var(--ink2);min-height:44px;padding:0 18px;border-radius:999px;transition:.3s}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.count{margin-top:12px;text-align:center;font-size:.85rem;color:var(--muted)}
+.grid{margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px;list-style:none}
+.grid li{transition:opacity .45s var(--ease),transform .45s var(--ease)}
+.grid li.out{opacity:0;transform:scale(.94)}
+.card{height:100%;border-radius:30px;padding:26px;display:flex;flex-direction:column;cursor:pointer;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0));transition:transform .5s var(--ease)}
+.card:hover{--ty:-6px}
+.card.flash{animation:flash 1.6s var(--ease)}
+@keyframes flash{30%{box-shadow:0 0 0 2px var(--accent2),0 0 50px -6px rgb(95 224 189/.6)}}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.top .ic{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;color:var(--accent2);transition:transform .5s var(--ease)}
+.card:hover .top .ic{transform:scale(1.1) rotate(-6deg)}
+.top svg{width:22px;height:22px}
+.prio{font:500 .76rem 'Readex Pro';padding:4px 12px;border-radius:999px;white-space:nowrap}
+.p1{background:rgb(47 207 159/.16);color:var(--accent2)}.p2{background:rgb(245 181 68/.15);color:var(--saffron)}.p3{background:rgb(255 255 255/.08);color:var(--ink2)}
+.card h3{font-size:1.25rem;margin-top:18px}
+.en{font-size:.8rem;color:var(--muted);margin-top:2px;direction:ltr;text-align:end}
+.card p{margin:10px 0 0;color:var(--ink2);line-height:1.7}
+.foot{margin-top:auto;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.tag{font-size:.78rem;padding:3px 11px;border-radius:999px;background:rgb(255 255 255/.06);border:1px solid rgb(255 255 255/.08);color:var(--ink2)}
+.more{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 4px;font:500 .9rem 'Readex Pro';color:var(--accent2)}
+.more svg{transition:transform .4s var(--ease)}.card:hover .more svg{transform:translateX(-4px)}
+
+.card .roles{margin-top:16px;font-size:.88rem}
+.split{margin-top:40px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.col{border-radius:30px;padding:26px}
+.col .hd{display:flex;align-items:center;gap:12px}
+.col .hd .av{width:44px;height:44px;font-size:1rem;box-shadow:none}
+.col h3{font-size:1.2rem}.col .sub{font-size:.85rem;color:var(--muted)}
+.col ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:10px}
+.col li{display:grid;grid-template-columns:22px 1fr;gap:8px;color:var(--ink2);font-size:.95rem;opacity:0;transform:translateX(-12px);transition:.6s var(--ease);transition-delay:calc(var(--n)*70ms + .2s)}
+.col.in li{opacity:1;transform:none}
+.col li::before{content:'';width:8px;height:8px;border-radius:50%;margin:.65em auto 0;background:var(--c)}
+@media(max-width:860px){.split{grid-template-columns:minmax(0,1fr)}}
+/* sheet */
+.scrim{position:fixed;inset:0;z-index:60;background:rgb(0 0 0/.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);display:grid;place-items:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}
+.scrim.open{opacity:1;pointer-events:auto}
+.sheet{width:min(100%,640px);max-height:88vh;overflow:auto;border-radius:32px;padding:clamp(22px,4vw,36px);background:linear-gradient(155deg,#1d1d21,#121214 55%,#17171a);transform:translateY(30px) scale(.96);transition:transform .5s var(--ease)}
+.scrim.open .sheet{transform:none}
+.sh-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.x{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgb(255 255 255/.08)}
+.sheet h3{font-size:clamp(1.4rem,4vw,1.9rem);margin-top:14px}
+.sheet .one{color:var(--ink2);margin:10px 0 0}
+.sheet h4{font:500 .95rem 'Readex Pro';margin:22px 0 8px;color:var(--saffron)}
+.steps{margin:0;padding:0;list-style:none;display:grid;gap:8px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;color:var(--ink2);font-size:.96rem}
+.steps li::before{content:counter(s,arabic-indic);width:30px;height:30px;border-radius:10px;display:grid;place-items:center;background:rgb(47 207 159/.14);color:var(--accent2);font:500 .85rem 'Readex Pro'}
+.roles{display:grid;gap:8px;padding:14px 16px;border-radius:18px;font-size:.93rem}
+.roles div{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline}
+.roles .who{margin:0}
+.ex{padding:14px 16px;border-radius:18px;background:rgb(245 181 68/.07);border:1px solid rgb(245 181 68/.15);color:var(--ink2);font-size:.95rem}
+.sh-nav{margin-top:24px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.sh-nav .sp{flex:1}
+.ghost{background:rgb(255 255 255/.07)}
+
+/* roadmap */
+.road{margin:44px auto 0;max-width:860px;position:relative;display:grid;gap:18px}
+.road::before{content:'';position:absolute;inset-block:10px;inset-inline-start:23px;width:2px;background:rgb(255 255 255/.08)}
+.road .fill{position:absolute;top:10px;inset-inline-start:23px;width:2px;height:var(--h,0%);background:linear-gradient(var(--accent),var(--saffron));transition:height .2s linear}
+.step{display:grid;grid-template-columns:48px 1fr;gap:18px}
+.step .k{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font:700 1.05rem 'Readex Pro';background:var(--paper);border:1px solid rgb(255 255 255/.14);position:relative;z-index:1;transition:.5s var(--ease)}
+.step.in .k{border-color:var(--accent2);color:var(--accent2)}
+.step .b{border-radius:24px;padding:20px 22px}
+.step h3{font-size:1.08rem}.step .t{font-size:.82rem;color:var(--saffron);margin-top:2px}
+.step ul{margin:10px 0 0;padding-inline-start:18px;color:var(--ink2);font-size:.95rem}
+.step button{color:var(--accent2);font:500 .88rem 'Readex Pro';min-height:40px;text-decoration:underline;text-underline-offset:4px}
+
+/* market */
+.mk{margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:14px}
+.mi{border-radius:24px;padding:22px;display:flex;flex-direction:column}
+.mi small{font-size:.78rem;color:var(--muted)}
+.mi h3{font-size:1.05rem;margin-top:6px;direction:ltr;text-align:end}
+.mi p{margin:6px 0 12px;color:var(--ink2);font-size:.92rem;line-height:1.65}
+.mi a{margin-top:auto;font-size:.85rem;color:var(--accent2);min-height:32px;display:inline-flex;align-items:center}
+.gap{margin-top:16px;border-radius:28px;padding:26px 28px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.gap .ic{width:54px;height:54px;border-radius:18px;display:grid;place-items:center;color:var(--saffron)}
+.gap h3{font-size:1.15rem}.gap p{margin:6px 0 0;color:var(--ink2)}
+
+.final{margin:clamp(72px,10vw,128px) auto 0;max-width:920px;border-radius:36px;padding:clamp(32px,6vw,64px);text-align:center}
+.final h2{font-size:clamp(1.8rem,5vw,2.8rem)}
+.final p{color:var(--ink2);max-width:560px;margin:14px auto 0}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:48px 16px 40px}
+
+@media(max-width:900px){.links{display:none}.burger{display:grid}}
+@media(max-width:760px){
+  .stages{grid-template-columns:minmax(0,1fr);gap:6px}
+  .track{inset-inline-start:42px;inset-inline-end:auto;top:30px;bottom:30px;width:2px;height:auto;background:linear-gradient(rgb(255 255 255/.05),rgb(255 255 255/.2),rgb(255 255 255/.05))}
+  .pulse{right:auto;inset-inline-start:-5px;animation:travelv 5.5s var(--ease) infinite}
+  @keyframes travelv{0%{top:0;opacity:0}8%,92%{opacity:1}100%{top:100%;opacity:0}}
+  .st{display:grid;grid-template-columns:76px 1fr;gap:14px;text-align:start;align-items:center}
+  .st b{margin-top:0}
+  .pin{grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr;align-content:start;gap:14px;padding-top:80px}
+  .screen{height:46svh;order:-1}
+  .vis{padding:8px}.mock{transform:scale(.84)}
+  .txts{gap:4px}
+  .tx h2{font-size:1.75rem}
+  .tx p{font-size:.97rem;margin-top:8px}
+  .tx .btn{margin-top:12px}.who{margin-top:10px}
+  .ambient i{animation:none;filter:blur(60px)}
+  .glass{-webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%)}
+  .gap{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}.bub,.note{opacity:1;transform:none}.bar span{width:var(--w)}.check path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="prog"></div>
+<div class="ambient" aria-hidden="true">
+  <i style="width:46vw;height:46vw;top:-12vw;inset-inline-start:-8vw;background:#1f7a62"></i>
+  <i style="width:38vw;height:38vw;top:30vh;inset-inline-end:-12vw;background:#7a5a1f;animation-delay:-9s"></i>
+  <i style="width:40vw;height:40vw;bottom:-14vw;inset-inline-start:22vw;background:#243b7a;animation-delay:-17s;opacity:.4"></i>
+</div>
+
+<header>
+  <nav aria-label="التنقل">
+    <a class="brand" href="#top" data-go="top">Two Tabs <span>×</span> عائشة</a>
+    <ul class="links" id="links"></ul>
+    <div class="nr">
+      <a class="btn solid" href="#contact" data-go="contact">نبدأ؟</a>
+      <button class="burger" id="burger" aria-label="القائمة" aria-expanded="false" aria-controls="menu"><i></i></button>
+    </div>
+    <div class="menu glass" id="menu"></div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <p class="pill soft rise"><span class="dot"></span>مقترح شراكة · تسويق × تقنية</p>
+    <h1 id="h1"></h1>
+    <p class="lead rise" style="--d:120ms">عائشة بتجيب الناس بالتسويق، وإحنا بنبني المكان اللي بيستقبلهم والـ agent اللي بيرد عليهم ويقفل البيع. هنا كل الأفكار اللي ممكن نبنيها مع بعض.</p>
+    <div class="ctas rise" style="--d:220ms">
+      <a class="btn solid" href="#ideas" data-go="ideas">شوف الأفكار</a>
+      <a class="btn glass" href="#journey" data-go="journey">الرحلة خطوة بخطوة</a>
+    </div>
+    <p class="duo rise" style="--d:320ms"><span style="display:flex"><span class="av" style="background:var(--saffron)">ع</span><span class="av" style="background:var(--accent)">TT</span></span>عائشة إبراهيم · Two Tabs</p>
+
+    <div class="stage3d">
+      <div class="device glass" id="device">
+        <div class="dbar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="stages" id="stages"><div class="track" aria-hidden="true"><span class="pulse"></span></div></div>
+        <p class="hint">اضغط على أي مرحلة عشان تشوفها شغالة</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="story" id="journey">
+    <div class="pin">
+      <div class="txts">
+        <span class="eyebrow" id="eb">رحلة العميل: المرحلة ١ من ٥</span>
+        <div class="rail" id="rail" role="group" aria-label="مراحل الرحلة"></div>
+        <div class="txbox" id="txs"></div>
+      </div>
+      <div class="screen glass" id="screen">
+        <div class="vis" data-i="0"><div class="mock">
+          <div class="row"><span class="ava"></span><div style="flex:1"><div class="ln" style="width:45%"></div><div class="ln" style="width:25%;margin-top:6px;opacity:.6"></div></div><span class="tag">ممول</span></div>
+          <div class="img">افتتاح الفرع الجديد</div>
+          <div class="ln" style="width:90%;margin-top:12px"></div><div class="ln" style="width:65%;margin-top:7px"></div>
+          <div class="cta-m">احجز دلوقتي</div></div></div>
+        <div class="vis" data-i="1"><div class="mock" style="padding:0;overflow:hidden">
+          <div style="display:flex;gap:5px;padding:10px 14px;background:rgb(255 255 255/.05)"><span class="dbar" style="margin:0"><span></span><span></span><span></span></span></div>
+          <div style="padding:18px"><div class="ln" style="width:30%;background:var(--accent2);opacity:.7"></div>
+          <div style="font:700 1.25rem 'Readex Pro';margin-top:12px;line-height:1.3">ابتسامتك تستاهل أحسن رعاية</div>
+          <div class="ln" style="width:85%;margin-top:12px"></div><div class="ln" style="width:60%;margin-top:7px"></div>
+          <div class="row" style="margin-top:16px"><div class="cta-m" style="flex:1;margin:0">احجز على واتساب</div><div class="cta-m" style="flex:1;margin:0;background:rgb(255 255 255/.1);color:var(--ink)">الأسعار</div></div>
+          <div class="row" style="margin-top:14px;gap:8px"><div class="img" style="height:64px;flex:1;margin:0;font-size:.8rem">قبل</div><div class="img" style="height:64px;flex:1;margin:0;font-size:.8rem">بعد</div></div></div></div></div>
+        <div class="vis" data-i="2"><div class="mock">
+          <div class="row" style="padding-bottom:10px;border-bottom:1px solid rgb(255 255 255/.08)"><span class="ava" style="background:linear-gradient(135deg,var(--accent),#1f7a62)"></span><div><b style="font:500 .9rem 'Readex Pro'">مساعد العيادة</b><div style="font-size:.75rem;color:var(--accent2)">بيرد فورًا</div></div></div>
+          <div class="bub u" style="--n:0">السلام عليكم، عايز أحجز كشف</div>
+          <div class="bub b" style="--n:1">أهلًا بيك! تحب يوم الخميس الساعة ٦ ولا ٨؟</div>
+          <div class="bub u" style="--n:2">٦ تمام</div>
+          <div class="bub b" style="--n:3">اتحجزلك الخميس ٦:٠٠، وهفكّرك قبلها بساعة.</div></div></div>
+        <div class="vis" data-i="3"><div class="mock" style="text-align:center">
+          <div class="check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <b style="display:block;font:700 1.15rem 'Readex Pro';margin-top:12px">حجز جديد</b>
+          <div style="color:var(--ink2);font-size:.9rem">أحمد · الخميس ٦:٠٠ م · كشف</div>
+          <div class="note"><span class="ava" style="width:26px;height:26px;flex:none;background:var(--saffron)"></span>صاحب العيادة اتبلّغ على واتساب</div></div></div>
+        <div class="vis" data-i="4"><div class="mock">
+          <b style="font:500 .95rem 'Readex Pro'">تقرير الأسبوع</b>
+          <div class="bars"><div class="bar">إعلان ١<span style="--w:48%"></span></div><div class="bar">إعلان ٢<span style="--w:86%"></span></div><div class="bar">إعلان ٣<span style="--w:30%"></span></div></div>
+          <div class="ex" style="margin-top:14px;font-size:.88rem">«الإعلان التاني جاب أكتر حجوزات، نزوّد عليه ونوقف التالت.»</div>
+          <div class="note" style="margin-top:10px">رسالة متابعة اتبعتت للعملاء اللي ماحجزوش</div></div></div>
+        <div class="sample">الأمثلة توضيحية</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="say wrap" id="say"><p id="sayp"></p></div>
+
+  <section class="s" id="ideas">
+    <div class="wrap">
+      <div class="sh reveal"><h2>٨ أفكار نبنيها مع بعض</h2><p>دوس على أي فكرة عشان تشوف بتشتغل إزاي خطوة بخطوة، ومين بيعمل إيه، ومثال عليها.</p></div>
+      <div class="filters reveal" role="group" aria-label="فلترة الأفكار" id="filters"></div>
+      <p class="count" id="count" aria-live="polite"></p>
+      <ul class="grid" id="grid"></ul>
+    </div>
+  </section>
+
+  <section class="s" id="roles">
+    <div class="wrap">
+      <div class="sh reveal"><h2>مين بيعمل إيه</h2><p>كل واحد بيعمل اللي بيعرفه أحسن حاجة، والنتيجة بنقيسها مع بعض.</p></div>
+      <div class="split" id="split"></div>
+    </div>
+  </section>
+
+  <section class="s" id="plan">
+    <div class="wrap">
+      <div class="sh reveal"><h2>نبدأ صغير ونكبر بالنتيجة</h2><p>مش هنبني منصة كبيرة من أول يوم. نجرّب مع عميل حقيقي، ولما يجيب نتيجة نكمّل عليه.</p></div>
+      <div class="road" id="road"><span class="fill" id="fill"></span></div>
+    </div>
+  </section>
+
+  <section class="s" id="market">
+    <div class="wrap">
+      <div class="sh reveal"><h2>السوق برّه بيعمل إيه؟</h2><p>الفكرة نفسها موجودة عالميًا، بس معمولة لشركات كبيرة وأغلبها بالإنجليزي. اللي بيميّزنا هو الخبرة البشرية والعامية والتنفيذ.</p></div>
+      <div class="mk" id="mk"></div>
+      <div class="gap glass reveal">
+        <div class="ic soft"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div><h3>الفرصة اللي قدامنا</h3><p>الأدوات دي معمولة لشركات عندها فرق تسويق كاملة. الكافيه والعيادة والبراند الصغير في مصر والسعودية محتاجين نفس النتيجة، بلغتهم، ومعاهم حد حقيقي بيتابع.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="final glass reveal" id="contact">
+      <h2>نختار فكرة ونبدأ؟</h2>
+      <p>اقتراحي نبدأ بـ «من الإعلان للحجز» مع «كشف الحساب»: الأولى نجرّبها مع عميل حقيقي، والتانية تجيب عملاء جداد.</p>
+      <div class="ctas">
+        <a class="btn wa" id="wa-main" href="https://wa.me/201559683122"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg>كلّم محمد على واتساب</a>
+        <a class="btn glass" href="https://khashab12.github.io/team/">شوف أعمال Two Tabs</a>
+      </div>
+      <p style="font-size:.85rem;color:var(--muted)">واتساب: ‎+20 155 968 3122</p>
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 Two Tabs × عائشة إبراهيم · القاهرة</footer>
+
+<div class="scrim" id="scrim" aria-hidden="true">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t" id="sheet"></div>
+</div>
+
+<script>
+{
+const WA='https://wa.me/201559683122?text=';
+const P=d=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+const IC={
+ mega:'<path d="M3 11v2a1 1 0 0 0 1 1h2l5 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12"/>',
+ page:'<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h5"/>',
+ chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/>',
+ cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18M9 15l2 2 4-4"/>',
+ chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+ gauge:'<path d="M12 14l4-4"/><path d="M3.3 17a9 9 0 1 1 17.4 0"/><circle cx="12" cy="14" r="1.5"/>',
+ reply:'<path d="M9 14L4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 6 6v5"/>',
+ spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',
+ ab:'<path d="M4 20l4-12 4 12M5.5 15.5h5"/><path d="M15 8h3.5a2.5 2.5 0 0 1 0 5H15zM15 13h4a2.5 2.5 0 0 1 0 5h-4z"/>',
+ eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+ twin:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/>',
+ back:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>'
+};
+const NAV=[['journey','الرحلة'],['ideas','الأفكار'],['roles','مين بيعمل إيه'],['plan','خطة البداية'],['market','السوق'],['contact','تواصل']];
+const STAGES=[
+ {ic:'mega',c:'var(--saffron)',t:'الإعلان',s:'كامبين يجيب الناس المناسبة',h:'الإعلان بيجيب الناس.',p:'عائشة بتعمل الكامبين والمحتوى اللي يوصل للجمهور الصح، على تيك توك وإنستجرام وسناب.',w:[['a','عائشة']],idea:'studio'},
+ {ic:'page',c:'var(--accent2)',t:'صفحة الهبوط',s:'بهوية البراند وسريعة',h:'صفحة تقنع في ثواني.',p:'بدل ما الإعلان يودّي على بروفايل عادي، يودّي على landing page معمولة للعرض ده بالذات، بهوية البراند وزرار حجز واضح.',w:[['m','Two Tabs']],idea:'test'},
+ {ic:'chat',c:'var(--accent2)',t:'الـ Agent',s:'يرد في ثواني',h:'حد بيرد فورًا، ٢٤ ساعة.',p:'الـ agent بيرد على واتساب وإنستجرام بالعامية، بيجاوب على الأسئلة ويعرض المواعيد، فالعميل مش بيستنى ويمشي.',w:[['m','Two Tabs']],idea:'comment'},
+ {ic:'cal',c:'var(--accent2)',t:'الحجز',s:'يتسجّل والبزنس يتبلّغ',h:'الرسالة بتتحول لحجز.',p:'الحجز بيتسجّل تلقائيًا وصاحب البزنس بيوصله إشعار، وبعدين العميل بيوصله تذكير قبل الميعاد.',w:[['b','تلقائي']],idea:'booking'},
+ {ic:'chart',c:'var(--saffron)',t:'المتابعة',s:'تقرير ورجوع العميل',h:'نعرف إيه اللي نجح، ونرجّع اللي ماكملش.',p:'تقرير بالعامية بيقول أنهي إعلان جاب حجوزات، وكمان رسايل متابعة بتتبعت للي سأل وماحجزش.',w:[['a','عائشة'],['m','Two Tabs']],idea:'winback'}
+];
+const F=[['all','الكل'],['leads','يجيب عملاء'],['close','يقفل البيع'],['time','يوفر وقت']];
+const PR={1:['ابدأ بيها','p1'],2:['المرحلة التانية','p2'],3:['بعدين','p3']};
+const IDEAS=[
+ {id:'booking',ic:'cal',p:1,f:['close'],t:'من الإعلان للحجز',en:'Ad-to-booking system',
+  one:'نظام كامل لنوع بزنس واحد، العيادات مثلًا: كامبين وصفحة هبوط وagent على واتساب بيحجز لوحده. بنبيع نتيجة، مش خدمات متفرقة.',
+  steps:['عائشة بتطلق الكامبين لعرض محدد','الإعلان بيودّي على landing page بهوية العيادة','الـ agent بيرد ويعرض المواعيد ويحجز','صاحب العيادة بيوصله الحجز، والعميل بيوصله تذكير'],
+  a:'الكامبين والعرض والمحتوى',m:'الصفحة والـ agent وربط الحجز',
+  ex:'عيادة أسنان عاملة عرض تنظيف: اللي يضغط على الإعلان بيلاقي صفحة فيها العرض، يدوس «احجز»، والـ agent يحجزله في نفس الدقيقة.'},
+ {id:'audit',ic:'gauge',p:1,f:['leads'],t:'كشف الحساب',en:'Free account audit',
+  one:'صاحب البزنس بيحط لينك حسابه، والـ agent بيديله درجة من ١٠٠ وأهم ٥ حاجات يصلّحها، في كارت شكله حلو يقدر ينزّله ستوري.',
+  steps:['صاحب البزنس بيحط لينك إنستجرام أو تيك توك','الـ agent بيحلل البايو والبوستات والهايلايتس على معايير عائشة','بتطلعله درجة وكارت قابل للمشاركة','وفي الآخر: «عايز تصلّحها؟ كلّم عائشة»'],
+  a:'معايير التقييم والنصايح من خبرتها',m:'الأداة والكارت وجمع بيانات المهتمين',
+  ex:'عائشة بتعمل فيديو تيك توك تقيّم فيه حساب كافيه بالأداة على الهوا، والمتابعين يجرّبوها على حساباتهم.'},
+ {id:'comment',ic:'reply',p:1,f:['leads','close'],t:'الكومنت يبيع',en:'Comment-to-DM automation',
+  one:'أي حد يكتب كلمة معينة في الكومنتات، زي «عايز»، بيوصله DM أوتوماتيك فيه العرض واللينك، والـ agent بيكمّل معاه.',
+  steps:['عائشة بتكتب في البوست أو الفيديو: «اكتب عايز في الكومنت»','الأوتوميشن بيلقط الكومنت ويبعت DM في ثواني','الـ agent بيجاوب ويوصّله للحجز أو الطلب','كل اللي كتبوا بيتجمعوا في ليستة للمتابعة'],
+  a:'المحتوى والكلمة والعرض',m:'الأوتوميشن والـ agent والليستة',
+  ex:'براند لبس ينزل ريل «اكتب مقاس في الكومنت»، وكل اللي يكتب يوصله جدول المقاسات ولينك الطلب في الخاص.'},
+ {id:'studio',ic:'spark',p:2,f:['leads'],t:'استوديو الكامبين',en:'AI campaign studio',
+  one:'فكرة عائشة الأصلية بشكل أقوى: العميل بيجاوب على ٥ أسئلة، ويطلعله خطة كامبين وإعلانات جاهزة بالعامية وجدول محتوى، كله بطريقة عائشة.',
+  steps:['العميل بيختار نوع نشاطه وهدفه وجمهوره','الـ agent بيبني الخطة على الـ frameworks بتاعة عائشة','بيطلّع كوبي إعلانات بلهجة الجمهور وجدول أسبوعين','وفيه اختيار إن عائشة تراجع الخطة بنفسها'],
+  a:'المنهج والـ frameworks والأمثلة',m:'الـ agent والموقع والحسابات',
+  ex:'صاحبة مشروع حلويات بتكتب «عايزة أبيع تورت المناسبات في الشيخ زايد»، ويطلعلها ٣ أفكار إعلانات وجدول بوستات.'},
+ {id:'test',ic:'ab',p:2,f:['close'],t:'جرّب قبل ما تكبّر',en:'Pre-launch A/B testing',
+  one:'قبل ما الكامبين الكبير ينزل، بنعمل ٣ نسخ من الإعلان و٣ صفحات هبوط، ونجرّبهم على جمهور صغير، ونكبّر اللي كسب.',
+  steps:['عائشة بتحدد ٣ زوايا مختلفة للعرض','Two Tabs بتطلّع لكل زاوية صفحة هبوط','نجرّب على جمهور صغير ونقيس مين جاب رسايل وحجوزات','الكامبين الكبير بيمشي على النسخة اللي كسبت'],
+  a:'الزوايا والإعلانات والقراءة',m:'الصفحات والتتبع والمقارنة',
+  ex:'عيادة جلدية: نسخة بتتكلم عن السعر، ونسخة عن النتيجة، ونسخة عن الدكتور. نشوف مين جاب حجوزات أكتر.'},
+ {id:'twin',ic:'twin',p:2,f:['time'],t:'توأم عائشة',en:'Aisha’s AI copilot',
+  one:'agent داخلي متدرّب على أسلوب عائشة: بيكتب سكريبتات تيك توك وخطط المحتوى لكل عميل، وهي بتراجع بس. كده تمسك عملاء أكتر بنفس الوقت.',
+  steps:['بنجمع أحسن شغل عائشة كأمثلة','الـ agent بيتعلم الأسلوب والنبرة والهيكل','بيطلّع مسودات لكل عميل كل أسبوع','عائشة بتعدّل وتوافق في دقايق'],
+  a:'الأمثلة والمراجعة',m:'بناء الـ agent وتظبيطه',
+  ex:'بدل ما عائشة تقعد ٣ ساعات تكتب سكريبتات أسبوع لعميل، بتراجع ١٠ مسودات جاهزة في نص ساعة.'},
+ {id:'radar',ic:'eye',p:3,f:['time'],t:'رادار المنافسين',en:'Competitor radar',
+  one:'العميل بيكتب أسماء منافسيه، وكل أسبوع يوصله ملخص بإعلاناتهم الجديدة وعروضهم، ومعاه اقتراح يرد عليهم إزاي.',
+  steps:['العميل بيضيف ٣ إلى ٥ منافسين','الـ agent بيتابع إعلاناتهم من Meta Ad Library','بيوصل ملخص أسبوعي على واتساب','عائشة بتحوّل الملخص لخطوة عملية'],
+  a:'تحويل الملخص لقرار',m:'جمع البيانات والملخص',
+  ex:'كافيه بيعرف إن المنافس اللي جنبه نزّل عرض «اشتري ١ وخد ١»، فيرد عليه بعرض مختلف في نفس الأسبوع.'},
+ {id:'winback',ic:'back',p:3,f:['close'],t:'رجّع عملاءك',en:'Win-back follow-ups',
+  one:'رسايل واتساب أوتوماتيك للعملاء القدام اللي اختفوا وللناس اللي سألت وماحجزتش، بعرض مناسب في الوقت المناسب.',
+  steps:['بنجمع أرقام العملاء القدام والمهتمين','بنقسمهم: سأل وماحجزش، اختفى من شهرين، عميل دايم','عائشة بتكتب رسالة لكل نوع','الأوتوميشن بيبعت ويتابع الردود'],
+  a:'الرسايل والعروض',m:'التقسيم والإرسال والمتابعة',
+  ex:'عيادة بتبعت للي عمل تنظيف من ٦ شهور: «وحشتنا! ميعاد التنظيف الجاي، تحب نحجزلك؟»'}
+];
+const SPLIT=[
+ ['ع','var(--saffron)','عائشة','التسويق والمحتوى',['استراتيجية الكامبين والعروض','المحتوى وسكريبتات تيك توك','الإعلانات والجمهور','معايير «كشف الحساب» والـ frameworks','قراءة النتايج وتحويلها لقرار','العلاقة مع العميل وفهم البزنس']],
+ ['TT','var(--accent)','Two Tabs','التقنية والأوتوميشن',['صفحات الهبوط والمواقع بهوية البراند','الـ agents على واتساب وإنستجرام','أوتوميشن الكومنتات والمتابعة','ربط الحجوزات والإشعارات','تتبع الإعلانات والتقارير','الأدوات زي «كشف الحساب» و«استوديو الكامبين»']],
+ ['+','var(--ink2)','مع بعض','قرارات مشتركة',['اختيار العميل التجريبي ونوع البزنس','تجربة الأفكار وقياس النتيجة','تجهيز الـ case study والعرض','اختيار الفكرة الجاية']]
+];
+const ROAD=[
+ ['١','نجرّب مع عميل واحد','الأسبوع ١–٢',['نختار عميل من عملاء عائشة','نبني له «من الإعلان للحجز» ونقيس الرسايل والحجوزات'],'booking'],
+ ['٢','«كشف الحساب» + فيديو','الأسبوع ٢–٤',['عائشة بتكتب معايير التقييم وTwo Tabs بتبني الأداة','فيديو تيك توك تقيّم فيه حساب حقيقي'],'audit'],
+ ['٣','نحوّل النتيجة لعرض','الشهر ٢',['نتيجة أول عميل تبقى case study','نضيف «الكومنت يبيع» و«توأم عائشة»'],'comment'],
+ ['٤','نكبر بالأدوات','الشهر ٣ وبعده',['استوديو الكامبين ورادار المنافسين','رجّع عملاءك للعملاء الدايمين'],'studio']
+];
+const MK=[
+ ['عالمي','Klaviyo · Marketing Agent','تدّيه هدف أو brief ويطلّع محتوى وكوبي للكامبين في دقايق. لسه بالإنجليزي بس.','https://www.klaviyo.com/solutions/ai/what-is-an-ai-marketing-agent'],
+ ['عالمي','Salesforce · Agentforce','agent بيخطط الكامبين ويكتبها ويحسّنها على أساس صوت البراند وبيانات العملاء.','https://www.salesforce.com/blog/small-business/meet-your-digital-teammate-for-marketing-agent/'],
+ ['المنطقة','Lahjty','كوبي وحملات عربي بلهجات زي السعودي والمصري من منصة واحدة.','https://index.dodopayments.com/lahjty'],
+ ['المنطقة','MATTE · دبي','studio بالذكاء الاصطناعي للوكالات الصغيرة، بيدير حملات عربي وإنجليزي.','https://menastartupdigest.com/?p=36455']
+];
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* smooth navigation for every in-page link */
+function go(id){const el=document.getElementById(id);if(!el)return;closeMenu();el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();go(a.dataset.go)});
+
+/* nav + mobile menu */
+$('#links').innerHTML=NAV.slice(0,5).map(([k,l])=>`<li><a href="#${k}" data-go="${k}" data-nav="${k}">${l}</a></li>`).join('');
+$('#menu').innerHTML=NAV.map(([k,l])=>`<a href="#${k}" data-go="${k}">${l}</a>`).join('');
+const burger=$('#burger'),menu=$('#menu');
+function closeMenu(){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+burger.addEventListener('click',()=>{const o=!menu.classList.contains('open');menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)});
+document.addEventListener('click',e=>{if(!e.target.closest('nav'))closeMenu()});
+
+/* headline */
+const H=[['ننجح','مع','بعض،'],['أسرع','من','لوحدنا.']];let n=0;
+$('#h1').innerHTML=H.map((l,i)=>`<span style="display:block"${i?' class="m"':''}>${l.map(w=>`<span class="wm"><span class="w" style="--i:${n++}">${w}</span></span>`).join(' ')}</span>`).join('');
+
+/* hero stages → jump into the pinned story */
+$('#stages').insertAdjacentHTML('beforeend',STAGES.map((s,i)=>`<button class="st" data-stage="${i}"><span class="ic soft" style="color:${s.c}">${P(IC[s.ic])}</span><span><b>${s.t}</b><small>${s.s}</small></span></button>`).join(''));
+
+/* story */
+const story=$('#journey');
+$('#txs').innerHTML=STAGES.map((s,i)=>`<div class="tx" data-i="${i}"><h2>${s.h}</h2><p>${s.p}</p><div>${s.w.map(([c,l])=>`<span class="who ${c}">${l}</span>`).join('')}</div><button class="btn glass" data-idea="${s.idea}">الفكرة المرتبطة</button></div>`).join('');
+$('#rail').innerHTML=STAGES.map((s,i)=>`<button data-stage="${i}" aria-label="${s.t}"><i></i></button>`).join('');
+const AR='٠١٢٣٤٥٦٧٨٩',ar=x=>String(x).replace(/\d/g,d=>AR[d]);
+let cur=-1;
+function setStage(i){if(i===cur)return;cur=i;
+ $$('.tx').forEach(t=>t.classList.toggle('on',+t.dataset.i===i));
+ $$('.vis').forEach(t=>t.classList.toggle('on',+t.dataset.i===i));
+ $$('#rail button').forEach((b,j)=>{b.classList.toggle('on',j===i);b.setAttribute('aria-current',j===i?'step':'false')});
+ $('#eb').textContent=`رحلة العميل: المرحلة ${ar(i+1)} من ٥`}
+function toStage(i){const top=story.offsetTop+(story.offsetHeight-innerHeight)*((i+.5)/STAGES.length);scrollTo({top,behavior:reduce?'auto':'smooth'})}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-stage]');if(b)toStage(+b.dataset.stage)});
+setStage(0);
+
+/* scroll-lit statement */
+const SAY='الإعلان لوحده مش كفاية. العميل بيضغط ويسأل، ولو محدش رد عليه بسرعة بيمشي. إحنا هنخلي كل ضغطة تبقى محادثة، وكل محادثة تبقى حجز.';
+const KEY=['محادثة،','حجز.'];
+$('#sayp').innerHTML=SAY.split(' ').map(w=>`<span${KEY.includes(w)?' class="k"':''}>${w}</span>`).join(' ');
+const sw=$$('#sayp span');
+
+/* ideas */
+const grid=$('#grid'),fEl=$('#filters');
+fEl.innerHTML=F.map(([k,l],i)=>`<button type="button" class="soft" data-f="${k}" aria-pressed="${!i}">${l}</button>`).join('');
+grid.innerHTML=IDEAS.map((x,i)=>`<li class="reveal" style="--d:${(i%3)*90}ms" data-f="${x.f.join(' ')}"><article class="card glass" id="card-${x.id}" data-open="${x.id}" tabindex="0" role="button" aria-label="${x.t}: التفاصيل">
+ <div class="top"><span class="ic soft">${P(IC[x.ic])}</span><span class="prio ${PR[x.p][1]}">${PR[x.p][0]}</span></div>
+ <h3>${x.t}</h3><div class="en">${x.en}</div><p>${x.one}</p>
+ <div class="roles soft"><div><span class="who a">عائشة</span><span>${x.a}</span></div><div><span class="who m">Two Tabs</span><span>${x.m}</span></div></div>
+ <div class="foot"><span>${x.f.map(f=>`<span class="tag">${F.find(z=>z[0]===f)[1]}</span>`).join(' ')}</span><span class="more">التفاصيل ${P('<path d="M15 6l-6 6 6 6"/>').replace('<svg','<svg width="16" height="16"')}</span></div></article></li>`).join('');
+function count(){const v=$$('#grid li').filter(l=>l.style.display!=='none').length;$('#count').textContent=`${ar(v)} أفكار`}
+fEl.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const f=b.dataset.f;
+ fEl.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+ $$('#grid li').forEach(li=>{const show=f==='all'||li.dataset.f.split(' ').includes(f);
+  if(show){li.style.display='';requestAnimationFrame(()=>li.classList.remove('out'))}else{li.classList.add('out');setTimeout(()=>{if(li.classList.contains('out'))li.style.display='none';count()},reduce?0:300)}});
+ setTimeout(count,reduce?0:320)});
+count();
+/* 3D tilt */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!reduce){
+ $$('.card').forEach(c=>{c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.setProperty('--ry',`${x*8}deg`);c.style.setProperty('--rx',`${-y*8}deg`)});
+ c.addEventListener('pointerleave',()=>{c.style.setProperty('--ry','0deg');c.style.setProperty('--rx','0deg')})})}
+
+/* detail sheet */
+const scrim=$('#scrim'),sheet=$('#sheet');let open=-1,lastFocus=null;
+function render(i){const x=IDEAS[i];open=i;
+ sheet.innerHTML=`<div class="sh-top"><span class="prio ${PR[x.p][1]}">${PR[x.p][0]}</span><button class="x" id="x" aria-label="إغلاق">${P('<path d="M6 6l12 12M18 6L6 18"/>').replace('<svg','<svg width="20" height="20"')}</button></div>
+ <h3 id="sh-t">${x.t}</h3><div class="en">${x.en}</div><p class="one">${x.one}</p>
+ <h4>بتشتغل إزاي</h4><ol class="steps">${x.steps.map(s=>`<li><span>${s}</span></li>`).join('')}</ol>
+ <h4>مين بيعمل إيه</h4><div class="roles soft"><div><span class="who a">عائشة</span><span>${x.a}</span></div><div><span class="who m">Two Tabs</span><span>${x.m}</span></div></div>
+ <h4>مثال</h4><div class="ex">${x.ex}</div>
+ <div class="sh-nav"><a class="btn wa" href="${WA+encodeURIComponent('أهلًا محمد، شفت فكرة «'+x.t+'» وعايزين نتكلم فيها')}" target="_blank" rel="noopener">نتكلم في الفكرة دي</a><span class="sp"></span>
+ <button class="btn ghost" data-step="-1" aria-label="الفكرة السابقة">السابقة</button><button class="btn ghost" data-step="1" aria-label="الفكرة التالية">التالية</button></div>`;
+ sheet.scrollTop=0;$('#x').focus()}
+function openIdea(id){const i=IDEAS.findIndex(x=>x.id===id);if(i<0)return;lastFocus=document.activeElement;render(i);scrim.classList.add('open');scrim.setAttribute('aria-hidden','false');document.documentElement.classList.add('lock')}
+function closeIdea(){if(open<0)return;scrim.classList.remove('open');scrim.setAttribute('aria-hidden','true');document.documentElement.classList.remove('lock');open=-1;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.addEventListener('click',e=>{
+ const o=e.target.closest('[data-open]');if(o){openIdea(o.dataset.open);return}
+ const d=e.target.closest('[data-idea]');if(d){openIdea(d.dataset.idea);return}
+ if(e.target.closest('#x')||e.target===scrim){closeIdea();return}
+ const s=e.target.closest('[data-step]');if(s&&open>-1)render((open+ +s.dataset.step+IDEAS.length)%IDEAS.length)});
+document.addEventListener('keydown',e=>{
+ if(open>-1){if(e.key==='Escape')closeIdea();if(e.key==='ArrowLeft')render((open+1)%IDEAS.length);if(e.key==='ArrowRight')render((open-1+IDEAS.length)%IDEAS.length);return}
+ const c=e.target.closest&&e.target.closest('[data-open]');if(c&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openIdea(c.dataset.open)}});
+
+/* roadmap + market */
+$('#road').insertAdjacentHTML('beforeend',ROAD.map((r,i)=>`<div class="step reveal" style="--d:${i*80}ms"><div class="k">${r[0]}</div><div class="b glass"><h3>${r[1]}</h3><div class="t">${r[2]}</div><ul>${r[3].map(x=>`<li>${x}</li>`).join('')}</ul><button data-idea="${r[4]}">افتح الفكرة</button></div></div>`).join(''));
+$('#split').innerHTML=SPLIT.map((c,i)=>`<div class="col glass reveal" style="--d:${i*90}ms;--c:${c[1]}"><div class="hd"><span class="av" style="background:${c[1]}">${c[0]}</span><div><h3>${c[2]}</h3><div class="sub">${c[3]}</div></div></div><ul>${c[4].map((x,j)=>`<li style="--n:${j}"><span>${x}</span></li>`).join('')}</ul></div>`).join('');
+$('#mk').innerHTML=MK.map((m,i)=>`<div class="mi glass reveal" style="--d:${i*70}ms"><small>${m[0]}</small><h3>${m[1]}</h3><p>${m[2]}</p><a href="${m[3]}" target="_blank" rel="noopener">المصدر ←</a></div>`).join('');
+$('#wa-main').href=WA+encodeURIComponent('أهلًا محمد، شفت صفحة الأفكار وعايزين نبدأ');
+
+/* reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+$$('.reveal').forEach(el=>io.observe(el));
+
+/* one scroll loop: progress, device tilt, story, statement, roadmap fill, active nav */
+const dev=$('#device'),prog=$('#prog'),road=$('#road'),fill=$('#fill'),cl=(v,a,b)=>Math.min(b,Math.max(a,v));
+const secs=NAV.slice(0,4).map(([k])=>document.getElementById(k));
+let ticking=false;
+function frame(){ticking=false;const d=document.documentElement,H=innerHeight;
+ prog.style.transform=`scaleX(${d.scrollTop/((d.scrollHeight-H)||1)})`;
+ if(!reduce){const r=dev.getBoundingClientRect();const p=cl((H-r.top)/(H*.85),0,1);
+  dev.style.transform=`rotateX(${(1-p)*16}deg) scale(${.9+p*.1})`}
+ const sr=story.getBoundingClientRect(),sp=cl(-sr.top/((story.offsetHeight-H)||1),0,.9999);
+ setStage(Math.floor(sp*STAGES.length));
+ const yr=$('#say').getBoundingClientRect(),yp=cl((H*.85-yr.top)/(yr.height*.9),0,1),lit=Math.round(yp*sw.length);
+ sw.forEach((w,i)=>w.classList.toggle('lit',reduce||i<lit));
+ const rr=road.getBoundingClientRect();fill.style.setProperty('--h',`${cl((H*.6-rr.top)/rr.height,0,1)*100}%`);
+ $$('.step').forEach(s=>{if(s.getBoundingClientRect().top<H*.6)s.classList.add('in')});
+ let act='';secs.forEach(s=>{if(s.getBoundingClientRect().top<H*.4)act=s.id});
+ $$('[data-nav]').forEach(a=>a.classList.toggle('cur',a.dataset.nav===act))}
+addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(frame)}},{passive:true});
+addEventListener('resize',frame);frame();
+}
+</script>
+</body>
+</html>
