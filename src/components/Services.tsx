@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../lib/lang'
-import { Reveal, SectionTitle } from './Reveal'
+import { Reveal } from './Reveal'
 import { Cart, Check, Globe, Mobile, Pin, Plus, Spark, Target, WhatsApp } from './Icons'
 
 // Sample palettes for the live preview (taken from the concept designs).
@@ -54,15 +54,15 @@ export function Services() {
   const s = t.services
 
   return (
-    <section id="services" aria-labelledby="services-title" className="mx-auto max-w-[1120px] px-4 py-20 sm:px-6 md:py-28">
+    <section id="services" aria-labelledby="services-title" className="mx-auto max-w-[1240px] px-4 py-24 sm:px-6 md:py-32">
       <Reveal>
-        <SectionTitle id="services-title">{s.title}</SectionTitle>
+        <h2 id="services-title" className="text-[clamp(2.2rem,7vw,4.4rem)] font-bold leading-[1.05] tracking-tight">{s.title}</h2>
       </Reveal>
 
       <div className="mt-10 grid gap-4 md:grid-cols-3 md:grid-rows-[auto_auto]">
         {/* Website + menu: the main offer, largest tile */}
         <Reveal className="md:col-span-2 md:row-span-2">
-          <article className="grid h-full gap-6 rounded-3xl border border-line bg-surface p-6 sm:grid-cols-[1fr_minmax(0,15rem)] sm:p-8">
+          <article className="edge spotlight grid h-full gap-6 rounded-[2rem] p-6 sm:grid-cols-[1fr_minmax(0,15rem)] sm:p-8">
             <div>
               <h3 className="text-2xl font-bold">{s.menu.title}</h3>
               <p className="mt-2 text-ink-2">{s.menu.body}</p>
@@ -107,7 +107,7 @@ export function Services() {
         </Reveal>
 
         <Reveal delay={0.06}>
-          <article className="h-full rounded-3xl bg-ink p-6 text-paper sm:p-8">
+          <article className="h-full rounded-[2rem] bg-ink p-6 text-paper sm:p-8">
             <h3 className="text-xl font-bold">{s.ads.title}</h3>
             <p className="mt-1 text-paper/75">{s.ads.body}</p>
             <ul className="mt-4 flex flex-wrap gap-2">
@@ -132,8 +132,8 @@ export function Services() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <article className="flex h-full flex-col rounded-3xl border border-line bg-accent-soft p-6 sm:p-8">
-            <span className="grid size-11 place-items-center rounded-2xl bg-surface text-accent-strong">
+          <article className="spotlight flex h-full flex-col rounded-[2rem] border border-accent/25 bg-accent-soft p-6 sm:p-8">
+            <span className="grid size-11 place-items-center rounded-2xl bg-paper/60 text-accent-strong">
               <Cart />
             </span>
             <h3 className="mt-4 text-xl font-bold">{s.shopify.title}</h3>
@@ -150,7 +150,7 @@ export function Services() {
         ] as const).map(({ k, Icon }, i) => (
           <li key={k}>
             <Reveal delay={i * 0.06} className="h-full">
-              <article className="flex h-full flex-col rounded-3xl border border-line bg-surface p-6 sm:p-8">
+              <article className="spotlight flex h-full flex-col rounded-[2rem] border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 sm:p-8">
                 <span className="grid size-11 place-items-center rounded-2xl bg-accent-soft text-accent-strong">
                   <Icon />
                 </span>

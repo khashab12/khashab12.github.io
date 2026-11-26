@@ -64,5 +64,7 @@ export type Demo = {
 
 export const demos = demosData as Demo[]
 
-/** Preview screenshots (1365×918) hosted with the demos themselves. */
-export const demoPreview = (n: number) => `https://yousef-samir-web.surge.sh/assets/preview-current-${n}-v2.webp`
+/** Preview screenshots (1365×918), mirrored into public/y/previews by scripts/sync-yousef.sh. */
+export const demoPreview = (n: number) => asset(`y/previews/${n}.webp`)
+/** Our own hosted copy of a demo (mirrored, with the animation layer from scripts/polish-demos.ts). */
+export const demoUrl = (id: string) => asset(`y/${id}/index.html`)

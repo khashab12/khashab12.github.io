@@ -19,7 +19,7 @@ function StepVisual({ step }: { step: number }) {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5, ease }}
-          className="grid size-28 place-items-center rounded-full border-2 border-dashed border-paper/40 text-center font-display text-sm text-paper/80"
+          className="grid size-28 place-items-center rounded-full border-2 border-dashed border-ink/40 text-center font-display text-sm text-ink/80"
         >
           {v.logo}
         </m.div>
@@ -30,11 +30,11 @@ function StepVisual({ step }: { step: number }) {
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.25 + i * 0.1, duration: 0.4, ease }}
-              className="block size-12 rounded-2xl ring-1 ring-paper/15"
+              className="block size-12 rounded-2xl ring-1 ring-ink/15"
               style={{ background: c }}
             />
           ))}
-          <m.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="col-span-2 mt-1 text-center font-display text-2xl text-paper/85">
+          <m.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }} className="col-span-2 mt-1 text-center font-display text-2xl text-ink/85">
             Aa أب
           </m.span>
         </div>
@@ -48,7 +48,7 @@ function StepVisual({ step }: { step: number }) {
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.55, ease }}
-          className="w-52 overflow-hidden rounded-[1.75rem] border-[5px] border-paper/90 bg-[#f4ecdc] text-[#1e2b52] shadow-2xl"
+          className="w-52 overflow-hidden rounded-[1.75rem] border-[5px] border-ink/90 bg-[#f4ecdc] text-[#1e2b52] shadow-2xl"
         >
           <m.div initial={{ backgroundColor: '#54696a' }} animate={{ backgroundColor: '#1e2b52' }} transition={{ delay: 0.35, duration: 0.6 }} className="px-3 pb-3 pt-5 text-center text-[#f4ecdc]">
             <div className="mx-auto mb-1.5 size-7 rounded-full border-2 border-[#e2622b]" />
@@ -83,8 +83,8 @@ function StepVisual({ step }: { step: number }) {
         </div>
         <div className="flex items-center gap-3">
           <span className="font-display text-4xl font-bold text-saffron">{formatNumber(7, lang)}</span>
-          <span className="text-paper/80">{v.days}</span>
-          <span className="rounded-full bg-paper/10 px-3 py-1 text-sm text-paper">{v.free}</span>
+          <span className="text-ink/80">{v.days}</span>
+          <span className="rounded-full bg-ink/10 px-3 py-1 text-sm text-ink">{v.free}</span>
         </div>
       </div>
     )
@@ -98,13 +98,13 @@ function StepVisual({ step }: { step: number }) {
             initial={{ y: 24, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.1 + i * 0.12, duration: 0.5, ease }}
-            className="rounded-2xl border border-paper/15 bg-paper/5 p-4"
+            className="rounded-2xl border border-ink/15 bg-ink/5 p-4"
           >
-            <span className="grid size-8 place-items-center rounded-full bg-saffron text-ink">
+            <span className="grid size-8 place-items-center rounded-full bg-saffron text-paper">
               <Check width={16} height={16} />
             </span>
-            <h4 className="mt-3 font-display text-base font-bold leading-snug text-paper">{p.title}</h4>
-            <p className="mt-1 text-sm leading-relaxed text-paper/75">{p.body}</p>
+            <h4 className="mt-3 font-display text-base font-bold leading-snug text-ink">{p.title}</h4>
+            <p className="mt-1 text-sm leading-relaxed text-ink/75">{p.body}</p>
           </m.div>
         ))}
       </div>
@@ -117,11 +117,11 @@ function StepText({ step, total }: { step: number; total: number }) {
   const s = t.how.steps[step]
   return (
     <div>
-      <p className="font-display text-sm tracking-wide text-paper/60">
+      <p className="font-display text-sm tracking-wide text-ink/60">
         <span className="text-saffron">{formatNumber(step + 1, lang)}</span> {t.how.of} {formatNumber(total, lang)}
       </p>
-      <h3 className="mt-3 text-[clamp(1.6rem,6vw,2.6rem)] font-bold leading-tight text-paper">{s.title}</h3>
-      <p className="mt-3 max-w-md text-lg text-paper/75">{s.body}</p>
+      <h3 className="mt-3 text-[clamp(1.6rem,6vw,2.6rem)] font-bold leading-tight text-ink">{s.title}</h3>
+      <p className="mt-3 max-w-md text-lg text-ink/75">{s.body}</p>
     </div>
   )
 }
@@ -188,9 +188,9 @@ export function HowIWork() {
 
   if (staticMode)
     return (
-      <section id="how" aria-labelledby="how-title" className="bg-ink py-20 text-paper">
-        <div className="mx-auto max-w-[1120px] px-4 sm:px-6">
-          <h2 id="how-title" className="text-[clamp(1.7rem,6vw,2.5rem)] font-bold text-paper">
+      <section id="how" aria-labelledby="how-title" className="border-y border-line bg-surface py-20 text-ink">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
+          <h2 id="how-title" className="text-[clamp(1.7rem,6vw,2.5rem)] font-bold text-ink">
             {t.how.title}
           </h2>
           <ol className="mt-10 grid gap-12">
@@ -212,17 +212,17 @@ export function HowIWork() {
       ref={section}
       id="how"
       aria-labelledby="how-title"
-      className="bg-ink text-paper"
+      className="border-y border-line bg-surface text-ink"
       // One screen for the panel plus 85% of a screen of scrolling per remaining step, reserved from the first render.
       style={{ height: `calc(100svh + ${(total - 1) * 85}svh)` }}
     >
       <div className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pt-16">
-        <div className="mx-auto flex w-full max-w-[1120px] flex-1 flex-col px-4 py-6 sm:px-6 md:py-10">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-1 flex-col px-4 py-6 sm:px-6 md:py-10">
           <div className="flex items-center gap-4">
-            <h2 id="how-title" className="shrink-0 font-display text-lg font-bold text-paper/90">
+            <h2 id="how-title" className="shrink-0 font-display text-lg font-bold text-ink/90">
               {t.how.title}
             </h2>
-            <div className="h-1 flex-1 overflow-hidden rounded-full bg-paper/10">
+            <div className="h-1 flex-1 overflow-hidden rounded-full bg-ink/10">
               <div ref={bar} className="h-full origin-left rounded-full bg-saffron rtl:origin-right" style={{ transform: 'scaleX(0)' }} />
             </div>
           </div>

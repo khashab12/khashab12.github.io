@@ -15,6 +15,7 @@ export function Marquee({ children, repeat = 4, duration = 40, className = '' }:
         <div
           key={i}
           aria-hidden={i > 0 || undefined}
+          inert={i > 0 || undefined}
           className="marquee-track flex shrink-0 items-center justify-around [gap:var(--gap)]"
         >
           {children}
