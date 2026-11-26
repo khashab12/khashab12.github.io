@@ -39,18 +39,6 @@ function useDesk() {
   return desk
 }
 
-const BY_TONE: Record<string, string> = { mohamed: 'bg-accent text-paper', yousef: 'bg-saffron text-paper' }
-
-function ByChip({ by }: { by: string }) {
-  const { t } = useLang()
-  return (
-    <span className="glass-soft inline-flex items-center gap-1.5 rounded-full py-0.5 pe-2.5 ps-0.5 text-xs text-ink-2">
-      <span aria-hidden className={`grid size-5 place-items-center rounded-full text-[10px] font-bold ${BY_TONE[by]}`}>{t.work.by[by]?.[0]}</span>
-      {t.work.by[by]}
-    </span>
-  )
-}
-
 /** A live, scaled-down copy of a site inside a frame. Loads only near the viewport. */
 function LiveScreen({ src, width }: { src: string; width: number }) {
   const box = useRef<HTMLDivElement>(null)
@@ -168,7 +156,6 @@ function StackCard({ f, i, total, progress }: { f: Featured; i: number; total: n
             <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${f.real ? 'bg-accent/20 text-accent-strong' : 'bg-white/10 text-ink-2'}`}>
               {f.real ? t.work.tagReal : t.work.tagDemo}
             </span>
-            <ByChip by={f.by} />
           </div>
           <h3 className="mt-5 text-[clamp(1.6rem,4vw,2.6rem)] font-bold leading-[1.15]">{copy.title}</h3>
           <p className="mt-4 max-w-md text-ink-2">{copy.body}</p>
@@ -225,7 +212,6 @@ function DemoCard({ d }: { d: Demo }) {
         <span className="mt-1.5 font-display text-xl font-bold">{d.name[lang]}</span>
         <span className="mt-1.5 text-sm text-ink-2">{d.body[lang]}</span>
         <span className="mt-auto flex items-center justify-between gap-2 pt-5">
-          <ByChip by={d.by} />
           <span className="inline-flex items-center gap-1 text-sm font-medium text-accent-strong">
             {t.work.tryIt}
             <External width={16} height={16} />
@@ -278,7 +264,7 @@ function DemoRail() {
   return (
     <div ref={pin} className={pinned ? 'flex min-h-svh flex-col justify-center overflow-hidden py-10' : 'py-10'}>
       <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
-        <SectionHead label={t.work.by.yousef + ' × ' + t.work.by.mohamed} title={<>{t.work.demosTitle} <span className="text-muted tabular-nums">{formatNumber(demos.length, lang)}</span></>} sub={t.work.demosNote} />
+        <SectionHead title={<>{t.work.demosTitle} <span className="text-muted tabular-nums">{formatNumber(demos.length, lang)}</span></>} sub={t.work.demosNote} />
         <div role="group" aria-label={t.work.demosTitle} className="glass-soft rail mx-auto mt-8 flex w-fit max-w-full gap-1 overflow-x-auto rounded-full p-1">
           {FILTERS.map((k) => (
             <button
@@ -341,7 +327,6 @@ export function Work() {
                     <span className="flex flex-col p-5">
                       <span className="flex flex-wrap gap-2">
                         <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-ink-2">{t.work.tagDemo}</span>
-                        <ByChip by="mohamed" />
                       </span>
                       <span className="mt-3 font-display text-lg font-bold leading-snug">{copy.title}</span>
                       <span className="mt-1.5 text-sm text-ink-2">{copy.body}</span>
@@ -365,7 +350,7 @@ export function Work() {
       {concepts.length > 0 && (
         <div className="py-20">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <SectionHead label={t.work.by.mohamed} title={<>{t.work.conceptsTitle} <span className="text-muted tabular-nums">{formatNumber(concepts.length, lang)}</span></>} sub={t.work.conceptsNote} />
+            <SectionHead title={<>{t.work.conceptsTitle} <span className="text-muted tabular-nums">{formatNumber(concepts.length, lang)}</span></>} sub={t.work.conceptsNote} />
           </div>
           <div className="mt-10 flex flex-col gap-5">
             {rows.map((row, r) => (
