@@ -1,0 +1,20 @@
+name: Redeploy site (team changed)
+
+on:
+  push:
+    branches: [team]
+    paths-ignore: [public/y/**]
+  workflow_run:
+    workflows: [Sync Yousef demos]
+    types: [completed]
+
+permissions:
+  actions: write
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run deploy.yml --ref main --repo "$GITHUB_REPOSITORY"
+        env:
+          GH_TOKEN: ${{ github.token }}
