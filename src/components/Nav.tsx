@@ -16,6 +16,19 @@ export function Nav() {
           {t.nav.wordmark}
           <span aria-hidden className="text-saffron">.</span>
         </a>
+        <ul className="hidden items-center gap-1 md:flex">
+          {t.nav.links.map((l) => (
+            <li key={l.href}>
+              <a
+                href={l.href}
+                onClick={(e) => (e.preventDefault(), scrollToHash(l.href))}
+                className="inline-flex min-h-11 items-center rounded-xl px-3 font-display text-sm font-medium text-ink-2 transition-colors hover:bg-accent-soft"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
         <div className="flex items-center gap-2">
           <button
             type="button"

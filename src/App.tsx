@@ -5,7 +5,7 @@ import { startSmoothScroll } from './lib/scroll'
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { FeatureStrip } from './components/FeatureStrip'
-import { About } from './components/About'
+import { Team } from './components/Team'
 import { Services } from './components/Services'
 import { HowIWork } from './components/HowIWork'
 import { Work } from './components/Work'
@@ -55,10 +55,10 @@ export default function App() {
         <main id="main">
           <Hero />
           <FeatureStrip />
-          <About />
+          <Work />
           <Services />
           <HowIWork />
-          <Work />
+          <Team />
           <Testimonials />
           <Contact />
         </main>

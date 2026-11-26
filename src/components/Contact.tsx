@@ -1,5 +1,5 @@
 import { useLang } from '../lib/lang'
-import { contactLinks, type ContactLink } from '../lib/contact'
+import { contactPeople, type ContactLink } from '../lib/contact'
 import { Reveal } from './Reveal'
 import { Instagram, Mail, WhatsApp } from './Icons'
 
@@ -10,11 +10,12 @@ const STYLE: Record<ContactLink['kind'], string> = {
 }
 const ICON = { whatsapp: WhatsApp, instagram: Instagram, email: Mail }
 
-/** Hidden entirely until at least one contact value is set in src/config.ts. */
+/** Hidden entirely until at least one team member has a contact value in src/config.ts. */
 export function Contact() {
   const { t } = useLang()
-  const links = contactLinks()
-  if (links.length === 0) return null
+  const people = contactPeople()
+  if (people.length === 0) return null
+  const member = (id: string) => t.team.members.find((m) => m.id === id)
 
   return (
     <section id="contact" aria-labelledby="contact-title" className="px-4 py-20 sm:px-6 md:py-28">
@@ -23,23 +24,31 @@ export function Contact() {
           {t.contact.title}
         </h2>
         <p className="mx-auto mt-3 max-w-lg text-lg text-ink-2">{t.contact.body}</p>
-        <ul className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-          {links.map((l) => {
-            const Icon = ICON[l.kind]
-            return (
-              <li key={l.kind}>
-                <a
-                  href={l.href}
-                  target={l.kind === 'email' ? undefined : '_blank'}
-                  rel="noopener"
-                  className={`inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-2xl px-7 font-display text-lg font-medium transition sm:w-auto ${STYLE[l.kind]}`}
-                >
-                  <Icon width={22} height={22} />
-                  {t.contact[l.kind]}
-                </a>
-              </li>
-            )
-          })}
+        <ul className={`mx-auto mt-8 grid gap-4 ${people.length > 1 ? 'max-w-3xl sm:grid-cols-2' : 'max-w-md'}`}>
+          {people.map((p) => (
+            <li key={p.id} className="rounded-3xl bg-surface/70 p-5">
+              <p className="font-display text-lg font-bold">{member(p.id)?.name}</p>
+              <p className="text-sm text-muted">{member(p.id)?.role}</p>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {p.links.map((l) => {
+                  const Icon = ICON[l.kind]
+                  return (
+                    <li key={l.kind}>
+                      <a
+                        href={l.href}
+                        target={l.kind === 'email' ? undefined : '_blank'}
+                        rel="noopener"
+                        className={`inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-2xl px-7 font-display text-lg font-medium transition ${STYLE[l.kind]}`}
+                      >
+                        <Icon width={22} height={22} />
+                        {t.contact[l.kind]}
+                      </a>
+                    </li>
+                  )
+                })}
+              </ul>
+            </li>
+          ))}
         </ul>
       </Reveal>
     </section>

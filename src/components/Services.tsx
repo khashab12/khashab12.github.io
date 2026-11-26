@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useLang } from '../lib/lang'
 import { Reveal, SectionTitle } from './Reveal'
-import { Cart, Check, Pin, Plus, Target, WhatsApp } from './Icons'
+import { Cart, Check, Globe, Mobile, Pin, Plus, Spark, Target, WhatsApp } from './Icons'
 
 // Sample palettes for the live preview (taken from the concept designs).
 const PALETTES = [
@@ -141,6 +141,26 @@ export function Services() {
           </article>
         </Reveal>
       </div>
+
+      <ul className="mt-4 grid gap-4 md:grid-cols-3">
+        {([
+          { k: 'apps', Icon: Mobile },
+          { k: 'bots', Icon: Spark },
+          { k: 'reach', Icon: Globe },
+        ] as const).map(({ k, Icon }, i) => (
+          <li key={k}>
+            <Reveal delay={i * 0.06} className="h-full">
+              <article className="flex h-full flex-col rounded-3xl border border-line bg-surface p-6 sm:p-8">
+                <span className="grid size-11 place-items-center rounded-2xl bg-accent-soft text-accent-strong">
+                  <Icon />
+                </span>
+                <h3 className="mt-4 text-xl font-bold">{s[k].title}</h3>
+                <p className="mt-1 text-ink-2">{s[k].body}</p>
+              </article>
+            </Reveal>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

@@ -47,3 +47,22 @@ export const testimonials = testimonialsData as Testimonial[]
 
 export const asset = (p: string) => import.meta.env.BASE_URL + p.replace(/^\//, '')
 export const conceptUrl = (n: number) => asset(`concepts/${n}/index.html`)
+
+import demosData from '../data/demos.json'
+
+export type Demo = {
+  id: string
+  by: 'mohamed' | 'yousef'
+  cat: 'store' | 'food' | 'service'
+  url: string
+  img: number
+  featured?: boolean
+  name: Localized
+  hook: Localized
+  body: Localized
+}
+
+export const demos = demosData as Demo[]
+
+/** Preview screenshots (1365×918) hosted with the demos themselves. */
+export const demoPreview = (n: number) => `https://yousef-samir-web.surge.sh/assets/preview-current-${n}-v2.webp`
