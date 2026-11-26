@@ -1,0 +1,2137 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="/manifest.webmanifest"><link rel="apple-touch-icon" href="/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="theme-color" content="#17140f"><meta name="description" content="مزاج، قهوة على مهل. تجربة تصميم لكافيه مصري بروح القهوة المختصة."><title>مزاج | قهوة على مهل</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Changa:wght@600;700;800&family=Cairo:wght@400;600;700&display=optional" rel="stylesheet"><script id="portfolio-security-bootstrap">(function(){
+'use strict';if(window.__portfolioSecurity)return;window.__portfolioSecurity=true;
+var endpoint='https://portfolio-chat-backend.yousef-portfolio.workers.dev',nativeFetch=window.fetch.bind(window),session=null,pending=null,sitekey="0x4AAAAAAGO0I2tLsytslNSh";
+function verify(){if(session&&session.expires>Date.now()+30000)return Promise.resolve(session.token);if(pending)return pending;
+pending=new Promise(function(resolve,reject){var lang=document.documentElement.lang==='ar'?'ar':'en',box=document.createElement('section');box.id='portfolio-verification';box.setAttribute('role','status');box.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483647;max-width:calc(100vw - 24px);background:white;color:#111;border:1px solid #aaa;border-radius:10px;padding:12px;box-shadow:0 4px 24px #0003;font:14px Arial,sans-serif';var label=document.createElement('div');label.textContent=lang==='ar'?'جاري التحقق لحماية الشات...':'Verifying access to the chat...';box.appendChild(label);var target=document.createElement('div');box.appendChild(target);document.body.appendChild(box);var widget=null,settled=false,timer=setTimeout(function(){done(new Error('verification timeout'))},90000);
+function done(error,value){if(settled)return;settled=true;clearTimeout(timer);if(widget!==null&&window.turnstile)window.turnstile.remove(widget);box.remove();pending=null;if(error)reject(error);else resolve(value)}
+function render(){try{widget=window.turnstile.render(target,{sitekey:sitekey,action:'portfolio_chat',appearance:'interaction-only',language:lang,callback:function(token){nativeFetch(endpoint+'/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})}).then(function(r){if(!r.ok)throw Error('verification rejected');return r.json()}).then(function(data){if(!data.ok)throw Error('verification failed');session=data;done(null,data.token)}).catch(function(e){done(e)})},'error-callback':function(){done(new Error('verification unavailable'))},'timeout-callback':function(){done(new Error('verification timeout'))}})}catch(e){done(e)}}
+if(window.turnstile)render();else{var script=document.getElementById('portfolio-turnstile');if(!script){script=document.createElement('script');script.id='portfolio-turnstile';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;document.head.appendChild(script)}script.addEventListener('load',render,{once:true});script.addEventListener('error',function(){done(new Error('verification unavailable'))},{once:true})}
+});return pending;}
+function conversationProof(){try{var key='ym-chat-owner-proof-v1',value=localStorage.getItem(key);if(!/^v1_[a-f0-9]{64}$/.test(value||'')){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);value='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.setItem(key,value)}return value}catch(e){if(!window.__ymChatOwnerProof){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);window.__ymChatOwnerProof='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('')}return window.__ymChatOwnerProof}}
+window.fetch=function(resource,options){var url=typeof resource==='string'?resource:resource&&resource.url;if(!url||url.indexOf(endpoint+'/api/')!==0||!/\/api\/(assist|chat)$/.test(url))return nativeFetch(resource,options);return verify().then(function(token){var init=Object.assign({},options),body;try{body=JSON.parse(init.body||'{}')}catch(e){return nativeFetch(resource,options)}body.securityToken=token;if(/\/api\/chat$/.test(url))body.conversationProof=conversationProof();if(/\/api\/assist$/.test(url)){var area=document.querySelector('[id$="-msgs"],#yc-msgs');if(area){var turns=Array.prototype.slice.call(area.children).filter(function(n){return n.matches('.user,.bot,.yc-u,.yc-b,.u,.b')}).map(function(n){return {r:n.matches('.user,.yc-u,.u')?'u':'a',t:(n.textContent||'').slice(0,300)}}).filter(function(n){return n.t.trim()});if(turns.length&&turns[turns.length-1].r==='u'&&turns[turns.length-1].t===String(body.message||'').slice(0,300))turns.pop();if(turns.length)body.history=turns.slice(-6)}}init.body=JSON.stringify(body);var controller=window.AbortController?new AbortController():null,timer=controller?setTimeout(function(){controller.abort()},15000):null;init.signal=controller?controller.signal:undefined;return nativeFetch(resource,init).then(function(response){if(timer)clearTimeout(timer);if(response.status===403)session=null;return response},function(error){if(timer)clearTimeout(timer);throw error})})};
+})();
+</script>
+<style>/* ===== MAZAG v2 — menu-first street coffee: the page opens on the ordering experience ===== */
+:root{
+  --bg:#17140f;--panel:#201b14;--deep:#100d09;
+  --ink:#f4ecdc;--muted:#a99e89;--line:rgba(244,236,220,.16);
+  --accent:#ff5a1f;--accent-ink:#1a0f06;
+  --paper:#f4ecdc;--olive:#8a7d5f;--orange:#ff5a1f;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Cairo',Tahoma,sans-serif;font-size:16.5px;line-height:1.85;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+::selection{background:var(--accent);color:var(--accent-ink)}
+
+/* cut-corner ticket buttons (unique to mazag) */
+.pill,.order{clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);border:none;border-radius:0}
+
+/* ---------- top nav: heavy black bar ---------- */
+header.wrap{position:sticky;top:0;z-index:900;width:100%;max-width:none;background:rgba(23,20,15,.94);backdrop-filter:blur(10px);border-bottom:3px solid var(--accent);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px max(4%,calc((100% - 1180px)/2))}
+.brand{font-family:'Changa',sans-serif;font-weight:800;font-size:29px;line-height:1;display:flex;align-items:baseline;gap:10px}
+.brand span[lang="en"]{font-size:11px;letter-spacing:4px;color:var(--accent);font-weight:600}
+header nav{display:flex;align-items:center;gap:26px}
+header nav a{font-family:'Changa',sans-serif;font-weight:600;font-size:16.5px;color:var(--muted);transition:color .2s}
+header nav a:hover{color:var(--accent)}
+.order{background:var(--accent);color:var(--accent-ink);padding:11px 22px;font-family:'Changa',sans-serif;font-weight:700;font-size:15.5px;transition:background .2s}
+.order:hover{background:#ff7442}
+@media(max-width:720px){.desktop{display:none}header nav{gap:14px}}
+
+/* ---------- slim hero header (reduced; menu is the star) ---------- */
+.hero{display:flex;align-items:center;gap:34px;padding:34px 0 22px}
+.hero>div:first-child{flex:1;min-width:0}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:'Changa',sans-serif;font-size:13px;font-weight:600;letter-spacing:1.5px;color:var(--accent)}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block}
+.hero h1{font-family:'Changa',sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,38px);line-height:1.35;margin:10px 0 8px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{color:var(--muted);font-size:15.5px;max-width:60ch}
+.hero p br{display:none}
+.hero .pill{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);padding:10px 22px;font-family:'Changa',sans-serif;font-weight:700;font-size:15px;margin-top:16px;transition:background .2s}
+.hero .pill:hover{background:#ff7442}
+.hero-art{position:relative;flex:0 0 auto;display:flex;align-items:center;gap:14px}
+.hero-image{width:150px;height:150px;border:2.5px solid var(--ink);border-radius:14px;overflow:hidden;transform:rotate(-2deg);box-shadow:7px 7px 0 var(--accent);flex:0 0 auto}
+.hero-image img{width:100%;height:100%;object-fit:cover}
+.seal{position:absolute;top:-20px;inset-inline-start:-20px;width:88px;height:88px;border-radius:50%;background:var(--deep);border:2px dashed var(--accent);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(8deg);padding:8px}
+.seal span{font-size:9px;color:var(--muted);line-height:1.5}
+.seal strong{font-family:'Changa',sans-serif;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.photo-note{position:absolute;bottom:-14px;inset-inline-end:0;background:var(--deep);border:1.5px solid var(--line);border-radius:999px;padding:5px 13px;font-size:11.5px;color:var(--muted);white-space:nowrap}
+.hero-foot{display:flex;justify-content:space-between;gap:16px;padding:0 0 8px;font-family:'Changa',sans-serif;font-size:12.5px;letter-spacing:1.5px;color:var(--muted)}
+@media(max-width:720px){
+  .hero{gap:22px;padding:26px 0 16px}
+  .hero-image{width:104px;height:104px}
+  .seal{width:72px;height:72px;top:-16px;inset-inline-start:-12px}
+  .photo-note{display:none}
+  .hero-foot{font-size:11.5px}
+}
+
+/* ---------- plain text line (no ribbon band) ---------- */
+.ribbon{padding:6px 0 26px}
+.ribbon .wrap{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.ribbon b{color:var(--accent);font-weight:400}
+@media(max-width:720px){.ribbon .optional{display:none}}
+
+/* ---------- THE menu: opens the page ---------- */
+.menu-section{background:var(--panel);border-block:3px solid var(--deep);padding:64px 0 72px}
+.menu-shell{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.menu-intro h2{font-family:'Changa',sans-serif;font-weight:800;font-size:clamp(36px,5vw,58px);line-height:1.2;margin:12px 0 14px}
+.menu-intro .sub{color:var(--muted);font-size:16.5px;max-width:42ch}
+.little-star{font-size:44px;color:var(--accent);margin-top:26px}
+.receipt{background:var(--deep);border:2px dashed rgba(244,236,220,.3);border-radius:6px;padding:30px 30px 22px;box-shadow:10px 10px 0 rgba(0,0,0,.35)}
+.receipt-title{display:flex;align-items:baseline;justify-content:space-between;border-bottom:2px solid var(--line);padding-bottom:16px;margin-bottom:18px}
+.receipt-title b{font-family:'Changa',sans-serif;font-size:26px;font-weight:800}
+.receipt-title small{font-family:'Changa',sans-serif;font-size:10.5px;letter-spacing:3px;color:var(--accent)}
+.tabs{display:flex;gap:8px;background:rgba(244,236,220,.06);border:1.5px solid var(--line);padding:5px;margin-bottom:8px}
+.tabs button{flex:1;border:none;background:transparent;color:var(--muted);padding:10px 8px;font-family:'Changa',sans-serif;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+#menu-list{padding:6px 2px}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:13px 2px;border-bottom:1.5px dashed rgba(244,236,220,.18)}
+.menu-item:last-child{border-bottom:none}
+.menu-item h3{font-family:'Changa',sans-serif;font-weight:700;font-size:18px}
+.menu-item p{color:var(--muted);font-size:14px;margin-top:2px}
+.menu-price{font-family:'Changa',sans-serif;font-weight:800;font-size:21px;color:var(--accent);white-space:nowrap}
+.menu-price small{font-size:12px;font-weight:600;color:var(--muted);margin-inline-start:5px}
+.receipt-end{display:flex;justify-content:space-between;gap:12px;border-top:1.5px dashed rgba(244,236,220,.18);margin-top:14px;padding-top:14px;font-size:13px;color:var(--muted)}
+.barcode{height:34px;margin-top:16px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 8px,transparent 8px 10px,var(--ink) 10px 11px,transparent 11px 15px);opacity:.55}
+@media(max-width:960px){.menu-shell{grid-template-columns:1fr;gap:36px}.menu-section{padding:48px 0 56px}}
+
+/* ---------- signatures ---------- */
+.section{padding:72px 0}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.section-top h2,.story-copy h2,.visit-copy h2{font-family:'Changa',sans-serif;font-weight:800;font-size:clamp(30px,4vw,46px);line-height:1.3;margin:12px 0 14px}
+.section-top .sub{color:var(--muted);font-size:16px;max-width:42ch}
+.signature-grid{display:grid;grid-template-columns:.8fr 1fr 1fr;gap:22px}
+.signature-lead{border:2px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:30px;text-align:center;color:var(--muted)}
+.signature-lead .steam{font-size:26px;color:var(--accent)}
+.signature-lead .cup{width:74px;height:74px;border-radius:50%;border:2px dashed var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Changa',sans-serif;font-size:32px;font-weight:800;color:var(--accent)}
+.signature-lead small{font-size:13px}
+.signature{background:var(--panel);border:2px solid var(--line);padding:28px;display:flex;flex-direction:column;gap:10px;transition:transform .25s,border-color .25s}
+.signature:hover{transform:translateY(-5px);border-color:var(--accent)}
+.signature .serial{font-family:'Changa',sans-serif;font-size:11px;letter-spacing:3px;color:var(--muted)}
+.signature h3{font-family:'Changa',sans-serif;font-weight:800;font-size:26px}
+.signature p{color:var(--muted);font-size:15px;flex:1}
+.signature .tasting{font-size:13px;color:var(--accent)}
+.signature .price{font-family:'Changa',sans-serif;font-weight:800;font-size:30px;color:var(--accent)}
+.signature .price small{font-size:13px;color:var(--muted);font-weight:600}
+@media(max-width:960px){.signature-grid{grid-template-columns:1fr}.signature-lead{flex-direction:row;padding:18px}}
+
+/* ---------- story ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+.story-photo{position:relative}
+.story-photo img{width:100%;aspect-ratio:4/3.4;max-height:54vh;object-fit:cover;border:3px solid var(--ink);transform:rotate(1.4deg);box-shadow:-12px 12px 0 var(--accent)}
+.story-photo .caption{position:absolute;bottom:-14px;inset-inline-start:18px;background:var(--deep);border:1.5px solid var(--line);border-radius:999px;padding:7px 16px;font-size:13px;color:var(--muted)}
+.story-copy p{color:var(--muted);margin-bottom:14px;max-width:52ch}
+.amenities{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.amenities span{border:1.5px solid var(--line);padding:8px 16px;font-size:14px;color:var(--ink)}
+.moments{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
+.moment{position:relative;overflow:hidden;border:2px solid var(--line);aspect-ratio:3/4}
+.moment img{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.moment span{position:absolute;bottom:0;inset-inline:0;background:linear-gradient(transparent,rgba(16,13,9,.92));padding:34px 18px 14px;font-size:14px}
+.daily{margin-top:26px;background:var(--panel);border:2px dashed rgba(244,236,220,.28);padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.daily h3{font-family:'Changa',sans-serif;font-weight:800;font-size:23px;margin:6px 0 4px}
+.daily p{color:var(--muted);font-size:14.5px}
+.outline{background:transparent;border:2px solid var(--ink);color:var(--ink);padding:11px 22px;font-family:'Changa',sans-serif;font-weight:600;font-size:15px;transition:background .2s,color .2s;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px)}
+.outline:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:960px){.story{grid-template-columns:1fr;gap:40px}.moments{grid-template-columns:1fr 1fr;gap:14px}}
+
+/* ---------- visit ---------- */
+.visit{background:var(--accent);color:var(--accent-ink);padding:70px 0;border-block:3px solid var(--deep)}
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:52px;align-items:center}
+.visit .eyebrow{color:var(--accent-ink)}
+.visit-copy h2{color:var(--accent-ink)}
+.visit-copy p{color:rgba(26,15,6,.78);max-width:48ch}
+.visit .pill{background:var(--deep);color:var(--ink)}
+.visit .pill:hover{background:#000}
+.visit-card{background:var(--deep);color:var(--ink);padding:30px;border:2px solid rgba(16,13,9,.4);box-shadow:12px 12px 0 rgba(16,13,9,.35)}
+.visit-card h3{font-family:'Changa',sans-serif;font-weight:800;font-size:22px;border-bottom:1.5px solid var(--line);padding-bottom:14px;margin-bottom:8px}
+.visit-row{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1.5px dashed rgba(244,236,220,.18);font-size:15px}
+.visit-row span:first-child{color:var(--muted)}
+.visit-card small{display:block;margin-top:14px;color:var(--muted);font-size:12.5px}
+@media(max-width:960px){.visit-grid{grid-template-columns:1fr;gap:36px}}
+
+/* ---------- footer ---------- */
+footer.wrap{padding:48px 0 38px}
+.footer-top{display:flex;justify-content:space-between;align-items:start;gap:24px;flex-wrap:wrap;border-bottom:1.5px solid var(--line);padding-bottom:26px}
+.footer-top p{color:var(--muted);font-size:15px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding-top:22px}
+.footer-bottom span{color:var(--muted);font-size:13px;max-width:60ch}
+
+/* ---------- order modal ---------- */
+dialog.modal{border:none;background:transparent;padding:0;max-width:min(520px,92vw)}
+dialog.modal::backdrop{background:rgba(10,8,5,.72);backdrop-filter:blur(3px)}
+.modal-content{background:var(--panel);color:var(--ink);border:2px solid var(--accent);padding:32px;position:relative;box-shadow:14px 14px 0 rgba(0,0,0,.4)}
+.modal-content .close{position:absolute;top:16px;inset-inline-end:16px;background:transparent;border:1.5px solid var(--line);color:var(--ink);width:34px;height:34px;border-radius:50%;font-size:16px}
+.modal-content .close:hover{border-color:var(--accent);color:var(--accent)}
+.modal-content h2{font-family:'Changa',sans-serif;font-weight:800;font-size:30px;margin:10px 0 10px}
+.modal-content p{color:var(--muted);font-size:15px}
+.modal-content .preview{background:var(--deep);border:1.5px dashed rgba(244,236,220,.3);padding:16px;margin:18px 0;font-size:15px;line-height:1.9}
+.modal-content .pill{margin-top:4px;width:100%;justify-content:center;display:flex}
+.modal-content .demo-note{font-size:12.5px;margin-top:14px;text-align:center}
+</style><style id="overlay-chat-safety">body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-launcher"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-panel"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) #yc-fab{visibility:hidden!important;pointer-events:none!important}</style><meta id="arabic-practical-route" name="demo-practical-routing" content="1"><script id="portfolio-safe-summary">function yEscapeHTML(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]||c})}</script></head><body>
+<header class="wrap"><a href="#" class="brand" aria-label="مزاج الرئيسية">مزاج<span lang="en">MAZAG</span></a><nav aria-label="القائمة الرئيسية"><a href="#menu">القائمة</a><a class="desktop" href="#story">حكايتنا</a><a class="desktop" href="#visit">تعال نجلس</a><button class="top-order order">اطلب على واتساب ↖</button></nav></header>
+<main><section class="hero wrap"><div><div class="eyebrow"><i class="dot"></i> قهوة مختصة · جلسة تشبهك</div><h1>خذ وقتك.<br> <em>اضبط مزاجك.</em></h1><p>أول رشفة لك، والباقي على مهلك.<br>بنّ طازج، وموسيقى هادئة، وركن تنفصل فيه عن ضجيج اليوم.</p><a href="#menu" class="pill">تصفّح القائمة <span class="arrow">↙</span></a></div><div class="hero-art"><div class="hero-image"><img src="/assets/media-175c8d2361718ced.avif" alt="تحضير قهوة مقطرة بإبريق ترشيح زجاجي" fetchpriority="high" loading="eager" width="1000" height="1120"></div><div class="seal"><span>بنّ بإتقان</span><strong>slow down</strong><span>واستمتع بها</span></div><span class="photo-note">قليل من الهدوء... وكوب جميل.</span></div></section>
+<div class="hero-foot wrap"><span>مكانك المحبّب، من أول جلسة.</span><span>GOOD COFFEE. NO RUSH.</span></div>
+<div class="ribbon"><div class="wrap"><span>بنّ يُطحَن عند طلبك</span><b>✳</b><span>حلوى طازجة من الفرن</span><b>✳</b><span>جلسة من القلب</span><b class="optional">✳</b><span class="optional">كل يوم بداية جديدة</span></div></div>
+<section class="menu-section" id="menu"><div class="menu-shell wrap"><div class="menu-intro"><div class="eyebrow">02 / قائمة المزاج</div><h2>ما مزاجك<br> اليوم؟</h2><p class="sub">قهوة توقظك، أو مشروب بارد يصفّي ذهنك، أو قطعة حلوى تُتمّ الجلسة؟ اختر ونحن نتولى الباقي.</p><div class="little-star" aria-hidden="true">✳</div></div><div class="receipt"><div class="receipt-title"><b>مزاج</b><small>YOUR DAILY DOSE OF SLOW</small></div><div class="tabs" role="tablist" aria-label="أقسام القائمة"><button role="tab" id="tab-coffee" aria-selected="true" aria-controls="menu-list" data-cat="coffee">قهوة ساخنة</button><button role="tab" id="tab-cold" aria-selected="false" aria-controls="menu-list" data-cat="cold" tabindex="-1">مع ثلج</button><button role="tab" id="tab-sweet" aria-selected="false" aria-controls="menu-list" data-cat="sweet" tabindex="-1">حلوى</button></div><div id="menu-list" role="tabpanel" aria-labelledby="tab-coffee"></div><div class="receipt-end"><span>الأسعار بالجنيه المصري</span><span>الجلسة الجميلة لا تُحسب ♡</span></div><div class="barcode" aria-hidden="true"></div></div></div></section>
+<section class="section wrap" id="signatures"><div class="section-top"><div><div class="eyebrow">01 / على ذوقنا</div><h2>كوبات لا تفوّتها.</h2></div><span class="sub">وصفات لها شخصية، مثلك.</span></div><div class="signature-grid"><div class="signature-lead" aria-hidden="true"><span class="steam">≈</span><div class="cup">م</div><small>محضّرة بحب. بلا استعجال.</small></div><article class="signature"><span class="serial">NO. 01 / SIGNATURE</span><h3>لاتيه حلاوة</h3><p>إسبريسو مزدوج، وحليب كريمي، ولمسة حلاوة طحينية. طعم مألوف بحكاية جديدة.</p><span class="tasting">غني · ناعم · مصري أصيل</span><div class="price">115 <small>جنيه</small></div></article><article class="signature"><span class="serial">NO. 02 / ON ICE</span><h3>أورانج كولد برو</h3><p>قهوة باردة على مهل، وبرتقال طازج، وثلج. خفيفة ومنعشة حتى آخر رشفة.</p><span class="tasting">منعش · حموضة خفيفة · بلا حليب</span><div class="price">125 <small>جنيه</small></div></article></div></section>
+
+<section class="section wrap" id="story"><div class="story"><div class="story-photo"><img src="/assets/media-e19e2a1d69238747.avif" alt="مساحة كافيه دافئة بإضاءة معلقة وبار قهوة" loading="lazy" width="900" height="800"><span class="caption">كرسيّك بانتظارك. خذ راحتك.</span></div><div class="story-copy"><div class="eyebrow">03 / أكثر من قهوة</div><h2>ركن صغير.<br>حكايات كثيرة.</h2><p>وُلد مزاج من فكرة بسيطة: مكان نحب الجلوس فيه نحن أيضًا. لا نستعجل قيامك، ولا نقول لك «آخر طلب» وأنت ما زلت تتحدث.</p><p>نختار البنّ بعناية، ونحضّر كل كوب عند طلبه. ومع أول رائحة قهوة، تشعر أنك وصلت إلى مكانك.</p><div class="amenities"><span>واي فاي للعمل</span><span>ركن للقراءة</span><span>جلسة مع الأصدقاء</span><span>قهوة للسفر</span></div></div></div><div class="moments"><div class="moment"><img src="/assets/media-c0016831add0130f.avif" alt="حبوب بن محمصة بدرجات بنية دافئة" loading="lazy" width="640" height="480"><span>الفرق يبدأ من حبّة البنّ.</span></div><div class="moment"><img src="/assets/media-59f5a019b615e920.avif" alt="كوكيز بقطع الشوكولاتة على ورق خبز" loading="lazy" width="640" height="760"><span>جلسة حلوة... ساخنة وطازجة.</span></div></div><div class="daily"><div><div class="eyebrow">محتار؟ اترك الأمر لنا</div><h3 id="daily-name">فلات وايت + كوكيز</h3><p id="daily-note">قهوة مضبوطة وحلوى بجانبها. ١٦٠ جنيهًا.</p></div><button class="outline" id="shuffle">اختر لي مزاجًا آخر ↻</button></div></section>
+<section class="visit" id="visit"><div class="visit-grid wrap"><div class="visit-copy"><div class="eyebrow">04 / نلتقي على قهوة</div><h2>اترك الضجيج في الخارج.<br>وتعال على راحتك.</h2><p>زرنا غدًا صباحًا، أو بعد العمل، أو في منتصف النهار بلا سبب. لدينا دائمًا كوب لك.</p><button class="pill order">جهّز طلبك على واتساب <span class="arrow">↖</span></button></div><div class="visit-card"><h3>مزاج / مصر الجديدة</h3><div class="visit-row"><span>أين تجدنا؟</span><span>شارع بغداد، الكوربة</span></div><div class="visit-row"><span>السبت للخميس</span><span>٨ صباحًا - ١٢ ليلًا</span></div><div class="visit-row"><span>الجمعة</span><span>٩ صباحًا - ١ بعد منتصف الليل</span></div><small>عنوان ومواعيد توضيحية لنسخة العرض، وليست فرعًا حقيقيًا.</small></div></div></section></main>
+<footer class="wrap"><div class="footer-top"><a href="#" class="brand">مزاج<span lang="en">MAZAG COFFEE</span></a><p>بنّ جيد. وأناس طيبون.<br>والباقي يأتي على مهله.</p></div><div class="footer-bottom"><span>نسخة تصميم تجريبية لكافيه خيالي. الأسماء والأسعار والمواعيد للعرض فقط. الصور تعبيرية من Unsplash.</span><button class="outline" id="install">ثبّت مزاج على موبايلك ↗</button></div></footer>
+<dialog class="modal" id="order-modal" aria-labelledby="modal-title"><div class="modal-content"><button class="close" aria-label="أغلق النافذة">×</button><div class="eyebrow" id="modal-kicker">واتساب / تجربة الطلب</div><h2 id="modal-title">ماذا نُعدّ لك؟</h2><p id="modal-desc">هذه معاينة لرسالة الطلب. في الموقع الحقيقي يفتح هذا الزر واتساب الكافيه والطلب جاهز.</p><div class="preview" id="order-preview">مرحبًا مزاج! أريد طلب لاتيه حلاوة، من فضلكم. هل لي بتفاصيل الاستلام؟</div><button class="pill" id="copy-order">انسخ رسالة الطلب <span>↗</span></button><p class="demo-note">نسخة عرض فقط. لا طلبات تُرسَل ولا بيانات تُجمَع.</p></div></dialog>
+<script>
+const menu={coffee:[['إسبريسو دابل','شوتين بنّ، طعم واضح ومظبوط.',65],['أمريكانو','إسبريسو ومية سخنة. بسيط وصريح.',75],['فلات وايت','دابل شوت ولبن مخملي، توازن على أصوله.',95],['لاتيه حلاوة','وصفتنا الخاصة بلمسة حلاوة طحينية.',115],['قهوة تركي','سادة، مظبوط أو زيادة. على كيفك.',60]],cold:[['آيس لاتيه','إسبريسو ولبن بارد على تلج.',105],['سبانيش لاتيه','قهوة كريمي بلبن مكثف ولمسة حلاوة.',120],['أورانج كولد برو','قهوة مقطرة باردة وبرتقال فريش.',125],['ماتشا فراولة','ماتشا ولبن مع صوص فراولة.',135],['ليمون نعناع','فريش وساقع ومروّق.',80]],sweet:[['كوكيز شوكولاتة','طرية من الداخل، وبقطع شوكولاتة داكنة.',65],['سان سيباستيان','تشيز كيك كريمي، بوش محمّر.',145],['سينامون رول','قرفة وسكر بني وصوص فانيليا.',110],['براوني دافي','شوكولاتة غنية. يستاهل آخر حتة.',95],['كرواسون زبدة','طبقات خفيفة، طازة كل صباح.',75]]};
+const list=document.querySelector('#menu-list'),tabs=[...document.querySelectorAll('[data-cat]')];
+function setMenu(cat){tabs.forEach(t=>{let active=t.dataset.cat===cat;t.setAttribute('aria-selected',active);t.tabIndex=active?0:-1});list.setAttribute('aria-labelledby','tab-'+cat);list.innerHTML=menu[cat].map(i=>`<article class="menu-item"><div><h3>${i[0]}</h3><p>${i[1]}</p></div><div class="menu-price">${i[2]}<small>جنيه</small></div></article>`).join('')}
+tabs.forEach((t,i)=>{t.onclick=()=>setMenu(t.dataset.cat);t.onkeydown=e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowLeft'?1:2))%3];next.focus();setMenu(next.dataset.cat)}}});setMenu('coffee');
+const moods=[['فلات وايت + كوكيز','قهوة مظبوطة وحاجة حلوة جنبها. ١٦٠ جنيه.'],['أورانج كولد برو','خفيف، بارد، ومنعش. ١٢٥ جنيهًا.'],['لاتيه حلاوة + كرواسون','فطار على مهلك وطعم يظبّط اليوم. ١٩٠ جنيه.'],['ماتشا فراولة','غيّر الأجواء وجرّب شيئًا مختلفًا. ١٣٥ جنيهًا.']];let mood=0;
+document.querySelector('#shuffle').onclick=()=>{mood=(mood+1)%moods.length;document.querySelector('#daily-name').textContent=moods[mood][0];document.querySelector('#daily-note').textContent=moods[mood][1]};
+const modal=document.querySelector('#order-modal');document.querySelectorAll('.order').forEach(b=>b.onclick=()=>{document.querySelector('#copy-order').innerHTML='انسخ رسالة الطلب <span>↗</span>';modal.showModal()});document.querySelector('.close').onclick=()=>modal.close();modal.onclick=e=>{if(e.target===modal)modal.close()};document.querySelector('#copy-order').onclick=async()=>{const msg=document.querySelector('#order-preview').textContent;try{await navigator.clipboard.writeText(msg);document.querySelector('#copy-order').textContent='نُسخت. الرسالة جاهزة ✓'}catch{document.querySelector('#copy-order').textContent='حدّد الرسالة وانسخها من الأعلى'}};
+let installEvent;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvent=e});document.querySelector('#install').onclick=async()=>{if(installEvent){await installEvent.prompt();installEvent=null}else{document.querySelector('#modal-title').textContent='مزاج على موبايلك';document.querySelector('#modal-kicker').textContent='مزاج / تطبيقك المفضّل';document.querySelector('#modal-desc').textContent='ثبّت مزاج بأيقونة على الشاشة الرئيسية، وافتحه في نافذة تطبيق مستقلة. يحتاج إلى إنترنت ليجلب لك آخر نسخة.';document.querySelector('#order-preview').textContent='أندرويد: افتح قائمة المتصفح واختار تثبيت التطبيق. آيفون: افتح الموقع في Safari، اضغط مشاركة، وبعدها إضافة إلى الشاشة الرئيسية.';document.querySelector('#copy-order').style.display='none';modal.showModal()}};document.querySelectorAll('.order').forEach(b=>b.onclick=()=>{document.querySelector('#modal-title').textContent='نظبطلك إيه؟';document.querySelector('#modal-kicker').textContent='واتساب / تجربة الطلب';document.querySelector('#modal-desc').textContent='دي معاينة لرسالة الطلب. في الموقع الحقيقي، الزر ده بيفتح واتساب الكافيه بالطلب جاهز.';document.querySelector('#order-preview').textContent='مرحبًا مزاج! أريد طلب لاتيه حلاوة، من فضلكم. هل لي بتفاصيل الاستلام؟';document.querySelector('#copy-order').style.display='flex';document.querySelector('#copy-order').innerHTML='انسخ رسالة الطلب <span>↗</span>';modal.showModal()});
+</script><style id="mz-widget-css">
+/* Mazag assistant widget — dark roast theme */
+#mz-launcher{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:center;gap:8px;background:#ff5a1f;color:#1a0f06;border:2px solid #100d09;border-radius:999px;padding:12px 18px;font-family:inherit;font-weight:700;font-size:15px;cursor:pointer;box-shadow:5px 5px 0 rgba(0,0,0,.45);transition:transform .25s ease,background .25s ease}
+#mz-launcher:hover{transform:translateY(-2px);background:#ff7442}
+#mz-launcher .mz-dot{width:8px;height:8px;border-radius:50%;background:#1a0f06;display:inline-block}
+#mz-launcher svg{width:18px;height:18px;display:block}
+#mz-panel{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:#1d1812;border-top:2px solid #ff5a1f;border-radius:20px 20px 0 0;display:none;flex-direction:column;height:min(72dvh,620px);box-shadow:0 -12px 40px rgba(0,0,0,.5);overflow:hidden;font-family:inherit;color:#f4ecdc}
+#mz-panel.open{display:flex}
+#mz-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1.5px solid rgba(244,236,220,.16);background:#17140f}
+#mz-head .mz-ava{width:38px;height:38px;border-radius:50%;background:#ff5a1f;color:#1a0f06;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 auto}
+#mz-head .mz-who{flex:1;min-width:0}
+#mz-head .mz-who b{display:block;font-size:15px;color:#f4ecdc}
+#mz-head .mz-who small{display:flex;align-items:center;gap:5px;font-size:12px;color:#a99e89}
+#mz-head .mz-who small i{width:7px;height:7px;border-radius:50%;background:#7fc24a;display:inline-block}
+#mz-close{background:none;border:1.5px solid rgba(244,236,220,.25);border-radius:50%;width:30px;height:30px;font-size:15px;line-height:1;cursor:pointer;color:#f4ecdc;flex:0 0 auto}
+#mz-close:hover{border-color:#ff5a1f;color:#ff5a1f}
+#mz-msgs{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.mz-msg{max-width:85%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.75;white-space:pre-line;word-break:break-word}
+.mz-msg.bot{align-self:flex-start;background:#2a231a;border:1px solid rgba(244,236,220,.14);color:#f4ecdc;border-bottom-right-radius:4px}
+.mz-msg.user{align-self:flex-end;background:#ff5a1f;color:#1a0f06;border-bottom-left-radius:4px}
+.mz-msg.bot b{color:#ff8a5c}
+.mz-order-card{align-self:stretch;background:#17140f;border:1.5px solid #ff5a1f;border-radius:12px;padding:12px 14px;font-size:14px;color:#f4ecdc}
+.mz-order-card .mz-oc-title{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed rgba(244,236,220,.25);padding-bottom:8px;margin-bottom:8px}
+.mz-order-card .mz-oc-title b{font-size:15px}
+.mz-order-card .mz-oc-title small{color:#a99e89;font-family:'Changa',Georgia,serif;font-size:10px;letter-spacing:1px}
+.mz-order-card .mz-row{display:flex;justify-content:space-between;padding:3px 0}
+.mz-order-card .mz-row.total{border-top:1px dashed rgba(244,236,220,.25);margin-top:7px;padding-top:8px;font-weight:bold;font-size:15px}
+.mz-order-card .mz-row.total span:last-child{color:#ff5a1f}
+.mz-order-card .mz-muted{color:#a99e89;font-size:12.5px}
+#mz-typing{align-self:flex-start;background:#2a231a;border:1px solid rgba(244,236,220,.14);border-radius:14px;border-bottom-right-radius:4px;padding:12px 16px;display:none;gap:5px}
+#mz-typing.on{display:flex}
+#mz-typing span{width:6px;height:6px;border-radius:50%;background:#a99e89;animation:mzbnc 1.1s infinite}
+#mz-typing span:nth-child(2){animation-delay:.15s}
+#mz-typing span:nth-child(3){animation-delay:.3s}
+@keyframes mzbnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+#mz-chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px;border-top:1.5px solid rgba(244,236,220,.16);background:#17140f}
+#mz-chips:empty{display:none}
+#mz-chips button{border:1.5px solid #f4ecdc;background:transparent;color:#f4ecdc;border-radius:999px;padding:7px 14px;font-size:13.5px;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+#mz-chips button:hover{border-color:#ff5a1f;color:#ff5a1f}
+#mz-chips button.mz-primary{background:#ff5a1f;border-color:#ff5a1f;color:#1a0f06;font-weight:700}
+#mz-chips button.mz-primary:hover{background:#ff7442;border-color:#ff7442;color:#1a0f06}
+#mz-input{display:flex;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:#17140f}
+#mz-input input{flex:1;border:1.5px solid rgba(244,236,220,.22);border-radius:999px;padding:10px 16px;font-size:14.5px;font-family:inherit;background:#100d09;color:#f4ecdc;outline:none}
+#mz-input input:focus{border-color:#ff5a1f}
+#mz-input button{background:#ff5a1f;color:#1a0f06;border:none;border-radius:999px;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+#mz-input button svg{width:18px;height:18px;transform:scaleX(-1)}
+@media(min-width:720px){
+  #mz-panel{left:24px;right:auto;bottom:86px;width:384px;height:min(70vh,600px);border:2px solid #ff5a1f;border-radius:18px}
+  #mz-launcher{left:24px;bottom:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  #mz-typing span{animation:none}
+  #mz-launcher{transition:none}
+}
+</style>
+<script id="mz-widget-js">(function () {
+  /* name-refusal-fix-v1 */
+  function widgetNameStep(step) {
+    return /^(lead-name|await-name|book-name)$/.test(step);
+  }
+  function widgetName(raw) {
+    var value = String(raw || '').normalize('NFKC').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '').trim();
+    value = value.replace(/^(?:(?:أنا|انا)\s+)?(?:اسمي|إسمي|اسم حضرتك)\s*[:：]?\s*/, '').replace(/^(?:أنا|انا)\s+/, '').replace(/^(?:my name is|i am|i'm)\s+/i, '').trim();
+    var t = value.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[^\p{L}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+    if (!t || /^(?:لا|لاء|لا شكرا|لأ|مش مهم|مش مهم الاسم|الاسم مش مهم|مو مهم|مو مهم الاسم|مجهول|فاعل خير|بدون اسم|من غير اسم|اي اسم|اي حاجه|حد|فلان|فلان الفلاني|اسم|الاسم|اسمك|سري|سر|مش هقول|مش هقولك|مالكش دعوه|ملكش دعوه|خليك في حالك|لا يهم|لا يهم الاسم|مفيش اسم|محدش|انا مين|انت مالك|انت مين|باتمان|سبايدرمان|سوبرمان|no|no thanks|none|anonymous|anon|unknown|guest|test|testing|joke|batman|superman|n a|skip|pass|whatever|not important|doesn t matter|name doesn t matter|prefer not to say|rather not say|not telling|none of your business|null|undefined)$/u.test(t)) return null;
+    if (/(?:^|\s)(?:مش|مو|غير|مش حابب|مش حابه|مش عايز|مش عاوز|مش عايزه|مش عاوزه|مش هقول|مابحبش|ما بحبش|مبحبش|مش لازم|مش ضروري|مش فارق|مش هيفرق|مش هتفرق)(?:\s|$)/u.test(t) && /(?:اسم|اقول|اقلك|اعرف|اكتب|اذكر|مهم|حابب|عايز|عاوز|ضروري|فارق|هيفرق|هتفرق)/u.test(t)) return null;
+    if (/(?:نكمل|كمل|تخطي|تجاوز|بعدين|سيبك من|خلينا من غير|خصوصيه|سريه|بهزر|بهزار|هزار|ههه|هاها|لول|هههه|lol|haha|skip|prefer not|rather not|don t want|won t tell|not sharing|private|privacy|never mind|nevermind)/u.test(t)) return null;
+    if (value.length < 2 || value.length > 70 || value.split(/\s+/).length > 6 || !/^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]*$/u.test(value)) return null;
+    if (!/[\p{L}]{2}/u.test(value) || /^(.)\1{2,}$/u.test(t.replace(/\s/g, ''))) return null;
+    return value;
+  }
+  function widgetCall(name) {
+    return name ? ' يا ' + name : '';
+  }
+  function widgetTitle(name) {
+    return name ? ' ' + name : ' بدون اسم';
+  }
+  'use strict';
+  if (window.__mzAssistant) return;
+  window.__mzAssistant = true;
+  var MENU = {
+    coffee: [{
+      n: 'إسبريسو دابل',
+      d: 'شوتين بنّ، طعم واضح ومظبوط.',
+      p: 65,
+      drink: 1,
+      a: ['اسبريسو', 'إسبريسو', 'اسبرسو', 'اكسبريسو', 'دابل', 'دبل', 'شوت', 'espresso', 'اسبريسو دابل', 'اسبرسو دبل']
+    }, {
+      n: 'أمريكانو',
+      d: 'إسبريسو ومية سخنة. بسيط وصريح.',
+      p: 75,
+      drink: 1,
+      a: ['امريكانو', 'أمريكانو', 'امريكان', 'قهوه امريكيه', 'americano']
+    }, {
+      n: 'فلات وايت',
+      d: 'دابل شوت ولبن مخملي، توازن على أصوله.',
+      p: 95,
+      drink: 1,
+      a: ['فلات', 'فلاتوايت', 'فلوت وايت', 'فلات وايت', 'flat white', 'flat']
+    }, {
+      n: 'لاتيه حلاوة',
+      d: 'وصفتنا الخاصة بلمسة حلاوة طحينية.',
+      p: 115,
+      drink: 1,
+      a: ['لاتيه حلاوة', 'لاتيه حلاوه', 'حلاوة', 'حلاوه', 'لاتيه']
+    }, {
+      n: 'قهوة تركي',
+      d: 'سادة، مظبوط أو زيادة. على كيفك.',
+      p: 60,
+      drink: 1,
+      a: ['تركي', 'قهوه تركي', 'قهوة تركي', 'قهوه', 'قهوة', 'مظبوط', 'turkish']
+    }],
+    cold: [{
+      n: 'آيس لاتيه',
+      d: 'إسبريسو ولبن بارد على تلج.',
+      p: 105,
+      drink: 1,
+      a: ['ايس لاتيه', 'آيس لاتيه', 'ايسلاتيه', 'لاتيه ساقع', 'لاتيه بارد', 'iced latte']
+    }, {
+      n: 'سبانيش لاتيه',
+      d: 'قهوة كريمي بلبن مكثف ولمسة حلاوة.',
+      p: 120,
+      drink: 1,
+      a: ['سبانيش', 'اسبانيش', 'سبانش', 'سبانيش لاتيه', 'اسبانيش لاتيه', 'spanish']
+    }, {
+      n: 'أورانج كولد برو',
+      d: 'قهوة مقطرة باردة وبرتقال فريش.',
+      p: 125,
+      drink: 1,
+      a: ['كولد برو', 'كولدبرو', 'اورانج', 'أورانج', 'اورنج', 'برتقال', 'cold brew']
+    }, {
+      n: 'ماتشا فراولة',
+      d: 'ماتشا ولبن مع صوص فراولة.',
+      p: 135,
+      drink: 1,
+      a: ['ماتشا', 'ماتشا فراولة', 'ماتشا فراوله', 'matcha']
+    }, {
+      n: 'ليمون نعناع',
+      d: 'فريش وساقع ومروّق.',
+      p: 80,
+      drink: 1,
+      a: ['ليمون', 'نعناع', 'ليمون نعناع', 'ليمون بالنعناع', 'ليموناضه', 'ليموناضة']
+    }],
+    sweet: [{
+      n: 'كوكيز شوكولاتة',
+      d: 'طرية من الداخل، وبقطع شوكولاتة داكنة.',
+      p: 65,
+      a: ['كوكيز', 'كوكي', 'cookies', 'كوكيز شوكولاته', 'كوكيز شوكولاتة']
+    }, {
+      n: 'سان سيباستيان',
+      d: 'تشيز كيك كريمي، بوش محمّر.',
+      p: 145,
+      a: ['سان', 'سيباستيان', 'سبستيان', 'سيبستيان', 'تشيز كيك', 'تشيزكيك', 'تشيز']
+    }, {
+      n: 'سينامون رول',
+      d: 'قرفة وسكر بني وصوص فانيليا.',
+      p: 110,
+      a: ['سينامون', 'قرفه', 'قرفة', 'رول', 'سينابون', 'سينامون رول']
+    }, {
+      n: 'براوني دافي',
+      d: 'شوكولاتة غنية. يستاهل آخر حتة.',
+      p: 95,
+      a: ['براوني', 'براونيز', 'براوني دافي', 'brownie', 'brownies']
+    }, {
+      n: 'كرواسون زبدة',
+      d: 'طبقات خفيفة، طازة كل صباح.',
+      p: 75,
+      a: ['كرواسون', 'كراسون', 'كرواسون زبده', 'كرواسون زبدة', 'croissant']
+    }]
+  };
+  var ALL = MENU.coffee.concat(MENU.cold, MENU.sweet);
+  var DELIVERY_FEE = 30;
+  var SIZES = [{
+    n: 'صغير',
+    d: -10
+  }, {
+    n: 'وسط',
+    d: 0
+  }, {
+    n: 'كبير',
+    d: 15
+  }];
+  function norm(s) {
+    return (s || '').toLowerCase().replace(/ـ/g, '').replace(/[\u200b-\u200f\u202a-\u202e]/g, '').replace(/\s+/g, ' ').replace(/[\u064B-\u0652\u0670]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/[٠-٩]/g, function (c) {
+      return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+    }).trim();
+  }
+  var NUM_WORDS = {
+    'واحد': 1,
+    'واحده': 1,
+    'واحدة': 1,
+    'اتنين': 2,
+    'اثنين': 2,
+    'تنين': 2,
+    'تلت': 3,
+    'تلاته': 3,
+    'ثلاثه': 3,
+    'ثلاثة': 3,
+    'اربعه': 4,
+    'أربعه': 4,
+    'اربعة': 4,
+    'خمسه': 5,
+    'خمسة': 5
+  };
+  function parseQty(t) {
+    t = norm(t);
+    var m = t.match(/\b([1-9])\b/);
+    if (m) return +m[1];
+    for (var w in NUM_WORDS) {
+      if (t.indexOf(norm(w)) > -1) return NUM_WORDS[w];
+    }
+    return null;
+  }
+  function findItem(t) {
+    t = norm(t);
+    var best = null;
+    for (var i = 0; i < ALL.length; i++) {
+      var it = ALL[i];
+      var names = [it.n].concat(it.a);
+      for (var j = 0; j < names.length; j++) {
+        var nm = norm(names[j]);
+        if (nm.length > 1 && t.indexOf(nm) > -1) {
+          if (!best || nm.length > best._len) {
+            best = it;
+            best._len = nm.length;
+          }
+        }
+      }
+    }
+    return best;
+  }
+  function hasAny(t, arr) {
+    t = norm(t);
+    for (var i = 0; i < arr.length; i++) {
+      if (t.indexOf(norm(arr[i])) > -1) return true;
+    }
+    return false;
+  }
+
+  /* ---------- off-menu + free-text helpers ---------- */
+  var OFFMENU = [{
+    k: ['شاي بلبن', 'شاي بالبن', 'شاي حليب', 'شاي لبن'],
+    s: ['لاتيه حلاوة', 'فلات وايت']
+  }, {
+    k: ['شاي'],
+    s: ['قهوة تركي', 'أمريكانو']
+  }, {
+    k: ['نسكافيه', 'نيسكافيه', 'نسكافه'],
+    s: ['أمريكانو', 'فلات وايت']
+  }, {
+    k: ['كابتشينو', 'كابوتشينو', 'كابتشين', 'cappuccino'],
+    s: ['فلات وايت', 'لاتيه حلاوة']
+  }, {
+    k: ['موكا', 'موكاتشينو', 'موكا فرابيه'],
+    s: ['لاتيه حلاوة', 'سبانيش لاتيه']
+  }, {
+    k: ['عصير', 'مانجا', 'مانجو'],
+    s: ['أورانج كولد برو', 'ليمون نعناع']
+  }, {
+    k: ['سحلب', 'حليب', 'لبن سخن'],
+    s: ['لاتيه حلاوة', 'سبانيش لاتيه']
+  }, {
+    k: ['هوت شوكلت', 'هوت شوكليت', 'شوكولاته سخنه', 'شوكولاتة سخنة'],
+    s: ['لاتيه حلاوة', 'كوكيز شوكولاتة']
+  }, {
+    k: ['ميلك شيك', 'ميلكشيك'],
+    s: ['سبانيش لاتيه', 'ماتشا فراولة']
+  }];
+  function byName(n) {
+    for (var i = 0; i < ALL.length; i++) {
+      if (ALL[i].n === n) return ALL[i];
+    }
+    return null;
+  }
+  function offMenuHit(t) {
+    t = norm(t);
+    var best = null,
+      bl = 0;
+    for (var i = 0; i < OFFMENU.length; i++) {
+      var e = OFFMENU[i];
+      for (var j = 0; j < e.k.length; j++) {
+        var k = norm(e.k[j]);
+        if (t.indexOf(k) > -1 && k.length > bl) {
+          bl = k.length;
+          best = {
+            label: e.k[j],
+            suggest: e.s
+          };
+        }
+      }
+    }
+    return best;
+  }
+  function suggestChips(hit, extra) {
+    var c = [];
+    for (var i = 0; i < hit.suggest.length; i++) {
+      var it = byName(hit.suggest[i]);
+      if (it) c.push({
+        label: it.n
+      });
+    }
+    return c.concat(extra || []);
+  }
+  function offMenuReply(hit, resume, makeChips) {
+    var names = [];
+    for (var i = 0; i < hit.suggest.length; i++) {
+      var it = byName(hit.suggest[i]);
+      if (it) names.push(it.n);
+    }
+    var msg = 'للأسف "' + hit.label + '" مش على منيو مزاج.';
+    if (names.length) msg += ' بس أقرب حاجة ليه عندنا: ' + names.join(' أو ') + ' — مظبوطين على الآخر.';
+    if (resume) msg += '\n' + resume;
+    botSay(msg, 650, function () {
+      setChips(makeChips());
+    });
+  }
+
+  /* ---------- DOM ---------- */
+  var root = document.createElement('div');
+  root.innerHTML = '<button id="mz-launcher" aria-label="افتح محادثة مساعد مزاج">' + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg>' + '<span>اسأل مزاج</span></button>' + '<section id="mz-panel" role="dialog" aria-label="مساعد مزاج">' + '<header id="mz-head"><div class="mz-ava">م</div>' + '<div class="mz-who"><b>مساعد مزاج</b><small><i></i>متصل الآن · يردّ فورًا</small></div>' + '<button id="mz-close" aria-label="إغلاق المحادثة">✕</button></header>' + '<div id="mz-msgs" aria-live="polite"></div>' + '<div id="mz-typing" aria-hidden="true"><span></span><span></span><span></span></div>' + '<div id="mz-chips"></div>' + '<form id="mz-input"><input type="text" id="mz-text" placeholder="اكتب رسالتك…" autocomplete="off" enterkeyhint="send">' + '<button type="submit" aria-label="إرسال"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5c.8-.35.8-1.45 0-1.8L3.4 3.6c-.7-.3-1.4.35-1.3 1.05l.6 5.35c.05.45.4.8.85.9l8.95 1.1c.1 0 .1.2 0 .2l-8.95 1.1c-.45.1-.8.45-.85.9l-.6 5.35c-.1.7.6 1.35 1.3 1.05z"/></svg></button></form></section>';
+  document.body.appendChild(root);
+  var launcher = document.getElementById('mz-launcher'),
+    panel = document.getElementById('mz-panel'),
+    msgs = document.getElementById('mz-msgs'),
+    chips = document.getElementById('mz-chips'),
+    typing = document.getElementById('mz-typing'),
+    form = document.getElementById('mz-input'),
+    input = document.getElementById('mz-text');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && !reduce ? window.gsap : null;
+  function animIn(el) {
+    if (G) {
+      G.from(el, {
+        y: 14,
+        opacity: 0,
+        duration: .35,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+  }
+  function scrollBottom() {
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function addMsg(text, who) {
+    var d = document.createElement('div');
+    d.className = 'mz-msg ' + who;
+    d.textContent = text;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function addCard(html) {
+    var d = document.createElement('div');
+    d.className = 'mz-order-card';
+    d.innerHTML = html;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function setChips(list) {
+    chips.innerHTML = '';
+    (list || []).forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = c.label;
+      if (c.primary) b.className = 'mz-primary';
+      b.onclick = function () {
+        handleUser(c.label, c.action || null);
+      };
+      chips.appendChild(b);
+    });
+    scrollBottom();
+  }
+  var busy = false;
+  var pending = null;
+  var _yrSeen = {};
+  function yVaryReply(text) {
+    var n = (_yrSeen[text] || 0) % 3;
+    _yrSeen[text] = n + 1;
+    if (/مش (?:ضمن|متوفر|موجود|من تشكيلتنا|في تشكيلتنا|على منيو)|للأسف/.test(text)) {
+      if (n === 1) text = text.replace(/^للأسف\s*/, 'بص، ').replace(/^الطلب ده/, 'الحاجة دي').replace(/بس أقرب حاجة ليه عندنا:/, 'ولو بتدور على بديل، عندنا:');
+      if (n === 2) text = text.replace(/^للأسف\s*/, 'خليني أوضحلك، ').replace(/^الطلب ده/, 'الاختيار ده').replace(/بس أقرب حاجة ليه عندنا:/, 'ممكن بدل كده تشوف:');
+      if (n === 1 && !/^(بص|الحاجة|بالنسبة|خليني)/.test(text)) text = 'بص، ' + text;
+      if (n === 2 && !/^(خليني|الاختيار|بالنسبة|بص)/.test(text)) text = 'خليني أوضحلك، ' + text;
+    }
+    return text;
+  }
+  function botSay(text, delay, after) {
+    if (text.indexOf('مش واضحلي قصدك بالكامل') === 0) {
+      var bi = (window.__yClarifyCount || 0) % 3;
+      window.__yClarifyCount = bi + 1;
+      text = ["مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", "محتاج منك توضيح صغير. تقصد منتج معين ولا خدمة؟ المعلومة دي مش متوفرة عندي بشكل أقدر أأكد عليه.", "خليني أفهمك صح المعلومة دي مش متوفرة عندي من الكلام ده لوحده. قولّي بتدور على إيه بالظبط؟"][bi];
+    }
+    text = yVaryReply(text);
+    var _yq = window.__yousefResponseQuestion || '';
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      var _yn = addMsg(text, 'bot');
+      if (_yn) _yn.dataset.yousefQuestion = _yq;
+      busy = false;
+      if (after) after();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }, delay != null ? delay : 700 + Math.min(text.length * 8, 900));
+  }
+  function botSeq(list, i, done) {
+    i = i || 0;
+    if (i >= list.length) {
+      if (done) done();
+      return;
+    }
+    var item = list[i];
+    botSay(item.text, item.delay, function () {
+      if (item.card) addCard(item.card);
+      if (item.chips) setChips(item.chips);
+      botSeq(list, i + 1, done);
+    });
+  }
+
+  /* ---------- conversation state ---------- */
+  var conv = {
+    step: 'idle',
+    order: null,
+    tmp: null,
+    greeted: false
+  };
+  function mainChips() {
+    return [{
+      label: 'تصفّح القائمة',
+      action: 'menu'
+    }, {
+      label: 'رشّح لي شيئًا',
+      action: 'reco'
+    }, {
+      label: 'أريد أن أطلب',
+      action: 'order',
+      primary: true
+    }, {
+      label: 'المواعيد والعنوان',
+      action: 'info'
+    }];
+  }
+  function menuText() {
+    function lines(cat, title) {
+      var s = title + '\n';
+      MENU[cat].forEach(function (i) {
+        s += '• ' + i.n + ' — ' + i.p + ' جنيه\n';
+      });
+      return s;
+    }
+    return lines('coffee', 'قهوة سخنة ☕') + '\n' + lines('cold', 'على تلج 🧊') + '\n' + lines('sweet', 'حاجة حلوة 🍪');
+  }
+  function hoursText() {
+    return 'مواعيدنا:\nالسبت للخميس: من ٨ الصبح لـ ١٢ بالليل\nالجمعة: من ٩ الصبح لـ ١ بالليل\n\nوالفرع في شارع بغداد، الكوربة، مصر الجديدة. كرسيّك مستنيك ☕';
+  }
+
+  /* ---------- order engine ---------- */
+  function startOrder() {
+    conv.order = {
+      items: [],
+      fulfillment: null,
+      name: null,
+      address: null
+    };
+    conv.step = 'await-item';
+    botSay('تمام، هاخد طلبك خطوة خطوة وأنت مرتاح. تقولي هتاخد إيه أول حاجة؟', 600, function () {
+      setChips(popularChips());
+    });
+  }
+  function popularChips() {
+    return [{
+      label: 'فلات وايت'
+    }, {
+      label: 'لاتيه حلاوة'
+    }, {
+      label: 'أورانج كولد برو'
+    }, {
+      label: 'كوكيز شوكولاتة'
+    }, {
+      label: 'القائمة كاملة',
+      action: 'menu'
+    }];
+  }
+  function addItemFlow(item) {
+    conv.tmp = {
+      item: item,
+      size: null,
+      qty: null
+    };
+    if (item.drink) {
+      conv.step = 'await-size';
+      botSay('اختيار موفق. تحب ' + item.n + ' بأي حجم؟', 600, function () {
+        setChips(SIZES.map(function (s) {
+          return {
+            label: s.n + ' (' + (item.p + s.d) + ' جنيه)',
+            size: s.n
+          };
+        }));
+      });
+    } else {
+      conv.tmp.size = null;
+      askQty();
+    }
+  }
+  function askQty() {
+    conv.step = 'await-qty';
+    var it = conv.tmp.item;
+    botSay('كام ' + (it.drink ? 'واحد' : 'قطعة') + ' من ' + it.n + '؟', 600, function () {
+      setChips([{
+        label: '١'
+      }, {
+        label: '٢'
+      }, {
+        label: '٣'
+      }]);
+    });
+  }
+  function confirmItem() {
+    var t = conv.tmp;
+    t.qty = t.qty || 1;
+    conv.order.items.push({
+      item: t.item,
+      size: t.size,
+      qty: t.qty
+    });
+    if (t.next) {
+      var nxt = t.next;
+      conv.tmp = null;
+      botSay('اتسجلت: ' + t.qty + ' × ' + t.item.n + (t.size ? ' ' + t.size : '') + ' ✓\nودلوقتي نضبط ' + nxt.n + '.', 600, function () {
+        addItemFlow(nxt);
+      });
+      return;
+    }
+    conv.step = 'await-more';
+    var sz = t.size ? ' ' + t.size : '';
+    botSay('اتسجلت: ' + t.qty + ' × ' + t.item.n + sz + ' ✓\nتحب تضيف حاجة تانية؟', 600, function () {
+      setChips([{
+        label: 'هكذا يكفي',
+        primary: true
+      }, {
+        label: 'أضيف شيئًا'
+      }]);
+    });
+  }
+  function askFulfillment() {
+    conv.step = 'await-fulfill';
+    botSay('ممتاز. تستلمه من الفرع ولا نوصلهولك لحد عندك؟', 600, function () {
+      setChips([{
+        label: 'استلام من الفرع'
+      }, {
+        label: 'توصيل'
+      }]);
+    });
+  }
+  function askName() {
+    conv.step = 'await-name';
+    botSay('آخر حاجة، الاسم اللي أجهز الطلب بيه؟', 600, function () {
+      setChips([{
+        label: 'نتابع دون اسم'
+      }]);
+      input.focus();
+    });
+  }
+  function summaryAndConfirm() {
+    conv.step = 'await-confirm';
+    var o = conv.order,
+      sub = 0,
+      rows = '';
+    o.items.forEach(function (it) {
+      var price = it.item.p + (it.size ? it.size === 'صغير' ? -10 : it.size === 'كبير' ? 15 : 0 : 0);
+      sub += price * it.qty;
+      rows += '<div class="mz-row"><span>' + it.qty + ' × ' + it.item.n + (it.size ? ' ' + it.size : '') + '</span><span>' + price * it.qty + ' جنيه</span></div>';
+    });
+    var fee = o.fulfillment === 'توصيل' ? DELIVERY_FEE : 0;
+    var total = sub + fee;
+    rows += '<div class="mz-row mz-muted"><span>' + o.fulfillment + (yEscapeHTML(o.address) ? ' · ' + yEscapeHTML(o.address) : '') + '</span><span>' + (fee ? fee + ' جنيه' : 'بلاش') + '</span></div>';
+    rows += '<div class="mz-row total"><span>الإجمالي</span><span>' + total + ' جنيه</span></div>';
+    var eta = o.fulfillment === 'توصيل' ? 'من ٣٠ لـ ٤٥ دقيقة' : 'من ١٠ لـ ١٥ دقيقة';
+    var card = '<div class="mz-oc-title"><b>طلب' + yEscapeHTML(widgetTitle(o.name)) + '</b><small>MAZAG ORDER</small></div>' + rows;
+    conv.step = 'await-confirm';
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      addCard(card);
+      animIn(msgs.lastChild);
+      addMsg('الطلب جاهز يتجهز في ' + eta + '. تأكده وأنا أبعته للفرع على طول؟', 'bot');
+      setChips([{
+        label: 'أؤكد الطلب ✓',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    }, 900);
+  }
+  function finishOrder() {
+    window.dispatchEvent(new CustomEvent('yousef-chat-event', {
+      detail: {
+        kind: 'demo_order',
+        label: 'finishOrder'
+      }
+    }));
+    conv.step = 'done';
+    var num = 'MZ-' + Math.floor(1000 + Math.random() * 9000);
+    var o = conv.order;
+    setChips([]);
+    botSay('تم' + widgetCall(o.name) + '! طلبك اتأكد ورقمه ' + num + ' ✅\n' + (o.fulfillment === 'توصيل' ? 'هيوصلك لحد ' + (o.address || 'عندك') + '.' : 'تستلمه من الفرع، شارع بغداد - الكوربة.') + '\nنقعدك على قهوة قريب ☕', 800, function () {
+      setChips([{
+        label: 'تصفّح القائمة',
+        action: 'menu'
+      }, {
+        label: 'أغلق المحادثة',
+        action: 'close'
+      }]);
+      conv.step = 'idle';
+      conv.order = null;
+    });
+  }
+
+  /* ---------- intent routing ---------- */
+  const MAZAG_CURRENT_MENU = {
+    "arabic": {
+      "coffee": [["إسبريسو دابل", "شوتين بنّ، طعم واضح ومظبوط.", 65], ["أمريكانو", "إسبريسو ومية سخنة. بسيط وصريح.", 75], ["فلات وايت", "دابل شوت ولبن مخملي، توازن على أصوله.", 95], ["لاتيه حلاوة", "وصفتنا الخاصة بلمسة حلاوة طحينية.", 115], ["قهوة تركي", "سادة، مظبوط أو زيادة. على كيفك.", 60]],
+      "cold": [["آيس لاتيه", "إسبريسو ولبن بارد على تلج.", 105], ["سبانيش لاتيه", "قهوة كريمي بلبن مكثف ولمسة حلاوة.", 120], ["أورانج كولد برو", "قهوة مقطرة باردة وبرتقال فريش.", 125], ["ماتشا فراولة", "ماتشا ولبن مع صوص فراولة.", 135], ["ليمون نعناع", "فريش وساقع ومروّق.", 80]],
+      "sweet": [["كوكيز شوكولاتة", "طرية من الداخل، وبقطع شوكولاتة داكنة.", 65], ["سان سيباستيان", "تشيز كيك كريمي، بوش محمّر.", 145], ["سينامون رول", "قرفة وسكر بني وصوص فانيليا.", 110], ["براوني دافي", "شوكولاتة غنية. يستاهل آخر حتة.", 95], ["كرواسون زبدة", "طبقات خفيفة، طازة كل صباح.", 75]]
+    },
+    "english": {
+      "coffee": [["Double espresso", "Double espresso with a clear, concentrated flavour.", 65], ["Americano", "Espresso and hot water. Simple and straightforward.", 75], ["Flat white", "Double espresso with smooth steamed milk.", 95], ["Halawa Latte", "Our special recipe with a touch of halva.", 115], ["Turkish coffee", "Turkish coffee. Choose your preferred sweetness.", 60]],
+      "cold": [["Iced Latte", "Espresso and ice cold milk.", 105], ["Spanish latte", "Creamy coffee with condensed milk and a touch of sweetness.", 120], ["Orange Cold Brew", "Cold drip coffee and fresh orange.", 125], ["Strawberry matcha", "Matcha and milk with strawberry sauce.", 135], ["Lemon mint", "Fresh, Saqi', and Marwaq.", 80]],
+      "sweet": [["Chocolate cookies", "Soft inside, with dark chocolate pieces.", 65], ["San Sebastian", "Creamy cheesecake with a caramelised top.", 145], ["Cinnamon roll", "Cinnamon, brown sugar and vanilla sauce.", 110], ["Warm Brownie", "Rich chocolate for a sweet finish.", 95], ["Butter croissant", "Light, fresh layers every morning.", 75]]
+    }
+  };
+  function mazagCatalogReply(message, english) {
+    const norm = s => String(s || '').toLowerCase().replace(/[\u064B-\u0652]/g, '').replace(/[أإآ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي');
+    const q = norm(message),
+      data = MAZAG_CURRENT_MENU[english ? 'english' : 'arabic'];
+    const price = /(?:بكام|بكم|سعر|تمن|ثمن|تكلف|how much|price|cost)/i.test(q),
+      iced = /(?:مثلج|بارد|ساقع|تلج|ايس|iced|cold)/i.test(q),
+      hot = /(?:سخن|ساخن|حار|hot)/i.test(q);
+    const flavor = /(?:كراميل|فانيليا|بندق|caramel|vanilla|hazelnut)/i.test(q);
+    const drink = /(?:قهو|لاتيه|كابتشينو|مشروب|coffee|latte|cappuccino|drink)/i.test(q);
+    if (flavor && drink) {
+      const alt = english ? 'Iced Latte' : 'آيس لاتيه';
+      const warm = english ? 'Flat white' : 'فلات وايت';
+      const chosen = hot && !iced ? warm : alt;
+      const amount = hot && !iced ? 95 : 105;
+      return english ? 'That flavour is not listed as a drink in this demo menu. ' + chosen + ' is a listed ' + (hot && !iced ? 'hot' : 'iced') + ' alternative at ' + amount + ' EGP. It does not include the requested flavour. Prices are illustrative, and no real order is placed.' : 'النكهة المطلوبة مش مدرجة كمشروب في منيو الديمو. البديل ' + chosen + ' من قسم ' + (hot && !iced ? 'قهوة سخنة' : 'على تلج') + '، بسعر ' + amount + ' جنيه. ده بديل من غير النكهة المطلوبة. الأسعار تجريبية ومفيش طلب حقيقي.';
+    }
+    if (!price && !iced && !hot) return null;
+    const aliases = english ? {
+      'Halawa Latte': ['halawa latte', 'latte halawa'],
+      'Iced Latte': ['iced latte', 'ice latte'],
+      'Spanish latte': ['spanish latte'],
+      'Double espresso': ['double espresso'],
+      'Flat white': ['flat white'],
+      'Turkish coffee': ['turkish coffee']
+    } : {
+      'آيس لاتيه': ['ايس لاتيه', 'ايس لاتية'],
+      'لاتيه حلاوة': ['لاتيه حلاوه'],
+      'إسبريسو دابل': ['اسبريسو دابل', 'دابل اسبريسو'],
+      'قهوة تركي': ['قهوه تركي', 'قهوه تركيه']
+    };
+    let hits = [];
+    for (const [section, items] of Object.entries(data)) for (const item of items) {
+      const names = [item[0], ...(aliases[item[0]] || [])];
+      if (names.some(n => q.includes(norm(n)))) hits.push({
+        section,
+        item
+      });
+    }
+    hits.sort((a, b) => b.item[0].length - a.item[0].length);
+    if (!hits.length) return null;
+    const {
+      section,
+      item
+    } = hits[0];
+    const label = english ? {
+      coffee: 'Hot coffee',
+      cold: 'On ice',
+      sweet: 'Something sweet'
+    }[section] : {
+      coffee: 'قهوة سخنة',
+      cold: 'على تلج',
+      sweet: 'حاجة حلوة'
+    }[section];
+    let reply = english ? item[0] + ': ' + item[1] + ' Menu section: ' + label + '. Demo price: ' + item[2] + ' EGP.' : item[0] + ': ' + item[1] + ' قسم المنيو: ' + label + '. السعر التجريبي: ' + item[2] + ' جنيه.';
+    if (iced && section !== 'cold' || hot && section !== 'coffee') reply += english ? ' The requested temperature version is not listed for this item.' : ' النسخة بدرجة الحرارة المطلوبة مش مدرجة للصنف ده.';
+    return reply + (english ? ' This is a simulated menu, not a real order.' : ' ده منيو تجريبي، مش طلب حقيقي.');
+  }
+  function handleUser(text, action) {
+    if (!action && (!conv.step || conv.step === 'idle')) {
+      var menuReply = mazagCatalogReply(text, false);
+      if (menuReply) {
+        window.__yousefResponseQuestion = text;
+        if (text.trim()) addMsg(text, 'user');
+        botSay(menuReply, 150);
+        return;
+      }
+    }
+    if (!action && (!conv.step || conv.step === 'idle') && /(?:عنوان|عناوين|فين.{0,12}(?:فرع|فروع|محل|مكتب|عياد|مكان)|(?:فرع|فروع).{0,12}فين|مواعيد.{0,8}(?:العمل|الفتح|الغلق)|ساعات العمل|بتفتح|بتقفل|(?:branch|address|opening hours|office hours))/i.test(text)) {
+      if (text.trim()) addMsg(text, 'user');
+      botSay("العنوان التجريبي: شارع بغداد، الكوربة، مصر الجديدة. المواعيد المعروضة: السبت للخميس من ٨ الصبح لمنتصف الليل، والجمعة من ٩ الصبح لـ١ بعد منتصف الليل. ده كافيه افتراضي والطلبات محاكاة.", 150, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (text.trim()) addMsg(text, 'user');
+    setChips([]);
+    if (busy) {
+      pending = {
+        text: text,
+        action: action
+      };
+      return;
+    }
+    route(text, action);
+  }
+  var yFAQ = [[["حساسيه", "لبن نباتي", "لاكتوز", "جلوتين", "سكر", "كافيين", "مكونات"], ["قولي المشروب والتعديل اللي محتاجه. بيانات الديمو مش متوفر فيها جدول حساسية أو كافيين دقيق، ولا تأكيد بدائل اللبن. لو عندك حساسية ما تعتمدش على وصف المنيو وحده، لازم تأكيد من المكان.", "ممكن نوضح طلبك، بس مش هضمن خلو أي مشروب من اللبن أو مسببات الحساسية. التفاصيل دي مش متوفرة كاملة في الديمو. أنهي مشروب في بالك؟"]], [["حجم", "احجام", "ايس", "بارد", "سخن", "حليب", "لبن"], ["للمشروبات في الديمو: صغير أقل 10 ج من السعر الأساسي، وسط بالسعر المعروض، وكبير بزيادة 15 ج. اختار المشروب. اللبن البديل والإضافات غير المذكورة مش متوفرة كتأكيد."]], [["مناطق التوصيل", "بتوصلوا", "توصيل فين", "رسوم التوصيل", "دليفري فين"], ["رسوم التوصيل في الديمو 30 ج، أو استلام من الكافيه في شارع بغداد، الكوربة. نطاق التوصيل وموعد الوصول لكل عنوان مش متوفرين كتأكيد، فقولّي المنطقة الأول."]], [["كود خصم", "كوبون", "خصومات", "عروض", "عرض النهارده"], ["أي عرض أو خصم مش مكتوب في الأسعار الحالية مش متوفر عندي كتأكيد. أقدر أوريك الموجود، لكن مش هألف كود خصم أو أوعد بسعر خاص.", "خلينا في السعر المعروض لحد ما يبقى فيه عرض واضح. تفاصيل خصم إضافي مش متوفرة في بيانات الديمو."]], [["واتساب", "رقم تليفون", "رقمكم"], ["بيانات التواصل المعروضة هنا خاصة بالديمو وقد تكون تجريبية. ما تبعتش معلومات حساسة أو تدفع فلوس على أساس إن ده نشاط حقيقي. أقدر أساعدك تستعرض الخدمة هنا."]]];
+  var yFAQSeen = {};
+  var yLastFAQ = -1,
+    yLastFAQAt = 0;
+  function yAnswerFAQ(t) {
+    var yArea = document.querySelector('[id$="-msgs"],#yc-msgs');
+    var yBots = yArea ? yArea.querySelectorAll('.bot,.yc-b,.b') : [];
+    var yPrev = yBots.length ? yBots[yBots.length - 1].textContent : '';
+    var yFollow = /(?:^|\s)(?:هو|هي|ده|دي|دا|فيه|فيها|سعره|سعرها|طيب|طب|هال|it|its|that|this|does|what about)(?:\s|[؟?]|$)/i.test(t);
+    var ySafety = /(حساسي|طوار|نزيف|جرع|تشخيص|allerg|emergen|dosage|diagnos)/i.test(t);
+    if (!ySafety && /(?:^|[\s،؟?!.])(?:وش|وشو|شلون|ابي|أبي|ابغى|أبغى|بغيت|شو|بدي|بدّي|عندكن|قديش)(?=$|[\s،؟?!.])/.test(t)) return false;
+    if (yFollow && yPrev && !ySafety) {
+      var yWasFAQ = yFAQ.some(function (row) {
+        return row[1].some(function (a) {
+          return yPrev.indexOf(a) >= 0;
+        });
+      });
+      if (!yWasFAQ) return false;
+    }
+    var short = t.replace(/[؟?!.,،]/g, '').trim();
+    if (yLastFAQ >= 0 && Date.now() - yLastFAQAt < 300000 && /^(?:هو|هي|ده|دي|دا|نفسه|نفسها|قصدي ده|اقصد ده|يعني ده|وريني|بكام|كام|سعره|سعرها|وضح|وضحلي|وضح لي|تفاصيله|تفاصيلها)$/.test(short)) {
+      return yGiveFAQ(yLastFAQ);
+    }
+    for (var i = 0; i < yFAQ.length; i++) {
+      if (yFAQ[i][0].some(function (k) {
+        var w = norm(k),
+          q = ' ' + norm(t).replace(/[؟?!.,،]/g, ' ') + ' ';
+        return /[a-z]/i.test(w) ? q.indexOf(' ' + w + ' ') >= 0 : w.length > 4 ? q.indexOf(w) >= 0 : q.indexOf(' ' + w + ' ') >= 0 || q.indexOf(' ال' + w + ' ') >= 0;
+      })) return yGiveFAQ(i);
+    }
+    return false;
+  }
+  function yGiveFAQ(i) {
+    var r = yFAQ[i];
+    yLastFAQ = i;
+    yLastFAQAt = Date.now();
+    var n = yFAQSeen[i] || 0;
+    yFAQSeen[i] = n + 1;
+    var a = r[1][n % r[1].length];
+    if (n && r[1].length === 1) a = (n % 2 ? 'خليني أوضحلك، ' : 'بالنسبة لسؤالك، ') + a;
+    botSay(a, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function yProductDetail(t) {
+    if (!hasAny(t, ['بكام', 'سعر', 'تفاصيل', 'مكونات', 'لون', 'الوان', 'خامه', 'نوتات', 'اسابيع', 'مستوي', 'بيشمل'])) return false;
+    var it = findItem(t);
+    if (!it) return false;
+    var msg = it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + (typeof it.p === 'number' ? ' جنيه' : '') + '.';
+    msg += '\nده وصف المنيو، مش قائمة حساسية كاملة. الحساسية محتاجة تأكيد منفصل.';
+    msg += '\nبيانات وأسعار تجريبية للعرض.';
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yLex = ["شاي بلبن", "شاي", "لبن", "قهوة", "كابتشينو", "نسكافيه", "اسبريسو", "اسبرسو", "امريكانو", "فلات وايت", "لاتيه", "كوكيز", "كروسان", "كرواسون", "سينامون", "ساندوتش", "سندوتش", "مياه"];
+  function yOneEdit(a, b) {
+    if (a === b || Math.abs(a.length - b.length) > 1) return false;
+    var i = 0,
+      j = 0,
+      n = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      if (++n > 1) return false;
+      if (a.length >= b.length) i++;
+      if (b.length >= a.length) j++;
+    }
+    return n + (i < a.length || j < b.length ? 1 : 0) === 1;
+  }
+  function yOfferSpelling(t) {
+    var tokens = t.split(/\s+/),
+      hits = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokens[i].length < 4) continue;
+      for (var j = 0; j < yLex.length; j++) {
+        var w = norm(yLex[j]);
+        if (yOneEdit(tokens[i], w) && hits.indexOf(yLex[j]) < 0) hits.push(yLex[j]);
+      }
+    }
+    if (hits.length && hits.length <= 3) {
+      botSay('تقصد ' + hits.join(' ولا ') + '؟ المعلومة مش متوفرة عندي بشكل مؤكد من الكتابة دي، اختار الاسم أو وضحهولي.', 500, function () {
+        setChips(hits.map(function (x) {
+          return {
+            label: x
+          };
+        }));
+      });
+      return true;
+    }
+    return false;
+  }
+  var yBrands = [["Starbucks", "ستاربكس"], ["Costa", "كوستا"], ["Dunkin", "دانكن", "دنكن"], ["Tim Hortons", "تيم هورتنز"], ["Nespresso", "نسبريسو", "نيسبريسو"], ["Lavazza", "لافازا"], ["Illy", "ايلي للقهوه", "قهوه ايلي"], ["Nescafe", "نسكافيه", "نيسكافيه"], ["Coffee Bean", "كوفي بين"]];
+  var yBrandSeen = {};
+  function yBrandHit(t) {
+    var clean = ' ' + norm(t).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim() + ' ';
+    for (var i = 0; i < yBrands.length; i++) {
+      for (var j = 0; j < yBrands[i].length; j++) {
+        var k = norm(yBrands[i][j]).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim();
+        if (k && clean.indexOf(' ' + k + ' ') >= 0) return i;
+      }
+    }
+    return -1;
+  }
+  function yAnswerBrand(t) {
+    var b = yBrandHit(t);
+    if (b < 0) return false;
+    var n = yBrandSeen[b] || 0;
+    yBrandSeen[b] = n + 1;
+    var msg = "العلامة دي مش ضمن كتالوج الديمو الحالي. المعروض عندنا للاختيار: فلات وايت، أمريكانو. دي اختيارات من قائمتنا، مش ادعاء إنها نفس المنتج أو بديل مطابق.";
+    if (n) msg = (n % 2 ? 'بالنسبة للاسم ده، ' : 'خليني أوضحلك، ') + msg;
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function route(text, action) {
+    window.__yousefResponseQuestion = text;
+    var t = norm(text);
+    if (action) {
+      runAction(action);
+      return;
+    }
+    yTurn++;
+    if (yRef(text)) return;
+    if (yQGuard(text, t)) return;
+    if (yOffDomain(text)) return;
+    if (yAnswerBrand(t)) return;
+    if (/^(?:(?:عايز|عاوز|محتاج)\s+)?لب[؟?!.,،]*$/.test(t)) {
+      botSay('تقصد لبن ولا لب سوري؟ قولّي أنهي واحد عشان أرد عليك صح.', 500, function () {
+        setChips([{
+          label: 'لبن'
+        }, {
+          label: 'لب سوري'
+        }]);
+      });
+      return;
+    }
+    if (hasAny(t, ['شاي يلبن', 'شاي بلبن', 'شاى يلبن', 'شاى بلبن', 'شاي لبن', 'شاي بالبن', 'شاي حليب', 'شاي بالحليب'])) {
+      botSay('تقصد شاي بلبن؟ الشاي بلبن مش ضمن منيو الديمو الحالي. لو بتحب مشروب قهوة بلبن، فيه لاتيه حلاوة وفلات وايت. تحب تفاصيل واحد منهم؟', 600, function () {
+        setChips([{
+          label: 'لاتيه حلاوة'
+        }, {
+          label: 'فلات وايت'
+        }, {
+          label: 'تصفّح القائمة',
+          action: 'menu'
+        }]);
+      });
+      return;
+    }
+    if (/^(?:لبن|حليب|لب سوري|لب مصري|لب)$/.test(t)) {
+      botSay('اللبن كمشروب لوحده واللب كتسالي مش متوفرين ضمن منيو الديمو المعروض. اللبن مكوّن في مشروبات زي اللاتيه، فلو قصدك واحد منها قولي اسمه.', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (["قرفه"].indexOf(t.replace(/[؟?!.,،]/g, '').trim()) >= 0) {
+      botSay("تقصد مشروب قرفة ولا سينامون رول؟ السينامون رول موجود في المنيو بـ 110 ج، لكن مشروب القرفة مش متوفر ضمن المشروبات المعروضة.", 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yAnswerFAQ(t)) return;
+    if (yProductDetail(t)) return;
+
+    /* in-order steps take priority */
+    switch (conv.step) {
+      case 'await-item':
+        {
+          var it = findItem(t);
+          if (it) {
+            addItemFlow(it);
+            return;
+          }
+          if (hasAny(t, ['منيو', 'المنيو'])) {
+            conv.step = 'idle';
+            runAction('menu');
+            return;
+          }
+          var hit1 = offMenuHit(t);
+          if (hit1) {
+            offMenuReply(hit1, 'تحب تجرب حاجة من دول بدلها ولا تشوف المنيو؟', function () {
+              return suggestChips(hit1, [{
+                label: 'تصفّح القائمة',
+                action: 'menu'
+              }]);
+            });
+            return;
+          }
+          botSay('مش لاقيها في المنيو عندنا. ممكن تختار من دول أو تقولي اسم صنف من المنيو؟', 600, function () {
+            setChips(popularChips());
+          });
+          return;
+        }
+      case 'await-size':
+        {
+          for (var i = 0; i < SIZES.length; i++) {
+            if (t.indexOf(norm(SIZES[i].n)) > -1) {
+              conv.tmp.size = SIZES[i].n;
+              askQty();
+              return;
+            }
+          }
+          if (hasAny(t, ['عادي', 'وسط', 'ميديوم'])) {
+            conv.tmp.size = 'وسط';
+            askQty();
+            return;
+          }
+          var other = findItem(t);
+          if (other && other !== conv.tmp.item) {
+            conv.tmp.next = other;
+            botSay('عايز ' + other.n + ' كمان؟ حاضر، هنضيفه بعد ما نخلص دي. الأول ' + conv.tmp.item.n + ' بأي حجم؟', 600, function () {
+              setChips(SIZES.map(function (s) {
+                return {
+                  label: s.n + ' (' + (conv.tmp.item.p + s.d) + ' جنيه)',
+                  size: s.n
+                };
+              }));
+            });
+            return;
+          }
+          var hitS = offMenuHit(t);
+          if (hitS) {
+            offMenuReply(hitS, 'ونرجع نكمل ' + conv.tmp.item.n + ': صغير، وسط، ولا كبير؟', function () {
+              return SIZES.map(function (s) {
+                return {
+                  label: s.n + ' (' + (conv.tmp.item.p + s.d) + ' جنيه)',
+                  size: s.n
+                };
+              });
+            });
+            return;
+          }
+          botSay('قولي بس: صغير، وسط، ولا كبير؟', 500, function () {
+            setChips(SIZES.map(function (s) {
+              return {
+                label: s.n + ' (' + (conv.tmp.item.p + s.d) + ' جنيه)'
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-qty':
+        {
+          var q = parseQty(t);
+          if (q) {
+            conv.tmp.qty = Math.min(q, 9);
+            confirmItem();
+            return;
+          }
+          var other2 = findItem(t);
+          if (other2 && other2 !== conv.tmp.item) {
+            conv.tmp.next = other2;
+            botSay('حاضر، ' + other2.n + ' هيتسجل بعد دي. بس قولي الأول: كام ' + (conv.tmp.item.drink ? 'واحد' : 'قطعة') + ' من ' + conv.tmp.item.n + '؟', 600, function () {
+              setChips([{
+                label: '١'
+              }, {
+                label: '٢'
+              }, {
+                label: '٣'
+              }]);
+            });
+            return;
+          }
+          var hitQ = offMenuHit(t);
+          if (hitQ) {
+            offMenuReply(hitQ, 'ونكمل: كام ' + (conv.tmp.item.drink ? 'واحد' : 'قطعة') + ' من ' + conv.tmp.item.n + '؟', function () {
+              return [{
+                label: '١'
+              }, {
+                label: '٢'
+              }, {
+                label: '٣'
+              }];
+            });
+            return;
+          }
+          botSay('بس قولي الرقم: واحد، اتنين، تلاتة…', 500, function () {
+            setChips([{
+              label: '١'
+            }, {
+              label: '٢'
+            }, {
+              label: '٣'
+            }]);
+          });
+          return;
+        }
+      case 'await-more':
+        {
+          var it2 = findItem(t);
+          if (it2) {
+            addItemFlow(it2);
+            return;
+          }
+          if (hasAny(t, ['تمام', 'كده', 'خلاص', 'خلص', 'كفايه', 'كفاية'])) {
+            askFulfillment();
+            return;
+          }
+          if (hasAny(t, ['اضف', 'أضف', 'اضيف', 'أضيف', 'تاني', 'تانية', 'كمان', 'ايوه', 'ايوا', 'أيوه', 'نعم'])) {
+            conv.step = 'await-item';
+            botSay('اتفضل، تقولي التالي؟', 500, function () {
+              setChips(popularChips());
+            });
+            return;
+          }
+          var hit2 = offMenuHit(t);
+          if (hit2) {
+            offMenuReply(hit2, 'تحب تضيف حاجة من دول ولا الطلب كده تمام؟', function () {
+              return suggestChips(hit2, [{
+                label: 'هكذا يكفي',
+                primary: true
+              }]);
+            });
+            return;
+          }
+          botSay('نضيف حاجة تانية ولا الطلب كده تمام؟', 500, function () {
+            setChips([{
+              label: 'هكذا يكفي',
+              primary: true
+            }, {
+              label: 'أضيف شيئًا'
+            }]);
+          });
+          return;
+        }
+      case 'await-fulfill':
+        {
+          if (hasAny(t, ['توصيل', 'دليفري', 'يوصل', 'عندي', 'البيت', 'delivery'])) {
+            conv.order.fulfillment = 'توصيل';
+            conv.step = 'await-address';
+            botSay('تمام، توصيل برسوم ' + DELIVERY_FEE + ' جنيه. ابعتلي العنوان أو المنطقة اللي نوصلهالها؟', 600, function () {
+              input.focus();
+            });
+            return;
+          }
+          if (hasAny(t, ['استلام', 'الفرع', 'استلم', 'هستلم', 'اجي', 'آجي', 'اعدي', 'أعدي', 'pickup'])) {
+            conv.order.fulfillment = 'استلام من الفرع';
+            askName();
+            return;
+          }
+          if (offMenuHit(t) || findItem(t)) {
+            botSay('وصلتك! بس خلينا نحدد الأول: استلام من الفرع ولا توصيل؟ وبعدها نكمل باقي التفاصيل.', 500, function () {
+              setChips([{
+                label: 'استلام من الفرع'
+              }, {
+                label: 'توصيل'
+              }]);
+            });
+            return;
+          }
+          conv.order.fulfillment = 'استلام من الفرع';
+          askName();
+          return;
+        }
+      case 'await-address':
+        {
+          if (text.trim().length < 3) {
+            botSay('اكتبلي العنوان أو اسم المنطقة كده في سطر واحد.', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.order.address = text.trim();
+          askName();
+          return;
+        }
+      case 'await-name':
+        {
+          var nm = widgetName(text);
+          conv.order.name = nm;
+          if (!nm) {
+            botSay('ولا يهمك، نكمل من غير اسم.', 400, function () {
+              summaryAndConfirm();
+            });
+            return;
+          }
+          summaryAndConfirm();
+          return;
+        }
+      case 'await-confirm':
+        {
+          if (hasAny(t, ['اكد', 'أكد', 'تمام', 'موافق', 'ايوه', 'أيوه', 'ايوا', 'yes', 'يلا', 'ابعت', 'اوكي', 'ok'])) {
+            finishOrder();
+            return;
+          }
+          if (hasAny(t, ['الغي', 'ألغي', 'الغاء', 'إلغاء', 'cancel', 'مش عايز'])) {
+            conv.step = 'idle';
+            conv.order = null;
+            botSay('اتلغى، ولا يهمك. لو عدّلت رأيك أنا موجود ☕', 600, function () {
+              setChips(mainChips());
+            });
+            return;
+          }
+          var hitC = offMenuHit(t);
+          if (hitC) {
+            offMenuReply(hitC, 'ونرجع لطلبك الحالي: تأكده ولا نلغيه؟', function () {
+              return [{
+                label: 'أؤكد الطلب ✓',
+                primary: true
+              }, {
+                label: 'إلغاء'
+              }];
+            });
+            return;
+          }
+          var itC = findItem(t);
+          if (itC) {
+            botSay('حاضر، ' + itC.n + ' نسجله في طلب لوحده بعد ما نأكد ده. الأول: تأكد الطلب الحالي ولا نلغيه؟', 500, function () {
+              setChips([{
+                label: 'أؤكد الطلب ✓',
+                primary: true
+              }, {
+                label: 'إلغاء'
+              }]);
+            });
+            return;
+          }
+          botSay('تأكده ولا نلغيه؟', 500, function () {
+            setChips([{
+              label: 'أؤكد الطلب ✓',
+              primary: true
+            }, {
+              label: 'إلغاء'
+            }]);
+          });
+          return;
+        }
+    }
+
+    /* idle intents */
+    if (findItem(t)) {
+      var found = findItem(t);
+      if (hasAny(t, ['اطلب', 'عايز', 'عاوز', 'هات', 'جيب', 'order'])) {
+        startOrderSilent();
+        addItemFlow(found);
+        return;
+      }
+      botSay(found.n + ' — ' + found.d + '\nبـ ' + found.p + ' جنيه. تحب تطلبه؟', 600, function () {
+        setChips([{
+          label: 'اطلب ' + found.n,
+          primary: true
+        }, {
+          label: 'تصفّح القائمة',
+          action: 'menu'
+        }, {
+          label: 'الرئيسية',
+          action: 'home'
+        }]);
+        conv.step = 'idle';
+        conv._pend = found;
+      });
+      conv._pend = found;
+      return;
+    }
+    if (conv._pend && hasAny(t, ['اطلب', 'عايز', 'عاوز', 'ايوه', 'أيوه', 'ايوا', 'نعم', 'تمام', 'يلا'])) {
+      var p = conv._pend;
+      conv._pend = null;
+      startOrderSilent();
+      addItemFlow(p);
+      return;
+    }
+    if (hasAny(t, ['منيو', 'قائمه', 'قائمة', 'menu', 'الاصناف', 'الأصناف', 'اسعار', 'أسعار', 'بكام', 'عندكم ايه', 'عندكوا ايه'])) {
+      runAction('menu');
+      return;
+    }
+    if (hasAny(t, ['رشح', 'اقترح', 'اقتراح', 'محتار', 'مش عارف', 'توصيه', 'توصية', 'ايه احسن', 'إيه أحسن', 'انسب', 'أنسب'])) {
+      runAction('reco');
+      return;
+    }
+    if (hasAny(t, ['اطلب', 'اوردر', 'order', 'عايز اطلب', 'عاوز اطلب', 'طلب'])) {
+      runAction('order');
+      return;
+    }
+    if (hasAny(t, ['مواعيد', 'ساعات', 'بتقفلوا', 'بتفتحوا', 'مفتوحين', 'مفتوح', 'قفل', 'فتح', 'عنوان', 'فين', 'مكان', 'لوكيشن', 'الفرع', 'الكوربه', 'الكوربة'])) {
+      runAction('info');
+      return;
+    }
+    var hitI = offMenuHit(t);
+    if (hitI) {
+      offMenuReply(hitI, 'تحب تجرب حاجة من دول؟', function () {
+        return suggestChips(hitI, [{
+          label: 'تصفّح القائمة',
+          action: 'menu'
+        }, {
+          label: 'أريد أن أطلب',
+          action: 'order',
+          primary: true
+        }]);
+      });
+      return;
+    }
+    if (hasAny(t, ['شكرا', 'تسلم', 'متشكر', 'ممنون', 'thanks'])) {
+      botSay('العفو! ده واجبي ☕ لو احتجت أي حاجة تانية أنا هنا.', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['اهلا', 'أهلا', 'هاي', 'ازيك', 'صباح', 'مساء', 'hello', 'hi', 'سلام'])) {
+      botSay('أهلًا وسهلًا! نورت مزاج. أقدر أساعدك في إيه النهارده؟', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    yLLMAsk(text, t, function () {
+      yTail(text, t);
+    });
+  }
+  function yTail(text, t) {
+    if (hasAny(t, ['قهوه', 'قهوة', 'كوفي', 'coffee', 'مشروب', 'مشروبات', 'سخن', 'ساقع', 'ايس', 'آيس', 'فرابيه', 'فرابتشينو', 'اسبريسو', 'إسبريسو', 'لاتيه', 'موكا', 'ماتشا', 'شاي', 'عصير', 'ميلك', 'سكر', 'كريمه', 'كريمة', 'فانيليا', 'كراميل', 'محلب', 'كافيه', 'كافيين', 'ديكاف', 'تركي', 'امريكانو', 'أمريكانو', 'فلات وايت', 'كولد برو', 'نسكافيه', 'كابتشينو', 'هوت شوكلت', 'ميلك شيك', 'ميلكشيك', 'نعناع', 'ليمون', 'حلاوه', 'حلاوة', 'كوكيز', 'مافن', 'كرواسون', 'حاجه ساقعة', 'حاجة ساقعة', 'فطار', 'قعده', 'قعدة'])) {
+      botSay('ده مشروب مش على المنيو عندنا ☕ بس قولي مزاجك (سخن ولا ساقع، حلو ولا تقيل) وأرشحلك أقرب حاجة ليه.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["اسبريسو", "اسبرسو", "اسبرسو", "espresso", "cappuccino", "كابتشينو", "لاتيه", "لاتة", "latte", "موكا", "mocha", "ديكاف", "decaf", "ماتشا", "matcha", "كورتادو", "cortado"])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات والتشكيلة الحالية عندنا. قولي محتاج إيه فيه أو شوف الاختيارات المتاحة، وأساعدك تختار أقرب بديل.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['عندكم', 'عندكوا', 'بتبيع', 'بتقدموا', 'موجود عندك', 'متوفر عندك'])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات الحالية عندي. قولي اسمه أو نوعه بالتفصيل، أو نراجع الاختيارات الموجودة بدل ما أديك معلومة مش مؤكدة.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["مياه", "ميه", "ماء", "نسكافيه", "كركديه", "ينسون", "نعناع", "سحلب", "قرفه", "دونات", "كرواسون", "كوكي", "كابتشينو", "كابتشين"])) {
+      botSay('الاسم ده مش متوفر بتفاصيل مؤكدة ضمن بيانات الديمو الحالية. قولي نوعه أو الاسم الكامل، وأراجع معاك الاختيارات المعروضة بدل ما أخمن.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yOfferSpelling(t)) return;
+    botSay("مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", 600, function () {
+      setChips(mainChips());
+    });
+  }
+  var Y_OFF = /(كابل|كابلات|شاحن|سلك|اسلاك|موبايل|تليفون|هاتف|سامسونج|samsung|ايفون|iphone|هونر|اونر|honor|شاومي|xiaomi|اوبو|لابتوب|لاب توب|laptop|سماعه|سماعة|سماعات|تلفزيون|شاشه|ثلاجه|غسالة|بنطلون|قميص|جزمه|حذاء|بيتزا|برجر|كشري|عطر|عطور|برفان|كرسي|شقه|شقة|عصير|بنطلون)/i;
+  var Y_SCENT = /(قهوه|قهوة|اسبريسو|لاتيه|كابتشينو|مشروب|كوكيز|مافن|كرواسون|حلاوه)/i;
+  var __yb = botSay,
+    __ys = setChips;
+  try {
+    botSay = function (tx, d, a) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') {
+        conv._yP = tx;
+        conv._yC = null;
+      }
+      return __yb.apply(this, arguments);
+    };
+    setChips = function (c) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') conv._yC = c;
+      return __ys.apply(this, arguments);
+    };
+  } catch (e) {}
+  function yGSay(tx, chips) {
+    window.__yG = true;
+    botSay(tx, 500, function () {
+      setChips(chips);
+      window.__yG = false;
+    });
+  }
+  function yQGuard(text, t) {
+    if (!conv.step || conv.step === 'idle') return false;
+    var q = t.replace(/[؟?!.,،\s]/g, '');
+    if (conv._yQ) {
+      if (/^(نكمل|كمل|كمّل|نكملالحجز|اكمل|نكملالطلب)$/.test(q)) {
+        conv._yQ = false;
+        var P = conv._yP,
+          C = conv._yC;
+        if (P) {
+          window.__yG = true;
+          botSay(P, 300, function () {
+            window.__yG = false;
+            if (C) setChips(C);else setChips([]);
+          });
+        }
+        return true;
+      }
+      if (/^(الغاء|إلغاء|الغي|الغيه|cancel|الغاءالحجز|إلغاءالحجز)$/.test(q)) {
+        conv._yQ = false;
+        conv.step = 'idle';
+        yGSay('تمام، وقفنا اللي كنا فيه. تقدر تبدأ من جديد في أي وقت.', mainChips());
+        return true;
+      }
+      conv._yQ = false;
+    }
+    if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت', 'اختنق', 'تسمم'])) return false;
+    var words = text.trim().split(/\s+/).length;
+    var qm = /[؟?]/.test(text);
+    var qw = /(^|\s)(ينفع|هل|ازاي|إزاي|بديل|بدائل|بدل|ليه|الفرق|ايه الفرق|إيه الفرق)(\s|$)/.test(t);
+    if (!(qm && words >= 3 || qw)) return false;
+    conv._yQ = true;
+    var note = '';
+    yGSay('ده سؤال مش هسجله كإجابة في الحجز.' + note + ' تحب نكمل اللي كنا فيه ولا نلغيه؟', [{
+      label: 'نتابع الحجز',
+      primary: true
+    }, {
+      label: 'إلغاء'
+    }]);
+    return true;
+  }
+  function yOffDomain(text) {
+    if (/^(?:await-name|await-address|lead-name|book-name)$/.test(conv.step || '')) return false;
+    var q = norm(text);
+    if (!Y_OFF.test(q)) return false;
+    var mixed = Y_SCENT.test(q);
+    var tail = conv.step && conv.step !== 'idle' ? ' وطلبك الحالي زي ما هو، نكمله لما تحب.' : '';
+    if (/^(?:سلك|اسلاك|شاحن|اونر|هونر|honor|كرسي)$/i.test(q.replace(/[؟?!.,،\s]/g, ''))) {
+      botSay('قصدك ايه بالظبط؟ انا مساعد مزاج، لو بتدور على حاجة من المنيو قولي وأساعدك.' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (mixed) {
+      botSay('طلبك فيه حاجتين مختلفين. انا هساعدك في القهوة والمشروبات والحلويات بس، اما باقي الطلب فخارج تخصص مزاج. تحب نبدأ؟' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    botSay('ده خارج تخصصي، انا مساعد مزاج. لو عايز تسأل عن القهوة والمشروبات والحلويات انا معاك.' + tail, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yTurn = 0,
+    yLast = {
+      names: [],
+      turn: -9
+    };
+  function yRef(text) {
+    var q = norm(text).replace(/[؟?!.,،]/g, ' ');
+    var idx = /(^|\s)(الاول|الأول|الاولي|الاولى|اول واحد|اول وحده)(\s|$)/.test(q) ? 0 : /(^|\s)(التاني|الثاني|التانيه|الثانيه|تاني واحد)(\s|$)/.test(q) ? 1 : /(^|\s)(التالت|الثالث)(\s|$)/.test(q) ? 2 : -1;
+    if (idx < 0 || !/(سعر|بكام|كام|تفاصيل|ثمن)/.test(q)) return false;
+    var N = yLast.names;
+    if (!N.length) {
+      botSay('تقصد انهي منتج بالظبط؟ قولي اسمه وأقولك سعره.', 500, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (yTurn - yLast.turn > 1) {
+      botSay('بعد كلامنا الأخير مش متأكد تقصد انهي واحد. تقصد ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    var it = byName(N[idx]);
+    if (!it) {
+      botSay('تقصد انهي واحد بالظبط؟ ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    botSay(it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + ' جنيه' + (it.sized || typeof SIZES !== 'undefined' ? ' (بيتغير حسب الحجم)' : '') + '. بيانات وأسعار تجريبية للعرض.', 500, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var Y_LLM_URL = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/assist',
+    yHist = [];
+  function yCatalog() {
+    return ALL.map(function (it) {
+      return it.n + ': ' + it.d;
+    }).join('\n');
+  }
+  function yLLMAsk(text, t, fallback) {
+    if (window.__yLLMOff || !window.fetch || !text || text.trim().length < 2 || text.length > 300) {
+      fallback();
+      return;
+    }
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    var done = false,
+      ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (ctl) ctl.abort();
+    }, 10000);
+    function finish(fn) {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      typing.classList.remove('on');
+      busy = false;
+      fn();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }
+    fetch(Y_LLM_URL, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({
+        message: text,
+        history: yHist
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (!d || !d.ok || !d.reply) {
+        finish(function () {
+          fallback();
+        });
+        return;
+      }
+      var names = [];
+      (d.suggest || []).forEach(function (n) {
+        var it = byName(n);
+        if (it && names.indexOf(it.n) < 0) names.push(it.n);
+      });
+      yLast = {
+        names: names.slice(),
+        turn: yTurn
+      };
+      finish(function () {
+        var _n = addMsg(d.reply, 'bot');
+        if (_n) _n.dataset.yousefQuestion = window.__yousefResponseQuestion || text;
+        yHist.push({
+          r: 'u',
+          t: text
+        }, {
+          r: 'a',
+          t: d.reply
+        });
+        if (yHist.length > 6) yHist = yHist.slice(-6);
+        var c = d.intent === 'offdomain' || d.intent === 'ambiguous' ? [] : names.map(function (n) {
+          return {
+            label: n
+          };
+        });
+        setChips(c.length ? c.concat([{
+          label: 'تصفّح التشكيلة',
+          action: 'menu'
+        }]) : mainChips());
+        window.__yLastIntent = d.intent;
+      });
+    }).catch(function () {
+      finish(function () {
+        fallback();
+      });
+    });
+  }
+  function startOrderSilent() {
+    conv.order = {
+      items: [],
+      fulfillment: null,
+      name: null,
+      address: null
+    };
+    conv.step = 'await-item';
+  }
+  function runAction(action) {
+    switch (action) {
+      case 'menu':
+        botSay('دي قايمة مزاج كلها. اختار اللي يريحك:', 700, function () {
+          addMsg(menuText(), 'bot');
+          setChips([{
+            label: 'رشّح لي شيئًا',
+            action: 'reco'
+          }, {
+            label: 'أريد أن أطلب',
+            action: 'order',
+            primary: true
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        break;
+      case 'reco':
+        conv.step = 'reco-temp';
+        botSay('قولي الأول: مزاجك النهارده سخن ولا ساقع؟', 600, function () {
+          setChips([{
+            label: 'سخن ☕'
+          }, {
+            label: 'ساقع 🧊'
+          }, {
+            label: 'حاجة حلوة 🍪'
+          }]);
+        });
+        break;
+      case 'order':
+        startOrder();
+        break;
+      case 'info':
+        botSay(hoursText(), 700, function () {
+          setChips([{
+            label: 'تصفّح القائمة',
+            action: 'menu'
+          }, {
+            label: 'أريد أن أطلب',
+            action: 'order',
+            primary: true
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        break;
+      case 'home':
+        botSay('تحب أساعدك في إيه كمان؟', 500, function () {
+          setChips(mainChips());
+        });
+        break;
+      case 'close':
+        closePanel();
+        break;
+    }
+  }
+
+  /* recommendation follow-up handled in route() through step */
+  var _origRoute = route;
+  route = function (text, action) {
+    if (conv.step === 'reco-temp' && !action) {
+      var t = norm(text);
+      var pick = null;
+      if (hasAny(t, ['سخن', 'ساخن', 'قهوه', 'قهوة'])) {
+        pick = MENU.coffee[3];
+      } else if (hasAny(t, ['ساقع', 'بارد', 'تلج', 'ثلج'])) {
+        pick = MENU.cold[2];
+      } else if (hasAny(t, ['حلو', 'حلواني', 'حاجه حلوه'])) {
+        pick = MENU.sweet[1];
+      }
+      conv.step = 'idle';
+      if (pick) {
+        botSay('على مزاجك ده، أرشحلك ' + pick.n + ' — ' + pick.d + '\nبـ ' + pick.p + ' جنيه. أطلبهولك؟', 700, function () {
+          conv._pend = pick;
+          setChips([{
+            label: 'اطلب ' + pick.n,
+            primary: true
+          }, {
+            label: 'رشّح لي غيره',
+            action: 'reco'
+          }, {
+            label: 'تصفّح القائمة',
+            action: 'menu'
+          }]);
+        });
+        return;
+      }
+      botSay('قولي بس: سخن، ساقع، ولا حاجة حلوة؟', 500, function () {
+        setChips([{
+          label: 'سخن ☕'
+        }, {
+          label: 'ساقع 🧊'
+        }, {
+          label: 'حاجة حلوة 🍪'
+        }]);
+      });
+      return;
+    }
+    _origRoute(text, action);
+  };
+
+  /* ---------- open/close ---------- */
+
+  // Keep the composer inside the *visible* viewport, not behind the soft keyboard.
+  var yPrefix = panel.id.replace(/-panel$/, ''),
+    yVV = window.visualViewport,
+    yFrame = 0;
+  var yStyle = document.createElement('style');
+  yStyle.textContent = '#' + yPrefix + '-panel{box-sizing:border-box;min-height:0;padding:0;margin:0;overscroll-behavior:contain}#' + yPrefix + '-head,#' + yPrefix + '-input,#' + yPrefix + '-typing{flex-shrink:0}#' + yPrefix + '-msgs{min-height:0;overscroll-behavior:contain;overflow-anchor:none}#' + yPrefix + '-input input{min-width:0;font-size:16px}#' + yPrefix + '-chips{flex-shrink:0;max-height:96px;overflow-y:auto}#' + yPrefix + '-chips button{flex-shrink:0;white-space:nowrap}#' + yPrefix + '-chips{scrollbar-width:none}#' + yPrefix + '-chips::-webkit-scrollbar{display:none}';
+  document.head.appendChild(yStyle);
+  function yFitViewport() {
+    cancelAnimationFrame(yFrame);
+    yFrame = requestAnimationFrame(function () {
+      if (!panel.classList.contains('open')) return;
+      if (window.matchMedia('(max-width:680px)').matches) {
+        var vh = yVV ? yVV.height : window.innerHeight,
+          vo = yVV ? yVV.offsetTop : 0;
+        var h = Math.min(620, Math.max(120, vh - 16));
+        panel.style.height = h + 'px';
+        panel.style.maxHeight = h + 'px';
+        panel.style.top = vo + vh - h - 8 + 'px';
+        panel.style.bottom = 'auto';
+        var yShort = vh < 500;
+        chips.style.display = '';
+        chips.style.maxHeight = (yShort ? 52 : 96) + 'px';
+        chips.style.flexWrap = yShort ? 'nowrap' : '';
+        chips.style.overflowX = yShort ? 'auto' : '';
+        chips.style.overflowY = yShort ? 'hidden' : 'auto';
+        chips.style.padding = yShort ? '6px 14px' : '';
+      } else {
+        ['height', 'max-height', 'top', 'bottom'].forEach(function (k) {
+          panel.style.removeProperty(k);
+        });
+        ['max-height', 'display', 'flex-wrap', 'overflow-x', 'overflow-y', 'padding'].forEach(function (k) {
+          chips.style.removeProperty(k);
+        });
+      }
+      scrollBottom();
+    });
+  }
+  if (yVV) {
+    yVV.addEventListener('resize', yFitViewport, {
+      passive: true
+    });
+    yVV.addEventListener('scroll', yFitViewport, {
+      passive: true
+    });
+  }
+  window.addEventListener('resize', yFitViewport, {
+    passive: true
+  });
+  input.addEventListener('focus', yFitViewport);
+  input.addEventListener('blur', yFitViewport);
+  function openPanel() {
+    panel.classList.add('open');
+    yFitViewport();
+    launcher.style.display = 'none';
+    if (G && !window.matchMedia('(max-width:680px)').matches) {
+      G.from(panel, {
+        y: 60,
+        opacity: 0,
+        duration: .45,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+    if (!conv.greeted) {
+      conv.greeted = true;
+      botSeq([{
+        text: 'أهلًا بك في مزاج ☕',
+        delay: 500
+      }, {
+        text: 'أنا مساعدك هنا. أعرّفك بالقائمة، وأرشّح لك ما يناسب مزاجك، أو آخذ طلبك كاملًا حتى يجهز، وكل ذلك من هنا.',
+        delay: 800,
+        chips: mainChips()
+      }]);
+    }
+    input.focus();
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    launcher.style.display = 'flex';
+    if (G) {
+      G.from(launcher, {
+        scale: .7,
+        opacity: 0,
+        duration: .35,
+        ease: 'back.out(2)',
+        clearProps: 'all'
+      });
+    }
+  }
+  launcher.addEventListener('click', openPanel);
+  document.getElementById('mz-close').addEventListener('click', closePanel);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!v && !widgetNameStep(conv.step)) return;
+    input.value = '';
+    handleUser(v, null);
+  });
+
+  /* launcher entrance */
+  if (G) {
+    G.from(launcher, {
+      y: 30,
+      opacity: 0,
+      duration: .6,
+      delay: .9,
+      ease: 'back.out(1.8)',
+      clearProps: 'all'
+    });
+  }
+})();</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"></script>
+<script>(function(){
+if(!window.gsap||!window.ScrollTrigger)return;
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+
+gsap.registerPlugin(ScrollTrigger);
+var E='power3.out';
+function reveal(sel,from){
+  gsap.utils.toArray(sel).forEach(function(el){
+    var v={opacity:0,duration:.9,ease:E,scrollTrigger:{trigger:el,start:'top 92%',once:true}};
+    for(var k in from)v[k]=from[k];
+    gsap.from(el,v);
+  });
+}
+function batch(sel,from,stagger){
+  var els=gsap.utils.toArray(sel);
+  if(!els.length)return;
+  var init={opacity:0};for(var k in from)init[k]=from[k];
+  gsap.set(els,init);
+  ScrollTrigger.batch(els,{start:'top 92%',once:true,onEnter:function(b){
+    var v={opacity:1,duration:.85,stagger:stagger,ease:E,overwrite:true};
+    for(var k in from){if(k==='y')v.y=0;else if(k==='x')v.x=0;else if(k==='scale')v.scale=1;}
+    gsap.to(b,v);
+  }});
+}
+/* lists re-rendered by the site's own JS (filters/tabs): animate the fresh items */
+function watchList(containerSel,itemSel){
+  var c=document.querySelector(containerSel); if(!c)return;
+  new MutationObserver(function(muts){
+    var added=[];
+    muts.forEach(function(m){m.addedNodes.forEach(function(n){
+      if(n.nodeType!==1)return;
+      if(n.matches&&n.matches(itemSel))added.push(n);
+      else if(n.querySelector)added=added.concat([].slice.call(n.querySelectorAll(itemSel)));
+    });});
+    if(added.length)gsap.fromTo(added,{opacity:0,y:24},{opacity:1,y:0,duration:.5,stagger:.06,ease:'power2.out',overwrite:true});
+  }).observe(c,{childList:true,subtree:true});
+}
+function hoverLift(sel){
+  if(!window.matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  gsap.utils.toArray(sel).forEach(function(el){
+    el.addEventListener('mouseenter',function(){gsap.to(el,{y:-6,duration:.3,ease:'power2.out',overwrite:'auto'});});
+    el.addEventListener('mouseleave',function(){gsap.to(el,{y:0,duration:.35,ease:'power2.out',overwrite:'auto'});});
+  });
+}
+
+gsap.from('header',{y:-24,opacity:0,duration:.8,ease:E});
+gsap.from('.hero .eyebrow',{y:16,opacity:0,duration:.7,delay:.15,ease:E});
+gsap.from('.hero h1',{y:44,opacity:0,duration:1,delay:.25,ease:E});
+gsap.from('.hero p',{y:24,opacity:0,duration:.8,delay:.45,ease:E});
+gsap.from('.hero .pill',{y:18,opacity:0,duration:.7,delay:.58,ease:E});
+gsap.from('.hero-art',{scale:.7,opacity:0,duration:1.1,delay:.4,ease:'back.out(1.6)'});
+gsap.from('.seal',{scale:.4,opacity:0,rotation:-30,duration:1,delay:.9,ease:'back.out(1.7)'});
+gsap.to('.seal',{y:-8,duration:2.8,ease:'sine.inOut',repeat:-1,yoyo:true,delay:2});
+reveal('.section-top',{y:30});
+reveal('.signature-lead',{y:26});
+reveal('.menu-intro',{y:24});
+reveal('.receipt',{y:34});
+reveal('.story-photo',{y:26});
+reveal('.story-copy',{y:26});
+reveal('.daily',{y:20});
+reveal('.visit-copy',{y:26});
+reveal('.visit-card',{y:30});
+batch('.signature-grid .signature',{y:40},.12);
+batch('.moments .moment',{y:30},.15);
+hoverLift('.signature');hoverLift('.moment');
+watchList('#menu-list','.menu-item');
+})();</script>
+<script id="portfolio-chat-recorder">
+(function () {
+  'use strict';
+  var dialog = Array.prototype.find.call(document.querySelectorAll('[role="dialog"]'), function(node){return node.querySelector('[aria-live]');});
+  if (!dialog || dialog.__portfolioChatLog) return;
+  var messagesNode = dialog.querySelector('[aria-live]');
+  if (!messagesNode) return;
+  dialog.__portfolioChatLog = true;
+
+  var apiUrl = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/chat';
+  var pageUrl = location.origin + location.pathname;
+  var idKey = 'ym-chat-conversation-id-v2';
+  var id;
+  var lastActive = 0;
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'ym' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  }
+  try {
+    var __chatStoredState = localStorage.getItem(idKey);
+    var __chatParsedState;
+    try { __chatParsedState = JSON.parse(__chatStoredState); } catch (_) {}
+    id = __chatParsedState && __chatParsedState.id || __chatStoredState;
+    lastActive = __chatParsedState && Number(__chatParsedState.lastActive) || 0;
+    if (!id || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
+      id = newId();
+      lastActive = Date.now();}
+    localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive}));
+  } catch (_) {
+    id = newId();
+  lastActive = Date.now();}
+
+  var startedKey = idKey + ':started';
+  var pendingKey = idKey + ':pending';
+  var started = false;
+  try { started = localStorage.getItem(startedKey) === '1'; } catch (_) {}
+  if (started && Date.now() - lastActive > 12 * 60 * 60 * 1000) {
+    started = false;
+    try { localStorage.setItem(startedKey, '0'); } catch (_) {}
+  }
+  var waiting = [];
+  var outbox = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem(pendingKey) || '[]');
+    if (Array.isArray(saved)) outbox = saved;
+  } catch (_) {}
+
+  function makeMessage(role, content) {
+    return {
+      role: role,
+      content: content,
+      ts: Date.now(),
+      id: newId()
+    };
+  }
+  function visitorInfo() {
+    return {
+      userAgent: navigator.userAgent || '',
+      lang: navigator.language || '',
+      referer: document.referrer || '',
+      page: pageUrl
+    };
+  }
+  function saveOutbox() {
+    try { localStorage.setItem(pendingKey, JSON.stringify(outbox)); } catch (_) {}
+  }
+  window.addEventListener('yousef-chat-event', function (event) {
+    var detail = event.detail || {};
+    if (!/^(demo_order|demo_booking|whatsapp_handoff)$/.test(detail.kind || '')) return;
+    enqueue({conversationId: id, events: [{id: newId(), kind: detail.kind, detail: detail.label || ''}], visitor: visitorInfo(), page: pageUrl});
+  });
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (link && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(link.href)) {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event',{detail:{kind:'whatsapp_handoff',label:'WhatsApp link clicked'}}));
+    }
+  }, true);
+  var sending = false;
+  var paused = false;
+  function pump() {
+    if (sending || paused || !outbox.length) return;
+    sending = true;
+    var payload = outbox[0];
+    var attempt = 0;
+    function transmit() {
+      fetch(apiUrl, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('chat log request failed');
+        outbox.shift();
+        saveOutbox();
+        sending = false;
+        pump();
+      }).catch(function () {
+        attempt += 1;
+        if (attempt < 3) {
+          setTimeout(transmit, attempt === 1 ? 1000 : 2500);
+        } else {
+          sending = false;
+          paused = true;
+          setTimeout(function () { paused = false; pump(); }, 30000);
+        }
+      });
+    }
+    transmit();
+  }
+  function enqueue(payload) {
+    outbox.push(payload);
+    if (outbox.length > 500) outbox.shift();
+    saveOutbox();
+    pump();
+  }
+  function record(node) {
+    function touchConversation() {
+      if (Date.now() - lastActive > 12 * 60 * 60 * 1000) id = newId();
+      lastActive = Date.now();
+      try { localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive})); } catch (_) {}
+    }
+
+    if (!node || node.nodeType !== 1 || node.__portfolioChatLogged) return;
+    node.__portfolioChatLogged = true;
+    var content = (node.innerText || node.textContent || '').trim();
+    if (!content) return;
+    var role = node.classList && node.classList.contains('user') ? 'visitor' : 'assistant';
+    var message = makeMessage(role, content);
+    if (role === 'assistant' && node.dataset && node.dataset.yousefQuestion) message.question = node.dataset.yousefQuestion;
+    if (!started) {
+      waiting.push(message);
+      if (role === 'visitor') {
+        started = true;
+        try { localStorage.setItem(startedKey, '1'); } catch (_) {}
+        
+        touchConversation();enqueue({ conversationId: id, messages: waiting.splice(0), visitor: visitorInfo(), page: pageUrl });
+      }
+      return;
+    }
+    
+        touchConversation();enqueue({ conversationId: id, message: message, visitor: visitorInfo(), page: pageUrl });
+  }
+
+  new MutationObserver(function (records) {
+    records.forEach(function (record) {
+      record.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && node.parentElement === messagesNode) recordNode(node);
+      });
+    });
+  }).observe(messagesNode, { childList: true });
+
+  function recordNode(node) { record(node); }
+  pump();
+})();
+
+</script>
+</body></html>

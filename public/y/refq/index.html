@@ -1,0 +1,1729 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" type="image/png" href="/icon-192.png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#f6efe0"><meta name="description" content="رفق، عيادة بيطرية في المعادي. كشف وتطعيم ورعاية، ومعاملة بحنان يستحقها صاحبك."><title>رفق | عيادة بيطرية في المعادي</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=Tajawal:wght@400;500;700;800&display=optional" rel="stylesheet"><script id="portfolio-security-bootstrap">(function(){
+'use strict';if(window.__portfolioSecurity)return;window.__portfolioSecurity=true;
+var endpoint='https://portfolio-chat-backend.yousef-portfolio.workers.dev',nativeFetch=window.fetch.bind(window),session=null,pending=null,sitekey="0x4AAAAAAGO0I2tLsytslNSh";
+function verify(){if(session&&session.expires>Date.now()+30000)return Promise.resolve(session.token);if(pending)return pending;
+pending=new Promise(function(resolve,reject){var lang=document.documentElement.lang==='ar'?'ar':'en',box=document.createElement('section');box.id='portfolio-verification';box.setAttribute('role','status');box.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483647;max-width:calc(100vw - 24px);background:white;color:#111;border:1px solid #aaa;border-radius:10px;padding:12px;box-shadow:0 4px 24px #0003;font:14px Arial,sans-serif';var label=document.createElement('div');label.textContent=lang==='ar'?'جاري التحقق لحماية الشات...':'Verifying access to the chat...';box.appendChild(label);var target=document.createElement('div');box.appendChild(target);document.body.appendChild(box);var widget=null,settled=false,timer=setTimeout(function(){done(new Error('verification timeout'))},90000);
+function done(error,value){if(settled)return;settled=true;clearTimeout(timer);if(widget!==null&&window.turnstile)window.turnstile.remove(widget);box.remove();pending=null;if(error)reject(error);else resolve(value)}
+function render(){try{widget=window.turnstile.render(target,{sitekey:sitekey,action:'portfolio_chat',appearance:'interaction-only',language:lang,callback:function(token){nativeFetch(endpoint+'/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})}).then(function(r){if(!r.ok)throw Error('verification rejected');return r.json()}).then(function(data){if(!data.ok)throw Error('verification failed');session=data;done(null,data.token)}).catch(function(e){done(e)})},'error-callback':function(){done(new Error('verification unavailable'))},'timeout-callback':function(){done(new Error('verification timeout'))}})}catch(e){done(e)}}
+if(window.turnstile)render();else{var script=document.getElementById('portfolio-turnstile');if(!script){script=document.createElement('script');script.id='portfolio-turnstile';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;document.head.appendChild(script)}script.addEventListener('load',render,{once:true});script.addEventListener('error',function(){done(new Error('verification unavailable'))},{once:true})}
+});return pending;}
+function conversationProof(){try{var key='ym-chat-owner-proof-v1',value=localStorage.getItem(key);if(!/^v1_[a-f0-9]{64}$/.test(value||'')){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);value='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.setItem(key,value)}return value}catch(e){if(!window.__ymChatOwnerProof){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);window.__ymChatOwnerProof='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('')}return window.__ymChatOwnerProof}}
+window.fetch=function(resource,options){var url=typeof resource==='string'?resource:resource&&resource.url;if(!url||url.indexOf(endpoint+'/api/')!==0||!/\/api\/(assist|chat)$/.test(url))return nativeFetch(resource,options);return verify().then(function(token){var init=Object.assign({},options),body;try{body=JSON.parse(init.body||'{}')}catch(e){return nativeFetch(resource,options)}body.securityToken=token;if(/\/api\/chat$/.test(url))body.conversationProof=conversationProof();if(/\/api\/assist$/.test(url)){var area=document.querySelector('[id$="-msgs"],#yc-msgs');if(area){var turns=Array.prototype.slice.call(area.children).filter(function(n){return n.matches('.user,.bot,.yc-u,.yc-b,.u,.b')}).map(function(n){return {r:n.matches('.user,.yc-u,.u')?'u':'a',t:(n.textContent||'').slice(0,300)}}).filter(function(n){return n.t.trim()});if(turns.length&&turns[turns.length-1].r==='u'&&turns[turns.length-1].t===String(body.message||'').slice(0,300))turns.pop();if(turns.length)body.history=turns.slice(-6)}}init.body=JSON.stringify(body);var controller=window.AbortController?new AbortController():null,timer=controller?setTimeout(function(){controller.abort()},15000):null;init.signal=controller?controller.signal:undefined;return nativeFetch(resource,init).then(function(response){if(timer)clearTimeout(timer);if(response.status===403)session=null;return response},function(error){if(timer)clearTimeout(timer);throw error})})};
+})();
+</script>
+<style>:root{--paper:#f6efe0;--card:#fffdf6;--ink:#0d4a42;--ink2:#15655a;--mut:#5f736b;--acc:#12877a;--acc-d:#0b6a5f;--sage:#9fc3b6;--line:#e4d8bd;--soft:#ede2c9;--gold:#e8875b}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Tajawal,Cairo,Tahoma,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,93%);margin-inline:auto}
+h1,h2,h3,.brand{font-family:"El Messiri",Tajawal,sans-serif}
+/* ---- slim top nav ---- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(246,239,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.brand{font-size:27px;font-weight:700;color:var(--ink)}
+.brand b{color:var(--gold)}
+.nav-links{display:flex;gap:4px;font-size:14.5px;font-weight:700}
+.nav-links a{padding:7px 13px;border-radius:999px;transition:background .2s}
+.nav-links a:hover{background:var(--soft)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle span{width:22px;height:2px;background:var(--ink);display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:#fdf9ef;border:1.5px solid var(--acc);border-radius:14px;padding:11px 22px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:var(--acc-d);border-color:var(--acc-d);transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.btn.light:hover{background:#fff}
+/* ---- hero: single centered column, banner image below ---- */
+.hero{padding:64px 0 0}
+.hero .wrap{max-width:820px;text-align:center;display:block}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:800;color:var(--acc-d);background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block}
+.hero h1{font-size:clamp(38px,5.6vw,62px);line-height:1.35;margin:22px 0 14px}
+.hero h1 em{font-style:normal;color:inherit;text-decoration:underline wavy var(--gold) 3px;text-underline-offset:10px}
+.hero .sub{font-size:17.5px;color:var(--mut);max-width:56ch;margin:0 auto}
+.hero-cta{display:flex;gap:12px;justify-content:center;margin-top:26px;flex-wrap:wrap}
+.hero-trust{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;font-size:14px;color:var(--mut);font-weight:700}
+.stars{color:var(--gold);letter-spacing:2px}
+.hero-media{max-width:1180px;width:93%;margin:44px auto 0;position:relative}
+.hero-media img{width:100%;height:min(50vh,470px);object-fit:cover;border-radius:30px;border:1px solid var(--line)}
+.emg-badge{position:absolute;inset-inline-start:22px;bottom:22px;display:flex;align-items:center;gap:12px;background:var(--ink);color:#f2ecdd;border-radius:18px;padding:13px 18px;box-shadow:0 14px 34px rgba(13,74,66,.35)}
+.emg-badge .ic{width:34px;height:34px;border-radius:12px;background:var(--gold);color:var(--ink);font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;font-family:Tajawal}
+.emg-badge b{display:block;font-size:14.5px;line-height:1.4}
+.emg-badge small{color:#cfe3da;font-size:12.5px}
+/* ---- split-screen: sticky rail + scrolling flow ---- */
+.split{padding:26px 0 10px}
+.split-grid{display:grid;grid-template-columns:350px minmax(0,1fr);gap:46px;align-items:start}
+.rail{position:sticky;top:86px;display:flex;flex-direction:column;gap:16px}
+.rail-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:26px}
+.rail-card.book{background:var(--ink);color:#eef4ec;border:none}
+.rail-card.book h2{font-size:24px;line-height:1.5;margin-bottom:8px}
+.rail-card.book p{font-size:14.5px;color:#cfe0d6;margin-bottom:18px}
+.rail-card.book .row{display:flex;flex-direction:column;gap:10px}
+.rail-card.book .btn{width:100%}
+.rail-card.contact h3{font-size:18px;margin-bottom:12px}
+.c-row{display:flex;justify-content:space-between;gap:12px;padding-block:9px;border-top:1px dashed var(--line);font-size:13.5px}
+.c-row:first-of-type{border-top:none}
+.c-row b{color:var(--mut);font-weight:700;white-space:nowrap}
+.c-row span{font-weight:800;text-align:end}
+.rail-facts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rail-facts span{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:10px 12px;font-size:12px;color:var(--mut);font-weight:700;line-height:1.5}
+.rail-facts b{display:block;font-family:"El Messiri";font-size:19px;color:var(--ink)}
+.flow{min-width:0}
+.flow>section{padding-block:40px;border-top:1px solid var(--line)}
+.flow>section:first-child{border-top:none;padding-top:18px}
+/* steps: vertical connected list */
+.steps h2,.sec-head h2{font-size:clamp(26px,3.2vw,34px);line-height:1.5}
+.kicker{font-size:13px;font-weight:800;color:var(--acc-d);letter-spacing:.5px;margin-bottom:6px}
+.sec-head{margin-bottom:26px;max-width:60ch}
+.sec-head p{color:var(--mut);font-size:15px;margin-top:8px}
+.steps .row{display:block;position:relative;margin-top:22px}
+.steps .row::before{content:"";position:absolute;inset-inline-start:19px;top:16px;bottom:16px;width:2px;background:var(--line)}
+.step{display:flex;gap:18px;padding-block:14px;position:relative}
+.step .n{flex:none;width:40px;height:40px;border-radius:50%;background:var(--card);border:2px solid var(--acc);color:var(--acc-d);font-family:"El Messiri";font-size:18px;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.step b{display:block;font-size:16.5px;margin-bottom:2px}
+.step p{font-size:14px;color:var(--mut)}
+/* services: 2-col soft cards */
+.grid{display:grid;gap:18px}
+.grid.c3{grid-template-columns:repeat(2,1fr)}
+.grid.c2{grid-template-columns:1fr}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.svc .ic{width:44px;height:44px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.svc .ic svg{width:22px;height:22px;stroke:var(--acc-d)}
+.svc h3{font-size:18px;margin-bottom:4px}
+.svc p{font-size:13.5px;color:var(--mut)}
+.svc .price{margin-top:12px;font-weight:800;color:var(--acc-d);font-size:14.5px}
+/* doctors: horizontal cards */
+.doc{display:flex;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;margin-bottom:16px;align-items:center}
+.doc img{width:150px;height:150px;object-fit:cover;flex:none}
+.doc .body{padding:18px 22px}
+.doc h3{font-size:19px}
+.doc .role{font-size:13px;font-weight:800;color:var(--acc-d);margin-bottom:6px}
+.doc .body p{font-size:13.5px;color:var(--mut)}
+/* tips */
+.tips .wrap{display:grid;grid-template-columns:300px 1fr;gap:34px;align-items:start}
+.tips .wrap>img{border-radius:22px;border:1px solid var(--line);height:300px;width:100%;object-fit:cover;position:sticky;top:86px}
+.tip{display:flex;gap:14px;padding-block:14px;border-top:1px solid var(--line)}
+.tip:first-of-type{border-top:none}
+.tip .t-n{flex:none;width:32px;height:32px;border-radius:10px;background:var(--ink);color:var(--paper);font-family:"El Messiri";display:flex;align-items:center;justify-content:center;font-size:15px}
+.tip b{display:block;font-size:15.5px}
+.tip p{font-size:13.5px;color:var(--mut)}
+/* stories: bare quotes, hairline separated */
+.tst{padding:22px 4px;border-top:1px solid var(--line)}
+.tst:first-child{border-top:none}
+.tst .q{font-family:"El Messiri";font-size:34px;color:var(--gold);line-height:1;height:22px}
+.tst p{font-size:15.5px}
+.tst .who{display:flex;align-items:center;gap:10px;margin-top:12px}
+.tst .av{width:36px;height:36px;border-radius:50%;background:var(--sage);color:var(--ink);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+.tst .who small{display:block;color:var(--mut);font-size:12px}
+/* faq */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:10px}
+.faq summary{font-weight:800;font-size:15.5px;cursor:pointer;list-style:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--acc-d);font-weight:800}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:10px;font-size:14px;color:var(--mut)}
+/* footer */
+footer{margin-top:40px;background:var(--ink);color:#dfeae2;padding:54px 0 30px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+footer .brand{color:#fff}
+footer p{font-size:14px;color:#b9cec2;margin-top:10px}
+footer h4{font-family:"El Messiri";font-size:16px;color:#fff;margin-bottom:10px}
+footer li{list-style:none;font-size:13.5px;padding-block:3px;color:#cfe0d6}
+footer li a:hover{color:#fff}
+footer .fine{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.15);padding-top:18px;font-size:12px;color:#9db8a9}
+.reveal{opacity:0;transform:translateY(26px)}
+@media(max-width:1020px){
+.split-grid{grid-template-columns:1fr}
+.rail{position:static;order:-1;flex-direction:column}
+.nav-links{display:none;position:absolute;top:100%;inset-inline:0;background:var(--paper);flex-direction:column;padding:14px;border-bottom:1px solid var(--line)}
+.nav-links.open{display:flex}
+.nav-toggle{display:flex}
+.tips .wrap{grid-template-columns:1fr}
+.tips .wrap>img{position:static;height:240px}
+.grid.c3{grid-template-columns:1fr}
+footer .wrap{grid-template-columns:1fr}
+.hero-media img{height:300px}
+.doc img{width:110px;height:110px}
+}
+
+#rf-launcher{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);border:none;border-radius:999px;padding:12px 18px;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer;box-shadow:0 10px 26px rgba(13,74,66,.34);transition:transform .25s}
+#rf-launcher:hover{transform:translateY(-2px);background:var(--ink2)}
+#rf-launcher svg{width:18px;height:18px}
+#rf-panel{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:var(--paper);border-top:1px solid var(--line);border-radius:26px 26px 0 0;display:none;flex-direction:column;height:min(72dvh,620px);box-shadow:0 -12px 40px rgba(13,74,66,.24);overflow:hidden;font-family:inherit}
+#rf-panel.open{display:flex}
+#rf-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--card)}
+#rf-head .rf-ava{width:38px;height:38px;border-radius:50%;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;flex:0 0 auto;font-family:"El Messiri",Tajawal,sans-serif}
+#rf-head .rf-who{flex:1;min-width:0}
+#rf-head .rf-who b{display:block;font-size:15px}
+#rf-head .rf-who small{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--mut)}
+#rf-head .rf-who small i{width:7px;height:7px;border-radius:50%;background:#5da85f}
+#rf-close{background:none;border:1px solid var(--line);border-radius:50%;width:30px;height:30px;font-size:15px;cursor:pointer;color:var(--ink);flex:0 0 auto}
+#rf-msgs{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.rf-msg{max-width:85%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.8;white-space:pre-line;word-break:break-word}
+.rf-msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-right-radius:5px}
+.rf-msg.user{align-self:flex-end;background:var(--acc);color:#fff;border-bottom-left-radius:5px}
+.rf-card{align-self:stretch;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:14px}
+.rf-card .rf-t{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed var(--line);padding-bottom:8px;margin-bottom:8px}
+.rf-card .rf-t b{font-size:15px}
+.rf-card .rf-t small{color:var(--mut);font-size:10.5px;letter-spacing:1px}
+.rf-card .rf-r{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.rf-card .rf-r.total{border-top:1px dashed var(--line);margin-top:7px;padding-top:8px;font-weight:800}
+.rf-card .rf-r.total span:last-child{color:var(--acc)}
+#rf-typing{align-self:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;border-bottom-right-radius:5px;padding:12px 16px;display:none;gap:5px}
+#rf-typing.on{display:flex}
+#rf-typing span{width:6px;height:6px;border-radius:50%;background:var(--mut);animation:rfbnc 1.1s infinite}
+#rf-typing span:nth-child(2){animation-delay:.15s}
+#rf-typing span:nth-child(3){animation-delay:.3s}
+@keyframes rfbnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+#rf-chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px;border-top:1px solid var(--line)}
+#rf-chips:empty{display:none}
+#rf-chips button{border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:7px 14px;font-size:13.5px;font-family:inherit;font-weight:600;cursor:pointer;transition:.2s}
+#rf-chips button:hover{background:var(--ink);color:var(--paper)}
+#rf-chips button.rf-primary{background:var(--acc);border-color:var(--acc);color:#fff}
+#rf-input{display:flex;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom))}
+#rf-input input{flex:1;border:1px solid var(--line);border-radius:999px;padding:10px 16px;font-size:14.5px;font-family:inherit;background:#fff;color:var(--ink);outline:none;min-width:0}
+#rf-input input:focus{border-color:var(--acc)}
+#rf-input button{background:var(--acc);color:#fff;border:none;border-radius:999px;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+#rf-input button svg{width:18px;height:18px;transform:scaleX(-1)}
+@media(min-width:720px){#rf-panel{left:24px;right:auto;bottom:86px;width:384px;height:min(70vh,600px);border:1px solid var(--line);border-radius:22px}#rf-launcher{left:24px;bottom:24px}}
+</style><style id="overlay-chat-safety">body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-launcher"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-panel"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) #yc-fab{visibility:hidden!important;pointer-events:none!important}</style><meta id="arabic-practical-route" name="demo-practical-routing" content="1"><script id="portfolio-safe-summary">function yEscapeHTML(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]||c})}</script></head>
+<body>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top">رفق<b>.</b></a>
+<div class="nav-links" id="navLinks"><a href="#services">خدماتنا</a><a href="#doctors">أطباؤنا</a><a href="#tips">نصائح</a><a href="#stories">آراء</a><a href="#faq">أسئلة شائعة</a></div>
+<a class="btn" href="#book">احجز كشفًا</a>
+<button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button></div></nav>
+<header class="hero" id="top"><div class="wrap">
+<div>
+<span class="eyebrow"><i></i>عيادة رفق البيطرية · المعادي</span>
+<h1>صاحبك في <em>يد أمينة</em></h1>
+<p class="sub">كشف وتطعيم ورعاية، بهدوء ودون استعجال. حيوانك الأليف عندنا ليس مجرد حالة، بل فرد من العائلة.</p>
+<div class="hero-cta"><a class="btn" href="#book">احجز كشفًا الآن</a><a class="btn ghost" href="#services">تصفّح خدماتنا</a></div>
+<div class="hero-trust"><span class="stars">★★★★★</span><span>تقييم ٤.٩ من أكثر من ١٢٠٠ زيارة</span></div>
+</div>
+<div class="hero-media"><img src="/assets/media-e7da114b51535f46.webp" alt="دكتور بيطري بيفحص كلب جولدن ريتريفر في عيادة رفق" width="1280" height="853">
+<div class="emg-badge"><span class="ic">+</span><div><b>حالة طارئة؟</b><small>توجّه إلى أقرب طبيب بيطري فورًا</small></div></div>
+</div>
+</div></header>
+<div class="split"><div class="wrap split-grid"><aside class="rail"><div class="rail-card book" id="book"><h2>جاهز لتطمئن على صاحبك؟</h2>
+<p>احجز كشفًا تجريبيًا عبر المساعد في دقيقة. وإن كانت الحالة طارئة، توجّه فورًا إلى أقرب طبيب بيطري.</p>
+<div class="row"><button class="btn light" id="ctaChat">احجز عبر المساعد</button><a class="btn ghost light" style="background:transparent;color:var(--paper);border-color:var(--paper)" href="#book" id="ctaCall">اتصل بنا (توضيحي)</a></div></div><div class="rail-card contact"><h3>تواصل معنا</h3><div class="c-row"><b>العنوان</b><span>شارع ٩، المعادي القديمة، القاهرة</span></div><div class="c-row"><b>الحالات الطارئة</b><span>توجّه إلى أقرب طبيب بيطري فورًا</span></div><div class="c-row"><b>السبت – الخميس</b><span>١٠ صباحًا – ١٠ مساءً</span></div><div class="c-row"><b>الجمعة</b><span>٢ – ١٠ مساءً</span></div></div><div class="rail-facts"><span><b>+١٢</b> سنة خبرة</span><span><b>+٩٠٠٠</b> حالة اطمأننا عليها</span><span><b>٤.٩</b> تقييم أصحاب الحيوانات</span></div></aside><div class="flow"><section><div class="wrap"><div class="steps reveal">
+<h2>الحجز أسهل مما تتخيل</h2>
+<div class="row">
+<div class="step"><div class="n">١</div><b>احجز عبر المساعد</b><p>تحدّث إلى المساعد في أسفل الصفحة، وسيثبّت لك موعدًا تجريبيًا في دقيقة.</p></div>
+<div class="step"><div class="n">٢</div><b>تعال في موعدك</b><p>بلا انتظار ولا زحام. أحضر أي تحاليل أو تطعيمات سابقة إن وُجدت.</p></div>
+<div class="step"><div class="n">٣</div><b>متابعة بعد الزيارة</b><p>نتصل بك لنطمئن على حالته، وتصلك التعليمات واضحة ومكتوبة.</p></div>
+</div></div></div></section><section id="services"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">خدماتنا</div><h2>كل ما يحتاجه صاحبك في مكان واحد</h2><p>من الكشف الدوري إلى التطعيمات والمتابعة، نعمل بهدوء وتعقيم كامل، ونشرح لك كل شيء خطوة بخطوة.</p></div>
+<div class="grid c3">
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c-4-3.5-8-6.6-8-10.5A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 8 4.5c0 3.9-4 7-8 10.5z"/><path d="M9 11h2l1-2 2 4 1-2h2"/></svg></div><h3>كشف عام</h3><p>فحص كامل من الرأس إلى الذيل، وخطة علاج واضحة إن احتاج الأمر لمتابعة.</p><div class="price">٢٥٠ جنيه</div></div>
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M7 21l9-9m-4-4l2 2m-6 10l-3-3 9-9 3 3z"/><path d="M14 3l7 7"/></svg></div><h3>تطعيمات</h3><p>التطعيمات الأساسية والسنوية للقطط والكلاب، مع شهادة بكل جرعة.</p><div class="price">من ٣٠٠ جنيه</div></div>
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.4"/><path d="M7 9h.01M17 15h.01"/></svg></div><h3>تحاليل وأشعة</h3><p>معمل وأشعة داخل العيادة، والنتيجة في اليوم نفسه بلا عناء.</p><div class="price">من ٤٠٠ جنيه</div></div>
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M12 3v18M5 8l14 8M19 8L5 16"/></svg></div><h3>عمليات</h3><p>غرفة عمليات مجهزة وتعقيم كامل، ومتابعة يومية حتى يتعافى بالسلامة.</p><div class="price">حسب الحالة</div></div>
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M4 15c2-1 2-3 4-3s2 2 4 2 2-2 4-2 2 2 4 3"/><path d="M6 20c1.5-.8 1.5-2 3-2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 2"/></svg></div><h3>استحمام وتجميل</h3><p>حمّام طبي وقص شعر وأظافر وتنظيف أذن، بلا توتر ولا إزعاج.</p><div class="price">من ٣٥٠ جنيه</div></div>
+<div class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M12 13v4M10 15h4"/></svg></div><h3>زيارة منزلية</h3><p>يأتيك الطبيب إلى البيت داخل المعادي وما حولها، بحجز مسبق.</p><div class="price">٥٠٠ جنيه</div></div>
+</div></div></section>
+
+<section id="doctors"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">أطباؤنا</div><h2>أناس يحبون الحيوانات قبل المهنة</h2></div>
+<div class="grid c2">
+<div class="doc reveal"><img src="/assets/media-481096f188daa3d1.webp" alt="دكتور كريم الشاذلي مع قطة" width="1024" height="1024"><div class="body"><h3>د. كريم الشاذلي</h3><div class="role">مؤسس العيادة · جراحة وباطنة</div><p>١٤ سنة في المهنة، وأكثر من يتصل به أصحاب الكلاب الكبيرة قبل أي قرار.</p></div></div>
+<div class="doc reveal"><img src="/assets/media-f7d82d6321477ee9.webp" alt="دكتورة سارة عبد الرحمن مع جرو بيجل" width="1024" height="1024"><div class="body"><h3>د. سارة عبد الرحمن</h3><div class="role">باطنة وطب قطط</div><p>متخصصة في حالات القطط الحساسة، ومعروف أن القطط الخائفة تهدأ معها.</p></div></div>
+</div></div></section>
+<section id="tips" class="tips"><div class="wrap">
+<img class="reveal" src="/assets/media-00617cf9ec3c4cb9.webp" alt="قطة تُمشَّط بهدوء في البيت" width="1024" height="1024">
+<div class="reveal"><div class="sec-head" style="margin-bottom:14px"><div class="kicker">نصائح من أطبائنا</div><h2>أشياء بسيطة تصنع فرقًا في صحتهم</h2></div>
+<div class="tip"><div class="t-n">١</div><div><b>التطعيم السنوي ليس رفاهية</b><p>حتى لو لم ينزل حيوانك من البيت، قد تصله الأمراض من حذائك. ثبّت موعد التطعيم كل سنة.</p></div></div>
+<div class="tip"><div class="t-n">٢</div><div><b>القطط تُخفي تعبها</b><p>إن قلّت شهيتها أو انعزلت كثيرًا، فهذا غالبًا إنذار. الكشف المبكر أرخص وأسهل بكثير.</p></div></div>
+<div class="tip"><div class="t-n">٣</div><div><b>تمشية الكلب في الحر</b><p>الصيف عندنا قاسٍ. اخرج مبكرًا أو ليلًا، وجرّب الأرض بيدك أولًا: إن كانت ساخنة عليك فهي ساخنة على كفوفه.</p></div></div>
+<div class="tip"><div class="t-n">٤</div><div><b>لا تغيّر الطعام فجأة</b><p>أي تغيير في الطعام يكون تدريجيًا على أسبوع، وإلا ستواجه معدة مضطربة.</p></div></div>
+</div>
+</div></section>
+<section id="stories"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">آراء</div><h2>أصحابهم تكلّموا</h2></div>
+<div class="grid c3">
+<div class="tst reveal"><div class="q">”</div><p>أول مرة لا تخاف فيها قطتي عند الطبيب. المكان هادئ، والدكتورة سارة صبورة جدًا وشرحت لي كل شيء.</p><div class="who"><div class="av">م</div><div><b>مريم أحمد</b><small>صاحبة سمسم</small></div></div></div>
+<div class="tst reveal"><div class="q">”</div><p>أجرى روكي عملية عند د. كريم، وكانت المتابعة بعدها أفضل من مستشفيات بشرية جرّبتها.</p><div class="who"><div class="av">ك</div><div><b>كريم صلاح</b><small>صاحب روكي</small></div></div></div>
+<div class="tst reveal"><div class="q">”</div><p>اتصلت بهم في الثانية فجرًا حين تعب بونبون، فردّوا فورًا وقالوا تعالي حالًا. كان ذلك الفارق.</p><div class="who"><div class="av">س</div><div><b>سلمى عادل</b><small>صاحبة بونبون</small></div></div></div>
+</div></div></section>
+<section id="faq" class="faq"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">أسئلة شائعة</div><h2>ما يسألنا عنه الناس</h2></div>
+<details class="reveal"><summary>كيف أحجز موعدًا؟</summary><p>عبر المساعد أسفل الصفحة في أقل من دقيقة، أو بالهاتف. إن كانت الحالة طارئة فلا تنتظر موعدًا: توجّه فورًا إلى أقرب طبيب بيطري.</p></details>
+<details class="reveal"><summary>والحالات الطارئة؟</summary><p>لا يؤكد هذا العرض وجود خدمة طوارئ أو رقم طوارئ. إن كانت الحالة طارئة، توجّه فورًا إلى أقرب طبيب بيطري أو عيادة طوارئ.</p></details>
+<details class="reveal"><summary>هل تستقبلون غير القطط والكلاب؟</summary><p>نستقبل العصافير والأرانب والسلاحف والهامستر ومعظم الحيوانات الأليفة الصغيرة. وإن كان لديك حيوان مختلف، اسألنا أولًا.</p></details>
+<details class="reveal"><summary>كيف يتم الدفع؟</summary><p>نقدًا أو فودافون كاش أو إنستاباي في العيادة. لا دفعة مقدمة للحجز العادي، وتدفع بعد الكشف.</p></details>
+</div></section>
+</div></div></div>
+<footer><div class="wrap">
+<div><a class="brand" href="#top">رفق<b>.</b></a><p>عيادة رفق البيطرية، شارع ٩، المعادي القديمة، القاهرة.</p><p style="margin-top:6px">بيانات التواصل في العرض تجريبية.</p></div>
+<div><h4>مواعيدنا</h4><li>السبت – الخميس: ١٠ صباحًا – ١٠ مساءً</li><li>الجمعة: ٢ – ١٠ مساءً</li></div>
+<div><h4>روابط سريعة</h4><li><a href="#services">خدماتنا وأسعارنا</a></li><li><a href="#doctors">أطباؤنا</a></li><li><a href="#tips">نصائح العناية</a></li><li><a href="#faq">أسئلة شائعة</a></li></div>
+<p class="fine">موقع تجريبي لعرض التصميم. الأسماء والصور والبيانات توضيحية، وليست بديلًا عن استشارة بيطرية حقيقية.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"></script>
+<script>
+var navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',function(){var o=navLinks.classList.toggle('open');navToggle.setAttribute('aria-expanded',o)});
+navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open')})});
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(window.gsap&&!reduce){
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hero .eyebrow, .hero h1, .hero .sub, .hero-cta, .hero-trust',{y:34,opacity:0,duration:.8,stagger:.1,ease:'power3.out'});
+gsap.from('.hero-media',{y:44,opacity:0,duration:.9,delay:.25,ease:'power3.out'});
+document.querySelectorAll('.reveal').forEach(function(el){
+gsap.to(el,{y:0,opacity:1,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+});
+gsap.from('.emg-badge',{scale:.6,opacity:0,duration:.5,delay:1,ease:'back.out(2)'});
+}else{document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity=1;el.style.transform='none'})}
+</script>
+<script>(function () {
+  /* name-refusal-fix-v1 */
+  function widgetNameStep(step) {
+    return /^(lead-name|await-name|book-name)$/.test(step);
+  }
+  function widgetName(raw) {
+    var value = String(raw || '').normalize('NFKC').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '').trim();
+    value = value.replace(/^(?:(?:أنا|انا)\s+)?(?:اسمي|إسمي|اسم حضرتك)\s*[:：]?\s*/, '').replace(/^(?:أنا|انا)\s+/, '').replace(/^(?:my name is|i am|i'm)\s+/i, '').trim();
+    var t = value.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[^\p{L}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+    if (!t || /^(?:لا|لاء|لا شكرا|لأ|مش مهم|مش مهم الاسم|الاسم مش مهم|مو مهم|مو مهم الاسم|مجهول|فاعل خير|بدون اسم|من غير اسم|اي اسم|اي حاجه|حد|فلان|فلان الفلاني|اسم|الاسم|اسمك|سري|سر|مش هقول|مش هقولك|مالكش دعوه|ملكش دعوه|خليك في حالك|لا يهم|لا يهم الاسم|مفيش اسم|محدش|انا مين|انت مالك|انت مين|باتمان|سبايدرمان|سوبرمان|no|no thanks|none|anonymous|anon|unknown|guest|test|testing|joke|batman|superman|n a|skip|pass|whatever|not important|doesn t matter|name doesn t matter|prefer not to say|rather not say|not telling|none of your business|null|undefined)$/u.test(t)) return null;
+    if (/(?:^|\s)(?:مش|مو|غير|مش حابب|مش حابه|مش عايز|مش عاوز|مش عايزه|مش عاوزه|مش هقول|مابحبش|ما بحبش|مبحبش|مش لازم|مش ضروري|مش فارق|مش هيفرق|مش هتفرق)(?:\s|$)/u.test(t) && /(?:اسم|اقول|اقلك|اعرف|اكتب|اذكر|مهم|حابب|عايز|عاوز|ضروري|فارق|هيفرق|هتفرق)/u.test(t)) return null;
+    if (/(?:نكمل|كمل|تخطي|تجاوز|بعدين|سيبك من|خلينا من غير|خصوصيه|سريه|بهزر|بهزار|هزار|ههه|هاها|لول|هههه|lol|haha|skip|prefer not|rather not|don t want|won t tell|not sharing|private|privacy|never mind|nevermind)/u.test(t)) return null;
+    if (value.length < 2 || value.length > 70 || value.split(/\s+/).length > 6 || !/^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]*$/u.test(value)) return null;
+    if (!/[\p{L}]{2}/u.test(value) || /^(.)\1{2,}$/u.test(t.replace(/\s/g, ''))) return null;
+    return value;
+  }
+  function widgetCall(name) {
+    return name ? ' يا ' + name : '';
+  }
+  function widgetTitle(name) {
+    return name ? ' ' + name : ' بدون اسم';
+  }
+  'use strict';
+  if (window.__rfAssistant) return;
+  window.__rfAssistant = true;
+  var SERVICES = [{
+    n: 'كشف عام',
+    p: '٢٥٠ جنيه',
+    d: 'فحص كامل من الرأس للذيل.',
+    a: ['كشف', 'فحص', 'شيك', 'كشف عام', 'checkup']
+  }, {
+    n: 'تطعيم',
+    p: 'من ٣٠٠ جنيه',
+    d: 'التطعيمات الأساسية والسنوية، ومعاك شهادة.',
+    a: ['تطعيم', 'تطعيمات', 'طعم', 'لقاح', 'تحصين', 'vaccine', 'تطعيمه']
+  }, {
+    n: 'تحاليل وأشعة',
+    p: 'من ٤٠٠ جنيه',
+    d: 'معمل وأشعة جوّه العيادة، نتيجة نفس اليوم.',
+    a: ['تحاليل', 'تحليل', 'اشعه', 'أشعة', 'سونار', 'اشعة']
+  }, {
+    n: 'عملية',
+    p: 'حسب الحالة',
+    d: 'غرفة عمليات مجهزة ومتابعة بعدها.',
+    a: ['عمليه', 'عملية', 'جراحه', 'جراحة', 'تعقيم', 'خصي', 'قيصريه', 'ولاده']
+  }, {
+    n: 'استحمام وتجميل',
+    p: 'من ٣٥٠ جنيه',
+    d: 'حمّام طبي وقص شعر وأظافير.',
+    a: ['استحمام', 'حمام', 'جروومينج', 'قص', 'تجميل', 'نظافه', 'شعر', 'اظافير', 'أظافير', 'grooming']
+  }, {
+    n: 'زيارة منزلية',
+    p: '٥٠٠ جنيه',
+    d: 'الدكتور يجيلك لحد البيت داخل المعادي وحواليها.',
+    a: ['منزليه', 'منزلية', 'البيت', 'بيتي', 'زياره', 'زيارة', 'تعالي', 'تيجي', 'home']
+  }];
+  var PETS = ['قطة', 'كلب', 'عصفور / ببغاء', 'أرنب', 'سلحفاة', 'حيوان آخر'];
+  var DAYS = ['اليوم', 'غدًا', 'بعد غد', 'يوم الجمعة', 'يوم السبت'];
+  var TIMES = ['صباحًا (١٠ - ٢)', 'مساءً (٥ - ١٠)'];
+  var PHONE = '';
+  var TIPS = {
+    cat: 'نصيحة للقطط: القطة لو قلت شهيتها يوم كامل أو بطلت تستخدم الليتر بوكس، دي علامات تستاهل كشف بدري. ومتنساش تشجعها تشرب مية، حلة مية نضيفة في أكتر من مكان بتفرق معاهم جدًا.',
+    dog: 'نصيحة للكلاب: تمشية الصيف تكون بدري أو بعد المغرب، وجرّب الأرض بإيدك الأول. وبعد كل تمشية بص على كفوفه، الأسفلت السخن والزجاج بيعملوا مشاكل كتير.',
+    other: 'نصيحة عامة: أي تغيير مفاجئ في الأكل أو النوم أو النشاط عند الحيوان الأليف هو طريقته إنه يقولك إن في حاجة. صوّره واكتب الملاحظة وابعتهالنا مع الحجز، هتساعد الدكتور جدًا.'
+  };
+  function norm(s) {
+    return (s || '').toLowerCase().replace(/ـ/g, '').replace(/[\u200b-\u200f\u202a-\u202e]/g, '').replace(/\s+/g, ' ').replace(/[ً-ْٰ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/[٠-٩]/g, function (c) {
+      return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+    }).trim();
+  }
+  function hasAny(t, arr) {
+    t = norm(t);
+    for (var i = 0; i < arr.length; i++) {
+      if (t.indexOf(norm(arr[i])) > -1) return true;
+    }
+    return false;
+  }
+  function findService(t) {
+    t = norm(t);
+    var best = null,
+      bl = 0;
+    SERVICES.forEach(function (s) {
+      [s.n].concat(s.a).forEach(function (nm) {
+        nm = norm(nm);
+        if (nm.length > 1 && t.indexOf(nm) > -1 && nm.length > bl) {
+          bl = nm.length;
+          best = s;
+        }
+      });
+    });
+    return best;
+  }
+  var OFFSCOPE = [{
+    k: ['اكل', 'طعام', 'دراي فود', 'فود', 'بيت شوب', 'لعب', 'طوق', 'شنطه'],
+    msg: 'احنا عيادة، مابنبيعش أكل أو مستلزمات. بس الدكتور في الكشف بيقولك أنسب أكل لحيوانك بالظبط.'
+  }, {
+    k: ['بيتزا', 'برجر', 'قهوه', 'قهوة', 'دليفري'],
+    msg: 'ده مش مجالي خالص! أنا مساعد عيادة رفق، شغلتي الحيوانات الأليفة بس.'
+  }, {
+    k: ['دكتور بشري', 'مستشفي', 'مستشفى', 'حجز لنفسي', 'عياده اسنان', 'تحاليل ليا'],
+    msg: 'احنا عيادة بيطرية، يعني للحيوانات الأليفة بس. لو محتاج دكتور ليك إنت، للأسف مش هقدر أساعدك هنا.'
+  }];
+  function offScopeHit(t) {
+    t = norm(t);
+    for (var i = 0; i < OFFSCOPE.length; i++) {
+      var e = OFFSCOPE[i];
+      for (var j = 0; j < e.k.length; j++) {
+        if (t.indexOf(norm(e.k[j])) > -1) return e;
+      }
+    }
+    return null;
+  }
+  var root = document.createElement('div');
+  root.innerHTML = '<button id="rf-launcher" aria-label="افتح محادثة مساعد رفق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg><span>اسأل رفق</span></button>' + '<section id="rf-panel" role="dialog" aria-label="مساعد عيادة رفق">' + '<header id="rf-head"><div class="rf-ava">ر</div><div class="rf-who"><b>مساعد رفق</b><small><i></i>متصل · بيرد فورًا</small></div><button id="rf-close" aria-label="إغلاق المحادثة">✕</button></header>' + '<div id="rf-msgs" aria-live="polite"></div><div id="rf-typing" aria-hidden="true"><span></span><span></span><span></span></div><div id="rf-chips"></div>' + '<form id="rf-input"><input type="text" id="rf-text" placeholder="اكتب رسالتك…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="إرسال"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5c.8-.35.8-1.45 0-1.8L3.4 3.6c-.7-.3-1.4.35-1.3 1.05l.6 5.35c.05.45.4.8.85.9l8.95 1.1c.1 0 .1.2 0 .2l-8.95 1.1c-.45.1-.8.45-.85.9l-.6 5.35c-.1.7.6 1.35 1.3 1.05z"/></svg></button></form></section>';
+  document.body.appendChild(root);
+  var launcher = document.getElementById('rf-launcher'),
+    panel = document.getElementById('rf-panel'),
+    msgs = document.getElementById('rf-msgs'),
+    chips = document.getElementById('rf-chips'),
+    typing = document.getElementById('rf-typing'),
+    form = document.getElementById('rf-input'),
+    input = document.getElementById('rf-text');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && !reduce ? window.gsap : null;
+  function animIn(el) {
+    if (G) {
+      G.from(el, {
+        y: 14,
+        opacity: 0,
+        duration: .35,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+  }
+  function scrollBottom() {
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function addMsg(text, who) {
+    var d = document.createElement('div');
+    d.className = 'rf-msg ' + who;
+    d.textContent = text;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function addCard(html) {
+    var d = document.createElement('div');
+    d.className = 'rf-card';
+    d.innerHTML = html;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function setChips(list) {
+    chips.innerHTML = '';
+    (list || []).forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = c.label;
+      if (c.primary) b.className = 'rf-primary';
+      b.onclick = function () {
+        handleUser(c.label, c.action || null);
+      };
+      chips.appendChild(b);
+    });
+    scrollBottom();
+  }
+  var busy = false,
+    pending = null;
+  var _yrSeen = {};
+  function yVaryReply(text) {
+    var n = (_yrSeen[text] || 0) % 3;
+    _yrSeen[text] = n + 1;
+    if (/مش (?:ضمن|متوفر|موجود|من تشكيلتنا|في تشكيلتنا|على منيو)|للأسف/.test(text)) {
+      if (n === 1) text = text.replace(/^للأسف\s*/, 'بص، ').replace(/^الطلب ده/, 'الحاجة دي').replace(/بس أقرب حاجة ليه عندنا:/, 'ولو بتدور على بديل، عندنا:');
+      if (n === 2) text = text.replace(/^للأسف\s*/, 'خليني أوضحلك، ').replace(/^الطلب ده/, 'الاختيار ده').replace(/بس أقرب حاجة ليه عندنا:/, 'ممكن بدل كده تشوف:');
+      if (n === 1 && !/^(بص|الحاجة|بالنسبة|خليني)/.test(text)) text = 'بص، ' + text;
+      if (n === 2 && !/^(خليني|الاختيار|بالنسبة|بص)/.test(text)) text = 'خليني أوضحلك، ' + text;
+    }
+    return text;
+  }
+  function botSay(text, delay, after) {
+    if (text.indexOf('مش واضحلي قصدك بالكامل') === 0) {
+      var bi = (window.__yClarifyCount || 0) % 3;
+      window.__yClarifyCount = bi + 1;
+      text = ["مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", "محتاج منك توضيح صغير. تقصد منتج معين ولا خدمة؟ المعلومة دي مش متوفرة عندي بشكل أقدر أأكد عليه.", "خليني أفهمك صح المعلومة دي مش متوفرة عندي من الكلام ده لوحده. قولّي بتدور على إيه بالظبط؟"][bi];
+    }
+    text = yVaryReply(text);
+    var _yq = window.__yousefResponseQuestion || '';
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      var _yn = addMsg(text, 'bot');
+      if (_yn) _yn.dataset.yousefQuestion = _yq;
+      busy = false;
+      if (after) after();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }, delay != null ? delay : 700 + Math.min(text.length * 8, 900));
+  }
+  function botSeq(list, i, done) {
+    i = i || 0;
+    if (i >= list.length) {
+      if (done) done();
+      return;
+    }
+    var item = list[i];
+    botSay(item.text, item.delay, function () {
+      if (item.card) addCard(item.card);
+      if (item.chips) setChips(item.chips);
+      botSeq(list, i + 1, done);
+    });
+  }
+  var conv = {
+    step: 'idle',
+    bk: null,
+    greeted: false
+  };
+  function mainChips() {
+    return [{
+      label: 'احجز موعدًا',
+      action: 'book',
+      primary: true
+    }, {
+      label: 'الخدمات والأسعار',
+      action: 'services'
+    }, {
+      label: 'نصيحة لحيوانك',
+      action: 'tips'
+    }, {
+      label: 'حالة طارئة',
+      action: 'emergency'
+    }];
+  }
+  function servicesText() {
+    var s = 'خدماتنا وأسعارها:\n';
+    SERVICES.forEach(function (x) {
+      s += '• ' + x.n + ' — ' + x.p + '\n';
+    });
+    return s + '\nدي أسعار توضيحية في الديمو. لو الحالة طارئة، متستناش ميعاد: تواصل مع أقرب طبيب بيطري أو عيادة طوارئ فورًا.';
+  }
+  function startBooking(svc) {
+    conv.bk = {
+      service: svc || null,
+      pet: null,
+      petName: null,
+      day: null,
+      time: null,
+      name: null,
+      phone: null
+    };
+    if (svc) {
+      askPet();
+    } else {
+      conv.step = 'await-service';
+      botSay('حاضر، هنظبطلك ميعاد في دقيقة. محتاج تعرف إيه الخدمة اللي جاي ليها؟', 600, function () {
+        setChips(SERVICES.map(function (s) {
+          return {
+            label: s.n
+          };
+        }).concat([{
+          label: 'حالة طارئة',
+          action: 'emergency'
+        }]));
+      });
+    }
+  }
+  function askPet() {
+    conv.step = 'await-pet';
+    botSay('تمام، ' + conv.bk.service.n + '. وصاحبنا ده إيه بقى؟', 600, function () {
+      setChips(PETS.map(function (p) {
+        return {
+          label: p
+        };
+      }));
+    });
+  }
+  function askPetName() {
+    conv.step = 'await-petname';
+    botSay('نورتينا يا ' + conv.bk.pet + '! اسمه إيه؟', 500, function () {
+      setChips([]);
+      input.focus();
+    });
+  }
+  function askDay() {
+    conv.step = 'await-day';
+    botSay('تحب تجي ' + conv.bk.petName + ' إمتى؟', 600, function () {
+      setChips(DAYS.map(function (d) {
+        return {
+          label: d
+        };
+      }));
+    });
+  }
+  function askTime() {
+    conv.step = 'await-time';
+    botSay('أي فترة تريحك ' + conv.bk.day + '؟', 500, function () {
+      setChips(TIMES.map(function (t) {
+        return {
+          label: t
+        };
+      }));
+    });
+  }
+  function askName() {
+    conv.step = 'await-name';
+    botSay('اسم حضرتك عشان نسجل الحجز بيه؟', 500, function () {
+      setChips([{
+        label: 'نتابع دون اسم'
+      }]);
+      input.focus();
+    });
+  }
+  function askPhone() {
+    conv.step = 'await-phone';
+    botSay((conv.bk.name ? 'تشرفنا يا ' + conv.bk.name + '. ' : '') + 'آخر حاجة: رقم موبايل لاستكمال تجربة الحجز؟ (مش هيتبعت عليه أي رسايل — ده ديمو)', 600, function () {
+      input.focus();
+    });
+  }
+  function summaryAndConfirm() {
+    conv.step = 'await-confirm';
+    var b = conv.bk;
+    var rows = '<div class="rf-r"><span>الخدمة</span><span>' + b.service.n + '</span></div>' + '<div class="rf-r"><span>الحيوان</span><span>' + yEscapeHTML(b.petName) + ' (' + yEscapeHTML(b.pet) + ')</span></div>' + '<div class="rf-r"><span>الميعاد</span><span>' + yEscapeHTML(b.day) + ' · ' + yEscapeHTML(b.time) + '</span></div>' + '<div class="rf-r"><span>الاسم</span><span>' + (yEscapeHTML(b.name) || 'لم يُذكر') + '</span></div>' + '<div class="rf-r"><span>الموبايل</span><span dir="ltr">' + yEscapeHTML(b.phone) + '</span></div>' + '<div class="rf-r total"><span>سعر الخدمة</span><span>' + b.service.p + '</span></div>';
+    var card = '<div class="rf-t"><b>حجز' + yEscapeHTML(widgetTitle(b.name)) + '</b><small>REFQ BOOKING</small></div>' + rows;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      addCard(card);
+      addMsg('كده كل حاجة مظبوطة. أكد وأنا أسجله كمحاكاة حجز في الديمو؟', 'bot');
+      setChips([{
+        label: 'أؤكد الحجز ✓',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    }, 900);
+  }
+  function finishBooking() {
+    window.dispatchEvent(new CustomEvent('yousef-chat-event', {
+      detail: {
+        kind: 'demo_booking',
+        label: 'finishBooking'
+      }
+    }));
+    conv.step = 'done';
+    var b = conv.bk;
+    var num = 'RQ-' + Math.floor(1000 + Math.random() * 9000);
+    setChips([]);
+    botSay('تم' + widgetCall(b.name) + '! دي محاكاة حجز في الديمو — مفيش ميعاد حقيقي اتسجل ولا تأكيد هيتبعت على رقمك. التفاصيل التجريبية: ' + b.service.n + '، ' + b.day + ' ' + b.time + ' (رقم تجريبي ' + num + '). لو ' + b.petName + ' محتاج دكتور فعلًا، احجز في عيادة بيطرية قريبة منك.', 850, function () {
+      setChips([{
+        label: 'الخدمات والأسعار',
+        action: 'services'
+      }, {
+        label: 'أغلق المحادثة',
+        action: 'close'
+      }]);
+      conv.step = 'idle';
+      conv.bk = null;
+    });
+  }
+  window.__CHIPALIAS={"أضيف شيئًا": "أضيف حاجة", "أؤكد الطلب ✓": "أكد الطلب ✓", "أؤكد الحجز ✓": "أكد الحجز ✓", "أؤكد الزيارة ✓": "أكد الزيارة ✓", "أؤكد التسجيل ✓": "أكد التسجيل ✓", "أغلق المحادثة": "اقفل الشات", "رشّح لي شيئًا": "رشحلي حاجة", "رشّح لي غيره": "رشحلي غيره", "أريد أن أطلب": "عايز أطلب", "هكذا يكفي": "كده تمام", "نتابع الحجز": "نكمل الحجز", "نتابع دون اسم": "نكمل من غير اسم", "شيء آخر": "حاجة تانية", "تصفّح القائمة": "شوف المنيو", "تصفّح التشكيلة": "شوف التشكيلة", "القائمة كاملة": "المنيو كله", "اليوم": "النهارده", "غدًا": "بكرة", "بعد غد": "بعد بكرة", "يوم آخر": "يوم تاني", "احجز موعدًا تجريبيًا": "احجز ميعاد تجريبي", "احجز موعدًا": "احجز ميعاد", "احجز كشفًا لحيوانك": "احجز كشف لحيوانك", "احجز كشفًا": "احجز كشف", "نصيحة أخرى": "نصيحة تانية", "صباحًا (١٠ - ٢)": "الصبح (١٠ - ٢)", "مساءً (٥ - ١٠)": "بالليل (٥ - ١٠)", "حيوان آخر": "حاجة تانية"};
+  function handleUser(text, action) {
+      var shown = text; if (!action && window.__CHIPALIAS && window.__CHIPALIAS[text]) text = window.__CHIPALIAS[text];
+    if (!action && /(?:ايبوبروفين|إيبوبروفين|بروفين|بنادول|باراسيتامول|اسبرين|أسبرين|مضاد|دواء|دوا\b|ادويه|أدوية|جرع|ملجم|مللي|حقن|تشخيص|نزيف|ورم|تورم|وجع|ألم|اعراض|أعراض|تسمم|اختناق|مش قادر.{0,8}تنفس|صعوب.{0,8}تنفس|ibuprofen|paracetamol|aspirin|medicine|medication|dosage|dose|symptom|bleeding|swelling|poison)/i.test(text)) {
+      window.__yousefResponseQuestion = text;
+      if (text.trim()) addMsg(shown, 'user');
+      botSay("السؤال ده محتاج تقييم من طبيب بيطري مؤهل. مش هقدر أشخّص أو أوصي بعلاج أو أقول جرعة. لو فيه أعراض شديدة أو نزيف أو صعوبة تنفس، تواصل فورًا مع طبيب أو طوارئ حقيقية. ده موقع تجريبي، مش خدمة طبية.", 150);
+      return;
+    }
+    if (!action && (!conv.step || conv.step === 'idle') && /(?:عنوان|عناوين|فين.{0,12}(?:فرع|فروع|محل|مكتب|عياد|مكان)|(?:فرع|فروع).{0,12}فين|مواعيد.{0,8}(?:العمل|الفتح|الغلق)|ساعات العمل|بتفتح|بتقفل|(?:branch|address|opening hours|office hours))/i.test(text)) {
+      if (text.trim()) addMsg(shown, 'user');
+      botSay("العنوان الافتراضي: شارع ٩، المعادي القديمة. المواعيد المعروضة: السبت للخميس من ١٠ الصبح لـ١٠ بالليل، والجمعة من ٢ الظهر لـ١٠ بالليل. بيانات التواصل تجريبية. لو فيه طوارئ تواصل فورًا مع طبيب بيطري حقيقي.", 150, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (text.trim()) addMsg(shown, 'user');
+    setChips([]);
+    if (busy) {
+      pending = {
+        text: text,
+        action: action
+      };
+      return;
+    }
+    route(text, action);
+  }
+  var yFAQ = [[["اكل", "تغذيه", "دواء", "جرعه", "حامل", "اعراض", "بيرجع", "مش بياكل"], ["لو حيوانك تعبان، قولي النوع والعمر ووصف الحالة، لكن التشخيص وجرعات الأدوية مش متوفرة من مساعد الديمو. تواصل مع طبيب بيطري للفحص، ولو الحالة شديدة ما تستناش حجز تجريبي."]], [["دفتر", "تجهيز", "قبل الكشف", "قبل التطعيم", "تحضير"], ["للزيارة خليك جاهز بعمر الحيوان وأي أدوية أو تطعيمات سابقة. تعليمات التحضير الخاصة بكل خدمة مش متوفرة هنا، خصوصًا الصيام قبل الإجراءات، فلازم تتأكد من الطبيب."]], [["سعر الكشف", "كشف بكام", "تامين", "زياره منزليه"], ["في الديمو: الكشف العام 250 ج، والزيارة المنزلية 500 ج داخل المعادي وحواليها بحجز مسبق. التأمين مش متوفر عنه تفاصيل مؤكدة. دي أسعار توضيحية، مش حجز فعلي."]], [["كود خصم", "كوبون", "خصومات", "عروض", "عرض النهارده"], ["أي عرض أو خصم مش مكتوب في الأسعار الحالية مش متوفر عندي كتأكيد. أقدر أوريك الموجود، لكن مش هألف كود خصم أو أوعد بسعر خاص.", "خلينا في السعر المعروض لحد ما يبقى فيه عرض واضح. تفاصيل خصم إضافي مش متوفرة في بيانات الديمو."]], [["واتساب", "رقم تليفون", "رقمكم"], ["بيانات التواصل المعروضة هنا خاصة بالديمو وقد تكون تجريبية. ما تبعتش معلومات حساسة أو تدفع فلوس على أساس إن ده نشاط حقيقي. أقدر أساعدك تستعرض الخدمة هنا."]]];
+  var yFAQSeen = {};
+  var yLastFAQ = -1,
+    yLastFAQAt = 0;
+  function yAnswerFAQ(t) {
+    var yArea = document.querySelector('[id$="-msgs"],#yc-msgs');
+    var yBots = yArea ? yArea.querySelectorAll('.bot,.yc-b,.b') : [];
+    var yPrev = yBots.length ? yBots[yBots.length - 1].textContent : '';
+    var yFollow = /(?:^|\s)(?:هو|هي|ده|دي|دا|فيه|فيها|سعره|سعرها|طيب|طب|هال|it|its|that|this|does|what about)(?:\s|[؟?]|$)/i.test(t);
+    var ySafety = /(حساسي|طوار|نزيف|جرع|تشخيص|allerg|emergen|dosage|diagnos)/i.test(t);
+    if (!ySafety && /(?:^|[\s،؟?!.])(?:وش|وشو|شلون|ابي|أبي|ابغى|أبغى|بغيت|شو|بدي|بدّي|عندكن|قديش)(?=$|[\s،؟?!.])/.test(t)) return false;
+    if (yFollow && yPrev && !ySafety) {
+      var yWasFAQ = yFAQ.some(function (row) {
+        return row[1].some(function (a) {
+          return yPrev.indexOf(a) >= 0;
+        });
+      });
+      if (!yWasFAQ) return false;
+    }
+    var short = t.replace(/[؟?!.,،]/g, '').trim();
+    if (yLastFAQ >= 0 && Date.now() - yLastFAQAt < 300000 && /^(?:هو|هي|ده|دي|دا|نفسه|نفسها|قصدي ده|اقصد ده|يعني ده|وريني|بكام|كام|سعره|سعرها|وضح|وضحلي|وضح لي|تفاصيله|تفاصيلها)$/.test(short)) {
+      return yGiveFAQ(yLastFAQ);
+    }
+    for (var i = 0; i < yFAQ.length; i++) {
+      if (yFAQ[i][0].some(function (k) {
+        var w = norm(k),
+          q = ' ' + norm(t).replace(/[؟?!.,،]/g, ' ') + ' ';
+        return /[a-z]/i.test(w) ? q.indexOf(' ' + w + ' ') >= 0 : w.length > 4 ? q.indexOf(w) >= 0 : q.indexOf(' ' + w + ' ') >= 0 || q.indexOf(' ال' + w + ' ') >= 0;
+      })) return yGiveFAQ(i);
+    }
+    return false;
+  }
+  function yGiveFAQ(i) {
+    var r = yFAQ[i];
+    yLastFAQ = i;
+    yLastFAQAt = Date.now();
+    var n = yFAQSeen[i] || 0;
+    yFAQSeen[i] = n + 1;
+    var a = r[1][n % r[1].length];
+    if (n && r[1].length === 1) a = (n % 2 ? 'خليني أوضحلك، ' : 'بالنسبة لسؤالك، ') + a;
+    botSay(a, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function yProductDetail(t) {
+    if (!hasAny(t, ['بكام', 'سعر', 'تفاصيل', 'مكونات', 'لون', 'الوان', 'خامه', 'نوتات', 'اسابيع', 'مستوي', 'بيشمل'])) return false;
+    var it = findService(t);
+    if (!it) return false;
+    var msg = it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + (typeof it.p === 'number' ? ' جنيه' : '') + '.';
+    msg += '\nبيانات وأسعار تجريبية للعرض.';
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yLex = ["هامستر", "ببغاء", "ارنب", "سلحفاة", "تطعيم", "قراد", "براغيث", "ديدان", "كاشف", "جروومينج"];
+  function yOneEdit(a, b) {
+    if (a === b || Math.abs(a.length - b.length) > 1) return false;
+    var i = 0,
+      j = 0,
+      n = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      if (++n > 1) return false;
+      if (a.length >= b.length) i++;
+      if (b.length >= a.length) j++;
+    }
+    return n + (i < a.length || j < b.length ? 1 : 0) === 1;
+  }
+  function yOfferSpelling(t) {
+    var tokens = t.split(/\s+/),
+      hits = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokens[i].length < 4) continue;
+      for (var j = 0; j < yLex.length; j++) {
+        var w = norm(yLex[j]);
+        if (yOneEdit(tokens[i], w) && hits.indexOf(yLex[j]) < 0) hits.push(yLex[j]);
+      }
+    }
+    if (hits.length && hits.length <= 3) {
+      botSay('تقصد ' + hits.join(' ولا ') + '؟ المعلومة مش متوفرة عندي بشكل مؤكد من الكتابة دي، اختار الاسم أو وضحهولي.', 500, function () {
+        setChips(hits.map(function (x) {
+          return {
+            label: x
+          };
+        }));
+      });
+      return true;
+    }
+    return false;
+  }
+  var yBrands = [["Royal Canin", "رويال كانين"], ["Purina", "بورينا"], ["Whiskas", "ويسكاس"], ["Friskies", "فريسكيز"], ["Bravecto", "برافكتو"], ["Nexgard", "نيكسجارد", "نكسجارد"], ["Simparica", "سيمباريكا"], ["Frontline", "فرونت لاين", "فرونتلاين"]];
+  var yBrandSeen = {};
+  function yBrandHit(t) {
+    var clean = ' ' + norm(t).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim() + ' ';
+    for (var i = 0; i < yBrands.length; i++) {
+      for (var j = 0; j < yBrands[i].length; j++) {
+        var k = norm(yBrands[i][j]).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim();
+        if (k && clean.indexOf(' ' + k + ' ') >= 0) return i;
+      }
+    }
+    return -1;
+  }
+  function yAnswerBrand(t) {
+    var b = yBrandHit(t);
+    if (b < 0) return false;
+    var n = yBrandSeen[b] || 0;
+    yBrandSeen[b] = n + 1;
+    var msg = "بالنسبة للعلامة اللي بتسأل عنها، توافرها أو نوع المنتج منها مش متوفر كتأكيد في بيانات الديمو. ما نختارش منتج علاجي أو بديل من الاسم بس؛ لازم المختص يراجع الحالة. أقدر أوريك الخدمات المعروضة، من غير تأكيد ماركة مش مسجلة.";
+    if (n) msg = (n % 2 ? 'بالنسبة للاسم ده، ' : 'خليني أوضحلك، ') + msg;
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function byName(n) {
+    for (var i = 0; i < SERVICES.length; i++) {
+      if (SERVICES[i].n === n) return SERVICES[i];
+    }
+    return null;
+  }
+  function route(text, action) {
+    window.__yousefResponseQuestion = text;
+    var t = norm(text);
+    if (action) {
+      runAction(action);
+      return;
+    }
+    yTurn++;
+    if (yRef(text)) return;
+    if (yOffDomain(text)) return;
+    if (yAnswerBrand(t)) return;
+    if (["هامستر", "سلحفاه", "ببغاء", "ارنب"].indexOf(t.replace(/[؟?!.,،]/g, '').trim()) >= 0) {
+      botSay("الديمو بيستقبل حيوانات أليفة صغيرة منها الهامستر والسلاحف والعصافير والأرانب. تقصد تسأل عن كشف ولا تطعيم ولا رعاية؟ التشخيص والعلاج محتاجين طبيب بيطري.", 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yAnswerFAQ(t)) return;
+    if (yProductDetail(t)) return;
+    if (yBkGuard(text, t)) return;
+    switch (conv.step) {
+      case 'await-service':
+        {
+          var s = findService(t);
+          if (s) {
+            conv.bk.service = s;
+            askPet();
+            return;
+          }
+          if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت'])) {
+            runAction('emergency');
+            return;
+          }
+          var e = offScopeHit(t);
+          if (e) {
+            botSay(e.msg, 600, function () {
+              botSay('نكمل الحجز؟ إيه الخدمة اللي محتاجها؟', 400, function () {
+                setChips(SERVICES.map(function (s) {
+                  return {
+                    label: s.n
+                  };
+                }));
+              });
+            });
+            return;
+          }
+          botSay('مش متأكد فهمت قصدك. اختار الخدمة من دول ولا اكتبهالي بكلمتين؟', 500, function () {
+            setChips(SERVICES.map(function (s) {
+              return {
+                label: s.n
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-pet':
+        {
+          for (var i = 0; i < PETS.length; i++) {
+            if (t.indexOf(norm(PETS[i])) > -1 || t.indexOf(norm(PETS[i].split(' /')[0])) > -1) {
+              conv.bk.pet = PETS[i];
+              askPetName();
+              return;
+            }
+          }
+          var petWords = [['قطه', 'قطة'], ['قطة', 'قطة'], ['بسه', 'قطة'], ['بسة', 'قطة'], ['كلب', 'كلب'], ['جرمان', 'كلب'], ['جولدن', 'كلب'], ['ببغاء', 'عصفور / ببغاء'], ['عصفور', 'عصفور / ببغاء'], ['كناري', 'عصفور / ببغاء'], ['ارنب', 'أرنب'], ['سلحفاه', 'سلحفاة'], ['هامستر', 'حاجة تانية'], ['قنفد', 'حاجة تانية']];
+          for (var j = 0; j < petWords.length; j++) {
+            if (t.indexOf(norm(petWords[j][0])) > -1) {
+              conv.bk.pet = petWords[j][1];
+              askPetName();
+              return;
+            }
+          }
+          if (text.trim().length >= 2) {
+            conv.bk.pet = text.trim();
+            askPetName();
+            return;
+          }
+          botSay('قولي نوعه إيه؟ قطة، كلب، عصفور…؟', 500, function () {
+            setChips(PETS.map(function (p) {
+              return {
+                label: p
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-petname':
+        {
+          var pn = text.trim().replace(/^اسمه\s*/, '').replace(/^اسمها\s*/, '');
+          if (pn.length < 2) {
+            botSay('اسم صاحبنا إيه؟', 400, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.bk.petName = pn;
+          askDay();
+          return;
+        }
+      case 'await-day':
+        {
+          for (var d = 0; d < DAYS.length; d++) {
+            if (t.indexOf(norm(DAYS[d])) > -1) {
+              conv.bk.day = DAYS[d];
+              askTime();
+              return;
+            }
+          }
+          var dayWords = ['النهارده|النهارده', 'النهاردة|النهارده', 'بكره|بكرة', 'بعد بكره|بعد بكرة', 'الجمعه|يوم الجمعة', 'السبت|يوم السبت', 'الاحد|يوم الأحد', 'الحد|يوم الأحد', 'الاتنين|يوم الاتنين', 'التلات|يوم التلات', 'الاربع|يوم الأربع', 'الخميس|يوم الخميس'];
+          for (var w = 0; w < dayWords.length; w++) {
+            var p2 = dayWords[w].split('|');
+            if (t.indexOf(norm(p2[0])) > -1) {
+              conv.bk.day = p2[1];
+              askTime();
+              return;
+            }
+          }
+          var e2 = offScopeHit(t);
+          if (e2) {
+            botSay(e2.msg, 600, function () {
+              askDay();
+            });
+            return;
+          }
+          botSay('اختار اليوم اللي يناسبك؟', 500, function () {
+            setChips(DAYS.map(function (d2) {
+              return {
+                label: d2
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-time':
+        {
+          if (hasAny(t, ['صبح', 'الصبح', 'بدري', '١٠', '١١', '١٢', '١', '٢'])) {
+            conv.bk.time = TIMES[0];
+            askName();
+            return;
+          }
+          if (hasAny(t, ['بالليل', 'ليل', 'مساء', '٥', '٦', '٧', '٨', '٩', '١٠'])) {
+            conv.bk.time = TIMES[1];
+            askName();
+            return;
+          }
+          botSay('الفترة الصبح ولا بالليل؟', 400, function () {
+            setChips(TIMES.map(function (t2) {
+              return {
+                label: t2
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-name':
+        {
+          var nm = widgetName(text);
+          conv.bk.name = nm;
+          if (!nm) {
+            botSay('ولا يهمك، نكمل من غير اسم.', 400, function () {
+              askPhone();
+            });
+            return;
+          }
+          askPhone();
+          return;
+        }
+      case 'await-phone':
+        {
+          var ph = norm(text).replace(/[^0-9]/g, '');
+          if (ph.length === 11 && ph.indexOf('01') === 0) {
+            conv.bk.phone = ph;
+            summaryAndConfirm();
+            return;
+          }
+          botSay('الرقم ده مش واضح عندي. ابعت رقم موبايل مصري من ١١ رقم ويبدأ بـ 01؟', 500, function () {
+            input.focus();
+          });
+          return;
+        }
+      case 'await-confirm':
+        {
+          if (hasAny(t, ['اكد', 'أكد', 'تمام', 'موافق', 'ايوه', 'أيوه', 'ايوا', 'يلا', 'ابعت', 'اوكي', 'ok', 'ماشي'])) {
+            finishBooking();
+            return;
+          }
+          if (hasAny(t, ['الغي', 'ألغي', 'الغاء', 'إلغاء', 'cancel', 'مش عايز'])) {
+            conv.step = 'idle';
+            conv.bk = null;
+            botSay('اتلغى ولا يهمك. لو اتغير رأيك أنا هنا في أي وقت.', 600, function () {
+              setChips(mainChips());
+            });
+            return;
+          }
+          botSay('نأكد الحجز ولا نلغيه؟', 400, function () {
+            setChips([{
+              label: 'أؤكد الحجز ✓',
+              primary: true
+            }, {
+              label: 'إلغاء'
+            }]);
+          });
+          return;
+        }
+      case 'tips-pet':
+        {
+          var tip = TIPS.other;
+          if (hasAny(t, ['قطه', 'قطة', 'بسه', 'بسة'])) tip = TIPS.cat;else if (hasAny(t, ['كلب', 'جرو'])) tip = TIPS.dog;
+          conv.step = 'idle';
+          botSay(tip, 700, function () {
+            setChips([{
+              label: 'احجز كشفًا',
+              action: 'book',
+              primary: true
+            }, {
+              label: 'نصيحة أخرى',
+              action: 'tips'
+            }, {
+              label: 'الرئيسية',
+              action: 'home'
+            }]);
+          });
+          return;
+        }
+    }
+    if (hasAny(t, ['لنفسي', 'ليا انا', 'ليا أنا', 'لي انا', 'لي أنا', 'لشخصي', 'للبشر', 'على البشر', 'للناس', 'لبني آدم', 'لبني ادم', 'لانسان', 'لإنسان'])) {
+      botSay('إيه ده يا معلم 😄 إحنا عيادة بيطرية، شغلنا كله مع الحيوانات الأليفة مش مع البشر! لو حضرتك محتاج دكتور، هتلاقي عيادات بشرية كتير حواليك. ولو صاحبك الأليف هو اللي محتاج كشف أو تطعيم، قولي وأنا أحجزلك على طول.', 700, function () {
+        setChips([{
+          label: 'احجز كشفًا لحيوانك',
+          action: 'book',
+          primary: true
+        }, {
+          label: 'الخدمات والأسعار',
+          action: 'services'
+        }, {
+          label: 'الرئيسية',
+          action: 'home'
+        }]);
+      });
+      return;
+    }
+    var s2 = findService(t);
+    if (s2) {
+      if (hasAny(t, ['احجز', 'عايز', 'عاوز', 'ميعاد', 'حجز', 'book'])) {
+        startBooking(s2);
+        return;
+      }
+      botSay(s2.n + ' — ' + s2.d + '\nالسعر: ' + s2.p + '. تحب تحجز؟', 600, function () {
+        conv._pend = s2;
+        setChips([{
+          label: 'احجز ' + s2.n,
+          primary: true
+        }, {
+          label: 'الخدمات والأسعار',
+          action: 'services'
+        }, {
+          label: 'الرئيسية',
+          action: 'home'
+        }]);
+      });
+      return;
+    }
+    if (conv._pend && hasAny(t, ['احجز', 'عايز', 'عاوز', 'ايوه', 'أيوه', 'ايوا', 'نعم', 'تمام', 'يلا'])) {
+      var ps = conv._pend;
+      conv._pend = null;
+      startBooking(ps);
+      return;
+    }
+    if (hasAny(t, ['طوارئ', 'طارئ', 'طارئة', 'مستعجل', 'بينزف', 'مش بياكل', 'مش بتاكل', 'اختنق', 'اتدهس', 'تسمم', 'بياكل سم'])) {
+      runAction('emergency');
+      return;
+    }
+    if (hasAny(t, ['احجز', 'حجز', 'ميعاد', 'معاد', 'اجي', 'أجي', 'عايز اكشف', 'book'])) {
+      runAction('book');
+      return;
+    }
+    if (hasAny(t, ['خدمات', 'اسعار', 'أسعار', 'بكام', 'التكلفه', 'تكلفة', 'عندكم ايه', 'منيو'])) {
+      runAction('services');
+      return;
+    }
+    if (hasAny(t, ['نصيحه', 'نصيحة', 'نصايح', 'نصائح', 'بياكل ايه', 'ازاي اربي', 'عنايه'])) {
+      runAction('tips');
+      return;
+    }
+    if (hasAny(t, ['مواعيد', 'بتقفلو', 'بتفتحو', 'مفتوح', 'عنوان', 'فين', 'مكان', 'لوكيشن', 'واصلين'])) {
+      runAction('info');
+      return;
+    }
+    if (hasAny(t, ['شكرا', 'تسلم', 'متشكر', 'ممنون', 'thanks', 'ربنا يخليك'])) {
+      botSay('العفو! ده واجبنا. ربنا يدي الصحة لصاحبك، ولو احتجتنا في أي وقت احنا موجودين.', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['اهلا', 'أهلا', 'هاي', 'ازيك', 'صباح', 'مساء', 'hello', 'hi', 'سلام'])) {
+      botSay('أهلًا وسهلًا، نورت عيادة رفق! أقدر أساعدك في إيه النهارده؟', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    yLLMAsk(text, t, function () {
+      yTail(text, t);
+    });
+  }
+  function yTail(text, t) {
+    var e3 = offScopeHit(t);
+    if (e3) {
+      botSay(e3.msg, 600, function () {
+        botSay('أقدر أفيدك في حاجة من دول؟', 400, function () {
+          setChips(mainChips());
+        });
+      });
+      return;
+    }
+    if (hasAny(t, ['حيوان', 'حيوانات', 'قطة', 'قطه', 'قطط', 'بسه', 'بسة', 'كلب', 'كلاب', 'جرو', 'ببغاء', 'عصفور', 'عصافير', 'ارنب', 'أرنب', 'سلحفاه', 'سلحفاة', 'هامستر', 'سنجاب', 'بيطري', 'تطعيم', 'تحصين', 'لقاح', 'تعقيم', 'براغيث', 'ديدان', 'تساقط', 'شعر', 'قفص', 'نظافه', 'نظافة', 'استحمام', 'اظافير', 'أظافير', 'حامل', 'ولاده', 'ولادة', 'جرح', 'كسور', 'كسر', 'بياكل', 'بتاكل', 'شهيه', 'شهية', 'اسهال', 'إسهال', 'ترجيع', 'قيء', 'عطس', 'كحه', 'كحة', 'برود', 'سلوك', 'عنيف', 'خايف', 'خوف', 'تربيه', 'تربية', 'تدريب', 'اكلهم', 'لعبهم', 'طعامهم'])) {
+      botSay('ده في صميم شغلنا 🐾 احكيلي عن صاحبك أو اللي محتاجه، وأنا أظبطلك الخدمة أو النصيحة المناسبة.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["رويال كانين", "royal canin", "برافكتو", "bravecto", "نيكسجارد", "nexgard", "فلاي بايت", "تطعيم", "تعقيم", "قطه", "كلب", "بيطري"])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات والتشكيلة الحالية عندنا. قولي محتاج إيه فيه أو شوف الاختيارات المتاحة، وأساعدك تختار أقرب بديل.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['عندكم', 'عندكوا', 'بتبيع', 'بتقدموا', 'موجود عندك', 'متوفر عندك'])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات الحالية عندي. قولي اسمه أو نوعه بالتفصيل، أو نراجع الاختيارات الموجودة بدل ما أديك معلومة مش مؤكدة.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["هامستر", "ببغاء", "ارنب", "ارانب", "سلحفاه", "سلاحف", "سمكه", "سمك", "قط", "قطط", "كلاب", "جرو", "جراوي", "براغيت", "قراد", "ديدان", "جرعه", "شامبو", "اكل جاف", "دراي فود"])) {
+      botSay('الاسم ده مش متوفر بتفاصيل مؤكدة ضمن بيانات الديمو الحالية. قولي نوعه أو الاسم الكامل، وأراجع معاك الاختيارات المعروضة بدل ما أخمن.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yOfferSpelling(t)) return;
+    botSay("مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", 600, function () {
+      setChips(mainChips());
+    });
+  }
+  var Y_OFF = /(كابل|كابلات|شاحن|سلك|اسلاك|موبايل|تليفون|هاتف|سامسونج|samsung|ايفون|iphone|هونر|اونر|honor|شاومي|xiaomi|اوبو|لابتوب|لاب توب|laptop|سماعه|سماعة|سماعات|تلفزيون|شاشه|ثلاجه|غسالة|بنطلون|قميص|جزمه|حذاء|بيتزا|برجر|كشري|عطر|عطور|برفان|كرسي|شقه|شقة|عطر|عطور|قهوة)/i;
+  var Y_SCENT = /(كشف|تطعيم|عمليه|عملية|استحمام|تحاليل|اشعه|أشعة|زيارة)/i;
+  var Y_BKSTEP = /^(await-service|await-pet|await-petname|await-day|await-time|await-name|await-phone|await-confirm)$/;
+  function yBkAsk() {
+    var st = conv.step;
+    if (st === 'await-service') {
+      botSay('نكمل الحجز، إيه الخدمة اللي محتاجها؟', 400, function () {
+        setChips(SERVICES.map(function (x) {
+          return {
+            label: x.n
+          };
+        }));
+      });
+    } else if (st === 'await-pet') askPet();else if (st === 'await-petname') askPetName();else if (st === 'await-day') askDay();else if (st === 'await-time') askTime();else if (st === 'await-name') askName();else if (st === 'await-phone') askPhone();else summaryAndConfirm();
+  }
+  function yBkGuard(text, t) {
+    if (!conv.bk || !Y_BKSTEP.test(conv.step || '')) return false;
+    var q = t.replace(/[؟?!.,،\s]/g, '');
+    if (/^(نكمل|كمل|كمّل|نكملالحجز|اكمل)$/.test(q)) {
+      yBkAsk();
+      return true;
+    }
+    if (/^(الغاء|إلغاء|الغي|الغيه|cancel)$/.test(q)) {
+      conv.step = 'idle';
+      conv.bk = null;
+      botSay('اتلغى ولا يهمك. لو اتغير رأيك أنا هنا في أي وقت.', 500, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت', 'اختنق', 'تسمم'])) {
+      runAction('emergency');
+      return true;
+    }
+    var step = conv.step;
+    if (step === 'await-phone' && /[0-9٠-٩]{6,}/.test(text)) return false;
+    if (step === 'await-confirm' && /^(اكد|أكد|تمام|موافق|ايوه|أيوه|ايوا|يلا|ابعت|اوكي|ok|ماشي|الغي|ألغي|الغاء|إلغاء|مشعايز)/.test(q)) return false;
+    var price = hasAny(t, ['خدمات', 'اسعار', 'أسعار', 'سعر', 'بكام', 'كام', 'تكلفة', 'تكلفه']);
+    if (price) {
+      botSay(servicesText(), 600, function () {
+        botSay('نكمل الحجز؟', 300, function () {
+          setChips([{
+            label: 'نتابع الحجز',
+            primary: true
+          }, {
+            label: 'إلغاء'
+          }]);
+        });
+      });
+      return true;
+    }
+    var isQ = /[؟?]/.test(text) || /(^|\s)(ينفع|ممكن|هل|ازاي|إزاي|بديل|بدل|بدائل|ليه|عايز اعرف|عندكم|لو سمحت)(\s|$)/.test(t) || (step === 'await-pet' || step === 'await-petname' || step === 'await-day' || step === 'await-time') && text.trim().split(/\s+/).length >= 4;
+    if (!isQ) return false;
+    botSay('ده سؤال مش هسجله في بيانات الحجز. الأسئلة الطبية أو بدائل الخدمات بيحددها الدكتور بعد الفحص ومقدرش أنصح فيها من هنا. تحب نكمل الحجز ولا نلغيه؟', 600, function () {
+      setChips([{
+        label: 'نتابع الحجز',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    });
+    return true;
+  }
+  function yOffDomain(text) {
+    if (/^(?:await-name|await-address|lead-name|book-name)$/.test(conv.step || '')) return false;
+    if (/(^|\s)(بديل|بدائل|بدل|بدلا|بدلاً|عوض)(\s|$)/.test(norm(text)) && (!conv.step || conv.step === 'idle')) {
+      botSay('مقدرش أقول إن خدمة بديل لخدمة تانية. اختيار المناسب بيحدده الدكتور بعد الكشف، وتقدر تحجز كشف أو تسأل عن خدمة معروضة بالاسم.', 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    var q = norm(text);
+    if (!Y_OFF.test(q)) return false;
+    var mixed = Y_SCENT.test(q);
+    var tail = conv.step && conv.step !== 'idle' ? ' وطلبك الحالي زي ما هو، نكمله لما تحب.' : '';
+    if (/^(?:سلك|اسلاك|شاحن|اونر|هونر|honor|كرسي)$/i.test(q.replace(/[؟?!.,،\s]/g, ''))) {
+      botSay('قصدك ايه بالظبط؟ انا مساعد رفق، لو بتدور على خدمة معينة قولي وأساعدك.' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (mixed) {
+      botSay('طلبك فيه حاجتين مختلفين. انا هساعدك في خدمات العيادة البيطرية بس، اما باقي الطلب فخارج تخصص رفق. تحب نبدأ؟' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    botSay('ده خارج تخصصي، انا مساعد رفق. لو عايز تسأل عن خدمات العيادة البيطرية انا معاك.' + tail, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yTurn = 0,
+    yLast = {
+      names: [],
+      turn: -9
+    };
+  function yRef(text) {
+    var q = norm(text).replace(/[؟?!.,،]/g, ' ');
+    var idx = /(^|\s)(الاول|الأول|الاولي|الاولى|اول واحد|اول وحده)(\s|$)/.test(q) ? 0 : /(^|\s)(التاني|الثاني|التانيه|الثانيه|تاني واحد)(\s|$)/.test(q) ? 1 : /(^|\s)(التالت|الثالث)(\s|$)/.test(q) ? 2 : -1;
+    if (idx < 0 || !/(سعر|بكام|كام|تفاصيل|ثمن)/.test(q)) return false;
+    var N = yLast.names;
+    if (!N.length) {
+      botSay('تقصد انهي منتج بالظبط؟ قولي اسمه وأقولك سعره.', 500, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (yTurn - yLast.turn > 1) {
+      botSay('بعد كلامنا الأخير مش متأكد تقصد انهي واحد. تقصد ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    var it = byName(N[idx]);
+    if (!it) {
+      botSay('تقصد انهي واحد بالظبط؟ ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    botSay(it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + ' جنيه' + (it.sized || typeof SIZES !== 'undefined' ? ' (بيتغير حسب الحجم)' : '') + '. بيانات وأسعار تجريبية للعرض.', 500, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var Y_LLM_URL = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/assist',
+    yHist = [];
+  function yCatalog() {
+    return ALL.map(function (it) {
+      return it.n + ': ' + it.d;
+    }).join('\n');
+  }
+  function yLLMAsk(text, t, fallback) {
+    if (window.__yLLMOff || !window.fetch || !text || text.trim().length < 2 || text.length > 300) {
+      fallback();
+      return;
+    }
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    var done = false,
+      ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (ctl) ctl.abort();
+    }, 10000);
+    function finish(fn) {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      typing.classList.remove('on');
+      busy = false;
+      fn();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }
+    fetch(Y_LLM_URL, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({
+        message: text,
+        history: yHist
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (!d || !d.ok || !d.reply) {
+        finish(function () {
+          fallback();
+        });
+        return;
+      }
+      var names = [];
+      (d.suggest || []).forEach(function (n) {
+        var it = byName(n);
+        if (it && names.indexOf(it.n) < 0) names.push(it.n);
+      });
+      window.yLast = {
+        names: names.slice(),
+        turn: window.yTurn || 0
+      };
+      yLast = {
+        names: names.slice(),
+        turn: yTurn
+      };
+      finish(function () {
+        var _n = addMsg(d.reply, 'bot');
+        if (_n) _n.dataset.yousefQuestion = window.__yousefResponseQuestion || text;
+        yHist.push({
+          r: 'u',
+          t: text
+        }, {
+          r: 'a',
+          t: d.reply
+        });
+        if (yHist.length > 6) yHist = yHist.slice(-6);
+        var c = d.intent === 'offdomain' || d.intent === 'ambiguous' ? [] : names.map(function (n) {
+          return {
+            label: n
+          };
+        });
+        setChips(c.length ? c.concat([{
+          label: 'تصفّح التشكيلة',
+          action: 'menu'
+        }]) : mainChips());
+        window.__yLastIntent = d.intent;
+      });
+    }).catch(function () {
+      finish(function () {
+        fallback();
+      });
+    });
+  }
+  function runAction(action) {
+    switch (action) {
+      case 'services':
+        botSay(servicesText(), 700, function () {
+          setChips([{
+            label: 'احجز موعدًا',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'نصيحة لحيوانك',
+            action: 'tips'
+          }, {
+            label: 'حالة طارئة',
+            action: 'emergency'
+          }]);
+        });
+        break;
+      case 'book':
+        startBooking();
+        break;
+      case 'tips':
+        conv.step = 'tips-pet';
+        botSay('اتفضل! صاحبك ده قطة ولا كلب ولا حاجة تانية؟ عشان النصيحة تفرق.', 550, function () {
+          setChips([{
+            label: 'قطة'
+          }, {
+            label: 'كلب'
+          }, {
+            label: 'شيء آخر'
+          }]);
+        });
+        break;
+      case 'emergency':
+        botSay('لو الحالة طارئة متستناش: تواصل مع أقرب طبيب بيطري أو عيادة طوارئ فورًا. مساعد الديمو مش بيشخّص ومش بيأكد وجود خدمة طوارئ.\nولو الحالة مش مستعجلة، أقدر أحجزلك كشف عادي.', 700, function () {
+          setChips([{
+            label: 'احجز كشفًا',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        break;
+      case 'info':
+        botSay('مواعيدنا:\nالسبت للخميس: من ١٠ الصبح لـ ١٠ بالليل\nالجمعة: من ٢ لـ ١٠ بالليل\nوالعيادة في شارع ٩، المعادي القديمة، جنب محطة مترو المعادي. حيوانك مستنياك.', 700, function () {
+          setChips([{
+            label: 'احجز موعدًا',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'الخدمات والأسعار',
+            action: 'services'
+          }]);
+        });
+        break;
+      case 'home':
+        botSay('تحب أساعدك في إيه كمان؟', 400, function () {
+          setChips(mainChips());
+        });
+        break;
+      case 'close':
+        closePanel();
+        break;
+    }
+  }
+
+  // Keep the composer inside the *visible* viewport, not behind the soft keyboard.
+  var yPrefix = panel.id.replace(/-panel$/, ''),
+    yVV = window.visualViewport,
+    yFrame = 0;
+  var yStyle = document.createElement('style');
+  yStyle.textContent = '#' + yPrefix + '-panel{box-sizing:border-box;min-height:0;padding:0;margin:0;overscroll-behavior:contain}#' + yPrefix + '-head,#' + yPrefix + '-input,#' + yPrefix + '-typing{flex-shrink:0}#' + yPrefix + '-msgs{min-height:0;overscroll-behavior:contain;overflow-anchor:none}#' + yPrefix + '-input input{min-width:0;font-size:16px}#' + yPrefix + '-chips{flex-shrink:0;max-height:96px;overflow-y:auto}#' + yPrefix + '-chips button{flex-shrink:0;white-space:nowrap}#' + yPrefix + '-chips{scrollbar-width:none}#' + yPrefix + '-chips::-webkit-scrollbar{display:none}';
+  document.head.appendChild(yStyle);
+  function yFitViewport() {
+    cancelAnimationFrame(yFrame);
+    yFrame = requestAnimationFrame(function () {
+      if (!panel.classList.contains('open')) return;
+      if (window.matchMedia('(max-width:680px)').matches) {
+        var vh = yVV ? yVV.height : window.innerHeight,
+          vo = yVV ? yVV.offsetTop : 0;
+        var h = Math.min(620, Math.max(120, vh - 16));
+        panel.style.height = h + 'px';
+        panel.style.maxHeight = h + 'px';
+        panel.style.top = vo + vh - h - 8 + 'px';
+        panel.style.bottom = 'auto';
+        var yShort = vh < 500;
+        chips.style.display = '';
+        chips.style.maxHeight = (yShort ? 52 : 96) + 'px';
+        chips.style.flexWrap = yShort ? 'nowrap' : '';
+        chips.style.overflowX = yShort ? 'auto' : '';
+        chips.style.overflowY = yShort ? 'hidden' : 'auto';
+        chips.style.padding = yShort ? '6px 14px' : '';
+      } else {
+        ['height', 'max-height', 'top', 'bottom'].forEach(function (k) {
+          panel.style.removeProperty(k);
+        });
+        ['max-height', 'display', 'flex-wrap', 'overflow-x', 'overflow-y', 'padding'].forEach(function (k) {
+          chips.style.removeProperty(k);
+        });
+      }
+      scrollBottom();
+    });
+  }
+  if (yVV) {
+    yVV.addEventListener('resize', yFitViewport, {
+      passive: true
+    });
+    yVV.addEventListener('scroll', yFitViewport, {
+      passive: true
+    });
+  }
+  window.addEventListener('resize', yFitViewport, {
+    passive: true
+  });
+  input.addEventListener('focus', yFitViewport);
+  input.addEventListener('blur', yFitViewport);
+  function openPanel() {
+    panel.classList.add('open');
+    yFitViewport();
+    launcher.style.display = 'none';
+    if (G && !window.matchMedia('(max-width:680px)').matches) {
+      G.from(panel, {
+        y: 60,
+        opacity: 0,
+        duration: .45,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+    if (!conv.greeted) {
+      conv.greeted = true;
+      botSeq([{
+        text: 'أهلًا بك في عيادة رفق',
+        delay: 450
+      }, {
+        text: 'أنا مساعدك هنا: أحجز لك موعدًا، وأعرّفك بالخدمات والأسعار، وأقدّم لك نصيحة سريعة لحيوانك، وإن كانت الحالة طارئة أوجّهك فورًا.',
+        delay: 750,
+        chips: mainChips()
+      }]);
+    }
+    input.focus();
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    launcher.style.display = 'flex';
+    if (G) {
+      G.from(launcher, {
+        scale: .7,
+        opacity: 0,
+        duration: .35,
+        ease: 'back.out(2)',
+        clearProps: 'all'
+      });
+    }
+  }
+  launcher.addEventListener('click', openPanel);
+  document.getElementById('ctaChat').addEventListener('click', function () {
+    openPanel();
+  });
+  document.getElementById('ctaCall').addEventListener('click', function (e) {
+    e.preventDefault();
+    var g = conv.greeted;
+    openPanel();
+    setTimeout(function () {
+      botSay('الرقم المعروض في الصفحة توضيحي للديمو، ومش بيتم أي اتصال حقيقي. أقدر أعملك حجز تجريبي هنا في الشات. ولو عندك حالة حقيقية لحيوان، تواصل مع أقرب عيادة بيطرية.', 600, function () {
+        setChips([{
+          label: 'احجز موعدًا تجريبيًا',
+          action: 'book',
+          primary: true
+        }, {
+          label: 'الرئيسية',
+          action: 'home'
+        }]);
+      });
+    }, g ? 350 : 2400);
+  });
+  document.getElementById('rf-close').addEventListener('click', closePanel);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!v && !widgetNameStep(conv.step)) return;
+    input.value = '';
+    handleUser(v, null);
+  });
+  if (G) {
+    G.from(launcher, {
+      y: 30,
+      opacity: 0,
+      duration: .6,
+      delay: .9,
+      ease: 'back.out(1.8)',
+      clearProps: 'all'
+    });
+  }
+})();</script>
+<script id="portfolio-chat-recorder">
+(function () {
+  'use strict';
+  var dialog = Array.prototype.find.call(document.querySelectorAll('[role="dialog"]'), function(node){return node.querySelector('[aria-live]');});
+  if (!dialog || dialog.__portfolioChatLog) return;
+  var messagesNode = dialog.querySelector('[aria-live]');
+  if (!messagesNode) return;
+  dialog.__portfolioChatLog = true;
+
+  var apiUrl = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/chat';
+  var pageUrl = location.origin + location.pathname;
+  var idKey = 'ym-chat-conversation-id-v2';
+  var id;
+  var lastActive = 0;
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'ym' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  }
+  try {
+    var __chatStoredState = localStorage.getItem(idKey);
+    var __chatParsedState;
+    try { __chatParsedState = JSON.parse(__chatStoredState); } catch (_) {}
+    id = __chatParsedState && __chatParsedState.id || __chatStoredState;
+    lastActive = __chatParsedState && Number(__chatParsedState.lastActive) || 0;
+    if (!id || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
+      id = newId();
+      lastActive = Date.now();}
+    localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive}));
+  } catch (_) {
+    id = newId();
+  lastActive = Date.now();}
+
+  var startedKey = idKey + ':started';
+  var pendingKey = idKey + ':pending';
+  var started = false;
+  try { started = localStorage.getItem(startedKey) === '1'; } catch (_) {}
+  if (started && Date.now() - lastActive > 12 * 60 * 60 * 1000) {
+    started = false;
+    try { localStorage.setItem(startedKey, '0'); } catch (_) {}
+  }
+  var waiting = [];
+  var outbox = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem(pendingKey) || '[]');
+    if (Array.isArray(saved)) outbox = saved;
+  } catch (_) {}
+
+  function makeMessage(role, content) {
+    return {
+      role: role,
+      content: content,
+      ts: Date.now(),
+      id: newId()
+    };
+  }
+  function visitorInfo() {
+    return {
+      userAgent: navigator.userAgent || '',
+      lang: navigator.language || '',
+      referer: document.referrer || '',
+      page: pageUrl
+    };
+  }
+  function saveOutbox() {
+    try { localStorage.setItem(pendingKey, JSON.stringify(outbox)); } catch (_) {}
+  }
+  window.addEventListener('yousef-chat-event', function (event) {
+    var detail = event.detail || {};
+    if (!/^(demo_order|demo_booking|whatsapp_handoff)$/.test(detail.kind || '')) return;
+    enqueue({conversationId: id, events: [{id: newId(), kind: detail.kind, detail: detail.label || ''}], visitor: visitorInfo(), page: pageUrl});
+  });
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (link && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(link.href)) {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event',{detail:{kind:'whatsapp_handoff',label:'WhatsApp link clicked'}}));
+    }
+  }, true);
+  var sending = false;
+  var paused = false;
+  function pump() {
+    if (sending || paused || !outbox.length) return;
+    sending = true;
+    var payload = outbox[0];
+    var attempt = 0;
+    function transmit() {
+      fetch(apiUrl, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('chat log request failed');
+        outbox.shift();
+        saveOutbox();
+        sending = false;
+        pump();
+      }).catch(function () {
+        attempt += 1;
+        if (attempt < 3) {
+          setTimeout(transmit, attempt === 1 ? 1000 : 2500);
+        } else {
+          sending = false;
+          paused = true;
+          setTimeout(function () { paused = false; pump(); }, 30000);
+        }
+      });
+    }
+    transmit();
+  }
+  function enqueue(payload) {
+    outbox.push(payload);
+    if (outbox.length > 500) outbox.shift();
+    saveOutbox();
+    pump();
+  }
+  function record(node) {
+    function touchConversation() {
+      if (Date.now() - lastActive > 12 * 60 * 60 * 1000) id = newId();
+      lastActive = Date.now();
+      try { localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive})); } catch (_) {}
+    }
+
+    if (!node || node.nodeType !== 1 || node.__portfolioChatLogged) return;
+    node.__portfolioChatLogged = true;
+    var content = (node.innerText || node.textContent || '').trim();
+    if (!content) return;
+    var role = node.classList && node.classList.contains('user') ? 'visitor' : 'assistant';
+    var message = makeMessage(role, content);
+    if (role === 'assistant' && node.dataset && node.dataset.yousefQuestion) message.question = node.dataset.yousefQuestion;
+    if (!started) {
+      waiting.push(message);
+      if (role === 'visitor') {
+        started = true;
+        try { localStorage.setItem(startedKey, '1'); } catch (_) {}
+        
+        touchConversation();enqueue({ conversationId: id, messages: waiting.splice(0), visitor: visitorInfo(), page: pageUrl });
+      }
+      return;
+    }
+    
+        touchConversation();enqueue({ conversationId: id, message: message, visitor: visitorInfo(), page: pageUrl });
+  }
+
+  new MutationObserver(function (records) {
+    records.forEach(function (record) {
+      record.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && node.parentElement === messagesNode) recordNode(node);
+      });
+    });
+  }).observe(messagesNode, { childList: true });
+
+  function recordNode(node) { record(node); }
+  pump();
+})();
+
+</script>
+</body></html>

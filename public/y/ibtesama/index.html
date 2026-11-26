@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#fbfdff" name="theme-color"/><meta content="مركز ابتسامة لطب وتجميل الأسنان: رعاية شخصية في التجمع الخامس. موقع تجريبي." name="description"/><title>ابتسامة | ابتسامتك، بأفضل حال</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&display=optional" rel="stylesheet"><script id="portfolio-security-bootstrap">(function(){
+'use strict';if(window.__portfolioSecurity)return;window.__portfolioSecurity=true;
+var endpoint='https://portfolio-chat-backend.yousef-portfolio.workers.dev',nativeFetch=window.fetch.bind(window),session=null,pending=null,sitekey="0x4AAAAAAGO0Xvx8GnbxA4U-";
+function verify(){if(session&&session.expires>Date.now()+30000)return Promise.resolve(session.token);if(pending)return pending;
+pending=new Promise(function(resolve,reject){var lang=document.documentElement.lang==='ar'?'ar':'en',box=document.createElement('section');box.id='portfolio-verification';box.setAttribute('role','status');box.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483647;max-width:calc(100vw - 24px);background:white;color:#111;border:1px solid #aaa;border-radius:10px;padding:12px;box-shadow:0 4px 24px #0003;font:14px Arial,sans-serif';var label=document.createElement('div');label.textContent=lang==='ar'?'جاري التحقق لحماية الشات...':'Verifying access to the chat...';box.appendChild(label);var target=document.createElement('div');box.appendChild(target);document.body.appendChild(box);var widget=null,settled=false,timer=setTimeout(function(){done(new Error('verification timeout'))},90000);
+function done(error,value){if(settled)return;settled=true;clearTimeout(timer);if(widget!==null&&window.turnstile)window.turnstile.remove(widget);box.remove();pending=null;if(error)reject(error);else resolve(value)}
+function render(){try{widget=window.turnstile.render(target,{sitekey:sitekey,action:'portfolio_chat',appearance:'interaction-only',language:lang,callback:function(token){nativeFetch(endpoint+'/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})}).then(function(r){if(!r.ok)throw Error('verification rejected');return r.json()}).then(function(data){if(!data.ok)throw Error('verification failed');session=data;done(null,data.token)}).catch(function(e){done(e)})},'error-callback':function(){done(new Error('verification unavailable'))},'timeout-callback':function(){done(new Error('verification timeout'))}})}catch(e){done(e)}}
+if(window.turnstile)render();else{var script=document.getElementById('portfolio-turnstile');if(!script){script=document.createElement('script');script.id='portfolio-turnstile';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;document.head.appendChild(script)}script.addEventListener('load',render,{once:true});script.addEventListener('error',function(){done(new Error('verification unavailable'))},{once:true})}
+});return pending;}
+function conversationProof(){try{var key='ym-chat-owner-proof-v1',value=localStorage.getItem(key);if(!/^v1_[a-f0-9]{64}$/.test(value||'')){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);value='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.setItem(key,value)}return value}catch(e){if(!window.__ymChatOwnerProof){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);window.__ymChatOwnerProof='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('')}return window.__ymChatOwnerProof}}
+window.fetch=function(resource,options){var url=typeof resource==='string'?resource:resource&&resource.url;if(!url||url.indexOf(endpoint+'/api/')!==0||!/\/api\/(assist|chat)$/.test(url))return nativeFetch(resource,options);return verify().then(function(token){var init=Object.assign({},options),body;try{body=JSON.parse(init.body||'{}')}catch(e){return nativeFetch(resource,options)}body.securityToken=token;if(/\/api\/chat$/.test(url))body.conversationProof=conversationProof();if(/\/api\/assist$/.test(url)){var area=document.querySelector('[id$="-msgs"],#yc-msgs');if(area){var turns=Array.prototype.slice.call(area.children).filter(function(n){return n.matches('.user,.bot,.yc-u,.yc-b,.u,.b')}).map(function(n){return {r:n.matches('.user,.yc-u,.u')?'u':'a',t:(n.textContent||'').slice(0,300)}}).filter(function(n){return n.t.trim()});if(turns.length&&turns[turns.length-1].r==='u'&&turns[turns.length-1].t===String(body.message||'').slice(0,300))turns.pop();if(turns.length)body.history=turns.slice(-6)}}init.body=JSON.stringify(body);var controller=window.AbortController?new AbortController():null,timer=controller?setTimeout(function(){controller.abort()},15000):null;init.signal=controller?controller.signal:undefined;return nativeFetch(resource,init).then(function(response){if(timer)clearTimeout(timer);if(response.status===403)session=null;return response},function(error){if(timer)clearTimeout(timer);throw error})})};
+})();
+</script>
+<style>/* ===== IBTESAMA v2 — appointment-first clinical: booking IS the hero ===== */
+:root{
+  --bg:#fbfdff;--card:#ffffff;--soft:#e9f2fb;--soft2:#f3f8fd;
+  --ink:#16283c;--ink2:#42556b;--muted:#6a7c90;--line:#e0eaf3;
+  --blue:#2f6fd0;--blue-dark:#1e4f9e;--blue-soft:#d8e8fa;
+  --paper:#fbfdff;--violet:#e9f2fb;--acid:#2f6fd0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Alexandria',Tahoma,sans-serif;font-size:16px;line-height:1.9;font-weight:400;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1140px,92%);margin-inline:auto}
+::selection{background:var(--blue);color:#fff}
+
+/* ---------- floating pill nav ---------- */
+.d-nav{position:sticky;top:14px;z-index:900;width:min(1140px,94%);margin:14px auto 0}
+.masthead{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;box-shadow:0 10px 34px rgba(22,40,60,.09);display:flex;align-items:center;gap:22px;padding:10px 22px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand-symbol{width:40px;height:40px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:21px;line-height:1}
+.brand-name{display:block;font-weight:800;font-size:19px;line-height:1.2}
+.brand small{display:block;font-size:9.5px;letter-spacing:2.5px;color:var(--muted);font-weight:600}
+.nav-links{display:flex;gap:22px;margin-inline-start:auto}
+.nav-links a{font-size:14.5px;font-weight:500;color:var(--ink2);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-action{background:var(--blue);color:#fff;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:600;transition:background .2s;display:inline-flex;align-items:center;gap:7px}
+.nav-action:hover{background:var(--blue-dark)}
+.nav-toggle{display:none;background:var(--soft);border:1px solid var(--line);border-radius:12px;width:42px;height:42px;font-size:18px;color:var(--ink)}
+@media(max-width:900px){
+  .masthead{flex-wrap:wrap;border-radius:22px}
+  .nav-toggle{display:block;margin-inline-start:auto}
+  .nav-action{display:none}
+  .nav-links{display:none;width:100%;flex-direction:column;gap:4px;padding:10px 4px 6px}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:10px 12px;border-radius:12px;font-size:15.5px}
+  .nav-links a:hover{background:var(--soft2)}
+}
+
+/* ---------- booking hero (appointment-first) ---------- */
+.d-book{background:linear-gradient(150deg,#e3effb 0%,#f2f8fe 60%,var(--bg) 100%);border-bottom:1px solid var(--blue-soft);padding:66px 0 74px}
+.reserve{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.giant-smile{display:none}
+.sec-kicker{font-size:12.5px;font-weight:700;letter-spacing:2px;color:var(--blue);margin-bottom:10px}
+.reserve h2{font-weight:800;font-size:clamp(32px,4.4vw,52px);line-height:1.35;margin-bottom:14px}
+.reserve p{color:var(--ink2);font-size:16.5px;max-width:52ch}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:14px 26px;font-size:15px;font-weight:700;border:1.5px solid var(--blue);transition:background .2s,color .2s}
+.btn-wa{background:var(--blue);color:#fff}
+.btn-wa:hover{background:var(--blue-dark)}
+.btn-ghost{background:#fff;color:var(--blue-dark)}
+.btn-ghost:hover{background:var(--soft)}
+.facts{list-style:none;display:flex;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 16px 44px rgba(30,79,158,.08)}
+.facts li{padding:17px 22px;font-size:14px;color:var(--ink2);line-height:1.85;border-bottom:1px solid var(--line);display:flex;gap:10px}
+.facts li:last-child{border-bottom:none}
+.facts li::before{content:"✓";color:var(--blue);font-weight:800;flex:0 0 auto}
+.facts li b{color:var(--ink)}
+.facts li a{color:var(--blue);font-weight:600;text-decoration:underline}
+@media(max-width:900px){.reserve{grid-template-columns:1fr;gap:34px}.d-book{padding:48px 0 54px}}
+
+/* ---------- slim intro band (the old hero, reduced) ---------- */
+.hero{padding:56px 0 8px}
+.hero-topline{display:flex;justify-content:space-between;gap:14px;font-size:11.5px;letter-spacing:2.5px;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line);padding-bottom:14px}
+.hero-main{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;padding:36px 0 30px}
+.hero-copy h1{font-weight:800;font-size:clamp(28px,3.6vw,42px);line-height:1.35}
+.hero-copy h1 .outline{color:var(--ink);box-shadow:inset 0 -3px 0 var(--blue-soft)}
+.hero-description{color:var(--ink2);font-size:15.5px;max-width:52ch;margin:14px 0 18px}
+.text-action{display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:700;font-size:15.5px;border-bottom:2px solid var(--blue-soft);padding-bottom:4px;transition:border-color .2s}
+.text-action:hover{border-color:var(--blue)}
+.portrait{position:relative;justify-self:start}
+.portrait img{width:min(240px,60vw);aspect-ratio:1/1.05;object-fit:cover;border-radius:20px;box-shadow:0 18px 44px rgba(30,79,158,.14)}
+.hero-orbit{display:none}
+.hero-medallion{position:absolute;bottom:-16px;inset-inline-start:-8px;width:112px;height:112px;border-radius:50%;background:#fff;box-shadow:0 12px 34px rgba(22,40,60,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:11.5px;font-weight:600;color:var(--blue-dark);line-height:1.6;border:1px solid var(--line)}
+.hero-medallion span{font-size:16px;color:var(--blue)}
+.portrait-caption{display:none}
+.hero-info{display:flex;gap:0;border-top:1px solid var(--line);padding:18px 0 22px;flex-wrap:wrap}
+.hero-info>div{font-size:14px;font-weight:600;padding:4px 22px;border-inline-end:1px solid var(--line)}
+.hero-info>div:first-child{padding-inline-start:0}
+.hero-info>div:last-child{border-inline-end:none}
+.hero-info span{display:block;font-size:11.5px;font-weight:600;color:var(--blue)}
+@media(max-width:900px){
+  .hero-main{grid-template-columns:1fr;gap:30px;padding:28px 0}
+  .hero-info>div{padding:6px 14px}
+}
+
+/* ---------- shared section bits ---------- */
+section{padding:64px 0}
+h2{font-weight:800;font-size:clamp(27px,3.4vw,40px);line-height:1.35}
+.sec-note{color:var(--muted);font-size:15px;max-width:52ch;margin-top:12px}
+.sec-head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+
+/* ---------- about ---------- */
+.d-about{background:#fff;border-block:1px solid var(--line)}
+.about-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center}
+.doctor-picture{position:relative}
+.doctor-picture img{width:100%;aspect-ratio:4/4.2;max-height:52vh;object-fit:cover;border-radius:22px;box-shadow:0 20px 50px rgba(22,40,60,.1)}
+.doctor-picture figcaption{position:absolute;bottom:14px;inset-inline:14px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13px;font-weight:600;text-align:center}
+.small-cross{position:absolute;top:-14px;inset-inline-end:-10px;color:var(--blue);font-size:24px}
+.about-copy p{color:var(--ink2);margin-top:14px;max-width:56ch}
+.stats{display:flex;gap:38px;margin-top:26px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column}
+.stat b{font-size:26px;font-weight:800;color:var(--blue)}
+.stat span{font-size:12.5px;color:var(--muted)}
+@media(max-width:900px){.about-layout{grid-template-columns:1fr;gap:38px}}
+
+/* ---------- services: card grid ---------- */
+.service-heading{max-width:640px;margin-bottom:38px}
+#services .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+#services .service-heading{grid-column:1/-1}
+.service-row{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.service-row:hover{transform:translateY(-5px);box-shadow:0 20px 46px rgba(30,79,158,.12)}
+.service-row img{order:-1;width:100%;aspect-ratio:16/10;object-fit:cover}
+.service-row>div{padding:18px 22px 22px;display:flex;flex-direction:column;gap:7px;flex:1}
+.service-no{position:absolute;top:12px;inset-inline-start:12px;background:rgba(255,255,255,.92);color:var(--blue-dark);font-size:12px;font-weight:700;border-radius:8px;padding:4px 10px;z-index:2}
+.service-row h3{font-size:18.5px;font-weight:700}
+.service-row p{color:var(--muted);font-size:14px;flex:1}
+.service-row .price{color:var(--blue-dark);font-weight:700;font-size:15px;margin-top:6px}
+@media(max-width:900px){#services .wrap{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){#services .wrap{grid-template-columns:1fr}}
+
+/* ---------- prices accordion ---------- */
+.d-prices{background:var(--soft2);border-block:1px solid var(--line)}
+.price-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:start}
+.price-intro{position:sticky;top:110px}
+.price-note{display:inline-flex;align-items:center;gap:9px;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-size:13.5px;color:var(--blue-dark);font-weight:600}
+.price-accordion{display:flex;flex-direction:column;gap:14px}
+.menu-group{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.menu-group summary{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 22px;font-weight:700;font-size:17px;cursor:pointer;list-style:none}
+.menu-group summary::-webkit-details-marker{display:none}
+.menu-group summary .plus{width:30px;height:30px;border-radius:10px;background:var(--soft);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .25s}
+.menu-group[open] summary .plus{transform:rotate(45deg);background:var(--blue);color:#fff}
+.menu-items{padding:4px 22px 16px}
+.dish{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.dish:last-child{border-bottom:none}
+.dish h3{font-size:15.5px;font-weight:600}
+.dish p{color:var(--muted);font-size:13px;margin-top:2px}
+.dish strong{color:var(--blue-dark);font-size:15.5px;white-space:nowrap}
+@media(max-width:900px){.price-layout{grid-template-columns:1fr;gap:32px}.price-intro{position:static}}
+
+/* ---------- results ---------- */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ba{background:#fff;border:1px solid var(--line);border-radius:20px;padding:12px;transition:transform .25s,box-shadow .25s}
+.ba:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(22,40,60,.1)}
+.ba img{width:100%;aspect-ratio:4/3;max-height:42vh;object-fit:cover;border-radius:12px;cursor:zoom-in}
+.ba-caption{display:flex;justify-content:space-between;padding:12px 8px 6px;font-size:13px;color:var(--muted)}
+.ba-caption span:last-child{color:var(--blue);font-weight:600}
+@media(max-width:720px){.ba-grid{grid-template-columns:1fr}}
+
+/* ---------- clinic gallery ---------- */
+.clinic-head{display:flex;align-items:end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:36px}
+.clinic-head .eyebrow{color:var(--muted);font-size:14px;line-height:1.8}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;border:1px solid var(--line);cursor:zoom-in;transition:transform .25s}
+.gallery img:hover{transform:scale(1.02)}
+@media(max-width:720px){.gallery{grid-template-columns:1fr 1fr;gap:10px}.gallery img{border-radius:12px}}
+
+/* ---------- footer ---------- */
+.d-footer{border-top:1px solid var(--line);padding:42px 0;background:#fff}
+.d-footer .wrap{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:start}
+.footer-brand{font-size:26px;font-weight:800;color:var(--blue)}
+.d-footer .wrap>div>div{color:var(--muted);font-size:13.5px;margin-top:5px}
+.footer-note{color:var(--muted);font-size:12.5px;max-width:46ch}
+
+/* ---------- lightbox dialog ---------- */
+dialog{border:none;padding:0;background:transparent;max-width:min(920px,94vw)}
+dialog::backdrop{background:rgba(16,28,44,.7);backdrop-filter:blur(4px)}
+dialog img{max-height:82vh;width:auto;max-width:100%;border-radius:16px;margin:auto}
+dialog button{position:fixed;top:22px;inset-inline-end:22px;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);font-size:19px;color:var(--ink);cursor:pointer}
+</style><link rel="manifest" href="/manifest.webmanifest"><style id="overlay-chat-safety">body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-launcher"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-panel"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) #yc-fab{visibility:hidden!important;pointer-events:none!important}</style><meta id="arabic-practical-route" name="demo-practical-routing" content="1"><script id="portfolio-safe-summary">function yEscapeHTML(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]||c})}</script></head><body><header class="d-nav" id="top"><div class="wrap masthead"><a aria-label="ابتسامة، الرئيسية" class="brand" href="#top"><span class="brand-symbol">⌣</span><span><span class="brand-name">ابتسامة</span><small dir="ltr">DENTAL STUDIO</small></span></a><nav aria-label="القائمة الرئيسية" class="nav-links"><a href="#about">عن المركز</a><a href="#services">خدماتنا</a><a href="#prices">الأسعار</a><a href="#results">النتائج</a><a href="#clinic">العيادة</a></nav><a class="nav-action" href="#book">احجز كشفك <span class="arrow">↖</span></a><button aria-expanded="false" aria-label="فتح القائمة" class="nav-toggle">☰</button></div></header><main>
+<section class="d-book" id="book">
+<div class="wrap">
+<div class="reserve">
+<div>
+<span aria-hidden="true" class="giant-smile"></span><div class="sec-kicker">الحجز</div>
+<h2>احجز كشفك في دقيقة</h2>
+<p>احجز عبر المساعد ليجهّز لك موعدًا تجريبيًا في دقيقة. لا يتم هنا أي حجز حقيقي. عند ألم شديد أو ورم أو نزيف، توجّه فورًا إلى أقرب طبيب أو طوارئ. يشمل الكشف الأول خطة علاج مكتوبة بأسعارها (بيانات العرض تجريبية).</p>
+<div class="cta-row">
+<a class="btn btn-wa" href="#book" id="ctaWa">واتساب: <bdi dir="ltr">0100 000 5678</bdi> (توضيحي)</a>
+<a class="btn btn-ghost" href="#book" id="ctaTel">الهاتف: <bdi dir="ltr">02 2818 1234</bdi> (توضيحي)</a>
+</div>
+</div>
+<ul class="facts">
+<li><b>العنوان:</b> مبنى ٢٤، شارع التسعين الشمالي، التجمع الخامس، القاهرة الجديدة — <a href="https://www.google.com/maps/search/?api=1&amp;query=Teseen%20Street%2C%20New%20Cairo" rel="noreferrer" target="_blank">افتح على الخريطة</a></li>
+<li><b>المواعيد:</b> السبت – الخميس من ١١ صباحًا إلى ٩ مساءً، والجمعة مغلق</li>
+<li><b>الدفع:</b> نقدًا وفودافون كاش، وتقسيط للتقويم والزراعة</li>
+
+</ul>
+</div>
+</div>
+</section><section aria-label="ابتسامة" class="hero"><div class="wrap"><div class="hero-topline"><span>التجمع الخامس · القاهرة الجديدة</span><span dir="ltr">A LITTLE CARE. A BIG SMILE.</span></div><div class="hero-main"><div class="hero-copy"><h1>ابتسامتك<br/><span class="outline">تستحق الأفضل.</span></h1><p class="hero-description">من الكشف الدوري إلى ابتسامة هوليوود: أحدث الأجهزة، تعقيم كامل، وخطة واضحة بسعر متفق عليه قبل أن نبدأ.</p><a class="text-action" href="#book" id="ctaWaHero">احجز كشفك من الشات <span class="arrow">↖</span></a></div><div class="portrait"><div aria-hidden="true" class="hero-orbit"></div><img alt="بورتريه توضيحي لابتسامة طبيعية" decoding="async" fetchpriority="high" src="/assets/media-8c6af1b4a6e8ce05.jpg"/><a class="hero-medallion" href="#services"><span>↙</span>رعاية على مقاسك<br/>ابتسامتك</a><span class="portrait-caption">IBTESAMA / NEW CAIRO</span></div></div><div class="hero-info"><div><span>وقتنا لك</span>السبت – الخميس: ١١ص – ٩م</div><div><span>مكاننا</span>شارع التسعين الشمالي، التجمع الخامس</div><div><span>بلا استعجال</span>تقسيط متاح على التقويم والزراعة</div></div></div></section><section class="d-about" id="about"><div class="wrap about-layout"><figure class="doctor-picture reveal"><img alt="د. أحمد الخولي، استشاري طب وتجميل الأسنان" class="" decoding="async" loading="lazy" src="/assets/media-894e683d43139cfc.jpg"/><span aria-hidden="true" class="small-cross">✳</span><figcaption>د. أحمد الخولي · استشاري طب وتجميل الأسنان</figcaption></figure><div class="about-copy reveal"><div class="sec-kicker">عن المركز</div><h2>رعاية أسنان بلا<br/>ألم ولا مفاجآت.</h2><p style="color:var(--ink2)">يديره د. أحمد الخولي، استشاري طب وتجميل الأسنان، بخبرة تتجاوز ١٥ سنة. نعمل ببروتوكول تعقيم كامل، ونشرح لك كل خطوة وتكلفتها قبل العلاج، لتعرف ما تدفعه بالضبط.</p><div class="stats">
+<div class="stat"><b>+١٥</b><span>سنة خبرة</span></div>
+<div class="stat"><b>+٥٠٠٠</b><span>ابتسامة عملنا عليها</span></div>
+<div class="stat"><b>٤.٩</b><span>تقييم مرضانا</span></div>
+</div></div></div></section><section id="services"><div class="wrap"><div class="service-heading reveal"><div class="sec-kicker">خدماتنا</div><h2>كل ما تحتاجه أسنانك<br/>في مكان واحد.</h2></div><article class="service-row reveal"><span class="service-no">01</span><div><h3>كشف وتنظيف</h3><p>كشف شامل بالأشعة، وإزالة الجير، وتلميع كامل</p><span class="price">من ٣٠٠ ج</span></div><img alt="كشف وتنظيف أسنان" decoding="async" loading="lazy" src="/assets/media-8d39bf0f204cbe1f.jpg"/></article><article class="service-row reveal"><span class="service-no">02</span><div><h3>تبييض بالليزر</h3><p>جلسة واحدة تفتّح أسنانك حتى ٨ درجات بلا حساسية</p><span class="price">من ٣٬٥٠٠ ج</span></div><img alt="تبييض الأسنان بالليزر" decoding="async" loading="lazy" src="/assets/media-3e7bff21c8e5bfbb.jpg"/></article><article class="service-row reveal"><span class="service-no">03</span><div><h3>زراعة الأسنان</h3><p>غرسات ألمانية وسويسرية بضمان، وزراعة فورية في اليوم نفسه</p><span class="price">من ١٥٬٠٠٠ ج</span></div><img alt="زراعة الأسنان" decoding="async" loading="lazy" src="/assets/media-ec5f448cb34623dd.jpg"/></article><article class="service-row reveal"><span class="service-no">04</span><div><h3>تقويم شفاف</h3><p>تقويم غير مرئي بمقاسات رقمية، ومتابعة كل شهرين</p><span class="price">من ٦٠٬٠٠٠ ج</span></div><img alt="التقويم الشفاف" decoding="async" loading="lazy" src="/assets/media-160aacff957302e0.jpg"/></article><article class="service-row reveal"><span class="service-no">05</span><div><h3>فينير وهوليوود سمايل</h3><p>قشور إيماكس تجميلية وتصميم ابتسامة كامل بالحاسوب</p><span class="price">من ٤٬٥٠٠ ج للسن</span></div><img alt="فينير وابتسامة هوليوود" decoding="async" loading="lazy" src="/assets/media-e1c8abe33a4480c0.jpg"/></article></div></section><section class="d-prices" id="prices"><div class="wrap price-layout"><div class="price-intro reveal"><div class="sec-kicker">الأسعار</div><h2>واضحة.<br/>من الأول.</h2><p class="sec-note">الأسعار بالجنيه المصري واسترشادية؛ يتحدد السعر النهائي بعد الكشف ويُتفق عليه قبل بدء أي علاج.</p><div class="price-note"><span>↙</span>اختر نوع العلاج وتصفّح التفاصيل</div></div><div class="price-accordion reveal"><details class="menu-group" open=""><summary><span>الكشف والعلاج</span><span aria-hidden="true" class="plus">+</span></summary><div class="menu-items"><div class="dish"><div><h3>كشف وتشخيص شامل</h3><p>يشمل الفحص وخطة العلاج المكتوبة</p></div><strong>٣٠٠ ج</strong></div><div class="dish"><div><h3>أشعة بانوراما</h3><p>أشعة كاملة على الفكين</p></div><strong>٤٥٠ ج</strong></div><div class="dish"><div><h3>تنظيف جير وتلميع</h3><p>إزالة الجير بالموجات فوق الصوتية وتلميع</p></div><strong>٨٠٠ ج</strong></div><div class="dish"><div><h3>حشو تجميلي (كومبوزيت)</h3><p>بلون السن الطبيعي، للسن الواحد</p></div><strong>٩٠٠ ج</strong></div><div class="dish"><div><h3>علاج عصب</h3><p>للقناة العصبية الواحدة شاملة الحشو</p></div><strong>١٬٨٠٠ ج</strong></div><div class="dish"><div><h3>خلع سن عادي</h3><p>تخدير موضعي ومتابعة بعد الخلع</p></div><strong>٥٠٠ ج</strong></div><div class="dish"><div><h3>خلع ضرس عقل</h3><p>خلع جراحي بسيط</p></div><strong>١٬٥٠٠ ج</strong></div></div></details><details class="menu-group"><summary><span>التجميل والتبييض</span><span aria-hidden="true" class="plus">+</span></summary><div class="menu-items"><div class="dish"><div><h3>تبييض بالليزر</h3><p>جلسة واحدة في العيادة، نتيجة فورية</p></div><strong>٣٬٥٠٠ ج</strong></div><div class="dish"><div><h3>تبييض منزلي</h3><p>مقاسات ومادة تبييض بإشراف طبي</p></div><strong>٢٬٠٠٠ ج</strong></div><div class="dish"><div><h3>فينير إيماكس</h3><p>قشرة تجميلية للسن الواحد</p></div><strong>٤٬٥٠٠ ج</strong></div><div class="dish"><div><h3>لومينير</h3><p>أرق القشور التجميلية بلا برد، للسن</p></div><strong>٦٬٠٠٠ ج</strong></div><div class="dish"><div><h3>ابتسامة هوليوود</h3><p>تصميم ابتسامة كامل للفكين</p></div><strong>٦٠٬٠٠٠ ج</strong></div><div class="dish"><div><h3>تجميل اللثة بالليزر</h3><p>تفتيح لون اللثة في جلسة</p></div><strong>٢٬٥٠٠ ج</strong></div></div></details><details class="menu-group"><summary><span>التركيبات والتقويم</span><span aria-hidden="true" class="plus">+</span></summary><div class="menu-items"><div class="dish"><div><h3>تركيبة زيركون</h3><p>تاج زيركون للسن الواحد</p></div><strong>٣٬٥٠٠ ج</strong></div><div class="dish"><div><h3>تركيبة إيماكس</h3><p>أعلى درجات الشفافية للأسنان الأمامية</p></div><strong>٤٬٥٠٠ ج</strong></div><div class="dish"><div><h3>طقم أسنان كامل</h3><p>للفك الواحد من أكريليك مرن</p></div><strong>١٥٬٠٠٠ ج</strong></div><div class="dish"><div><h3>تقويم معدني</h3><p>للفكين شاملة المتابعة</p></div><strong>٢٥٬٠٠٠ ج</strong></div><div class="dish"><div><h3>تقويم شفاف</h3><p>إنفزلاين أو ما يعادله، للفكين</p></div><strong>٦٠٬٠٠٠ ج</strong></div></div></details><details class="menu-group"><summary><span>الزراعة</span><span aria-hidden="true" class="plus">+</span></summary><div class="menu-items"><div class="dish"><div><h3>زراعة سن واحد</h3><p>غرسة ألمانية شاملة الجراحة</p></div><strong>١٥٬٠٠٠ ج</strong></div><div class="dish"><div><h3>زراعة مع تركيبة</h3><p>الغرسة مع تاج زيركون</p></div><strong>٢٠٬٠٠٠ ج</strong></div><div class="dish"><div><h3>زراعة فورية</h3><p>زراعة في يوم الخلع نفسه للحالات المناسبة</p></div><strong>٢٢٬٠٠٠ ج</strong></div><div class="dish"><div><h3>رفع الجيوب الأنفية</h3><p>عند الحاجة قبل زراعة الفك العلوي</p></div><strong>٨٬٠٠٠ ج</strong></div></div></details></div></div></section><section class="d-results" id="results"><div class="wrap"><div class="sec-head reveal"><div><div class="sec-kicker">قبل وبعد</div><h2>فرق يُرى.</h2></div><p class="sec-note">صور توضيحية لنوع النتائج التي نصل إليها. اضغط على أي صورة لتكبيرها.</p></div><div class="ba-grid"><div class="ba reveal"><img alt="نتيجة تبييض الأسنان قبل وبعد" class="zoomable" decoding="async" loading="lazy" src="/assets/media-8385501cf757f3ec.jpg"/><div class="ba-caption"><span>قبل التبييض</span><span>بعد التبييض ↗</span></div></div><div class="ba reveal"><img alt="نتيجة تقويم الأسنان قبل وبعد" class="zoomable" decoding="async" loading="lazy" src="/assets/media-2a9894bd3bd95f01.jpg"/><div class="ba-caption"><span>قبل التقويم</span><span>بعد التقويم ↗</span></div></div></div></div></section><section id="clinic"><div class="wrap"><div class="clinic-head reveal"><div><div class="sec-kicker">العيادة</div><h2>مكان مريح.<br/>ومعقم بالكامل.</h2></div><span class="eyebrow">عناية بالتفاصيل،<br/>من أول خطوة داخل المركز.</span></div><div class="gallery"><img alt="منطقة الاستقبال في المركز" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-fc11dbee3e25be57.jpg"/><img alt="غرفة علاج مجهزة بأحدث الأجهزة" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-c15cba1693ea211f.jpg"/><img alt="فريق العمل أثناء الكشف" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-8d39bf0f204cbe1f.jpg"/><img alt="جلسة تبييض بالليزر" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-3e7bff21c8e5bfbb.jpg"/><img alt="كرسي الأسنان في غرفة العلاج" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-30e3469bbdabee7e.jpg"/><img alt="د. أحمد الخولي في المركز" class="zoomable reveal" decoding="async" loading="lazy" src="/assets/media-894e683d43139cfc.jpg"/></div></div></section></main><footer class="d-footer"><div class="wrap"><div><a class="footer-brand" href="#top">ابتسامة.</a><div>مركز ابتسامة لطب وتجميل الأسنان · التجمع الخامس، القاهرة الجديدة</div><div dir="ltr">Ibtisama Dental Center · New Cairo</div></div><p class="footer-note">موقع تجريبي لعرض التصميم. الأسماء والبيانات والصور توضيحية، وليست معلومات طبية ولا نتائج علاج موثقة.</p></div></footer><dialog aria-label="صورة مكبرة"><button aria-label="إغلاق" type="button">×</button><img alt="" decoding="async" loading="lazy"/></dialog><script>document.documentElement.classList.add('js-ready');const toggle=document.querySelector('.nav-toggle'),nav=document.querySelector('.nav-links');toggle.addEventListener('click',()=>{let opened=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',opened)});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));const lightbox=document.querySelector('dialog');document.querySelectorAll('.zoomable').forEach(im=>{im.tabIndex=0;im.setAttribute('role','button');im.setAttribute('aria-label','تكبير الصورة: '+im.alt);const show=()=>{lightbox.querySelector('img').src=im.src;lightbox.querySelector('img').alt=im.alt;lightbox.showModal()};im.addEventListener('click',show);im.addEventListener('keydown',e=>{if(e.key==='Enter')show()})});lightbox.querySelector('button').addEventListener('click',()=>lightbox.close());lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.close()});</script><style>
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+.btn{transition:transform .3s ease}
+.btn:hover{transform:translateY(-2px)}
+.hero-medallion{transition:transform .35s ease}
+.hero-medallion:hover{transform:scale(1.04)}
+.text-action .arrow{transition:transform .3s ease}
+.text-action:hover .arrow{transform:translate(-3px,-3px)}
+.nav-links a{transition:opacity .25s ease}
+.nav-links a:hover{opacity:.65}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"></script>
+<script>
+(function(){
+if(!window.gsap||!window.ScrollTrigger)return;
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+gsap.registerPlugin(ScrollTrigger);
+var E='power3.out';
+gsap.from('.d-nav',{y:-24,opacity:0,duration:.8,ease:E});
+gsap.from('.hero-topline span',{y:14,opacity:0,duration:.7,delay:.12,stagger:.08,ease:E});
+gsap.from('.hero-copy h1',{y:44,opacity:0,duration:1,delay:.22,ease:E});
+gsap.from('.hero-description',{y:24,opacity:0,duration:.8,delay:.38,ease:E});
+gsap.from('.hero-copy .text-action',{y:18,opacity:0,duration:.7,delay:.5,ease:E});
+gsap.from('.portrait img',{scale:.95,opacity:0,duration:1.1,delay:.3,ease:E});
+gsap.from('.hero-orbit',{scale:.7,opacity:0,duration:1,delay:.45,ease:E});
+gsap.from('.hero-medallion',{scale:.6,opacity:0,duration:.9,delay:.75,ease:'back.out(1.7)'});
+gsap.from('.hero-info>div',{y:20,opacity:0,duration:.7,delay:.85,stagger:.1,ease:E});
+;
+gsap.utils.toArray('section h2').forEach(function(h){
+  gsap.fromTo(h,{y:30},{y:0,ease:'none',duration:.85,ease:E,scrollTrigger:{trigger:h,start:'top 95%',once:true}});
+});
+
+function reveal(sel,from){
+  gsap.utils.toArray(sel).forEach(function(el){
+    var v={opacity:0,duration:.9,ease:E,scrollTrigger:{trigger:el,start:'top 92%',once:true}};
+    for(var k in from)v[k]=from[k];
+    gsap.from(el,v);
+  });
+}
+function batch(sel,from,stagger){
+  var els=gsap.utils.toArray(sel);
+  if(!els.length)return;
+  var init={opacity:0};for(var k in from)init[k]=from[k];
+  gsap.set(els,init);
+  ScrollTrigger.batch(els,{start:'top 92%',once:true,onEnter:function(b){
+    var v={opacity:1,duration:.85,stagger:stagger,ease:E,overwrite:true};
+    for(var k in from){if(k==='y')v.y=0;else if(k==='x')v.x=0;else if(k==='scale')v.scale=1;}
+    gsap.to(b,v);
+  }});
+}
+
+batch('.d-about .stat',{y:24},.12);
+batch('.d-book .facts li',{y:16},.08);
+batch('.d-book .cta-row .btn',{y:16},.1);
+document.querySelectorAll('details.menu-group').forEach(function(g){
+  g.addEventListener('toggle',function(){
+    if(!g.open)return;
+    gsap.fromTo(g.querySelectorAll('.dish'),{opacity:0,y:14},{opacity:1,y:0,duration:.5,stagger:.05,ease:'power2.out',overwrite:true});
+  });
+});
+})();
+</script>
+<style id="ib-widget-css">
+/* Ibtesama assistant widget — clinical blue theme */
+#ib-launcher{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:center;gap:8px;background:#2f6fd0;color:#fff;border:none;border-radius:999px;padding:12px 18px;font-family:inherit;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 10px 26px rgba(47,111,208,.32);transition:transform .25s ease,background .25s ease}
+#ib-launcher:hover{transform:translateY(-2px);background:#1e4f9e}
+#ib-launcher .ib-dot{width:8px;height:8px;border-radius:50%;background:#a9d3ff;display:inline-block}
+#ib-launcher svg{width:18px;height:18px;display:block}
+#ib-panel{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:#fbfdff;border-top:1px solid #e0eaf3;border-radius:20px 20px 0 0;display:none;flex-direction:column;height:min(72dvh,620px);box-shadow:0 -14px 44px rgba(22,40,60,.18);overflow:hidden;font-family:inherit}
+#ib-panel.open{display:flex}
+#ib-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid #e0eaf3;background:#fff}
+#ib-head .ib-ava{width:38px;height:38px;border-radius:50%;background:#2f6fd0;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px;flex:0 0 auto}
+#ib-head .ib-who{flex:1;min-width:0}
+#ib-head .ib-who b{display:block;font-size:15px;color:#16283c}
+#ib-head .ib-who small{display:flex;align-items:center;gap:5px;font-size:12px;color:#6a7c90}
+#ib-head .ib-who small i{width:7px;height:7px;border-radius:50%;background:#3fae6a;display:inline-block}
+#ib-close{background:none;border:1px solid #e0eaf3;border-radius:50%;width:30px;height:30px;font-size:15px;line-height:1;cursor:pointer;color:#16283c;flex:0 0 auto}
+#ib-close:hover{background:#e9f2fb}
+#ib-msgs{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.ib-msg{max-width:85%;padding:10px 13px;border-radius:14px;font-size:14.5px;line-height:1.75;white-space:pre-line;word-break:break-word}
+.ib-msg.bot{align-self:flex-start;background:#fff;border:1px solid #e0eaf3;color:#16283c;border-bottom-right-radius:4px}
+.ib-msg.user{align-self:flex-end;background:#2f6fd0;color:#fff;border-bottom-left-radius:4px}
+.ib-msg.bot b{color:#1e4f9e}
+.ib-order-card{align-self:stretch;background:#fff;border:1px solid #2f6fd0;border-radius:12px;padding:12px 14px;font-size:14px;color:#16283c}
+.ib-order-card .ib-oc-title{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed #e0eaf3;padding-bottom:8px;margin-bottom:8px}
+.ib-order-card .ib-oc-title b{font-size:15px}
+.ib-order-card .ib-oc-title small{color:#6a7c90;font-family:Georgia,serif;font-size:10px;letter-spacing:1px}
+.ib-order-card .ib-row{display:flex;justify-content:space-between;padding:3px 0}
+.ib-order-card .ib-row.total{border-top:1px dashed #e0eaf3;margin-top:7px;padding-top:8px;font-weight:bold;font-size:15px}
+.ib-order-card .ib-row.total span:last-child{color:#2f6fd0}
+.ib-order-card .ib-muted{color:#6a7c90;font-size:12.5px}
+#ib-typing{align-self:flex-start;background:#fff;border:1px solid #e0eaf3;border-radius:14px;border-bottom-right-radius:4px;padding:12px 16px;display:none;gap:5px}
+#ib-typing.on{display:flex}
+#ib-typing span{width:6px;height:6px;border-radius:50%;background:#6a7c90;animation:ibbnc 1.1s infinite}
+#ib-typing span:nth-child(2){animation-delay:.15s}
+#ib-typing span:nth-child(3){animation-delay:.3s}
+@keyframes ibbnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+#ib-chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px;border-top:1px solid #e0eaf3;background:#fff}
+#ib-chips:empty{display:none}
+#ib-chips button{border:1px solid #2f6fd0;background:transparent;color:#1e4f9e;border-radius:999px;padding:7px 14px;font-size:13.5px;font-family:inherit;cursor:pointer;transition:background .2s,color .2s}
+#ib-chips button:hover{background:#e9f2fb}
+#ib-chips button.ib-primary{background:#2f6fd0;border-color:#2f6fd0;color:#fff}
+#ib-chips button.ib-primary:hover{background:#1e4f9e;border-color:#1e4f9e}
+#ib-input{display:flex;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:#fff}
+#ib-input input{flex:1;border:1px solid #e0eaf3;border-radius:999px;padding:10px 16px;font-size:14.5px;font-family:inherit;background:#fbfdff;color:#16283c;outline:none}
+#ib-input input:focus{border-color:#2f6fd0}
+#ib-input button{background:#2f6fd0;color:#fff;border:none;border-radius:999px;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+#ib-input button svg{width:18px;height:18px;transform:scaleX(-1)}
+@media(min-width:720px){
+  #ib-panel{left:24px;right:auto;bottom:86px;width:384px;height:min(70vh,600px);border:1px solid #e0eaf3;border-radius:18px}
+  #ib-launcher{left:24px;bottom:24px}
+}
+@media(prefers-reduced-motion:reduce){
+  #ib-typing span{animation:none}
+  #ib-launcher{transition:none}
+}
+</style>
+<script id="ib-widget-js">(function () {
+  /* name-refusal-fix-v1 */
+  function widgetNameStep(step) {
+    return /^(lead-name|await-name|book-name)$/.test(step);
+  }
+  function widgetName(raw) {
+    var value = String(raw || '').normalize('NFKC').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '').trim();
+    value = value.replace(/^(?:(?:أنا|انا)\s+)?(?:اسمي|إسمي|اسم حضرتك)\s*[:：]?\s*/, '').replace(/^(?:أنا|انا)\s+/, '').replace(/^(?:my name is|i am|i'm)\s+/i, '').trim();
+    var t = value.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[^\p{L}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+    if (!t || /^(?:لا|لاء|لا شكرا|لأ|مش مهم|مش مهم الاسم|الاسم مش مهم|مو مهم|مو مهم الاسم|مجهول|فاعل خير|بدون اسم|من غير اسم|اي اسم|اي حاجه|حد|فلان|فلان الفلاني|اسم|الاسم|اسمك|سري|سر|مش هقول|مش هقولك|مالكش دعوه|ملكش دعوه|خليك في حالك|لا يهم|لا يهم الاسم|مفيش اسم|محدش|انا مين|انت مالك|انت مين|باتمان|سبايدرمان|سوبرمان|no|no thanks|none|anonymous|anon|unknown|guest|test|testing|joke|batman|superman|n a|skip|pass|whatever|not important|doesn t matter|name doesn t matter|prefer not to say|rather not say|not telling|none of your business|null|undefined)$/u.test(t)) return null;
+    if (/(?:^|\s)(?:مش|مو|غير|مش حابب|مش حابه|مش عايز|مش عاوز|مش عايزه|مش عاوزه|مش هقول|مابحبش|ما بحبش|مبحبش|مش لازم|مش ضروري|مش فارق|مش هيفرق|مش هتفرق)(?:\s|$)/u.test(t) && /(?:اسم|اقول|اقلك|اعرف|اكتب|اذكر|مهم|حابب|عايز|عاوز|ضروري|فارق|هيفرق|هتفرق)/u.test(t)) return null;
+    if (/(?:نكمل|كمل|تخطي|تجاوز|بعدين|سيبك من|خلينا من غير|خصوصيه|سريه|بهزر|بهزار|هزار|ههه|هاها|لول|هههه|lol|haha|skip|prefer not|rather not|don t want|won t tell|not sharing|private|privacy|never mind|nevermind)/u.test(t)) return null;
+    if (value.length < 2 || value.length > 70 || value.split(/\s+/).length > 6 || !/^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]*$/u.test(value)) return null;
+    if (!/[\p{L}]{2}/u.test(value) || /^(.)\1{2,}$/u.test(t.replace(/\s/g, ''))) return null;
+    return value;
+  }
+  function widgetCall(name) {
+    return name ? ' يا ' + name : '';
+  }
+  function widgetTitle(name) {
+    return name ? ' ' + name : ' بدون اسم';
+  }
+
+  /* Shared assistant core. Concatenated with a site file, wrapped in one IIFE.
+     The site file calls CORE({...}) then defines route() and passes it to api.routeRef. */
+  window.__CHIPALIAS={"أضيف شيئًا": "أضيف حاجة", "أؤكد الطلب ✓": "أكد الطلب ✓", "أؤكد الحجز ✓": "أكد الحجز ✓", "أؤكد الزيارة ✓": "أكد الزيارة ✓", "أؤكد التسجيل ✓": "أكد التسجيل ✓", "أغلق المحادثة": "اقفل الشات", "رشّح لي شيئًا": "رشحلي حاجة", "رشّح لي غيره": "رشحلي غيره", "أريد أن أطلب": "عايز أطلب", "هكذا يكفي": "كده تمام", "نتابع الحجز": "نكمل الحجز", "نتابع دون اسم": "نكمل من غير اسم", "شيء آخر": "حاجة تانية", "تصفّح القائمة": "شوف المنيو", "تصفّح التشكيلة": "شوف التشكيلة", "القائمة كاملة": "المنيو كله", "اليوم": "النهارده", "غدًا": "بكرة", "بعد غد": "بعد بكرة", "يوم آخر": "يوم تاني", "احجز كشفًا تجريبيًا": "احجز كشف تجريبي", "لدي سؤال": "عندي سؤال"};
+  function CORE(cfg) {
+    'use strict';
+
+    var P = cfg.prefix;
+    if (window['__' + P + 'Assistant']) return null;
+    window['__' + P + 'Assistant'] = true;
+
+    /* ---------- text helpers ---------- */
+    function norm(s) {
+      return (s || '').toLowerCase().replace(/ـ/g, '').replace(/[\u200b-\u200f\u202a-\u202e]/g, '').replace(/\s+/g, ' ').replace(/[ً-ْٰ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/[٠-٩]/g, function (c) {
+        return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+      }).trim();
+    }
+    var NUM_WORDS = {
+      'واحد': 1,
+      'واحده': 1,
+      'واحدة': 1,
+      'اتنين': 2,
+      'اثنين': 2,
+      'تنين': 2,
+      'تلت': 3,
+      'تلاته': 3,
+      'ثلاثه': 3,
+      'ثلاثة': 3,
+      'اربعه': 4,
+      'أربعه': 4,
+      'اربعة': 4,
+      'خمسه': 5,
+      'خمسة': 5,
+      'ست': 6,
+      'سته': 6,
+      'ستة': 6,
+      'سبع': 7,
+      'سبعه': 7,
+      'سبعة': 7,
+      'تماني': 8,
+      'تمانيه': 8,
+      'ثمانية': 8,
+      'تسع': 9,
+      'تسعه': 9,
+      'تسعة': 9,
+      'عشر': 10,
+      'عشره': 10,
+      'عشرة': 10
+    };
+    function parseQty(t) {
+      t = norm(t);
+      var m = t.match(/\b([1-9]\d?)\b/);
+      if (m) return +m[1];
+      for (var w in NUM_WORDS) {
+        if (t.indexOf(norm(w)) > -1) return NUM_WORDS[w];
+      }
+      return null;
+    }
+    function hasAny(t, arr) {
+      t = norm(t);
+      for (var i = 0; i < arr.length; i++) {
+        if (t.indexOf(norm(arr[i])) > -1) return true;
+      }
+      return false;
+    }
+    function findIn(t, list) {
+      t = norm(t);
+      var best = null,
+        bl = 0;
+      for (var i = 0; i < list.length; i++) {
+        var it = list[i];
+        var names = [it.n].concat(it.a || []);
+        for (var j = 0; j < names.length; j++) {
+          var nm = norm(names[j]);
+          if (nm.length > 1 && t.indexOf(nm) > -1 && nm.length > bl) {
+            bl = nm.length;
+            best = it;
+          }
+        }
+      }
+      return best;
+    }
+    function offHit(t, table) {
+      t = norm(t);
+      var best = null,
+        bl = 0;
+      for (var i = 0; i < table.length; i++) {
+        var e = table[i];
+        for (var j = 0; j < e.k.length; j++) {
+          var k = norm(e.k[j]);
+          if (t.indexOf(k) > -1 && k.length > bl) {
+            bl = k.length;
+            best = {
+              label: e.k[j],
+              suggest: e.s,
+              reply: e.reply
+            };
+          }
+        }
+      }
+      return best;
+    }
+
+    /* ---------- DOM ---------- */
+    var root = document.createElement('div');
+    root.innerHTML = '<button id="' + P + '-launcher" aria-label="افتح محادثة ' + cfg.name + '">' + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg>' + '<span>' + cfg.launcher + '</span></button>' + '<section id="' + P + '-panel" role="dialog" aria-label="' + cfg.name + '">' + '<header id="' + P + '-head"><div class="' + P + '-ava">' + cfg.avatar + '</div>' + '<div class="' + P + '-who"><b>' + cfg.name + '</b><small><i></i>متصل الآن · يردّ فورًا</small></div>' + '<button id="' + P + '-close" aria-label="إغلاق المحادثة">✕</button></header>' + '<div id="' + P + '-msgs" aria-live="polite"></div>' + '<div id="' + P + '-typing" aria-hidden="true"><span></span><span></span><span></span></div>' + '<div id="' + P + '-chips"></div>' + '<form id="' + P + '-input"><input type="text" id="' + P + '-text" placeholder="اكتب رسالتك…" autocomplete="off" enterkeyhint="send">' + '<button type="submit" aria-label="إرسال"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5c.8-.35.8-1.45 0-1.8L3.4 3.6c-.7-.3-1.4.35-1.3 1.05l.6 5.35c.05.45.4.8.85.9l8.95 1.1c.1 0 .1.2 0 .2l-8.95 1.1c-.45.1-.8.45-.85.9l-.6 5.35c-.1.7.6 1.35 1.3 1.05z"/></svg></button></form></section>';
+    document.body.appendChild(root);
+    var launcher = document.getElementById(P + '-launcher'),
+      panel = document.getElementById(P + '-panel'),
+      msgs = document.getElementById(P + '-msgs'),
+      chips = document.getElementById(P + '-chips'),
+      typing = document.getElementById(P + '-typing'),
+      form = document.getElementById(P + '-input'),
+      input = document.getElementById(P + '-text');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var G = window.gsap && !reduce ? window.gsap : null;
+    function animIn(el) {
+      if (G) {
+        G.from(el, {
+          y: 14,
+          opacity: 0,
+          duration: .35,
+          ease: 'power2.out',
+          clearProps: 'all'
+        });
+      }
+    }
+    function scrollBottom() {
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+    function addMsg(text, who) {
+      var d = document.createElement('div');
+      d.className = P + '-msg ' + who;
+      d.textContent = text;
+      msgs.appendChild(d);
+      animIn(d);
+      scrollBottom();
+      return d;
+    }
+    function addCard(html) {
+      var d = document.createElement('div');
+      d.className = P + '-order-card';
+      d.innerHTML = html;
+      msgs.appendChild(d);
+      animIn(d);
+      scrollBottom();
+      return d;
+    }
+    function setChips(list) {
+      chips.innerHTML = '';
+      (list || []).forEach(function (c) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = c.label;
+        if (c.primary) b.className = P + '-primary';
+        b.onclick = function () {
+          handleUser(c.label, c.action || null);
+        };
+        chips.appendChild(b);
+      });
+      scrollBottom();
+    }
+    var busy = false;
+    var pending = null;
+    var _yrSeen = {};
+    function yVaryReply(text) {
+      var n = (_yrSeen[text] || 0) % 3;
+      _yrSeen[text] = n + 1;
+      if (/مش (?:ضمن|متوفر|موجود|من تشكيلتنا|في تشكيلتنا|على منيو)|للأسف/.test(text)) {
+        if (n === 1) text = text.replace(/^للأسف\s*/, 'بص، ').replace(/^الطلب ده/, 'الحاجة دي').replace(/بس أقرب حاجة ليه عندنا:/, 'ولو بتدور على بديل، عندنا:');
+        if (n === 2) text = text.replace(/^للأسف\s*/, 'خليني أوضحلك، ').replace(/^الطلب ده/, 'الاختيار ده').replace(/بس أقرب حاجة ليه عندنا:/, 'ممكن بدل كده تشوف:');
+        if (n === 1 && !/^(بص|الحاجة|بالنسبة|خليني)/.test(text)) text = 'بص، ' + text;
+        if (n === 2 && !/^(خليني|الاختيار|بالنسبة|بص)/.test(text)) text = 'خليني أوضحلك، ' + text;
+      }
+      return text;
+    }
+    function botSay(text, delay, after) {
+      if (text.indexOf('مش واضحلي قصدك بالكامل') === 0) {
+        var bi = (window.__yClarifyCount || 0) % 3;
+        window.__yClarifyCount = bi + 1;
+        text = ["مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟ 🙂", "محتاج منك توضيح صغير. تقصد منتج معين ولا خدمة؟ المعلومة دي مش متوفرة عندي بشكل أقدر أأكد عليه.", "خليني أفهمك صح 🙂 المعلومة دي مش متوفرة عندي من الكلام ده لوحده. قولّي بتدور على إيه بالظبط؟"][bi];
+      }
+      text = yVaryReply(text);
+      var _yq = window.__yousefResponseQuestion || '';
+      busy = true;
+      typing.classList.add('on');
+      scrollBottom();
+      setTimeout(function () {
+        typing.classList.remove('on');
+        var _yn = addMsg(text, 'bot');
+        if (_yn) _yn.dataset.yousefQuestion = _yq;
+        busy = false;
+        if (after) after();
+        if (pending) {
+          var _p = pending;
+          pending = null;
+          route(_p.text, _p.action);
+        }
+      }, delay != null ? delay : 700 + Math.min(text.length * 8, 900));
+    }
+    function botSeq(list, i, done) {
+      i = i || 0;
+      if (i >= list.length) {
+        if (done) done();
+        return;
+      }
+      var item = list[i];
+      botSay(item.text, item.delay, function () {
+        if (item.card) addCard(item.card);
+        if (item.chips) setChips(item.chips);
+        botSeq(list, i + 1, done);
+      });
+    }
+    function cardIntro(cardHtml, text, delay, chips) {
+      busy = true;
+      typing.classList.add('on');
+      scrollBottom();
+      setTimeout(function () {
+        typing.classList.remove('on');
+        addCard(cardHtml);
+        busy = false;
+        if (text) {
+          addMsg(text, 'bot');
+        }
+        if (chips) setChips(chips);
+        if (pending) {
+          var _p = pending;
+          pending = null;
+          route(_p.text, _p.action);
+        }
+      }, delay || 900);
+    }
+    var conv = {
+      step: 'idle',
+      greeted: false
+    };
+    function handleUser(text, action) {
+      var shown = text; if (!action && window.__CHIPALIAS && window.__CHIPALIAS[text]) text = window.__CHIPALIAS[text];
+      if (!action && /(?:ايبوبروفين|إيبوبروفين|بروفين|بنادول|باراسيتامول|اسبرين|أسبرين|مضاد|دواء|دوا\b|ادويه|أدوية|جرع|ملجم|مللي|حقن|تشخيص|نزيف|ورم|تورم|وجع|ألم|اعراض|أعراض|تسمم|اختناق|مش قادر.{0,8}تنفس|صعوب.{0,8}تنفس|ibuprofen|paracetamol|aspirin|medicine|medication|dosage|dose|symptom|bleeding|swelling|poison)/i.test(text)) {
+        window.__yousefResponseQuestion = text;
+        if (text.trim()) addMsg(shown, 'user');
+        botSay("السؤال ده محتاج تقييم من طبيب أسنان مؤهل. مش هقدر أشخّص أو أوصي بعلاج أو أقول جرعة. لو فيه أعراض شديدة أو نزيف أو صعوبة تنفس، تواصل فورًا مع طبيب أو طوارئ حقيقية. ده موقع تجريبي، مش خدمة طبية.", 150);
+        return;
+      }
+      if (!action && (!conv.step || conv.step === 'idle') && /(?:عنوان|عناوين|فين.{0,12}(?:فرع|فروع|محل|مكتب|عياد|مكان)|(?:فرع|فروع).{0,12}فين|مواعيد.{0,8}(?:العمل|الفتح|الغلق)|ساعات العمل|بتفتح|بتقفل|(?:branch|address|opening hours|office hours))/i.test(text)) {
+        if (text.trim()) addMsg(shown, 'user');
+        botSay("العنوان الافتراضي: شارع التسعين الشمالي، التجمع الخامس، القاهرة الجديدة. المواعيد المعروضة: السبت للخميس من ١١ الصبح لـ٩ بالليل، الجمعة إجازة. دي عيادة تجريبية، وأي شروط علاج أو دفع حقيقية لازم تتأكد من عيادة حقيقية.", 150, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (text.trim()) addMsg(shown, 'user');
+      setChips([]);
+      if (busy) {
+        pending = {
+          text: text,
+          action: action
+        };
+        return;
+      }
+      route(text, action);
+    }
+    function route(text, action) {
+      window.__yousefResponseQuestion = text; /* replaced by site */
+    }
+
+    // Keep the composer inside the *visible* viewport, not behind the soft keyboard.
+    var yPrefix = panel.id.replace(/-panel$/, ''),
+      yVV = window.visualViewport,
+      yFrame = 0;
+    var yStyle = document.createElement('style');
+    yStyle.textContent = '#' + yPrefix + '-panel{box-sizing:border-box;min-height:0;padding:0;margin:0;overscroll-behavior:contain}#' + yPrefix + '-head,#' + yPrefix + '-input,#' + yPrefix + '-typing{flex-shrink:0}#' + yPrefix + '-msgs{min-height:0;overscroll-behavior:contain;overflow-anchor:none}#' + yPrefix + '-input input{min-width:0;font-size:16px}#' + yPrefix + '-chips{flex-shrink:0;max-height:96px;overflow-y:auto}#' + yPrefix + '-chips button{flex-shrink:0;white-space:nowrap}#' + yPrefix + '-chips{scrollbar-width:none}#' + yPrefix + '-chips::-webkit-scrollbar{display:none}';
+    document.head.appendChild(yStyle);
+    function yFitViewport() {
+      cancelAnimationFrame(yFrame);
+      yFrame = requestAnimationFrame(function () {
+        if (!panel.classList.contains('open')) return;
+        if (window.matchMedia('(max-width:680px)').matches) {
+          var vh = yVV ? yVV.height : window.innerHeight,
+            vo = yVV ? yVV.offsetTop : 0;
+          var h = Math.min(620, Math.max(120, vh - 16));
+          panel.style.height = h + 'px';
+          panel.style.maxHeight = h + 'px';
+          panel.style.top = vo + vh - h - 8 + 'px';
+          panel.style.bottom = 'auto';
+          var yShort = vh < 500;
+          chips.style.display = '';
+          chips.style.maxHeight = (yShort ? 52 : 96) + 'px';
+          chips.style.flexWrap = yShort ? 'nowrap' : '';
+          chips.style.overflowX = yShort ? 'auto' : '';
+          chips.style.overflowY = yShort ? 'hidden' : 'auto';
+          chips.style.padding = yShort ? '6px 14px' : '';
+        } else {
+          ['height', 'max-height', 'top', 'bottom'].forEach(function (k) {
+            panel.style.removeProperty(k);
+          });
+          ['max-height', 'display', 'flex-wrap', 'overflow-x', 'overflow-y', 'padding'].forEach(function (k) {
+            chips.style.removeProperty(k);
+          });
+        }
+        scrollBottom();
+      });
+    }
+    if (yVV) {
+      yVV.addEventListener('resize', yFitViewport, {
+        passive: true
+      });
+      yVV.addEventListener('scroll', yFitViewport, {
+        passive: true
+      });
+    }
+    window.addEventListener('resize', yFitViewport, {
+      passive: true
+    });
+    input.addEventListener('focus', yFitViewport);
+    input.addEventListener('blur', yFitViewport);
+    function openPanel() {
+      panel.classList.add('open');
+      yFitViewport();
+      launcher.style.display = 'none';
+      if (G && !window.matchMedia('(max-width:680px)').matches) {
+        G.from(panel, {
+          y: 60,
+          opacity: 0,
+          duration: .45,
+          ease: 'power3.out',
+          clearProps: 'all'
+        });
+      }
+      if (!conv.greeted) {
+        conv.greeted = true;
+        cfg.greet(botSeq, setChips);
+      }
+      input.focus();
+    }
+    function closePanel() {
+      panel.classList.remove('open');
+      launcher.style.display = 'flex';
+      if (G) {
+        G.from(launcher, {
+          scale: .7,
+          opacity: 0,
+          duration: .35,
+          ease: 'back.out(2)',
+          clearProps: 'all'
+        });
+      }
+    }
+    launcher.addEventListener('click', openPanel);
+    ['ctaWa', 'ctaTel', 'ctaWaHero'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        var g = conv.greeted;
+        openPanel();
+        setTimeout(function () {
+          botSay('أرقام التواصل المعروضة في الديمو توضيحية، ومش بيتم أي اتصال أو رسايل حقيقية. أقدر أعملك حجز تجريبي هنا في الشات. ولو عندك ألم أو نزيف حقيقي، تواصل مع أقرب طبيب أسنان فورًا.', 600, function () {
+            setChips([{
+              label: 'احجز كشفًا تجريبيًا',
+              action: 'book',
+              primary: true
+            }, {
+              label: 'الرئيسية',
+              action: 'home'
+            }]);
+          });
+        }, g ? 350 : 2600);
+      });
+    });
+    document.getElementById(P + '-close').addEventListener('click', closePanel);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = input.value.trim();
+      if (!v && !widgetNameStep(conv.step)) return;
+      input.value = '';
+      handleUser(v, null);
+    });
+    if (G) {
+      G.from(launcher, {
+        y: 30,
+        opacity: 0,
+        duration: .6,
+        delay: .9,
+        ease: 'back.out(1.8)',
+        clearProps: 'all'
+      });
+    }
+    var yHist = [],
+      Y_LLM_URL = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/assist';
+    function llmAsk(text, fallback, valid, defChips) {
+      if (window.__yLLMOff || !window.fetch || !text || text.trim().length < 2 || text.length > 300) {
+        fallback();
+        return;
+      }
+      busy = true;
+      typing.classList.add('on');
+      scrollBottom();
+      var done = false,
+        ctl = window.AbortController ? new AbortController() : null;
+      var timer = setTimeout(function () {
+        if (ctl) ctl.abort();
+      }, 10000);
+      function finish(fn) {
+        if (done) return;
+        done = true;
+        clearTimeout(timer);
+        typing.classList.remove('on');
+        busy = false;
+        fn();
+        if (pending) {
+          var _p = pending;
+          pending = null;
+          route(_p.text, _p.action);
+        }
+      }
+      fetch(Y_LLM_URL, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        signal: ctl ? ctl.signal : undefined,
+        body: JSON.stringify({
+          message: text,
+          history: yHist
+        })
+      }).then(function (r) {
+        return r.json();
+      }).then(function (d) {
+        if (!d || !d.ok || !d.reply) {
+          finish(function () {
+            fallback();
+          });
+          return;
+        }
+        var names = [];
+        (d.suggest || []).forEach(function (n) {
+          var it = valid(n);
+          if (it && names.indexOf(it.n) < 0) names.push(it.n);
+        });
+        finish(function () {
+          var _n = addMsg(d.reply, 'bot');
+          if (_n) _n.dataset.yousefQuestion = window.__yousefResponseQuestion || text;
+          yHist.push({
+            r: 'u',
+            t: text
+          }, {
+            r: 'a',
+            t: d.reply
+          });
+          if (yHist.length > 6) yHist = yHist.slice(-6);
+          var c = d.intent === 'offdomain' || d.intent === 'ambiguous' ? [] : names.map(function (n) {
+            return {
+              label: n
+            };
+          });
+          setChips(c.length ? c.concat(defChips.slice(0, 1)) : defChips);
+        });
+      }).catch(function () {
+        finish(function () {
+          fallback();
+        });
+      });
+    }
+    return {
+      norm: norm,
+      hasAny: hasAny,
+      parseQty: parseQty,
+      findIn: findIn,
+      offHit: offHit,
+      llmAsk: llmAsk,
+      botSay: botSay,
+      botSeq: botSeq,
+      addMsg: addMsg,
+      addCard: addCard,
+      setChips: setChips,
+      conv: conv,
+      input: input,
+      closePanel: closePanel,
+      cardIntro: cardIntro,
+      routeRef: function (r) {
+        route = r;
+      }
+    };
+  }
+
+  /* Ibtesama Dental assistant — services + appointment booking */
+  var api = CORE({
+    prefix: 'ib',
+    name: 'مساعد ابتسامة',
+    launcher: 'اسأل ابتسامة',
+    avatar: '😁',
+    greet: function (botSeq, setChips) {
+      botSeq([{
+        text: 'أهلًا بك في مركز ابتسامة 😁',
+        delay: 500
+      }, {
+        text: 'أنا مساعدك هنا. أعرّفك بخدماتنا وأسعارنا، وأجيب عن أسئلتك، أو أحجز لك كشفًا في أقل من دقيقة.',
+        delay: 800,
+        chips: mainChips()
+      }]);
+    }
+  });
+  if (api) {
+    var norm = api.norm,
+      hasAny = api.hasAny,
+      parseQty = api.parseQty,
+      findIn = api.findIn,
+      offHit = api.offHit,
+      botSay = api.botSay,
+      setChips = api.setChips,
+      conv = api.conv,
+      input = api.input;
+    var SERVICES = [{
+      n: 'كشف وتشخيص شامل',
+      p: '٣٠٠ ج',
+      d: 'فحص كامل وخطة علاج مكتوبة.',
+      a: ['كشف', 'تشخيص', 'فحص']
+    }, {
+      n: 'أشعة بانوراما',
+      p: '٤٥٠ ج',
+      d: 'أشعة كاملة على الفكين.',
+      a: ['اشعه', 'أشعة', 'بانوراما', 'x ray', 'اكس راي']
+    }, {
+      n: 'تنظيف جير وتلميع',
+      p: '٨٠٠ ج',
+      d: 'إزالة الجير بالموجات فوق الصوتية وتلميع.',
+      a: ['جير', 'تنظيف', 'تلميع', 'تنضيف']
+    }, {
+      n: 'حشو تجميلي',
+      p: '٩٠٠ ج',
+      d: 'حشو كومبوزيت بلون السن الطبيعي، للسن الواحد.',
+      a: ['حشو', 'حشوه', 'حشوة', 'كومبوزيت']
+    }, {
+      n: 'علاج عصب',
+      p: '١٬٨٠٠ ج',
+      d: 'للقناة العصبية الواحدة شاملة الحشو.',
+      a: ['عصب', 'علاج عصب', 'قناة', 'حشو عصب', 'حشو العصب', 'حشو جذور', 'حشو قناة', 'سحب عصب', 'جذور']
+    }, {
+      n: 'خلع سن عادي',
+      p: '٥٠٠ ج',
+      d: 'بنج موضعي ومتابعة بعد الخلع.',
+      a: ['خلع', 'خلع سن']
+    }, {
+      n: 'خلع ضرس عقل',
+      p: '١٬٥٠٠ ج',
+      d: 'خلع جراحي بسيط.',
+      a: ['ضرس', 'ضرس عقل', 'العقل']
+    }, {
+      n: 'تبييض بالليزر',
+      p: '٣٬٥٠٠ ج',
+      d: 'جلسة واحدة في العيادة، نتيجة فورية.',
+      a: ['تبييض', 'تبيض', 'ليزر', 'whitening']
+    }, {
+      n: 'تبييض منزلي',
+      p: '٢٬٠٠٠ ج',
+      d: 'مقاسات ومادة تبييض بإشراف طبي.',
+      a: ['تبييض منزلي', 'تبيض منزلي']
+    }, {
+      n: 'فينير إيماكس',
+      p: '٤٬٥٠٠ ج',
+      d: 'قشرة تجميلية للسن الواحد.',
+      a: ['فينير', 'فينيرز', 'ايمكس', 'إيماكس', 'ايماكس']
+    }, {
+      n: 'لومينير',
+      p: '٦٬٠٠٠ ج',
+      d: 'أرق قشور تجميلية بدون برد، للسن.',
+      a: ['لومينير']
+    }, {
+      n: 'ابتسامة هوليوود',
+      p: '٦٠٬٠٠٠ ج',
+      d: 'تصميم ابتسامة كامل للفكين بالكمبيوتر.',
+      a: ['هوليوود', 'هوليود', 'hollywood']
+    }, {
+      n: 'توريد اللثة بالليزر',
+      p: '٢٬٥٠٠ ج',
+      d: 'تفتيح لون اللثة في جلسة.',
+      a: ['لثه', 'لثة', 'توريد']
+    }, {
+      n: 'تركيبة زيركون',
+      p: '٣٬٥٠٠ ج',
+      d: 'تاج زيركون للسن الواحد.',
+      a: ['زيركون', 'تاج', 'طربوش', 'تلبيسه', 'تركيبه زيركون']
+    }, {
+      n: 'تركيبة إيماكس',
+      p: '٤٬٥٠٠ ج',
+      d: 'أعلى درجات الشفافية للأسنان الأمامية.',
+      a: ['تركيبه ايمكس', 'تركيبة إيماكس', 'تركيبه']
+    }, {
+      n: 'طقم أسنان كامل',
+      p: '١٥٬٠٠٠ ج',
+      d: 'للفك الواحد بخامات أكريليك مرنة.',
+      a: ['طقم', 'طقم اسنان', 'طقم أسنان']
+    }, {
+      n: 'تقويم معدني',
+      p: '٢٥٬٠٠٠ ج',
+      d: 'للفكين شاملة المتابعة.',
+      a: ['تقويم معدني', 'تقويم عادي']
+    }, {
+      n: 'تقويم شفاف',
+      p: '٦٠٬٠٠٠ ج',
+      d: 'إنفزلاين أو ما يعادله، للفكين، بمقاسات رقمية.',
+      a: ['تقويم شفاف', 'انفزلاين', 'إنفزلاين', 'تقويم']
+    }, {
+      n: 'زراعة سن واحد',
+      p: '١٥٬٠٠٠ ج',
+      d: 'غرسة ألمانية شاملة الجراحة.',
+      a: ['زراعه', 'زراعة', 'غرسه', 'غرسة']
+    }, {
+      n: 'زراعة مع تركيبة',
+      p: '٢٠٬٠٠٠ ج',
+      d: 'الغرسة مع تاج زيركون.',
+      a: ['زراعه مع تركيبه', 'زراعة مع تركيبة']
+    }, {
+      n: 'زراعة فورية',
+      p: '٢٢٬٠٠٠ ج',
+      d: 'زراعة في نفس يوم الخلع للحالات المناسبة.',
+      a: ['زراعه فوريه', 'زراعة فورية', 'فوريه', 'فورية']
+    }, {
+      n: 'رفع الجيوب الأنفية',
+      p: '٨٬٠٠٠ ج',
+      d: 'عند الحاجة قبل زراعة الفك العلوي.',
+      a: ['جيوب', 'جيوب انفيه', 'الجيوب']
+    }];
+    var OFFMENU = [{
+      k: ['تحاليل', 'تحليل دم', 'اشعه مقطعيه', 'أشعة مقطعية', 'رنين'],
+      s: [],
+      reply: 'دي خدمة مش عندنا — إحنا مركز متخصص في الأسنان بس. لو محتاج أشعة على أسنانك، عندنا أشعة بانوراما بـ ٤٥٠ ج.'
+    }, {
+      k: ['عيون', 'نظاره', 'نظارة', 'اطفال باطنه', 'باطنه', 'جلديه', 'جلدية'],
+      s: [],
+      reply: 'إحنا مركز أسنان متخصص بس. لو عندك أي سؤال عن أسنانك أنا في الخدمة 😁'
+    }, {
+      k: ['سن متحرك', 'متحرك'],
+      s: ['طقم أسنان كامل']
+    }];
+    function byName(n) {
+      for (var i = 0; i < SERVICES.length; i++) {
+        if (SERVICES[i].n === n) return SERVICES[i];
+      }
+      return null;
+    }
+    function suggestChips(hit, extra) {
+      var c = [];
+      for (var i = 0; i < hit.suggest.length; i++) {
+        var it = byName(hit.suggest[i]);
+        if (it) c.push({
+          label: it.n
+        });
+      }
+      return c.concat(extra || []);
+    }
+    function offMenuReply(hit, resume, makeChips) {
+      var names = [];
+      for (var i = 0; i < hit.suggest.length; i++) {
+        var it = byName(hit.suggest[i]);
+        if (it) names.push(it.n);
+      }
+      var msg;
+      if (hit.reply) {
+        msg = hit.reply;
+      } else {
+        msg = 'للأسف "' + hit.label + '" مش من خدماتنا الحالية.';
+      }
+      if (names.length) msg += ' بس ممكن يفيدك: ' + names.join(' أو ') + '.';
+      if (resume) msg += '\n' + resume;
+      botSay(msg, 650, function () {
+        setChips(makeChips());
+      });
+    }
+    var DAYS = ['السبت', 'الأحد', 'الاتنين', 'التلات', 'الأربع', 'الخميس'];
+    var TIMES = ['١٢ الظهر', '٢ الظهر', '٤ العصر', '٦ المغرب', '٨ بالليل'];
+    function mainChips() {
+      return [{
+        label: 'احجز كشفك',
+        action: 'book',
+        primary: true
+      }, {
+        label: 'الخدمات والأسعار',
+        action: 'menu'
+      }, {
+        label: 'المواعيد والعنوان',
+        action: 'info'
+      }, {
+        label: 'لدي سؤال',
+        action: 'faq'
+      }];
+    }
+    function menuText() {
+      var s = 'خدماتنا وأسعارنا الاسترشادية:\n';
+      SERVICES.forEach(function (i) {
+        s += '• ' + i.n + ' — ' + i.p + '\n';
+      });
+      s += '\nالسعر النهائي بيتحدد بعد الكشف وبنتفق عليه قبل أي علاج.';
+      return s;
+    }
+    function infoText() {
+      return 'مواعيدنا: السبت للخميس، من ١١ الصبح لـ ٩ بالليل.\nالجمعة إجازة.\nمكاننا: شارع التسعين الشمالي، التجمع الخامس، القاهرة الجديدة.\n\nوالتقسيط متاح على التقويم والزراعة.';
+    }
+
+    /* ---------- booking engine ---------- */
+    function startBook() {
+      conv.book = {
+        service: null,
+        day: null,
+        time: null,
+        name: null,
+        phone: null
+      };
+      conv.step = 'book-service';
+      botSay('هنحجزلك معاد في أقل من دقيقة. محتاج إيه بالظبط؟', 600, function () {
+        setChips([{
+          label: 'كشف وتشخيص شامل'
+        }, {
+          label: 'تنظيف جير وتلميع'
+        }, {
+          label: 'تبييض بالليزر'
+        }, {
+          label: 'استشارة تقويم'
+        }, {
+          label: 'استشارة زراعة'
+        }, {
+          label: 'شيء آخر'
+        }]);
+      });
+    }
+    function askBookDay() {
+      conv.step = 'book-day';
+      botSay('تحب المعاد أي يوم؟ (إحنا مفتوحين السبت للخميس، ١١ص – ٩م)', 600, function () {
+        setChips(DAYS.map(function (d) {
+          return {
+            label: d
+          };
+        }));
+      });
+    }
+    function askBookTime() {
+      conv.step = 'book-time';
+      botSay('وتحب الساعة كام؟', 600, function () {
+        setChips(TIMES.map(function (t) {
+          return {
+            label: t
+          };
+        }));
+      });
+    }
+    function askBookName() {
+      conv.step = 'book-name';
+      botSay('الحجز باسم مين؟', 600, function () {
+        setChips([{
+          label: 'نتابع دون اسم'
+        }]);
+        input.focus();
+      });
+    }
+    function askBookPhone() {
+      conv.step = 'book-phone';
+      botSay('ورقم موبايل لاستكمال تجربة الحجز؟ (مش هيتبعت عليه أي رسايل — ده ديمو)', 600, function () {
+        input.focus();
+      });
+    }
+    function confirmBook() {
+      conv.step = 'book-confirm';
+      var b = conv.book;
+      var card = '<div class="ib-oc-title"><b>حجز' + yEscapeHTML(widgetTitle(b.name)) + '</b><small>APPOINTMENT</small></div>' + '<div class="ib-row"><span>الخدمة</span><span>' + yEscapeHTML(b.service) + '</span></div>' + '<div class="ib-row"><span>اليوم</span><span>' + yEscapeHTML(b.day) + '</span></div>' + '<div class="ib-row"><span>الميعاد</span><span>' + yEscapeHTML(b.time) + '</span></div>' + '<div class="ib-row ib-muted"><span>شارع التسعين الشمالي، التجمع الخامس</span><span></span></div>';
+      api.cardIntro(card, 'ده ملخص الحجز التجريبي. أأكد المعاد في الديمو؟', 900, [{
+        label: 'أؤكد الحجز ✓',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    }
+    function finishBook() {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event', {
+        detail: {
+          kind: 'demo_booking',
+          label: 'finishBook'
+        }
+      }));
+      conv.step = 'done';
+      var num = 'IB-' + Math.floor(1000 + Math.random() * 9000);
+      var b = conv.book;
+      setChips([]);
+      botSay('تم' + widgetCall(b.name) + '! دي محاكاة حجز في الديمو — مفيش معاد حقيقي اتسجل عند أي عيادة. التفاصيل التجريبية: يوم ' + b.day + ' الساعة ' + b.time + ' (رقم تجريبي ' + num + '). لو محتاج دكتور أسنان فعلًا، احجز في عيادة قريبة منك. ابتسامتك تستاهل 😁', 800, function () {
+        setChips([{
+          label: 'الخدمات والأسعار',
+          action: 'menu'
+        }, {
+          label: 'أغلق المحادثة',
+          action: 'close'
+        }]);
+        conv.step = 'idle';
+        conv.book = null;
+      });
+    }
+
+    /* ---------- routing ---------- */
+
+    var yFAQ = [[["وجع", "الم شديد", "ورم", "نزيف", "طوارئ"], ["لو الألم شديد أو فيه ورم كبير أو نزيف مستمر، محتاج تقييم طبي عاجل، ومش تستنى رد ديمو أو حجز تجريبي. المساعد هنا للحجوزات ومعلومات الخدمات، مش تشخيص أو وصف علاج."]], [["تامين", "ضمان", "مده العلاج", "جلسات", "بنج", "حامل"], ["التأمين وعدد الجلسات ونوع التخدير وخطة العلاج مش متوفرين كتأكيد في الديمو. بيتحددوا مع الطبيب بعد الكشف، خصوصًا مع الحمل أو أي تاريخ مرضي. مش هديك تشخيص من الشات."]], [["سعر الكشف", "كشف بكام", "تكلفه الكشف"], ["الكشف والتشخيص الشامل في الديمو بـ 300 ج، وبيشمل الفحص وخطة علاج مكتوبة. الأسعار استرشادية، والخطة والتكلفة النهائية بتتحدد بعد الكشف وقبل العلاج."]], [["كود خصم", "كوبون", "خصومات", "عروض", "عرض النهارده"], ["أي عرض أو خصم مش مكتوب في الأسعار الحالية مش متوفر عندي كتأكيد. أقدر أوريك الموجود، لكن مش هألف كود خصم أو أوعد بسعر خاص.", "خلينا في السعر المعروض لحد ما يبقى فيه عرض واضح. تفاصيل خصم إضافي مش متوفرة في بيانات الديمو."]], [["واتساب", "رقم تليفون", "رقمكم"], ["بيانات التواصل المعروضة هنا خاصة بالديمو وقد تكون تجريبية. ما تبعتش معلومات حساسة أو تدفع فلوس على أساس إن ده نشاط حقيقي. أقدر أساعدك تستعرض الخدمة هنا."]]];
+    var yFAQSeen = {};
+    var yLastFAQ = -1,
+      yLastFAQAt = 0;
+    function yAnswerFAQ(t) {
+      var yArea = document.querySelector('[id$="-msgs"],#yc-msgs');
+      var yBots = yArea ? yArea.querySelectorAll('.bot,.yc-b,.b') : [];
+      var yPrev = yBots.length ? yBots[yBots.length - 1].textContent : '';
+      var yFollow = /(?:^|\s)(?:هو|هي|ده|دي|دا|فيه|فيها|سعره|سعرها|طيب|طب|هال|it|its|that|this|does|what about)(?:\s|[؟?]|$)/i.test(t);
+      var ySafety = /(حساسي|طوار|نزيف|جرع|تشخيص|allerg|emergen|dosage|diagnos)/i.test(t);
+      if (!ySafety && /(?:^|[\s،؟?!.])(?:وش|وشو|شلون|ابي|أبي|ابغى|أبغى|بغيت|شو|بدي|بدّي|عندكن|قديش)(?=$|[\s،؟?!.])/.test(t)) return false;
+      if (yFollow && yPrev && !ySafety) {
+        var yWasFAQ = yFAQ.some(function (row) {
+          return row[1].some(function (a) {
+            return yPrev.indexOf(a) >= 0;
+          });
+        });
+        if (!yWasFAQ) return false;
+      }
+      var short = t.replace(/[؟?!.,،]/g, '').trim();
+      if (yLastFAQ >= 0 && Date.now() - yLastFAQAt < 300000 && /^(?:هو|هي|ده|دي|دا|نفسه|نفسها|قصدي ده|اقصد ده|يعني ده|وريني|بكام|كام|سعره|سعرها|وضح|وضحلي|وضح لي|تفاصيله|تفاصيلها)$/.test(short)) {
+        return yGiveFAQ(yLastFAQ);
+      }
+      for (var i = 0; i < yFAQ.length; i++) {
+        if (yFAQ[i][0].some(function (k) {
+          var w = norm(k),
+            q = ' ' + norm(t).replace(/[؟?!.,،]/g, ' ') + ' ';
+          return /[a-z]/i.test(w) ? q.indexOf(' ' + w + ' ') >= 0 : w.length > 4 ? q.indexOf(w) >= 0 : q.indexOf(' ' + w + ' ') >= 0 || q.indexOf(' ال' + w + ' ') >= 0;
+        })) return yGiveFAQ(i);
+      }
+      return false;
+    }
+    function yGiveFAQ(i) {
+      var r = yFAQ[i];
+      yLastFAQ = i;
+      yLastFAQAt = Date.now();
+      var n = yFAQSeen[i] || 0;
+      yFAQSeen[i] = n + 1;
+      var a = r[1][n % r[1].length];
+      if (n && r[1].length === 1) a = (n % 2 ? 'خليني أوضحلك، ' : 'بالنسبة لسؤالك، ') + a;
+      botSay(a, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    function yProductDetail(t) {
+      if (!hasAny(t, ['بكام', 'سعر', 'تفاصيل', 'مكونات', 'لون', 'الوان', 'خامه', 'نوتات', 'اسابيع', 'مستوي', 'بيشمل'])) return false;
+      var it = findIn(t, SERVICES);
+      if (!it) return false;
+      var msg = it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + (typeof it.p === 'number' ? ' جنيه' : '') + '.';
+      msg += '\nبيانات وأسعار تجريبية للعرض.';
+      botSay(msg, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    var yLex = ["طربوش", "تلبيسة", "زيركون", "تقويم", "تبييض", "حشو", "فينير", "زراعة", "مثبت"];
+    function yOneEdit(a, b) {
+      if (a === b || Math.abs(a.length - b.length) > 1) return false;
+      var i = 0,
+        j = 0,
+        n = 0;
+      while (i < a.length && j < b.length) {
+        if (a[i] === b[j]) {
+          i++;
+          j++;
+          continue;
+        }
+        if (++n > 1) return false;
+        if (a.length >= b.length) i++;
+        if (b.length >= a.length) j++;
+      }
+      return n + (i < a.length || j < b.length ? 1 : 0) === 1;
+    }
+    function yOfferSpelling(t) {
+      var tokens = t.split(/\s+/),
+        hits = [];
+      for (var i = 0; i < tokens.length; i++) {
+        if (tokens[i].length < 4) continue;
+        for (var j = 0; j < yLex.length; j++) {
+          var w = norm(yLex[j]);
+          if (yOneEdit(tokens[i], w) && hits.indexOf(yLex[j]) < 0) hits.push(yLex[j]);
+        }
+      }
+      if (hits.length && hits.length <= 3) {
+        botSay('تقصد ' + hits.join(' ولا ') + '؟ 🙂 المعلومة مش متوفرة عندي بشكل مؤكد من الكتابة دي، اختار الاسم أو وضحهولي.', 500, function () {
+          setChips(hits.map(function (x) {
+            return {
+              label: x
+            };
+          }));
+        });
+        return true;
+      }
+      return false;
+    }
+    var yBrands = [["Straumann", "سترومان"], ["Nobel Biocare", "نوبل بيوكير"], ["Osstem", "اوستم"], ["Neodent", "نيودنت"], ["3M", "ثري ام"]];
+    var yBrandSeen = {};
+    function yBrandHit(t) {
+      var clean = ' ' + norm(t).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim() + ' ';
+      for (var i = 0; i < yBrands.length; i++) {
+        for (var j = 0; j < yBrands[i].length; j++) {
+          var k = norm(yBrands[i][j]).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim();
+          if (k && clean.indexOf(' ' + k + ' ') >= 0) return i;
+        }
+      }
+      return -1;
+    }
+    function yAnswerBrand(t) {
+      var b = yBrandHit(t);
+      if (b < 0) return false;
+      var n = yBrandSeen[b] || 0;
+      yBrandSeen[b] = n + 1;
+      var msg = "بالنسبة للعلامة اللي بتسأل عنها، توافرها أو نوع المنتج منها مش متوفر كتأكيد في بيانات الديمو. ما نختارش منتج علاجي أو بديل من الاسم بس؛ لازم المختص يراجع الحالة. أقدر أوريك الخدمات المعروضة، من غير تأكيد ماركة مش مسجلة.";
+      if (n) msg = (n % 2 ? 'بالنسبة للاسم ده، ' : 'خليني أوضحلك، ') + msg;
+      botSay(msg, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    var Y_OFF = /(عطر|عطور|برفان|بارفان|perfume|موبايل|ايفون|سامسونج|كابل|شاحن|لابتوب|لاب توب|قهوه|قهوة|بيتزا|كشري|برجر|مكرونه|قميص|بنطلون|شقه|شقة|قطه|قطة|كلب|دامبل|جيم|كورس|برمجه|برمجة)/i;
+    var Y_SCENT = /(سنان|اسنان|كشف|حجز|دكتور|حشو|تقويم)/i;
+    var __yb = botSay,
+      __ys = setChips;
+    try {
+      botSay = function (tx, d, a) {
+        if (!window.__yG && conv.step && conv.step !== 'idle') {
+          conv._yP = tx;
+          conv._yC = null;
+        }
+        return __yb.apply(this, arguments);
+      };
+      setChips = function (c) {
+        if (!window.__yG && conv.step && conv.step !== 'idle') conv._yC = c;
+        return __ys.apply(this, arguments);
+      };
+    } catch (e) {}
+    function yGSay(tx, chips) {
+      window.__yG = true;
+      botSay(tx, 500, function () {
+        setChips(chips);
+        window.__yG = false;
+      });
+    }
+    function yQGuard(text, t) {
+      if (!conv.step || conv.step === 'idle') return false;
+      var q = t.replace(/[؟?!.,،\s]/g, '');
+      if (conv._yQ) {
+        if (/^(نكمل|كمل|كمّل|نكملالحجز|اكمل|نكملالطلب)$/.test(q)) {
+          conv._yQ = false;
+          var P = conv._yP,
+            C = conv._yC;
+          if (P) {
+            window.__yG = true;
+            botSay(P, 300, function () {
+              window.__yG = false;
+              if (C) setChips(C);else setChips([]);
+            });
+          }
+          return true;
+        }
+        if (/^(الغاء|إلغاء|الغي|الغيه|cancel|الغاءالحجز|إلغاءالحجز)$/.test(q)) {
+          conv._yQ = false;
+          conv.step = 'idle';
+          yGSay('تمام، وقفنا اللي كنا فيه. تقدر تبدأ من جديد في أي وقت.', mainChips());
+          return true;
+        }
+        conv._yQ = false;
+      }
+      if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت', 'اختنق', 'تسمم'])) return false;
+      var words = text.trim().split(/\s+/).length;
+      var qm = /[؟?]/.test(text);
+      var qw = /(^|\s)(ينفع|هل|ازاي|إزاي|بديل|بدائل|بدل|ليه|الفرق|ايه الفرق|إيه الفرق)(\s|$)/.test(t);
+      if (!(qm && words >= 3 || qw)) return false;
+      conv._yQ = true;
+      var note = ' الأسئلة الطبية وبدائل الخدمات بيحددها الدكتور بعد الفحص، ومقدرش أنصح فيها من هنا.';
+      yGSay('ده سؤال مش هسجله كإجابة في الحجز.' + note + ' تحب نكمل اللي كنا فيه ولا نلغيه؟', [{
+        label: 'نتابع الحجز',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+      return true;
+    }
+    function yOffDomain(text) {
+      if (/^(?:await-name|await-address|lead-name|book-name)$/.test(conv.step || '')) return false;
+      if (/(^|\s)(بديل|بدائل|بدل|بدلا|بدلاً|عوض)(\s|$)/.test(norm(text)) && (!conv.step || conv.step === 'idle')) {
+        botSay('مقدرش أقول إن خدمة بديل لخدمة تانية. اختيار المناسب بيحدده الدكتور بعد الكشف، وتقدر تحجز كشف أو تسأل عن خدمة معروضة بالاسم.', 600, function () {
+          setChips(mainChips());
+        });
+        return true;
+      }
+      var q = norm(text);
+      if (!Y_OFF.test(q)) return false;
+      var tail = conv.step && conv.step !== 'idle' ? ' وطلبك الحالي زي ما هو، نكمله لما تحب.' : '';
+      if (false) {
+        botSay('قصدك ايه بالظبط؟ انا مساعد ابتسامة لطب الاسنان، لو بتسأل عن خدمات الاسنان وحجز المواعيد قولي وأساعدك.' + tail, 600, function () {
+          setChips(mainChips());
+        });
+        return true;
+      }
+      if (Y_SCENT.test(q)) {
+        botSay('طلبك فيه حاجتين مختلفين. انا هساعدك في خدمات الاسنان وحجز المواعيد بس، وباقي الطلب خارج تخصصي. تحب نبدأ بإيه؟' + tail, 600, function () {
+          setChips(mainChips());
+        });
+        return true;
+      }
+      botSay('ده خارج تخصصي، انا مساعد ابتسامة لطب الاسنان. لو عايز تسأل عن خدمات الاسنان وحجز المواعيد انا معاك.' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    function route(text, action) {
+      window.__yousefResponseQuestion = text;
+      var t = norm(text);
+      if (action) {
+        runAction(action);
+        return;
+      }
+      if (yQGuard(text, t)) return;
+      if (yOffDomain(text)) return;
+      if (yAnswerBrand(t)) return;
+      if (yAnswerFAQ(t)) return;
+      if (yProductDetail(t)) return;
+      switch (conv.step) {
+        case 'book-service':
+          {
+            if (hasAny(t, ['حاجه تانيه', 'حاجة تانية', 'تانيه', 'تانية', 'غيرهم'])) {
+              conv.step = 'book-service2';
+              botSay('قولي الخدمة اللي محتاجها باسمها، زي: حشو، خلع، فينير، هوليوود سمايل…', 500, function () {
+                setChips([]);
+                input.focus();
+              });
+              return;
+            }
+            if (hasAny(t, ['استشاره تقويم', 'استشارة تقويم', 'تقويم'])) {
+              conv.book.service = 'استشارة تقويم';
+              askBookDay();
+              return;
+            }
+            if (hasAny(t, ['استشاره زراعه', 'استشارة زراعة', 'زراعه', 'زراعة'])) {
+              conv.book.service = 'استشارة زراعة';
+              askBookDay();
+              return;
+            }
+            var sv = findIn(t, SERVICES);
+            if (sv) {
+              conv.book.service = sv.n;
+              askBookDay();
+              return;
+            }
+            botSay('اختار من الخدمات اللي فوق، أو اكتب اللي محتاجه باسمه.', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+        case 'book-service2':
+          {
+            var sv2 = findIn(t, SERVICES);
+            if (sv2) {
+              conv.book.service = sv2.n;
+              askBookDay();
+              return;
+            }
+            var hitS = offHit(t, OFFMENU);
+            if (hitS) {
+              offMenuReply(hitS, 'ونرجع نكمل الحجز: محتاج أنهي خدمة؟', function () {
+                return [{
+                  label: 'كشف وتشخيص شامل'
+                }, {
+                  label: 'تنظيف جير وتلميع'
+                }];
+              });
+              conv.step = 'book-service';
+              return;
+            }
+            botSay('مش متأكد إن دي من خدماتنا. قولي أقرب حاجة ليها — أو احجز كشف شامل والدكتور يحدد معاك.', 500, function () {
+              setChips([{
+                label: 'كشف وتشخيص شامل',
+                primary: true
+              }]);
+            });
+            return;
+          }
+        case 'book-day':
+          {
+            for (var i = 0; i < DAYS.length; i++) {
+              if (t.indexOf(norm(DAYS[i])) > -1) {
+                conv.book.day = DAYS[i];
+                askBookTime();
+                return;
+              }
+            }
+            if (t.indexOf(norm('الجمعه')) > -1 || t.indexOf(norm('الجمعة')) > -1) {
+              botSay('يوم الجمعة إجازة. اختار يوم من السبت للخميس:', 500, function () {
+                setChips(DAYS.map(function (d) {
+                  return {
+                    label: d
+                  };
+                }));
+              });
+              return;
+            }
+            if (hasAny(t, ['النهارده', 'انهارده', 'النهاردة'])) {
+              conv.book.day = 'النهارده';
+              askBookTime();
+              return;
+            }
+            if (hasAny(t, ['بكره', 'بكرة'])) {
+              conv.book.day = 'بكره';
+              askBookTime();
+              return;
+            }
+            botSay('قولي اليوم: من السبت للخميس؟', 500, function () {
+              setChips(DAYS.map(function (d) {
+                return {
+                  label: d
+                };
+              }));
+            });
+            return;
+          }
+        case 'book-time':
+          {
+            var tm = text.trim();
+            var m = tm.replace(/[٠-٩]/g, function (c) {
+              return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+            }).match(/(\d{1,2})/);
+            if (m) {
+              var h = +m[1];
+              if (h >= 11 && h <= 12) {
+                conv.book.time = '١٢ الظهر';
+                askBookName();
+                return;
+              }
+              if (h >= 1 && h <= 9) {
+                conv.book.time = h + ' ' + (h <= 2 ? 'الظهر' : 'بعد العصر');
+                askBookName();
+                return;
+              }
+              botSay('مواعيدنا من ١١ الصبح لـ ٩ بالليل. اختار وقت في الحدود دي:', 500, function () {
+                setChips(TIMES.map(function (x) {
+                  return {
+                    label: x
+                  };
+                }));
+              });
+              return;
+            }
+            for (var k = 0; k < TIMES.length; k++) {
+              if (t.indexOf(norm(TIMES[k])) > -1) {
+                conv.book.time = TIMES[k];
+                askBookName();
+                return;
+              }
+            }
+            botSay('اختار من المواعيد دي، أو اكتب الساعة:', 500, function () {
+              setChips(TIMES.map(function (x) {
+                return {
+                  label: x
+                };
+              }));
+            });
+            return;
+          }
+        case 'book-name':
+          {
+            var nm = widgetName(text);
+            conv.book.name = nm;
+            if (!nm) {
+              botSay('ولا يهمك، نكمل من غير اسم.', 400, function () {
+                askBookPhone();
+              });
+              return;
+            }
+            askBookPhone();
+            return;
+          }
+        case 'book-phone':
+          {
+            var ph = text.trim().replace(/[\s-]/g, '');
+            if (ph.length < 8) {
+              botSay('ابعتلي رقم موبايل صحيح (١١ رقم يبدأ بـ 01) لاستكمال التجربة.', 500, function () {
+                input.focus();
+              });
+              return;
+            }
+            conv.book.phone = ph;
+            confirmBook();
+            return;
+          }
+        case 'book-confirm':
+          {
+            if (hasAny(t, ['اكد', 'أكد', 'تمام', 'موافق', 'ايوه', 'أيوه', 'ايوا', 'yes', 'يلا', 'اوكي', 'ok'])) {
+              finishBook();
+              return;
+            }
+            if (hasAny(t, ['الغي', 'ألغي', 'الغاء', 'إلغاء', 'cancel'])) {
+              conv.step = 'idle';
+              conv.book = null;
+              botSay('اتلغى الحجز، ولا يهمك. لو احتجت معاد تاني أنا موجود 😁', 600, function () {
+                setChips(mainChips());
+              });
+              return;
+            }
+            botSay('أأكد المعاد ولا نلغيه؟', 500, function () {
+              setChips([{
+                label: 'أؤكد الحجز ✓',
+                primary: true
+              }, {
+                label: 'إلغاء'
+              }]);
+            });
+            return;
+          }
+      }
+
+      /* idle intents */
+      if (hasAny(t, ['احجز', 'حجز', 'معاد', 'ميعاد', 'موعد', 'كشفك', 'book'])) {
+        runAction('book');
+        return;
+      }
+      var offIdle = offHit(t, OFFMENU);
+      if (offIdle) {
+        offMenuReply(offIdle, '', function () {
+          return suggestChips(offIdle, mainChips());
+        });
+        return;
+      }
+      var found = findIn(t, SERVICES);
+      if (found) {
+        botSay(found.n + ' — ' + found.d + '\nالسعر الاسترشادي: ' + found.p + '. تحب تحجز معاد؟', 600, function () {
+          conv._pend = found;
+          setChips([{
+            label: 'احجز ' + found.n,
+            primary: true
+          }, {
+            label: 'الخدمات والأسعار',
+            action: 'menu'
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        return;
+      }
+      if (conv._pend && hasAny(t, ['احجز', 'ايوه', 'أيوه', 'ايوا', 'نعم', 'تمام', 'يلا', 'عايز', 'عاوز'])) {
+        var p = conv._pend;
+        conv._pend = null;
+        startBook();
+        conv.book.service = p.n;
+        askBookDay();
+        return;
+      }
+      if (hasAny(t, ['اسعار', 'أسعار', 'اسعاركم', 'بكام', 'تكلفه', 'تكلفة', 'فلوس', 'سعر'])) {
+        runAction('menu');
+        return;
+      }
+      if (hasAny(t, ['خدمات', 'خدماتكم', 'بتعملوا ايه', 'بتعملو ايه'])) {
+        runAction('menu');
+        return;
+      }
+      if (hasAny(t, ['تقسيط', 'اقساط', 'أقساط', 'دفعات'])) {
+        botSay('أيوه، التقسيط متاح على التقويم والزراعة. التفاصيل بتتحدد في الكشف، والسعر النهائي بنتفق عليه قبل ما نبدأ أي علاج.', 700, function () {
+          setChips([{
+            label: 'احجز كشفك',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'الخدمات والأسعار',
+            action: 'menu'
+          }]);
+        });
+        return;
+      }
+      if (hasAny(t, ['دكتور', 'الدكتور', 'دكتوره', 'دكتورة', 'احمد الخولي', 'أحمد الخولي'])) {
+        botSay('المركز بيشغله د. أحمد الخولي، استشاري طب وتجميل الأسنان، بخبرة أكتر من ١٥ سنة وأكتر من ٥٠٠٠ ابتسامة اشتغل عليها. تقييم مرضانا ٤٫٩ ⭐', 700, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (hasAny(t, ['مواعيد', 'ساعات', 'بتقفلوا', 'بتفتحوا', 'مفتوحين', 'مفتوح', 'قفل', 'فتح', 'عنوان', 'فين', 'مكان', 'لوكيشن', 'التجمع', 'التسعين'])) {
+        runAction('info');
+        return;
+      }
+      if (hasAny(t, ['وجع', 'بيوجعني', 'الم', 'ألم', 'طوارئ', 'طواري', 'ضرسي', 'سني', 'سني بيوجعني'])) {
+        botSay('معلش، عارفين الإحساس ده. أسرع خطوة: احجز كشف شامل (٣٠٠ ج) وأقرب معاد يليق بيك، والدكتور يشوف الحالة ويحدد المناسب. ولو الألم شديد أو فيه ورم أو نزيف، تواصل مع أقرب طبيب أو طوارئ فورًا. تحب أحجزلك كشف؟', 700, function () {
+          setChips([{
+            label: 'احجز كشفك',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'المواعيد والعنوان',
+            action: 'info'
+          }]);
+        });
+        return;
+      }
+      var hitI = offHit(t, OFFMENU);
+      if (hitI) {
+        offMenuReply(hitI, null, function () {
+          return suggestChips(hitI, [{
+            label: 'احجز كشفك',
+            action: 'book',
+            primary: true
+          }, {
+            label: 'الخدمات والأسعار',
+            action: 'menu'
+          }]);
+        });
+        return;
+      }
+      if (hasAny(t, ['شكرا', 'تسلم', 'متشكر', 'ممنون', 'thanks'])) {
+        botSay('العفو! سلامتك تهمنا 😁 لو احتجت أي حاجة أنا هنا.', 500, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (hasAny(t, ['اهلا', 'أهلا', 'هاي', 'ازيك', 'صباح', 'مساء', 'hello', 'hi', 'سلام'])) {
+        botSay('أهلًا وسهلًا! نورت ابتسامة. أقدر أساعدك في إيه؟', 500, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      api.llmAsk(text, function () {
+        yTail(text, t);
+      }, function (n) {
+        return {
+          n: n
+        };
+      }, mainChips());
+    }
+    function yTail(text, t) {
+      if (hasAny(t, ['سن', 'سنه', 'سنة', 'سنان', 'اسنان', 'أسنان', 'ضرس', 'ضروس', 'اضرس', 'أضرس', 'تسوس', 'حشو', 'حشوه', 'حشوة', 'خلع', 'تنظيف', 'جير', 'تبيض', 'تبييض', 'تقويم', 'زراعه', 'زراعة', 'فينير', 'ايماكس', 'إيماكس', 'ابتسامه', 'ابتسامة', 'لثه', 'لثة', 'تورم', 'ورم', 'رائحه', 'رائحة', 'فم', 'تركيب', 'طقم', 'تلميع', 'عصب', 'التهاب', 'خراج', 'خياطه', 'تخدير', 'بنج', 'لبنيه', 'لبنية', 'كشف', 'متابعه', 'متابعة', 'بعد الحشو', 'طواري', 'طوارئ', 'تيجان', 'تاج', 'كوبله', 'تركيبات', 'هوليود', 'هوليوود', 'سمايل', 'بانوراما'])) {
+        botSay('دي خدمة مش واضحة عندي 😁 احكيلي أكتر عن اللي محتاجه في أسنانك وأنا أظبطلك الخدمة أو الكشف المناسب.', 600, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (hasAny(t, ["invisalign", "انفزلاين", "انفيزلاين", "فينير", "veneers", "هوليود سمايل", "hollywood smile", "implant", "ايمبلانت", "تركيبه", "ضرس", "تقويم"])) {
+        botSay('الطلب ده مش متوفر ضمن البيانات والتشكيلة الحالية عندنا. قولي محتاج إيه فيه أو شوف الاختيارات المتاحة، وأساعدك تختار أقرب بديل.', 600, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (hasAny(t, ['عندكم', 'عندكوا', 'بتبيع', 'بتقدموا', 'موجود عندك', 'متوفر عندك'])) {
+        botSay('الطلب ده مش متوفر ضمن البيانات الحالية عندي. قولي اسمه أو نوعه بالتفصيل، أو نراجع الاختيارات الموجودة بدل ما أديك معلومة مش مؤكدة.', 600, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (hasAny(t, ["تلبيسه", "طربوش", "جسر", "جسور", "وتد", "عصب", "حشو", "تكلسات", "جذور", "لثه", "ضرس", "ضروس", "اسنان", "اسنان اطفال", "نزيف", "تقويم", "مثبت"])) {
+        botSay('الاسم ده مش متوفر بتفاصيل مؤكدة ضمن بيانات الديمو الحالية. قولي نوعه أو الاسم الكامل، وأراجع معاك الاختيارات المعروضة بدل ما أخمن.', 600, function () {
+          setChips(mainChips());
+        });
+        return;
+      }
+      if (yOfferSpelling(t)) return;
+      botSay("مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟ 🙂", 600, function () {
+        setChips(mainChips());
+      });
+    }
+    function runAction(action) {
+      switch (action) {
+        case 'menu':
+          botSay(menuText(), 700, function () {
+            setChips([{
+              label: 'احجز كشفك',
+              action: 'book',
+              primary: true
+            }, {
+              label: 'المواعيد والعنوان',
+              action: 'info'
+            }, {
+              label: 'الرئيسية',
+              action: 'home'
+            }]);
+          });
+          break;
+        case 'book':
+          startBook();
+          break;
+        case 'info':
+          botSay(infoText(), 700, function () {
+            setChips([{
+              label: 'احجز كشفك',
+              action: 'book',
+              primary: true
+            }, {
+              label: 'الخدمات والأسعار',
+              action: 'menu'
+            }, {
+              label: 'الرئيسية',
+              action: 'home'
+            }]);
+          });
+          break;
+        case 'faq':
+          botSay('اتفضل اسأل: عن الأسعار، التقسيط، التعقيم، الدكتور، المواعيد… وأنا أرد عليك.', 500, function () {
+            setChips([{
+              label: 'احجز كشفك',
+              action: 'book',
+              primary: true
+            }]);
+            input.focus();
+          });
+          break;
+        case 'home':
+          botSay('تحب أساعدك في إيه كمان؟', 500, function () {
+            setChips(mainChips());
+          });
+          break;
+        case 'close':
+          api.closePanel();
+          break;
+      }
+    }
+    api.routeRef(route);
+  }
+})();</script>
+<script id="portfolio-chat-recorder">
+(function () {
+  'use strict';
+  var dialog = Array.prototype.find.call(document.querySelectorAll('[role="dialog"]'), function(node){return node.querySelector('[aria-live]');});
+  if (!dialog || dialog.__portfolioChatLog) return;
+  var messagesNode = dialog.querySelector('[aria-live]');
+  if (!messagesNode) return;
+  dialog.__portfolioChatLog = true;
+
+  var apiUrl = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/chat';
+  var pageUrl = location.origin + location.pathname;
+  var idKey = 'ym-chat-conversation-id-v2';
+  var id;
+  var lastActive = 0;
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'ym' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  }
+  try {
+    var __chatStoredState = localStorage.getItem(idKey);
+    var __chatParsedState;
+    try { __chatParsedState = JSON.parse(__chatStoredState); } catch (_) {}
+    id = __chatParsedState && __chatParsedState.id || __chatStoredState;
+    lastActive = __chatParsedState && Number(__chatParsedState.lastActive) || 0;
+    if (!id || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
+      id = newId();
+      lastActive = Date.now();}
+    localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive}));
+  } catch (_) {
+    id = newId();
+  lastActive = Date.now();}
+
+  var startedKey = idKey + ':started';
+  var pendingKey = idKey + ':pending';
+  var started = false;
+  try { started = localStorage.getItem(startedKey) === '1'; } catch (_) {}
+  if (started && Date.now() - lastActive > 12 * 60 * 60 * 1000) {
+    started = false;
+    try { localStorage.setItem(startedKey, '0'); } catch (_) {}
+  }
+  var waiting = [];
+  var outbox = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem(pendingKey) || '[]');
+    if (Array.isArray(saved)) outbox = saved;
+  } catch (_) {}
+
+  function makeMessage(role, content) {
+    return {
+      role: role,
+      content: content,
+      ts: Date.now(),
+      id: newId()
+    };
+  }
+  function visitorInfo() {
+    return {
+      userAgent: navigator.userAgent || '',
+      lang: navigator.language || '',
+      referer: document.referrer || '',
+      page: pageUrl
+    };
+  }
+  function saveOutbox() {
+    try { localStorage.setItem(pendingKey, JSON.stringify(outbox)); } catch (_) {}
+  }
+  window.addEventListener('yousef-chat-event', function (event) {
+    var detail = event.detail || {};
+    if (!/^(demo_order|demo_booking|whatsapp_handoff)$/.test(detail.kind || '')) return;
+    enqueue({conversationId: id, events: [{id: newId(), kind: detail.kind, detail: detail.label || ''}], visitor: visitorInfo(), page: pageUrl});
+  });
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (link && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(link.href)) {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event',{detail:{kind:'whatsapp_handoff',label:'WhatsApp link clicked'}}));
+    }
+  }, true);
+  var sending = false;
+  var paused = false;
+  function pump() {
+    if (sending || paused || !outbox.length) return;
+    sending = true;
+    var payload = outbox[0];
+    var attempt = 0;
+    function transmit() {
+      fetch(apiUrl, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('chat log request failed');
+        outbox.shift();
+        saveOutbox();
+        sending = false;
+        pump();
+      }).catch(function () {
+        attempt += 1;
+        if (attempt < 3) {
+          setTimeout(transmit, attempt === 1 ? 1000 : 2500);
+        } else {
+          sending = false;
+          paused = true;
+          setTimeout(function () { paused = false; pump(); }, 30000);
+        }
+      });
+    }
+    transmit();
+  }
+  function enqueue(payload) {
+    outbox.push(payload);
+    if (outbox.length > 500) outbox.shift();
+    saveOutbox();
+    pump();
+  }
+  function record(node) {
+    function touchConversation() {
+      if (Date.now() - lastActive > 12 * 60 * 60 * 1000) id = newId();
+      lastActive = Date.now();
+      try { localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive})); } catch (_) {}
+    }
+
+    if (!node || node.nodeType !== 1 || node.__portfolioChatLogged) return;
+    node.__portfolioChatLogged = true;
+    var content = (node.innerText || node.textContent || '').trim();
+    if (!content) return;
+    var role = node.classList && node.classList.contains('user') ? 'visitor' : 'assistant';
+    var message = makeMessage(role, content);
+    if (role === 'assistant' && node.dataset && node.dataset.yousefQuestion) message.question = node.dataset.yousefQuestion;
+    if (!started) {
+      waiting.push(message);
+      if (role === 'visitor') {
+        started = true;
+        try { localStorage.setItem(startedKey, '1'); } catch (_) {}
+        
+        touchConversation();enqueue({ conversationId: id, messages: waiting.splice(0), visitor: visitorInfo(), page: pageUrl });
+      }
+      return;
+    }
+    
+        touchConversation();enqueue({ conversationId: id, message: message, visitor: visitorInfo(), page: pageUrl });
+  }
+
+  new MutationObserver(function (records) {
+    records.forEach(function (record) {
+      record.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && node.parentElement === messagesNode) recordNode(node);
+      });
+    });
+  }).observe(messagesNode, { childList: true });
+
+  function recordNode(node) { record(node); }
+  pump();
+})();
+
+</script>
+</body></html>

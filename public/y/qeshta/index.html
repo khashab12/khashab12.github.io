@@ -1,0 +1,2211 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/png" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#fff8fd">
+<meta name="description" content="قشطة، حلويات وتورتات على مزاجك. تجربة تصميم لمتجر حلويات مصري: تورتات مناسبات بالاسم وحلويات شرقية بالسمن البلدي.">
+<title>قشطة | حلويات وتورتات على مزاجك</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marhey:wght@400;600;700&family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=optional" rel="stylesheet">
+<script id="portfolio-security-bootstrap">(function(){
+'use strict';if(window.__portfolioSecurity)return;window.__portfolioSecurity=true;
+var endpoint='https://portfolio-chat-backend.yousef-portfolio.workers.dev',nativeFetch=window.fetch.bind(window),session=null,pending=null,sitekey="0x4AAAAAAGO0I2tLsytslNSh";
+function verify(){if(session&&session.expires>Date.now()+30000)return Promise.resolve(session.token);if(pending)return pending;
+pending=new Promise(function(resolve,reject){var lang=document.documentElement.lang==='ar'?'ar':'en',box=document.createElement('section');box.id='portfolio-verification';box.setAttribute('role','status');box.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483647;max-width:calc(100vw - 24px);background:white;color:#111;border:1px solid #aaa;border-radius:10px;padding:12px;box-shadow:0 4px 24px #0003;font:14px Arial,sans-serif';var label=document.createElement('div');label.textContent=lang==='ar'?'جاري التحقق لحماية الشات...':'Verifying access to the chat...';box.appendChild(label);var target=document.createElement('div');box.appendChild(target);document.body.appendChild(box);var widget=null,settled=false,timer=setTimeout(function(){done(new Error('verification timeout'))},90000);
+function done(error,value){if(settled)return;settled=true;clearTimeout(timer);if(widget!==null&&window.turnstile)window.turnstile.remove(widget);box.remove();pending=null;if(error)reject(error);else resolve(value)}
+function render(){try{widget=window.turnstile.render(target,{sitekey:sitekey,action:'portfolio_chat',appearance:'interaction-only',language:lang,callback:function(token){nativeFetch(endpoint+'/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})}).then(function(r){if(!r.ok)throw Error('verification rejected');return r.json()}).then(function(data){if(!data.ok)throw Error('verification failed');session=data;done(null,data.token)}).catch(function(e){done(e)})},'error-callback':function(){done(new Error('verification unavailable'))},'timeout-callback':function(){done(new Error('verification timeout'))}})}catch(e){done(e)}}
+if(window.turnstile)render();else{var script=document.getElementById('portfolio-turnstile');if(!script){script=document.createElement('script');script.id='portfolio-turnstile';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;document.head.appendChild(script)}script.addEventListener('load',render,{once:true});script.addEventListener('error',function(){done(new Error('verification unavailable'))},{once:true})}
+});return pending;}
+function conversationProof(){try{var key='ym-chat-owner-proof-v1',value=localStorage.getItem(key);if(!/^v1_[a-f0-9]{64}$/.test(value||'')){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);value='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.setItem(key,value)}return value}catch(e){if(!window.__ymChatOwnerProof){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);window.__ymChatOwnerProof='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('')}return window.__ymChatOwnerProof}}
+window.fetch=function(resource,options){var url=typeof resource==='string'?resource:resource&&resource.url;if(!url||url.indexOf(endpoint+'/api/')!==0||!/\/api\/(assist|chat)$/.test(url))return nativeFetch(resource,options);return verify().then(function(token){var init=Object.assign({},options),body;try{body=JSON.parse(init.body||'{}')}catch(e){return nativeFetch(resource,options)}body.securityToken=token;if(/\/api\/chat$/.test(url))body.conversationProof=conversationProof();if(/\/api\/assist$/.test(url)){var area=document.querySelector('[id$="-msgs"],#yc-msgs');if(area){var turns=Array.prototype.slice.call(area.children).filter(function(n){return n.matches('.user,.bot,.yc-u,.yc-b,.u,.b')}).map(function(n){return {r:n.matches('.user,.yc-u,.u')?'u':'a',t:(n.textContent||'').slice(0,300)}}).filter(function(n){return n.t.trim()});if(turns.length&&turns[turns.length-1].r==='u'&&turns[turns.length-1].t===String(body.message||'').slice(0,300))turns.pop();if(turns.length)body.history=turns.slice(-6)}}init.body=JSON.stringify(body);var controller=window.AbortController?new AbortController():null,timer=controller?setTimeout(function(){controller.abort()},15000):null;init.signal=controller?controller.signal:undefined;return nativeFetch(resource,init).then(function(response){if(timer)clearTimeout(timer);if(response.status===403)session=null;return response},function(error){if(timer)clearTimeout(timer);throw error})})};
+})();
+</script>
+<style>:root{--paper:#fff8fd;--ink:#43254e;--muted:#96748a;--line:#f3d9e5;--pink:#ff5d8f;--pink2:#ffc2d6;--cream:#fffdf8;--choc:#43254e;--pist:#3f9d7c;--mint:#baf3df;--lemon:#ffe066;--lav:#e6defc}
+*{box-sizing:border-box}html,body{margin:0;overflow-x:clip;max-width:100%;background:var(--paper);color:var(--ink)}
+html{scroll-behavior:smooth;scroll-padding-top:22px}
+body{font-family:"Baloo Bhaijaan 2",Cairo,Tahoma,sans-serif;line-height:1.9}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,92%);margin-inline:auto}
+h1,h2,h3,.brand{font-family:Marhey,"Baloo Bhaijaan 2",sans-serif;font-weight:700}
+/* ---- header: sticker brand + chunky links ---- */
+header.wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:26px 0 0;flex-wrap:wrap}
+.brand{display:inline-block;background:var(--lemon);border:3px solid var(--choc);border-radius:18px;padding:6px 18px;font-size:26px;transform:rotate(-2deg);box-shadow:4px 4px 0 var(--choc);line-height:1.5}
+.brand span{display:block;font-family:"Baloo Bhaijaan 2";font-size:9px;letter-spacing:4px;color:var(--pink)}
+header nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:14px;font-weight:700}
+header nav a{padding:6px 14px;border:2.5px solid transparent;border-radius:999px;transition:.15s}
+header nav a:hover{border-color:var(--choc);background:var(--mint);transform:rotate(-1.5deg)}
+button.top-order,.pill{display:inline-flex;align-items:center;gap:8px;background:var(--pink);color:#fff;border:3px solid var(--choc);border-radius:999px;padding:10px 24px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 var(--choc);transition:transform .15s,box-shadow .15s}
+button.top-order:hover,.pill:hover{transform:translate(-2px,-2px) rotate(-1deg);box-shadow:6px 6px 0 var(--choc)}
+/* ---- hero: overlapping collage ---- */
+.hero{position:relative;padding:60px 0 0}
+.hero .wrap{display:block;position:relative}
+.hero .wrap>div:first-child{position:relative;z-index:2;max-width:560px;background:var(--cream);border:3px solid var(--choc);border-radius:28px;padding:38px 36px;transform:rotate(-1deg);box-shadow:6px 6px 0 var(--pink2)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;color:var(--pist);background:var(--mint);border:2.5px solid var(--choc);border-radius:999px;padding:4px 14px}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--pink)}
+.hero h1{font-size:clamp(36px,5.4vw,58px);line-height:1.5;margin:18px 0 12px}
+.hero h1 em{font-style:normal;background:var(--pink2);border-radius:12px;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.hero p{color:var(--muted);font-size:15px;font-weight:600}
+.hero .pill{margin-top:24px}
+.hero-art{position:relative;z-index:1;width:min(460px,80%);margin:-70px 0 0 auto;transform:rotate(2deg)}
+.hero-image{border:3px solid var(--choc);border-radius:30px;overflow:hidden;box-shadow:8px 8px 0 var(--lav);background:var(--lav)}
+.hero-image img{width:100%;height:min(52vh,500px);object-fit:cover}
+.seal{position:absolute;top:-26px;inset-inline-start:-24px;background:var(--pink);color:#fff;border:3px solid var(--choc);border-radius:50%;width:110px;height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;transform:rotate(-8deg);box-shadow:4px 4px 0 var(--choc);text-align:center;line-height:1.4}
+.seal strong{font-family:Marhey;font-size:16px}
+.seal span{font-size:9.5px;font-weight:700;padding:0 8px}
+.photo-note{position:absolute;bottom:-18px;inset-inline-end:6px;background:var(--lemon);border:2.5px solid var(--choc);border-radius:14px;padding:4px 14px;font-size:12.5px;font-weight:800;transform:rotate(-3deg)}
+.hero-foot{display:flex;justify-content:center;gap:16px;font-size:11.5px;font-weight:800;letter-spacing:1px;color:var(--muted);margin-top:40px;flex-wrap:wrap}
+/* ---- sticker scatter (replaces ribbon) ---- */
+.stickers{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:56px 4% 0;max-width:900px;margin-inline:auto}
+.stickers span{border:2.5px solid var(--choc);border-radius:999px;padding:6px 18px;font-size:14px;font-weight:800;box-shadow:3px 3px 0 var(--choc);margin:4px}
+.stickers span:nth-child(4n+1){background:var(--mint);transform:rotate(-2deg)}
+.stickers span:nth-child(4n+2){background:var(--pink2);transform:rotate(1.5deg) translateY(6px)}
+.stickers span:nth-child(4n+3){background:var(--lemon);transform:rotate(-1deg) translateY(-4px)}
+.stickers span:nth-child(4n+4){background:var(--lav);transform:rotate(2.5deg)}
+/* ---- sections ---- */
+.section,.menu-section,.visit{padding:84px 0 0}
+.section-top{max-width:640px;margin-bottom:36px}
+.section-top h2,.menu-intro h2,.visit-copy h2,.story-copy h2{font-size:clamp(26px,3.8vw,40px);line-height:1.6;margin-top:12px}
+.section-top .sub,.menu-intro .sub{display:block;color:var(--muted);font-size:14px;font-weight:700;margin-top:8px}
+/* signatures: masonry-ish, rotated */
+.signature-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:22px;align-items:start}
+.signature-lead{grid-column:1/3;background:var(--mint);border:3px solid var(--choc);border-radius:26px;padding:26px;text-align:center;transform:rotate(-2deg);box-shadow:5px 5px 0 var(--choc);font-weight:800;font-size:13.5px}
+.signature-lead .steam{display:block;font-size:26px;color:var(--pist)}
+.signature-lead .cake{display:block;font-family:Marhey;font-size:52px;color:var(--pink);line-height:1.4}
+article.signature{background:var(--cream);border:3px solid var(--choc);border-radius:26px;padding:28px;box-shadow:6px 6px 0 var(--pink2)}
+article.signature:nth-of-type(1){grid-column:3/6;transform:rotate(1.2deg) translateY(18px)}
+article.signature:nth-of-type(2){grid-column:2/5;transform:rotate(-1.4deg);box-shadow:6px 6px 0 var(--mint)}
+.serial{display:inline-block;background:var(--lav);border:2px solid var(--choc);border-radius:999px;font-size:10.5px;font-weight:800;letter-spacing:1px;padding:2px 12px}
+article.signature h3{font-size:25px;margin:14px 0 6px}
+article.signature p{font-size:13.5px;color:var(--muted);font-weight:600}
+.tasting{display:inline-block;font-size:12px;font-weight:800;color:var(--pist);background:var(--mint);border-radius:999px;padding:3px 14px;margin-top:12px}
+article.signature .price{font-family:Marhey;font-size:24px;margin-top:12px;color:var(--pink)}
+article.signature .price small{font-family:"Baloo Bhaijaan 2";font-size:12px;color:var(--muted)}
+/* menu: receipt stays a receipt, tilted */
+.menu-shell{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}
+.menu-intro{position:sticky;top:30px}
+.menu-intro .little-star{font-size:34px;color:var(--pink);display:inline-block;transform:rotate(12deg)}
+.receipt{background:#fff;border:3px solid var(--choc);border-radius:8px;padding:34px 30px;transform:rotate(-1.2deg);box-shadow:8px 8px 0 var(--lav);position:relative}
+.receipt::before,.receipt::after{content:"";position:absolute;inset-inline:0;height:12px;background:radial-gradient(circle at 8px 6px,#fff 6px,transparent 7px);background-size:16px 12px}
+.receipt::before{top:-6px;transform:rotate(180deg)}
+.receipt::after{bottom:-6px}
+.receipt-title{text-align:center;border-bottom:2.5px dashed var(--line);padding-bottom:16px;margin-bottom:16px}
+.receipt-title b{font-family:Marhey;font-size:28px;display:block}
+.receipt-title small{font-size:10px;letter-spacing:4px;color:var(--pink);font-weight:800}
+.tabs{display:flex;justify-content:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.tabs button{background:var(--paper);border:2.5px solid var(--choc);border-radius:999px;font-family:inherit;font-size:13px;font-weight:800;color:var(--ink);padding:6px 18px;cursor:pointer;transition:.15s}
+.tabs button[aria-selected="true"]{background:var(--lemon);transform:rotate(-1.5deg);box-shadow:3px 3px 0 var(--choc)}
+.menu-item{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;padding:14px 2px;border-bottom:2px dashed var(--line)}
+.menu-item h3{font-size:16.5px}
+.menu-item p{font-size:12px;color:var(--muted);font-weight:600;line-height:1.8}
+.menu-price{font-family:Marhey;font-size:19px;color:var(--pink);white-space:nowrap;text-align:end}
+.menu-price small{display:block;font-family:"Baloo Bhaijaan 2";font-size:10px;color:var(--muted)}
+.receipt-end{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-weight:700;margin-top:16px}
+.barcode{height:34px;margin-top:12px;background:repeating-linear-gradient(90deg,var(--choc) 0 2px,transparent 2px 5px,var(--choc) 5px 6px,transparent 6px 10px)}
+/* occasions: zigzag steps */
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:10px}
+.step{background:var(--cream);border:3px solid var(--choc);border-radius:24px;padding:24px;box-shadow:5px 5px 0 var(--pink2)}
+.step:nth-child(1){transform:rotate(-1.6deg)}
+.step:nth-child(2){transform:rotate(1.2deg) translateY(26px);box-shadow:5px 5px 0 var(--mint)}
+.step:nth-child(3){transform:rotate(-1deg);box-shadow:5px 5px 0 var(--lav)}
+.step .num{display:inline-block;background:var(--pink);color:#fff;border:2.5px solid var(--choc);border-radius:999px;font-size:10.5px;font-weight:800;padding:2px 12px;letter-spacing:1px}
+.step h3{font-size:19px;margin:12px 0 4px}
+.step p{font-size:12.5px;color:var(--muted);font-weight:600}
+.occasions-cta{margin-top:52px}
+/* story: tilted photo over copy */
+.story{display:grid;grid-template-columns:1.05fr 1fr;gap:0;align-items:center}
+.story-photo{position:relative;z-index:1;transform:rotate(-2deg)}
+.story-photo img{border:3px solid var(--choc);border-radius:28px;height:min(46vh,440px);width:100%;object-fit:cover;box-shadow:7px 7px 0 var(--mint)}
+.story-photo .caption{position:absolute;bottom:-14px;inset-inline-start:18px;background:var(--lemon);border:2.5px solid var(--choc);border-radius:14px;padding:4px 14px;font-size:12px;font-weight:800;transform:rotate(2deg)}
+.story-copy{background:var(--lav);border:3px solid var(--choc);border-radius:28px;padding:44px 40px;transform:rotate(1deg);margin-inline-start:-40px;position:relative;z-index:2}
+.story-copy p{font-size:14px;font-weight:600;color:#5a4172;margin-top:14px}
+.amenities{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.amenities span{background:var(--paper);border:2.5px solid var(--choc);border-radius:999px;font-size:11.5px;font-weight:800;padding:3px 13px}
+.amenities span:nth-child(odd){transform:rotate(-1.5deg)}
+.amenities span:nth-child(even){transform:rotate(1.5deg);background:var(--mint)}
+.moments{display:grid;grid-template-columns:1.2fr 1fr;gap:0;margin-top:60px;align-items:start}
+.moment{position:relative}
+.moment:first-child{transform:rotate(-1.6deg);z-index:1}
+.moment:last-child{transform:rotate(1.8deg);margin-top:60px;margin-inline-start:-30px;z-index:2}
+.moment img{border:3px solid var(--choc);border-radius:24px;width:100%;height:300px;object-fit:cover;box-shadow:6px 6px 0 var(--pink2)}
+.moment:last-child img{height:360px;box-shadow:6px 6px 0 var(--lemon)}
+.moment span{position:absolute;bottom:-12px;inset-inline-start:16px;background:#fff;border:2.5px solid var(--choc);border-radius:12px;font-size:11.5px;font-weight:800;padding:3px 12px;transform:rotate(-2deg)}
+.daily{margin-top:80px;background:var(--mint);border:3px solid var(--choc);border-radius:26px;padding:28px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;transform:rotate(-.8deg);box-shadow:6px 6px 0 var(--choc)}
+.daily h3{font-size:22px;margin-top:6px;color:var(--choc)}
+.daily p{font-size:13px;font-weight:700;color:#2c6e55}
+.daily .outline{margin-top:0;background:var(--pink);color:#fff;border:3px solid var(--choc);border-radius:999px;padding:9px 22px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 var(--choc)}
+.daily .outline:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--choc)}
+.outline{background:none;border:none;border-bottom:2.5px solid var(--pink);color:var(--pink);font-family:inherit;font-weight:800;font-size:14px;cursor:pointer;padding:0 0 3px;margin-top:18px}
+/* visit */
+.visit{padding-bottom:90px}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.visit-copy p{font-size:14.5px;font-weight:600;color:var(--muted);margin-top:14px;max-width:46ch}
+.visit-card{background:var(--cream);border:3px solid var(--choc);border-radius:26px;padding:30px;transform:rotate(1.4deg);box-shadow:7px 7px 0 var(--pink2)}
+.visit-card h3{font-size:21px;margin-bottom:14px}
+.visit-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:700;padding:11px 2px;border-top:2px dashed var(--line)}
+.visit-row span:first-child{color:var(--muted)}
+.visit-card small{display:block;margin-top:14px;font-size:10.5px;color:var(--muted)}
+/* footer */
+footer.wrap{border-top:3px solid var(--choc);margin-top:30px;padding:44px 0 40px;text-align:center}
+.footer-top .brand{font-size:24px;transform:rotate(-1deg)}
+.footer-top p{color:var(--muted);font-size:13px;font-weight:700;margin-top:16px}
+.footer-bottom{margin-top:24px;font-size:11px;color:var(--muted);display:flex;flex-direction:column;gap:12px;align-items:center;font-weight:600}
+.footer-bottom .outline{margin-top:0}
+/* modal */
+dialog.modal{border:3px solid var(--choc);border-radius:26px;background:var(--cream);color:var(--ink);padding:0;max-width:min(480px,92vw);box-shadow:8px 8px 0 rgba(67,37,78,.35)}
+dialog.modal::backdrop{background:rgba(67,37,78,.45)}
+.modal-content{padding:36px 32px;position:relative;text-align:center}
+.modal-content .close{position:absolute;top:10px;inset-inline-end:14px;background:var(--pink2);border:2.5px solid var(--choc);border-radius:50%;width:32px;height:32px;color:var(--choc);font-size:15px;font-weight:800;cursor:pointer}
+.modal-content h2{font-size:24px;margin:8px 0 6px}
+.modal-content p{font-size:13px;color:var(--muted);font-weight:600}
+.preview{border:2.5px dashed var(--pink);border-radius:18px;background:#fff;padding:16px;margin:18px 0;font-size:13.5px;font-weight:700;text-align:start;line-height:1.9}
+.demo-note{font-size:10.5px;margin-top:14px}
+@media(max-width:900px){
+.menu-shell,.story,.visit-grid,.moments{grid-template-columns:1fr}
+.menu-intro{position:static}
+.story-copy{margin-inline-start:0;margin-top:-30px}
+.moment:last-child{margin-inline-start:0;margin-top:30px}
+.signature-grid{grid-template-columns:1fr}
+.signature-lead,article.signature:nth-of-type(1),article.signature:nth-of-type(2){grid-column:auto;transform:rotate(-1deg)}
+article.signature:nth-of-type(2){transform:rotate(1deg)}
+.steps-grid{grid-template-columns:1fr}
+.step:nth-child(2){transform:rotate(1.2deg)}
+.hero .wrap>div:first-child{max-width:none}
+.hero-art{margin:30px auto 0;float:none}
+}
+
+#mz-launcher{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:center;gap:8px;background:var(--pink);color:#fff;border:3px solid var(--choc);border-radius:999px;padding:12px 18px;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer;box-shadow:4px 4px 0 var(--choc);transition:transform .2s}
+#mz-launcher:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--choc)}
+#mz-launcher svg{width:18px;height:18px;display:block}
+#mz-panel{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:var(--paper);border-top:3px solid var(--choc);border-radius:26px 26px 0 0;display:none;flex-direction:column;height:min(72dvh,620px);box-shadow:0 -12px 40px #43254e33;overflow:hidden;font-family:inherit}
+#mz-panel.open{display:flex}
+#mz-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:3px solid var(--choc);background:#ffe9f3}
+#mz-head .mz-ava{width:38px;height:38px;border-radius:50%;background:var(--pink);color:#fff;border:2px solid var(--choc);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;flex:0 0 auto;font-family:Marhey,Changa,sans-serif}
+#mz-head .mz-who{flex:1;min-width:0}
+#mz-head .mz-who b{display:block;font-size:15px;color:var(--ink)}
+#mz-head .mz-who small{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--muted)}
+#mz-head .mz-who small i{width:7px;height:7px;border-radius:50%;background:#4fbf8f;display:inline-block}
+#mz-close{background:#fff;border:2px solid var(--choc);border-radius:50%;width:30px;height:30px;font-size:15px;line-height:1;cursor:pointer;color:var(--ink);flex:0 0 auto}
+#mz-close:hover{background:var(--lemon)}
+#mz-msgs{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.mz-msg{max-width:85%;padding:10px 13px;border-radius:16px;font-size:14.5px;line-height:1.75;white-space:pre-line;word-break:break-word}
+.mz-msg.bot{align-self:flex-start;background:var(--cream);border:2px solid var(--choc);color:var(--ink);border-bottom-right-radius:5px}
+.mz-msg.user{align-self:flex-end;background:var(--pink);color:#fff;border:2px solid var(--choc);border-bottom-left-radius:5px}
+.mz-order-card{align-self:stretch;background:var(--cream);border:3px solid var(--choc);border-radius:16px;padding:12px 14px;font-size:14px;color:var(--choc);box-shadow:3px 3px 0 var(--pink2)}
+.mz-order-card .mz-oc-title{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px dashed #d8b7c8;padding-bottom:8px;margin-bottom:8px}
+.mz-order-card .mz-oc-title b{font-size:15px}
+.mz-order-card .mz-oc-title small{color:#a4829b;font-family:Georgia,serif;font-size:10px;letter-spacing:1px}
+.mz-order-card .mz-row{display:flex;justify-content:space-between;padding:3px 0}
+.mz-order-card .mz-row.total{border-top:2px dashed #d8b7c8;margin-top:7px;padding-top:8px;font-weight:bold;font-size:15px}
+.mz-order-card .mz-row.total span:last-child{color:var(--pink)}
+.mz-order-card .mz-muted{color:#a4829b;font-size:12.5px}
+#mz-typing{align-self:flex-start;background:var(--cream);border:2px solid var(--choc);border-radius:16px;border-bottom-right-radius:5px;padding:12px 16px;display:none;gap:5px}
+#mz-typing.on{display:flex}
+#mz-typing span{width:6px;height:6px;border-radius:50%;background:var(--pink);animation:mzbnc 1.1s infinite}
+#mz-typing span:nth-child(2){animation-delay:.15s}
+#mz-typing span:nth-child(3){animation-delay:.3s}
+@keyframes mzbnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+#mz-chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px;border-top:3px solid var(--choc);background:var(--paper)}
+#mz-chips:empty{display:none}
+#mz-chips button{border:2px solid var(--choc);background:#fff;color:var(--choc);border-radius:999px;padding:7px 14px;font-size:13.5px;font-family:inherit;cursor:pointer;font-weight:700;transition:.15s}
+#mz-chips button:hover{background:var(--lemon)}
+#mz-chips button.mz-primary{background:var(--pink);color:#fff}
+#mz-chips button.mz-primary:hover{background:#e84a7d}
+#mz-input{display:flex;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom));background:var(--paper)}
+#mz-input input{flex:1;border:2px solid var(--choc);border-radius:999px;padding:10px 16px;font-size:14.5px;font-family:inherit;background:var(--cream);color:var(--ink);outline:none}
+#mz-input input:focus{border-color:var(--pink)}
+#mz-input button{background:var(--pink);color:#fff;border:2px solid var(--choc);border-radius:999px;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+#mz-input button svg{width:18px;height:18px;transform:scaleX(-1)}
+@media(min-width:720px){
+  #mz-panel{left:24px;right:auto;bottom:86px;width:384px;height:min(70vh,600px);border:3px solid var(--choc);border-radius:22px}
+  #mz-launcher{left:24px;bottom:24px}
+}
+</style>
+<style id="overlay-chat-safety">body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-launcher"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-panel"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) #yc-fab{visibility:hidden!important;pointer-events:none!important}</style><meta id="arabic-practical-route" name="demo-practical-routing" content="1"><script id="portfolio-safe-summary">function yEscapeHTML(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]||c})}</script></head>
+<body>
+<header class="wrap"><a href="#" class="brand" aria-label="قشطة الرئيسية">قشطة<span lang="en">QESHTA</span></a>
+<nav aria-label="القائمة الرئيسية"><a href="#menu">القائمة</a><a class="desktop" href="#occasions">المناسبات</a><a class="desktop" href="#story">حكايتنا</a><a class="desktop" href="#visit">الفرع</a><button class="top-order order">اطلب عبر واتساب ↖</button></nav></header>
+<main>
+<section class="hero wrap">
+<div><div class="eyebrow"><i class="dot"></i> تورتات مناسبات · حلويات شرقية أصيلة</div>
+<h1>حلوى...<br><em>تجمع العائلة.</em></h1>
+<p>تورتة بالاسم والعبارة التي تحبها، وحلويات شرقية بالسمن البلدي.<br>كل شيء يُصنع طازجًا، يومًا بيوم.</p>
+<a href="#menu" class="pill">تصفّح القائمة <span class="arrow">↙</span></a></div>
+<div class="hero-art"><div class="hero-image"><img src="/assets/media-ccf5a2a9d7153628.webp" alt="تورتة شوكولاتة بجاناش سائل على طبق تقديم" fetchpriority="high" loading="eager" width="900" height="1100"></div>
+<div class="seal"><span>سمن بلدي</span><strong>QESHTA</strong><span>وطازجة كل يوم</span></div>
+<span class="photo-note">قطعة واحدة؟ لا، خذ اثنتين.</span></div>
+</section>
+<div class="hero-foot wrap"><span>مناسبتك القادمة تبدأ من هنا.</span><span>BAKED FRESH. EVERY DAY.</span></div>
+<div class="stickers wrap"><span>تورتة عيد ميلاد</span><span>كنافة بالمانجا</span><span>ضيافة خطوبة</span><span>حلويات صغيرة للجلسات</span><span>العبارة التي تحبها</span></div>
+<section class="menu-section" id="menu"><div class="menu-shell wrap">
+<div class="menu-intro"><div class="eyebrow">02 / قائمة قشطة</div><h2>ماذا تشتهي<br>اليوم؟</h2><p class="sub">تورتة لمناسبة، أم كيلو حلويات شرقية تجمع الشمل، أم قطعة صغيرة بجانب الشاي؟ اختر ونحن نضبطها لك.</p><div class="little-star" aria-hidden="true">✳</div></div>
+<div class="receipt"><div class="receipt-title"><b>قشطة</b><small>SWEETEN YOUR DAY</small></div>
+<div class="tabs" role="tablist" aria-label="أقسام القائمة"><button role="tab" id="tab-torte" aria-selected="true" aria-controls="menu-list" data-cat="torte">تورت</button><button role="tab" id="tab-oriental" aria-selected="false" aria-controls="menu-list" data-cat="oriental" tabindex="-1">حلويات شرقية</button><button role="tab" id="tab-mini" aria-selected="false" aria-controls="menu-list" data-cat="mini" tabindex="-1">حلويات صغيرة</button></div>
+<div id="menu-list" role="tabpanel" aria-labelledby="tab-torte"></div>
+<div class="receipt-end"><span>الأسعار بالجنيه المصري</span><span>الحلوى تُصلح المزاج ♡</span></div>
+<div class="barcode" aria-hidden="true"></div></div>
+</div></section>
+<section class="section wrap" id="signatures">
+<div class="section-top"><div><div class="eyebrow">01 / تُطلب بالاسم</div><h2>هناك أشياء لا تُفوَّت.</h2></div><span class="sub">وصفات لها عائلة تحبها.</span></div>
+<div class="signature-grid">
+<div class="signature-lead" aria-hidden="true"><span class="steam">≈</span><div class="cake">ق</div><small>مصنوعة بحب. وبلا استعجال.</small></div>
+<article class="signature"><span class="serial">NO. 01 / BESTSELLER</span><h3>تورتة شوكولاتة فوندان</h3><p>ثلاث طبقات شوكولاتة بلجيكية، وجاناش سائل، ولمحة ملح بحر. التورتة التي بدأنا بها.</p><span class="tasting">غنية · كثيفة · تذوب في الفم</span><div class="price">650 <small>جنيه / صغيرة</small></div></article>
+<article class="signature"><span class="serial">NO. 02 / ORIENTAL</span><h3>كنافة بالمانجا</h3><p>كنافة مقرمشة بالسمن البلدي، ومانجا طازجة، وقشطتنا التي تحمل اسم المحل.</p><span class="tasting">منعشة · مشبعة · حلوة في رمضان وكل السنة.</span><div class="price">320 <small>جنيه / كيلو</small></div></article>
+</div></section>
+<section class="section wrap" id="occasions">
+<div class="section-top"><div><div class="eyebrow">03 / مناسبتك علينا</div><h2>تورتة باسمك.<br>وبعبارة من اختيارك.</h2></div><span class="sub">عيد ميلاد، خطوبة، تخرج، أو مفاجأة فحسب.</span></div>
+<div class="steps-grid">
+<div class="step"><span class="num">STEP 01</span><h3>اختر الطعم والحجم</h3><p>من الفوندان إلى الريد فيلفت، ومن صغيرة تكفي اثنين إلى كبيرة تكفي عائلة.</p></div>
+<div class="step"><span class="num">STEP 02</span><h3>أخبرنا بالعبارة والتاريخ</h3><p>ما تريد كتابته على التورتة، ومتى تحتاجها بالضبط.</p></div>
+<div class="step"><span class="num">STEP 03</span><h3>استلم أو نوصلها إليك</h3><p>تمرّ لتستلمها من الفرع، أو تصلك حتى الباب في موعدها.</p></div>
+</div>
+<button class="pill occasions-cta" id="occasion-order">ابدأ طلب مناسبتك <span class="arrow">↖</span></button>
+</section>
+<section class="section wrap" id="story"><div class="story">
+<div class="story-photo"><img src="/assets/media-bd4fcfa9092ff99c.webp" alt="علبة شوكولاتة فاخرة مفتوحة" loading="lazy" width="800" height="700"><span class="caption">رائحة الفرن... تصل قبلنا.</span></div>
+<div class="story-copy"><div class="eyebrow">04 / من الفرن إلى البيت</div><h2>وصفات قديمة.<br>ويد ماهرة.</h2>
+<p>بدأت قشطة من مطبخ بيت صغير وتورتة عيد ميلاد صُنعت لجارتنا. ومنذ ذلك اليوم لم تتوقف الطلبات، والوصفة هي هي: سمن بلدي، وخامات سليمة، وعمل على مهل.</p>
+<p>تُصنع كل تورتة في يومها، وتخرج الحلويات الشرقية من الفرن إلى العلبة مباشرة. ولهذا تصل رائحتنا قبلنا.</p>
+<div class="amenities"><span>سمن بلدي ١٠٠٪</span><span>تورتة يومها</span><span>عبارة على ذوقك</span><span>ضيافة مناسبات كاملة</span></div></div>
+</div>
+<div class="moments">
+<div class="moment"><img src="/assets/media-131d8645c83a7629.webp" alt="صينية بقلاوة بالفستق مقطعة" loading="lazy" width="700" height="560"><span>بقلاوتنا... فستق ليس أي فستق.</span></div>
+<div class="moment"><img src="/assets/media-6f193bc276287ae9.webp" alt="تورتة عيد ميلاد وردية مزخرفة" loading="lazy" width="700" height="800"><span>تورتة عيد ميلاد، بالاسم وبالهناء.</span></div>
+</div>
+<div class="daily"><div><div class="eyebrow">محتار؟ اترك الأمر لنا</div><h3 id="daily-name">فوندان وسط + ميني إكلير</h3><p id="daily-note">تورتة تكفي العائلة وقطعة صغيرة بجانب الشاي. ١٬٠٧٠ جنيه.</p></div>
+<button class="outline" id="shuffle">اقترح عليّ شيئًا آخر ↻</button></div>
+</section>
+<section class="visit" id="visit"><div class="visit-grid wrap">
+<div class="visit-copy"><div class="eyebrow">05 / الفرع والتوصيل</div><h2>مرّ بنا.<br>أو تأتيك الحلوى.</h2>
+<p>اطلب قبل ٦ مساءً ويصلك الطلب في اليوم نفسه. وإن مررت بنا، ستجد الفرن يعمل أمامك والرائحة ستقنعك قبلنا.</p>
+<button class="pill order">جهّز طلبك عبر واتساب <span class="arrow">↖</span></button></div>
+<div class="visit-card"><h3>قشطة / مدينة نصر</h3>
+<div class="visit-row"><span>أين تجدنا؟</span><span>شارع عباس العقاد، مدينة نصر</span></div>
+<div class="visit-row"><span>السبت للخميس</span><span>٩ صباحًا - ١٢ منتصف الليل</span></div>
+<div class="visit-row"><span>الجمعة</span><span>١ ظهرًا - ١٢ منتصف الليل</span></div>
+<div class="visit-row"><span>التوصيل</span><span>حتى ١٠ كيلومترات من الفرع</span></div>
+<small>عنوان ومواعيد توضيحية لنسخة العرض، وليس فرعًا حقيقيًا.</small></div>
+</div></section>
+</main>
+<footer class="wrap"><div class="footer-top"><a href="#" class="brand">قشطة<span lang="en">QESHTA SWEETS</span></a><p>حلوى طازجة. وناس أجمل.<br>والباقي يأتي بالقشطة.</p></div>
+<div class="footer-bottom"><span>نسخة تصميم تجريبية لمتجر حلويات خيالي. الأسماء والأسعار والمواعيد للعرض فقط. الصور تعبيرية من Unsplash.</span><button class="outline" id="install">ثبّت قشطة على هاتفك ↗</button></div></footer>
+<dialog class="modal" id="order-modal" aria-labelledby="modal-title"><div class="modal-content"><button class="close" aria-label="أغلق النافذة">×</button><div class="eyebrow" id="modal-kicker">واتساب / تجربة الطلب</div><h2 id="modal-title">ماذا نجهّز لك؟</h2><p id="modal-desc">هذه معاينة لرسالة الطلب. في الموقع الحقيقي يفتح هذا الزر واتساب المتجر والطلب جاهز.</p><div class="preview" id="order-preview">أهلًا قشطة! أريد أن أطلب تورتة شوكولاتة فوندان وسط لعيد ميلاد يوم الخميس، مكتوب عليها "عيد ميلاد سعيد يا نور". هل التوصيل متاح؟</div><button class="pill" id="copy-order">انسخ رسالة الطلب <span>↗</span></button><p class="demo-note">نسخة عرض فقط. لا يُرسَل أي طلب ولا تُجمَع أي بيانات.</p></div></dialog>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"></script>
+<script>
+const menu={torte:[['شوكولاتة فوندان','تلات طبقات شوكولاتة بلجيكية وجاناش سايح.',650],['ريد فيلفت','طبقات مخملية وكريمة جبن خفيفة.',600],['مانجا طازجة','كيك فانيليا إسفنجي وطبقات مانجا طبيعية.',620],['فراولة وكريمة','فراولة طازجة وكريمة شانتيه أصيلة.',580],['لوتس كراميل','كراميل وبسكوت لوتس في كل طبقة.',640]],oriental:[['كنافة بالقشطة','كنافة مقرمشة وقلبها قشطة بلدي.',300],['بقلاوة بالفستق','طبقات رقيقة وفستق حلبي في أعلاها.',520],['بسبوسة بالقشطة','طرية ومشبعة بالشراب بقدر مضبوط.',240],['جلاش بالمكسرات','مكسرات مشكلة وسمن بلدي فقط.',380],['لقمة القاضي','مقلية ومقرمشة ومنقوعة في الشراب.',180]],mini:[['ميني إكلير','عجينة خفيفة وحشوة كريمة وغطاء شوكولاتة.',45],['ميني تارت فواكه','تارت مقرمش وفواكه الموسم.',55],['كب كيك','إسفنجة هشة وإضافات من اختيارك.',50],['بيتي فور مشكل','علبة متنوعة تشرّف أي ضيافة.',260]]};
+const list=document.querySelector('#menu-list'),tabs=[...document.querySelectorAll('[data-cat]')];
+const unit={torte:'جنيه / صغيرة',oriental:'جنيه / كيلو',mini:'جنيه / القطعة'};
+function setMenu(cat){tabs.forEach(t=>{let active=t.dataset.cat===cat;t.setAttribute('aria-selected',active);t.tabIndex=active?0:-1});list.setAttribute('aria-labelledby','tab-'+cat);list.innerHTML=menu[cat].map(i=>`<article class="menu-item"><div><h3>${i[0]}</h3><p>${i[1]}</p></div><div class="menu-price">${i[2]}<small>${unit[cat]}</small></div></article>`).join('')}
+tabs.forEach((t,i)=>{t.onclick=()=>setMenu(t.dataset.cat);t.onkeydown=e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();const next=tabs[(i+(e.key==='ArrowLeft'?1:2))%3];next.focus();setMenu(next.dataset.cat)}}});setMenu('torte');
+const moods=[['فوندان وسط + ميني إكلير','تورتة تكفي العيلة وحاجة صغيرة جنب الشاي. ١٬٠٧٠ جنيه.'],['كيلو كنافة بالقشطة','جلسة لا يغادرها أحد غاضبًا. ٣٠٠ جنيه.'],['ريد فيلفت صغيرة','لمناسبة صغيرة وقلب كبير. ٦٠٠ جنيه.'],['علبة بيتي فور + نصف كيلو بقلاوة','ضيافة تشرّف دون تفكير. ٥٢٠ جنيه.']];let mood=0;
+document.querySelector('#shuffle').onclick=()=>{mood=(mood+1)%moods.length;document.querySelector('#daily-name').textContent=moods[mood][0];document.querySelector('#daily-note').textContent=moods[mood][1]};
+const modal=document.querySelector('#order-modal');
+function openOrderModal(){document.querySelector('#modal-title').textContent='ماذا نجهّز لك؟';document.querySelector('#modal-kicker').textContent='واتساب / تجربة الطلب';document.querySelector('#modal-desc').textContent='هذه معاينة لرسالة الطلب. في الموقع الحقيقي يفتح هذا الزر واتساب المتجر والطلب جاهز.';document.querySelector('#order-preview').textContent='أهلًا قشطة! أريد أن أطلب تورتة شوكولاتة فوندان وسط لعيد ميلاد يوم الخميس، مكتوب عليها "عيد ميلاد سعيد يا نور". هل التوصيل متاح؟';document.querySelector('#copy-order').style.display='flex';document.querySelector('#copy-order').innerHTML='انسخ رسالة الطلب <span>↗</span>';modal.showModal()}
+document.querySelectorAll('.order').forEach(b=>b.onclick=openOrderModal);
+document.querySelector('.close').onclick=()=>modal.close();modal.onclick=e=>{if(e.target===modal)modal.close()};
+document.querySelector('#copy-order').onclick=async()=>{const msg=document.querySelector('#order-preview').textContent;try{await navigator.clipboard.writeText(msg);document.querySelector('#copy-order').textContent='تم النسخ. الرسالة جاهزة ✓'}catch{document.querySelector('#copy-order').textContent='حدّد الرسالة وانسخها من الأعلى'}};
+document.querySelector('#occasion-order').onclick=()=>{if(window.__mzOpen){window.__mzOpen('order')}else{openOrderModal()}};
+let installEvent;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installEvent=e});
+document.querySelector('#install').onclick=async()=>{if(installEvent){await installEvent.prompt();installEvent=null}else{document.querySelector('#modal-title').textContent='قشطة على هاتفك';document.querySelector('#modal-kicker').textContent='قشطة / تطبيقك المفضّل';document.querySelector('#modal-desc').textContent='ثبّت قشطة بأيقونة على الشاشة الرئيسية، وافتحها في نافذة تطبيق مستقلة.';document.querySelector('#order-preview').textContent='أندرويد: افتح قائمة المتصفح واختر تثبيت التطبيق. آيفون: افتح الموقع في Safari، اضغط مشاركة، ثم إضافة إلى الشاشة الرئيسية.';document.querySelector('#copy-order').style.display='none';modal.showModal()}};
+</script>
+<script>
+(function(){
+if(!window.gsap||!window.ScrollTrigger)return;
+if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+gsap.registerPlugin(ScrollTrigger);
+var E='power3.out';
+function reveal(sel,from){gsap.utils.toArray(sel).forEach(function(el){var v={opacity:0,duration:.9,ease:E,scrollTrigger:{trigger:el,start:'top 92%',once:true}};for(var k in from)v[k]=from[k];gsap.from(el,v);});}
+function batch(sel,from,stagger){var els=gsap.utils.toArray(sel);if(!els.length)return;var init={opacity:0};for(var k in from)init[k]=from[k];gsap.set(els,init);ScrollTrigger.batch(els,{start:'top 92%',once:true,onEnter:function(b){var v={opacity:1,duration:.85,stagger:stagger,ease:E,overwrite:true};for(var k in from){if(k==='y')v.y=0;else if(k==='x')v.x=0;else if(k==='scale')v.scale=1;}gsap.to(b,v);}});}
+function watchList(containerSel,itemSel){var c=document.querySelector(containerSel);if(!c)return;new MutationObserver(function(muts){var added=[];muts.forEach(function(m){m.addedNodes.forEach(function(n){if(n.nodeType!==1)return;if(n.matches&&n.matches(itemSel))added.push(n);else if(n.querySelector)added=added.concat([].slice.call(n.querySelectorAll(itemSel)));});});if(added.length)gsap.fromTo(added,{opacity:0,y:24},{opacity:1,y:0,duration:.5,stagger:.06,ease:'power2.out',overwrite:true});}).observe(c,{childList:true,subtree:true});}
+function hoverLift(sel){if(!window.matchMedia('(hover:hover) and (pointer:fine)').matches)return;gsap.utils.toArray(sel).forEach(function(el){el.addEventListener('mouseenter',function(){gsap.to(el,{y:-6,duration:.3,ease:'power2.out',overwrite:'auto'});});el.addEventListener('mouseleave',function(){gsap.to(el,{y:0,duration:.35,ease:'power2.out',overwrite:'auto'});});});}
+gsap.from('header',{y:-24,opacity:0,duration:.8,ease:E});
+gsap.from('.hero .eyebrow',{y:16,opacity:0,duration:.7,delay:.15,ease:E});
+gsap.from('.hero h1',{y:44,opacity:0,duration:1,delay:.25,ease:E});
+gsap.from('.hero p',{y:24,opacity:0,duration:.8,delay:.45,ease:E});
+gsap.from('.hero .pill',{y:18,opacity:0,duration:.7,delay:.58,ease:E});
+gsap.from('.hero-art',{scale:.7,opacity:0,duration:1.1,delay:.4,ease:'back.out(1.6)'});
+gsap.from('.seal',{scale:.4,opacity:0,rotation:-30,duration:1,delay:.9,ease:'back.out(1.7)'});
+gsap.to('.seal',{y:-8,duration:2.8,ease:'sine.inOut',repeat:-1,yoyo:true,delay:2});
+reveal('.section-top',{y:30});
+reveal('.signature-lead',{y:26});
+reveal('.menu-intro',{y:24});
+reveal('.receipt',{y:34});
+reveal('.story-photo',{y:26});
+reveal('.story-copy',{y:26});
+reveal('.daily',{y:20});
+reveal('.visit-copy',{y:26});
+reveal('.visit-card',{y:30});
+batch('.signature-grid .signature',{y:40},.12);
+batch('.steps-grid .step',{y:34},.12);
+batch('.moments .moment',{y:30},.15);
+hoverLift('.signature');hoverLift('.moment');hoverLift('.step');
+watchList('#menu-list','.menu-item');
+})();
+</script>
+<script id="mz-widget-js">(function () {
+  /* name-refusal-fix-v1 */
+  function widgetNameStep(step) {
+    return /^(lead-name|await-name|book-name)$/.test(step);
+  }
+  function widgetName(raw) {
+    var value = String(raw || '').normalize('NFKC').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '').trim();
+    value = value.replace(/^(?:(?:أنا|انا)\s+)?(?:اسمي|إسمي|اسم حضرتك)\s*[:：]?\s*/, '').replace(/^(?:أنا|انا)\s+/, '').replace(/^(?:my name is|i am|i'm)\s+/i, '').trim();
+    var t = value.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[^\p{L}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+    if (!t || /^(?:لا|لاء|لا شكرا|لأ|مش مهم|مش مهم الاسم|الاسم مش مهم|مو مهم|مو مهم الاسم|مجهول|فاعل خير|بدون اسم|من غير اسم|اي اسم|اي حاجه|حد|فلان|فلان الفلاني|اسم|الاسم|اسمك|سري|سر|مش هقول|مش هقولك|مالكش دعوه|ملكش دعوه|خليك في حالك|لا يهم|لا يهم الاسم|مفيش اسم|محدش|انا مين|انت مالك|انت مين|باتمان|سبايدرمان|سوبرمان|no|no thanks|none|anonymous|anon|unknown|guest|test|testing|joke|batman|superman|n a|skip|pass|whatever|not important|doesn t matter|name doesn t matter|prefer not to say|rather not say|not telling|none of your business|null|undefined)$/u.test(t)) return null;
+    if (/(?:^|\s)(?:مش|مو|غير|مش حابب|مش حابه|مش عايز|مش عاوز|مش عايزه|مش عاوزه|مش هقول|مابحبش|ما بحبش|مبحبش|مش لازم|مش ضروري|مش فارق|مش هيفرق|مش هتفرق)(?:\s|$)/u.test(t) && /(?:اسم|اقول|اقلك|اعرف|اكتب|اذكر|مهم|حابب|عايز|عاوز|ضروري|فارق|هيفرق|هتفرق)/u.test(t)) return null;
+    if (/(?:نكمل|كمل|تخطي|تجاوز|بعدين|سيبك من|خلينا من غير|خصوصيه|سريه|بهزر|بهزار|هزار|ههه|هاها|لول|هههه|lol|haha|skip|prefer not|rather not|don t want|won t tell|not sharing|private|privacy|never mind|nevermind)/u.test(t)) return null;
+    if (value.length < 2 || value.length > 70 || value.split(/\s+/).length > 6 || !/^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]*$/u.test(value)) return null;
+    if (!/[\p{L}]{2}/u.test(value) || /^(.)\1{2,}$/u.test(t.replace(/\s/g, ''))) return null;
+    return value;
+  }
+  function widgetCall(name) {
+    return name ? ' يا ' + name : '';
+  }
+  function widgetTitle(name) {
+    return name ? ' ' + name : ' بدون اسم';
+  }
+  'use strict';
+  if (window.__mzAssistant) return;
+  window.__mzAssistant = true;
+  var MENU = {
+    torte: [{
+      n: 'شوكولاتة فوندان',
+      d: 'تلات طبقات شوكولاتة بلجيكي وجاناش سايح.',
+      p: 650,
+      sized: 'torte',
+      a: ['شوكولاتة فوندان', 'شوكولاته فوندان', 'فوندان', 'شوكولاتة', 'شوكولاته', 'chocolate', 'تورتة شوكولاتة', 'تورتة شوكولاته', 'تورت شوكولاتة']
+    }, {
+      n: 'ريد فيلفت',
+      d: 'طبقات مخملية وكريمة جبن خفيفة.',
+      p: 600,
+      sized: 'torte',
+      a: ['ريد فيلفت', 'ريد فلفت', 'red velvet', 'فيلفت', 'الحمرا', 'الحمراء']
+    }, {
+      n: 'مانجا طازجة',
+      d: 'إسفنج فانيليا وطبقات مانجا طبيعية.',
+      p: 620,
+      sized: 'torte',
+      a: ['مانجا طازجة', 'مانجا', 'مانجو', 'mango', 'تورتة مانجا']
+    }, {
+      n: 'فراولة وكريمة',
+      d: 'فراولة طازجة وكريمة شانتيه أصيلة.',
+      p: 580,
+      sized: 'torte',
+      a: ['فراولة', 'فراوله', 'فراولة وكريمة', 'فراوله وكريمه', 'تورتة فراولة', 'تورتة فراوله']
+    }, {
+      n: 'لوتس كراميل',
+      d: 'كراميل وبسكوت لوتس في كل طبقة.',
+      p: 640,
+      sized: 'torte',
+      a: ['لوتس', 'لوتس كراميل', 'كراميل', 'lotus', 'تورتة لوتس']
+    }],
+    oriental: [{
+      n: 'كنافة بالقشطة',
+      d: 'كنافة مقرمشة وقلبها قشطة بلدي.',
+      p: 300,
+      sized: 'kilo',
+      a: ['كنافة بالقشطة', 'كنافه بالقشطه', 'كنافة', 'كنافه', 'konafa', 'كنافة قشطة']
+    }, {
+      n: 'بقلاوة بالفستق',
+      d: 'طبقات رقيقة وفستق حلبي في أعلاها.',
+      p: 520,
+      sized: 'kilo',
+      a: ['بقلاوة', 'بقلاوه', 'بقلاوة بالفستق', 'بقلاوه بالفستق', 'فستق', 'baklava']
+    }, {
+      n: 'بسبوسة بالقشطة',
+      d: 'طرية ومشبعة بالشراب بقدر مضبوط.',
+      p: 240,
+      sized: 'kilo',
+      a: ['بسبوسة', 'بسبوسه', 'بسبوسة بالقشطة', 'بسبوسه بالقشطه', 'basbousa']
+    }, {
+      n: 'جلاش بالمكسرات',
+      d: 'مكسرات مشكلة وسمن بلدي فقط.',
+      p: 380,
+      sized: 'kilo',
+      a: ['جلاش', 'جيلاش', 'جلاش بالمكسرات', 'مكسرات', 'goulash']
+    }, {
+      n: 'لقمة القاضي',
+      d: 'مقلية ومقرمشة ومنقوعة في الشراب.',
+      p: 180,
+      sized: 'kilo',
+      a: ['لقمة القاضي', 'لقمه القاضي', 'زلابية', 'لقيمات', 'لقمة', 'لقمه']
+    }],
+    mini: [{
+      n: 'ميني إكلير',
+      d: 'عجينة خفيفة وحشوة كريمة وغطاء شوكولاتة.',
+      p: 45,
+      sized: 'piece',
+      a: ['ميني إكلير', 'ميني اكلير', 'اكلير', 'إكلير', 'eclair']
+    }, {
+      n: 'ميني تارت فواكه',
+      d: 'تارت مقرمش وفواكه الموسم.',
+      p: 55,
+      sized: 'piece',
+      a: ['ميني تارت', 'تارت', 'تارت فواكه', 'تارت فواكة', 'tart']
+    }, {
+      n: 'كب كيك',
+      d: 'إسفنجة هشة وإضافات من اختيارك.',
+      p: 50,
+      sized: 'piece',
+      a: ['كب كيك', 'كبكيك', 'cupcake', 'كاب كيك']
+    }, {
+      n: 'بيتي فور مشكل',
+      d: 'علبة متنوعة تشرّف أي ضيافة.',
+      p: 260,
+      sized: 'piece',
+      a: ['بيتي فور', 'بيتيفور', 'بيتي فور مشكل', 'petit four', 'علبة بيتي فور']
+    }]
+  };
+  var ALL = MENU.torte.concat(MENU.oriental, MENU.mini);
+  var DELIVERY_FEE = 25;
+  var SIZES_TORTE = [{
+    n: 'صغيرة (٨ قطع)',
+    f: 1
+  }, {
+    n: 'وسط (١٢ قطعة)',
+    f: 1.45
+  }, {
+    n: 'كبيرة (١٦ قطعة)',
+    f: 1.85
+  }];
+  var SIZES_KILO = [{
+    n: 'نص كيلو',
+    f: .55
+  }, {
+    n: 'كيلو',
+    f: 1
+  }, {
+    n: 'كيلو ونص',
+    f: 1.45
+  }];
+  function sizesFor(it) {
+    return it.sized === 'torte' ? SIZES_TORTE : SIZES_KILO;
+  }
+  function priceOf(it, sizeObj) {
+    var f = sizeObj ? sizeObj.f : 1;
+    return Math.round(it.p * f / 5) * 5;
+  }
+  function norm(s) {
+    return (s || '').toLowerCase().replace(/ـ/g, '').replace(/[\u200b-\u200f\u202a-\u202e]/g, '').replace(/\s+/g, ' ').replace(/[ً-ْٰ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/[٠-٩]/g, function (c) {
+      return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+    }).trim();
+  }
+  var NUM_WORDS = {
+    'واحد': 1,
+    'واحده': 1,
+    'واحدة': 1,
+    'اتنين': 2,
+    'اثنين': 2,
+    'تنين': 2,
+    'تلت': 3,
+    'تلاته': 3,
+    'ثلاثه': 3,
+    'ثلاثة': 3,
+    'اربعه': 4,
+    'أربعه': 4,
+    'اربعة': 4,
+    'خمسه': 5,
+    'خمسة': 5,
+    'سته': 6,
+    'ستة': 6,
+    'سبعه': 7,
+    'سبعة': 7,
+    'تمانيه': 8,
+    'تمانية': 8,
+    'تسعه': 9,
+    'تسعة': 9,
+    'عشره': 10,
+    'عشرة': 10
+  };
+  function parseQty(t) {
+    t = norm(t);
+    var m = t.match(/\b([1-9]|1[0-2])\b/);
+    if (m) return +m[1];
+    for (var w in NUM_WORDS) {
+      if (t.indexOf(norm(w)) > -1) return NUM_WORDS[w];
+    }
+    return null;
+  }
+  function findItem(t) {
+    t = norm(t);
+    var best = null,
+      bl = 0;
+    for (var i = 0; i < ALL.length; i++) {
+      var it = ALL[i];
+      var names = [it.n].concat(it.a);
+      for (var j = 0; j < names.length; j++) {
+        var nm = norm(names[j]);
+        if (nm.length > 1 && t.indexOf(nm) > -1 && nm.length > bl) {
+          bl = nm.length;
+          best = it;
+        }
+      }
+    }
+    return best;
+  }
+  function hasAny(t, arr) {
+    t = norm(t);
+    for (var i = 0; i < arr.length; i++) {
+      if (t.indexOf(norm(arr[i])) > -1) return true;
+    }
+    return false;
+  }
+
+  /* ---------- off-menu + free-text helpers ---------- */
+  var OFFMENU = [{
+    k: ['جاتوه سواريه', 'جاتوه سوارية', 'جاتوه', 'جاتو', 'سواريه', 'سوارية', 'gateau'],
+    s: ['ميني إكلير', 'ميني تارت فواكه']
+  }, {
+    k: ['آيس كريم', 'ايس كريم', 'ايسكريم', 'ice cream'],
+    s: ['مانجا طازجة', 'ميني تارت فواكه']
+  }, {
+    k: ['قهوة', 'قهوه', 'شاي', 'مشروب', 'عصير', 'كابتشينو', 'لاتيه'],
+    s: []
+  }, {
+    k: ['بيتزا', 'فطير', 'حادق', 'مالح', 'سندوتش', 'ساندوتش'],
+    s: []
+  }, {
+    k: ['حلاوة المولد', 'حلاوه المولد', 'عروسة المولد', 'المولد'],
+    s: ['بقلاوة بالفستق', 'جلاش بالمكسرات']
+  }, {
+    k: ['نوتيلا', 'كنافة نوتيلا', 'كنافة بالنوتيلا', 'كنافه نوتيلا'],
+    s: ['كنافة بالقشطة', 'شوكولاتة فوندان']
+  }, {
+    k: ['دايت', 'دايت', 'بدون سكر', 'من غير سكر', 'سكر دايت'],
+    s: []
+  }, {
+    k: ['رز بلبن', 'رز باللبن', 'أرز بلبن', 'مهلبية', 'مهلبيه', 'أم علي', 'ام علي'],
+    s: ['بسبوسة بالقشطة', 'كنافة بالقشطة']
+  }];
+  function byName(n) {
+    for (var i = 0; i < ALL.length; i++) {
+      if (ALL[i].n === n) return ALL[i];
+    }
+    return null;
+  }
+  function offMenuHit(t) {
+    t = norm(t);
+    var best = null,
+      bl = 0;
+    for (var i = 0; i < OFFMENU.length; i++) {
+      var e = OFFMENU[i];
+      for (var j = 0; j < e.k.length; j++) {
+        var k = norm(e.k[j]);
+        if (t.indexOf(k) > -1 && k.length > bl) {
+          bl = k.length;
+          best = {
+            label: e.k[j],
+            suggest: e.s
+          };
+        }
+      }
+    }
+    return best;
+  }
+  function suggestChips(hit, extra) {
+    var c = [];
+    for (var i = 0; i < hit.suggest.length; i++) {
+      var it = byName(hit.suggest[i]);
+      if (it) c.push({
+        label: it.n
+      });
+    }
+    return c.concat(extra || []);
+  }
+  function offMenuReply(hit, resume, makeChips) {
+    var names = [];
+    for (var i = 0; i < hit.suggest.length; i++) {
+      var it = byName(hit.suggest[i]);
+      if (it) names.push(it.n);
+    }
+    var msg = 'للأسف "' + hit.label + '" مش على منيو قشطة دلوقتي.';
+    if (names.length) msg += ' بس أقرب حاجة ليه عندنا: ' + names.join(' أو ') + ' — بيتعملوا طازة كل يوم.';
+    if (resume) msg += '\n' + resume;
+    botSay(msg, 650, function () {
+      setChips(makeChips());
+    });
+  }
+
+  /* ---------- DOM ---------- */
+  var root = document.createElement('div');
+  root.innerHTML = '<button id="mz-launcher" aria-label="افتح محادثة مساعد قشطة">' + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg>' + '<span>اسأل قشطة</span></button>' + '<section id="mz-panel" role="dialog" aria-label="مساعد قشطة">' + '<header id="mz-head"><div class="mz-ava">ق</div>' + '<div class="mz-who"><b>مساعد قشطة</b><small><i></i>متصل الآن · يردّ فورًا</small></div>' + '<button id="mz-close" aria-label="إغلاق المحادثة">✕</button></header>' + '<div id="mz-msgs" aria-live="polite"></div>' + '<div id="mz-typing" aria-hidden="true"><span></span><span></span><span></span></div>' + '<div id="mz-chips"></div>' + '<form id="mz-input"><input type="text" id="mz-text" placeholder="اكتب رسالتك…" autocomplete="off" enterkeyhint="send">' + '<button type="submit" aria-label="إرسال"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5c.8-.35.8-1.45 0-1.8L3.4 3.6c-.7-.3-1.4.35-1.3 1.05l.6 5.35c.05.45.4.8.85.9l8.95 1.1c.1 0 .1.2 0 .2l-8.95 1.1c-.45.1-.8.45-.85.9l-.6 5.35c-.1.7.6 1.35 1.3 1.05z"/></svg></button></form></section>';
+  document.body.appendChild(root);
+  var launcher = document.getElementById('mz-launcher'),
+    panel = document.getElementById('mz-panel'),
+    msgs = document.getElementById('mz-msgs'),
+    chips = document.getElementById('mz-chips'),
+    typing = document.getElementById('mz-typing'),
+    form = document.getElementById('mz-input'),
+    input = document.getElementById('mz-text');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && !reduce ? window.gsap : null;
+  function animIn(el) {
+    if (G) {
+      G.from(el, {
+        y: 14,
+        opacity: 0,
+        duration: .35,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+  }
+  function scrollBottom() {
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function addMsg(text, who) {
+    var d = document.createElement('div');
+    d.className = 'mz-msg ' + who;
+    d.textContent = text;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function addCard(html) {
+    var d = document.createElement('div');
+    d.className = 'mz-order-card';
+    d.innerHTML = html;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function setChips(list) {
+    chips.innerHTML = '';
+    (list || []).forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = c.label;
+      if (c.primary) b.className = 'mz-primary';
+      b.onclick = function () {
+        handleUser(c.label, c.action || null);
+      };
+      chips.appendChild(b);
+    });
+    scrollBottom();
+  }
+  var busy = false;
+  var pending = null;
+  var _yrSeen = {};
+  function yVaryReply(text) {
+    var n = (_yrSeen[text] || 0) % 3;
+    _yrSeen[text] = n + 1;
+    if (/مش (?:ضمن|متوفر|موجود|من تشكيلتنا|في تشكيلتنا|على منيو)|للأسف/.test(text)) {
+      if (n === 1) text = text.replace(/^للأسف\s*/, 'بص، ').replace(/^الطلب ده/, 'الحاجة دي').replace(/بس أقرب حاجة ليه عندنا:/, 'ولو بتدور على بديل، عندنا:');
+      if (n === 2) text = text.replace(/^للأسف\s*/, 'خليني أوضحلك، ').replace(/^الطلب ده/, 'الاختيار ده').replace(/بس أقرب حاجة ليه عندنا:/, 'ممكن بدل كده تشوف:');
+      if (n === 1 && !/^(بص|الحاجة|بالنسبة|خليني)/.test(text)) text = 'بص، ' + text;
+      if (n === 2 && !/^(خليني|الاختيار|بالنسبة|بص)/.test(text)) text = 'خليني أوضحلك، ' + text;
+    }
+    return text;
+  }
+  function botSay(text, delay, after) {
+    if (text.indexOf('مش واضحلي قصدك بالكامل') === 0) {
+      var bi = (window.__yClarifyCount || 0) % 3;
+      window.__yClarifyCount = bi + 1;
+      text = ["مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", "محتاج منك توضيح صغير. تقصد منتج معين ولا خدمة؟ المعلومة دي مش متوفرة عندي بشكل أقدر أأكد عليه.", "خليني أفهمك صح المعلومة دي مش متوفرة عندي من الكلام ده لوحده. قولّي بتدور على إيه بالظبط؟"][bi];
+    }
+    text = yVaryReply(text);
+    var _yq = window.__yousefResponseQuestion || '';
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      var _yn = addMsg(text, 'bot');
+      if (_yn) _yn.dataset.yousefQuestion = _yq;
+      busy = false;
+      if (after) after();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }, delay != null ? delay : 700 + Math.min(text.length * 8, 900));
+  }
+  function botSeq(list, i, done) {
+    i = i || 0;
+    if (i >= list.length) {
+      if (done) done();
+      return;
+    }
+    var item = list[i];
+    botSay(item.text, item.delay, function () {
+      if (item.card) addCard(item.card);
+      if (item.chips) setChips(item.chips);
+      botSeq(list, i + 1, done);
+    });
+  }
+
+  /* ---------- conversation state ---------- */
+  var conv = {
+    step: 'idle',
+    order: null,
+    tmp: null,
+    greeted: false
+  };
+  function mainChips() {
+    return [{
+      label: 'تصفّح القائمة',
+      action: 'menu'
+    }, {
+      label: 'رشّح لي شيئًا',
+      action: 'reco'
+    }, {
+      label: 'أريد أن أطلب',
+      action: 'order',
+      primary: true
+    }, {
+      label: 'المواعيد والعنوان',
+      action: 'info'
+    }];
+  }
+  function menuText() {
+    function lines(cat, title) {
+      var s = title + '\n';
+      MENU[cat].forEach(function (i) {
+        s += '• ' + i.n + ' — ' + i.p + ' جنيه\n';
+      });
+      return s;
+    }
+    return lines('torte', 'تورت (السعر للصغيرة):') + '\n' + lines('oriental', 'حلو شرقي (الكيلو):') + '\n' + lines('mini', 'ميني حلو:');
+  }
+  function hoursText() {
+    return 'مواعيدنا:\nالسبت للخميس: من ٩ الصبح لـ ١٢ بالليل\nالجمعة: من ١ الضهر لـ ١٢ بالليل\n\nوالفرع في شارع عباس العقاد، مدينة نصر. اطلب قبل ٦ بالليل والتوصيل في نفس اليوم.';
+  }
+
+  /* ---------- order engine ---------- */
+  function startOrder() {
+    conv.order = {
+      items: [],
+      fulfillment: null,
+      name: null,
+      address: null,
+      phone: null
+    };
+    conv.step = 'await-item';
+    botSay('تمام، هاخد طلبك خطوة خطوة وإنت مرتاح. تقولي عايز إيه الأول؟', 600, function () {
+      setChips(popularChips());
+    });
+  }
+  function popularChips() {
+    return [{
+      label: 'شوكولاتة فوندان'
+    }, {
+      label: 'كنافة بالقشطة'
+    }, {
+      label: 'بقلاوة بالفستق'
+    }, {
+      label: 'ميني إكلير'
+    }, {
+      label: 'القائمة كاملة',
+      action: 'menu'
+    }];
+  }
+  function addItemFlow(item) {
+    conv.tmp = {
+      item: item,
+      size: null,
+      qty: 1,
+      writing: null,
+      date: null
+    };
+    if (item.sized === 'piece') {
+      askQty();
+      return;
+    }
+    conv.step = 'await-size';
+    var sz = sizesFor(item);
+    var askMsg = item.sized === 'torte' ? 'جميل. تحب ' + item.n + ' بأي حجم؟' : 'عاش. ' + item.n + ' بتتباع بالوزن، تحب قد إيه؟';
+    botSay(askMsg, 600, function () {
+      setChips(sz.map(function (s) {
+        return {
+          label: s.n + ' (' + priceOf(item, s) + ' جنيه)',
+          size: s.n
+        };
+      }));
+    });
+  }
+  function askQty() {
+    conv.step = 'await-qty';
+    var it = conv.tmp.item;
+    botSay('كام ' + (it.sized === 'piece' ? 'قطعة' : 'واحد') + ' من ' + it.n + '؟', 600, function () {
+      setChips([{
+        label: '٤'
+      }, {
+        label: '٦'
+      }, {
+        label: '١٢'
+      }]);
+    });
+  }
+  function askWriting() {
+    conv.step = 'await-writing';
+    botSay('تحب نكتب إيه على التورتة؟ اكتب العبارة، أو اختار من دول.', 600, function () {
+      setChips([{
+        label: 'بلا كتابة'
+      }, {
+        label: 'عيد ميلاد سعيد'
+      }, {
+        label: 'مبروك التخرج'
+      }, {
+        label: 'ألف مبروك'
+      }]);
+    });
+  }
+  function askDate() {
+    conv.step = 'await-date';
+    botSay('ومحتاجها إمتى؟ خد بالك: التورتة بتتعمل طازة في يومها.', 600, function () {
+      setChips([{
+        label: 'اليوم'
+      }, {
+        label: 'غدًا'
+      }, {
+        label: 'بعد غد'
+      }]);
+      input.focus();
+    });
+  }
+  function confirmItem() {
+    var t = conv.tmp;
+    t.qty = t.qty || 1;
+    conv.order.items.push({
+      item: t.item,
+      size: t.size,
+      qty: t.qty,
+      writing: t.writing,
+      date: t.date
+    });
+    if (t.next) {
+      var nxt = t.next;
+      conv.tmp = null;
+      botSay('اتسجلت: ' + t.qty + ' × ' + t.item.n + (t.size ? ' ' + t.size.n : '') + ' ✓\nودلوقتي نضبط ' + nxt.n + '.', 600, function () {
+        addItemFlow(nxt);
+      });
+      return;
+    }
+    conv.step = 'await-more';
+    var sz = t.size ? ' ' + t.size.n : '';
+    var extra = t.writing ? '\nومكتوب عليها: "' + t.writing + '"' + (t.date ? ' — ' + t.date : '') : '';
+    botSay('اتسجلت: ' + t.qty + ' × ' + t.item.n + sz + ' ✓' + extra + '\nتحب تضيف حاجة تانية؟', 600, function () {
+      setChips([{
+        label: 'هكذا يكفي',
+        primary: true
+      }, {
+        label: 'أضيف شيئًا'
+      }]);
+    });
+  }
+  function askFulfillment() {
+    conv.step = 'await-fulfill';
+    botSay('ممتاز. تستلم من الفرع ولا نوصلهولك لحد عندك؟', 600, function () {
+      setChips([{
+        label: 'استلام من الفرع'
+      }, {
+        label: 'توصيل'
+      }]);
+    });
+  }
+  function askName() {
+    conv.step = 'await-name';
+    botSay('الاسم اللي أجهز الطلب بيه؟', 600, function () {
+      setChips([{
+        label: 'نتابع دون اسم'
+      }]);
+      input.focus();
+    });
+  }
+  function askPhone() {
+    conv.step = 'await-phone';
+    botSay('ورقم موبايلك عشان نأكد معاك قبل ما الطلب يدخل الفرن؟', 600, function () {
+      input.focus();
+    });
+  }
+  function summaryAndConfirm() {
+    conv.step = 'await-confirm';
+    var o = conv.order,
+      sub = 0,
+      rows = '';
+    o.items.forEach(function (it) {
+      var price = priceOf(it.item, it.size);
+      sub += price * it.qty;
+      var label = it.qty + ' × ' + it.item.n + (it.size ? ' ' + it.size.n : '');
+      if (it.writing) label += ' ("' + yEscapeHTML(it.writing) + '")';
+      rows += '<div class="mz-row"><span>' + label + '</span><span>' + price * it.qty + ' جنيه</span></div>';
+      if (it.date) rows += '<div class="mz-row mz-muted"><span>ميعاد التجهيز: ' + yEscapeHTML(it.date) + '</span><span></span></div>';
+    });
+    var fee = o.fulfillment === 'توصيل' ? DELIVERY_FEE : 0;
+    var total = sub + fee;
+    rows += '<div class="mz-row mz-muted"><span>' + o.fulfillment + (yEscapeHTML(o.address) ? ' · ' + yEscapeHTML(o.address) : '') + '</span><span>' + (fee ? fee + ' جنيه' : 'بلاش') + '</span></div>';
+    rows += '<div class="mz-row total"><span>الإجمالي</span><span>' + total + ' جنيه</span></div>';
+    var card = '<div class="mz-oc-title"><b>طلب' + yEscapeHTML(widgetTitle(o.name)) + '</b><small>QESHTA ORDER</small></div>' + rows;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      addCard(card);
+      animIn(msgs.lastChild);
+      addMsg('كده الطلب جاهز يتأكد. تأكده وأنا أبعته للفرع على طول؟', 'bot');
+      setChips([{
+        label: 'أؤكد الطلب ✓',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    }, 900);
+  }
+  function finishOrder() {
+    window.dispatchEvent(new CustomEvent('yousef-chat-event', {
+      detail: {
+        kind: 'demo_order',
+        label: 'finishOrder'
+      }
+    }));
+    conv.step = 'done';
+    var num = 'QSH-' + Math.floor(1000 + Math.random() * 9000);
+    var o = conv.order;
+    setChips([]);
+    botSay('تم' + widgetCall(o.name) + '! طلبك اتأكد ورقمه ' + num + ' ✅\n' + (o.fulfillment === 'توصيل' ? 'هيوصلك لحد ' + (o.address || 'عندك') + '.' : 'تستلمه من الفرع، شارع عباس العقاد - مدينة نصر.') + '\nهنتصل بيك على ' + o.phone + ' للتأكيد. بالهنا والشفا مقدمًا!', 800, function () {
+      setChips([{
+        label: 'تصفّح القائمة',
+        action: 'menu'
+      }, {
+        label: 'أغلق المحادثة',
+        action: 'close'
+      }]);
+      conv.step = 'idle';
+      conv.order = null;
+    });
+  }
+
+  /* ---------- intent routing ---------- */
+  window.__CHIPALIAS={"أضيف شيئًا": "أضيف حاجة", "أؤكد الطلب ✓": "أكد الطلب ✓", "أؤكد الحجز ✓": "أكد الحجز ✓", "أؤكد الزيارة ✓": "أكد الزيارة ✓", "أؤكد التسجيل ✓": "أكد التسجيل ✓", "أغلق المحادثة": "اقفل الشات", "رشّح لي شيئًا": "رشحلي حاجة", "رشّح لي غيره": "رشحلي غيره", "أريد أن أطلب": "عايز أطلب", "هكذا يكفي": "كده تمام", "نتابع الحجز": "نكمل الحجز", "نتابع دون اسم": "نكمل من غير اسم", "شيء آخر": "حاجة تانية", "تصفّح القائمة": "شوف المنيو", "تصفّح التشكيلة": "شوف التشكيلة", "القائمة كاملة": "المنيو كله", "اليوم": "النهارده", "غدًا": "بكرة", "بعد غد": "بعد بكرة", "يوم آخر": "يوم تاني", "جلسة عائلية": "قعدة عيلة", "بلا كتابة": "من غير كتابة"};
+  function handleUser(text, action) {
+      var shown = text; if (!action && window.__CHIPALIAS && window.__CHIPALIAS[text]) text = window.__CHIPALIAS[text];
+    if (!action && (!conv.step || conv.step === 'idle') && /(?:عنوان|عناوين|فين.{0,12}(?:فرع|فروع|محل|مكتب|عياد|مكان)|(?:فرع|فروع).{0,12}فين|مواعيد.{0,8}(?:العمل|الفتح|الغلق)|ساعات العمل|بتفتح|بتقفل|(?:branch|address|opening hours|office hours))/i.test(text)) {
+      if (text.trim()) addMsg(shown, 'user');
+      botSay("العنوان التجريبي: شارع عباس العقاد، مدينة نصر. المواعيد المعروضة: السبت للخميس من ٩ الصبح لمنتصف الليل، والجمعة من ١ الظهر لمنتصف الليل. الطلبات والتوصيل محاكاة بس.", 150, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (text.trim()) addMsg(shown, 'user');
+    setChips([]);
+    if (busy) {
+      pending = {
+        text: text,
+        action: action
+      };
+      return;
+    }
+    route(text, action);
+  }
+  var yFAQ = [[["حساسيه", "مكونات", "جلوتين", "مكسرات", "سكر", "دايت", "نباتي"], ["قولي الصنف والمكون اللي عايز تتأكد منه. جدول الحساسية والسكر والمكونات الدقيقة مش متوفر في الديمو، ومش هضمن إنه خالي من المكسرات أو مناسب لمرضى السكر. لازم تأكيد من المحل.", "ممكن أساعدك تختار من المنيو، لكن معلومات الحساسية مش متوفرة كاملة. لو الموضوع طبي أو فيه حساسية، محتاج تأكيد مباشر قبل الطلب."]], [["تورت", "مناسبه", "عيد ميلاد", "كتابه", "تخصيص", "كيلو"], ["في الديمو تورت مناسبات بالاسم والعبارة اللي تختارها. الأحجام صغيرة 8 قطع، وسط 12، وكبيرة 16. اختار الطعم والحجم وقولي العبارة والتاريخ؛ التفاصيل الإضافية ورسوم التخصيص مش متوفرة كتأكيد."]], [["مناطق التوصيل", "بتوصلوا", "توصيل فين", "رسوم التوصيل", "دليفري فين"], ["الديمو موضح توصيل لحد 10 كم من فرع عباس العقاد بمدينة نصر، برسوم 25 ج. الطلب قبل 6 مساءً للتوصيل في نفس اليوم حسب المعروض. دي بيانات نموذج، مش وعد بتوصيل حقيقي."]], [["كود خصم", "كوبون", "خصومات", "عروض", "عرض النهارده"], ["أي عرض أو خصم مش مكتوب في الأسعار الحالية مش متوفر عندي كتأكيد. أقدر أوريك الموجود، لكن مش هألف كود خصم أو أوعد بسعر خاص.", "خلينا في السعر المعروض لحد ما يبقى فيه عرض واضح. تفاصيل خصم إضافي مش متوفرة في بيانات الديمو."]], [["واتساب", "رقم تليفون", "رقمكم"], ["بيانات التواصل المعروضة هنا خاصة بالديمو وقد تكون تجريبية. ما تبعتش معلومات حساسة أو تدفع فلوس على أساس إن ده نشاط حقيقي. أقدر أساعدك تستعرض الخدمة هنا."]]];
+  var yFAQSeen = {};
+  var yLastFAQ = -1,
+    yLastFAQAt = 0;
+  function yAnswerFAQ(t) {
+    var yArea = document.querySelector('[id$="-msgs"],#yc-msgs');
+    var yBots = yArea ? yArea.querySelectorAll('.bot,.yc-b,.b') : [];
+    var yPrev = yBots.length ? yBots[yBots.length - 1].textContent : '';
+    var yFollow = /(?:^|\s)(?:هو|هي|ده|دي|دا|فيه|فيها|سعره|سعرها|طيب|طب|هال|it|its|that|this|does|what about)(?:\s|[؟?]|$)/i.test(t);
+    var ySafety = /(حساسي|طوار|نزيف|جرع|تشخيص|allerg|emergen|dosage|diagnos)/i.test(t);
+    if (!ySafety && /(?:^|[\s،؟?!.])(?:وش|وشو|شلون|ابي|أبي|ابغى|أبغى|بغيت|شو|بدي|بدّي|عندكن|قديش)(?=$|[\s،؟?!.])/.test(t)) return false;
+    if (yFollow && yPrev && !ySafety) {
+      var yWasFAQ = yFAQ.some(function (row) {
+        return row[1].some(function (a) {
+          return yPrev.indexOf(a) >= 0;
+        });
+      });
+      if (!yWasFAQ) return false;
+    }
+    var short = t.replace(/[؟?!.,،]/g, '').trim();
+    if (yLastFAQ >= 0 && Date.now() - yLastFAQAt < 300000 && /^(?:هو|هي|ده|دي|دا|نفسه|نفسها|قصدي ده|اقصد ده|يعني ده|وريني|بكام|كام|سعره|سعرها|وضح|وضحلي|وضح لي|تفاصيله|تفاصيلها)$/.test(short)) {
+      return yGiveFAQ(yLastFAQ);
+    }
+    for (var i = 0; i < yFAQ.length; i++) {
+      if (yFAQ[i][0].some(function (k) {
+        var w = norm(k),
+          q = ' ' + norm(t).replace(/[؟?!.,،]/g, ' ') + ' ';
+        return /[a-z]/i.test(w) ? q.indexOf(' ' + w + ' ') >= 0 : w.length > 4 ? q.indexOf(w) >= 0 : q.indexOf(' ' + w + ' ') >= 0 || q.indexOf(' ال' + w + ' ') >= 0;
+      })) return yGiveFAQ(i);
+    }
+    return false;
+  }
+  function yGiveFAQ(i) {
+    var r = yFAQ[i];
+    yLastFAQ = i;
+    yLastFAQAt = Date.now();
+    var n = yFAQSeen[i] || 0;
+    yFAQSeen[i] = n + 1;
+    var a = r[1][n % r[1].length];
+    if (n && r[1].length === 1) a = (n % 2 ? 'خليني أوضحلك، ' : 'بالنسبة لسؤالك، ') + a;
+    botSay(a, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function yProductDetail(t) {
+    if (!hasAny(t, ['بكام', 'سعر', 'تفاصيل', 'مكونات', 'لون', 'الوان', 'خامه', 'نوتات', 'اسابيع', 'مستوي', 'بيشمل'])) return false;
+    var it = findItem(t);
+    if (!it) return false;
+    var msg = it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + (typeof it.p === 'number' ? ' جنيه' : '') + '.';
+    msg += '\nده وصف المنيو، مش قائمة حساسية كاملة. الحساسية محتاجة تأكيد منفصل.';
+    msg += '\nبيانات وأسعار تجريبية للعرض.';
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yLex = ["كنافة", "بقلاوة", "بسبوسة", "جلاش", "تورتة", "فوندان", "مانجا", "كحك", "كوكيز", "معمول"];
+  function yOneEdit(a, b) {
+    if (a === b || Math.abs(a.length - b.length) > 1) return false;
+    var i = 0,
+      j = 0,
+      n = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      if (++n > 1) return false;
+      if (a.length >= b.length) i++;
+      if (b.length >= a.length) j++;
+    }
+    return n + (i < a.length || j < b.length ? 1 : 0) === 1;
+  }
+  function yOfferSpelling(t) {
+    var tokens = t.split(/\s+/),
+      hits = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokens[i].length < 4) continue;
+      for (var j = 0; j < yLex.length; j++) {
+        var w = norm(yLex[j]);
+        if (yOneEdit(tokens[i], w) && hits.indexOf(yLex[j]) < 0) hits.push(yLex[j]);
+      }
+    }
+    if (hits.length && hits.length <= 3) {
+      botSay('تقصد ' + hits.join(' ولا ') + '؟ المعلومة مش متوفرة عندي بشكل مؤكد من الكتابة دي، اختار الاسم أو وضحهولي.', 500, function () {
+        setChips(hits.map(function (x) {
+          return {
+            label: x
+          };
+        }));
+      });
+      return true;
+    }
+    return false;
+  }
+  var yBrands = [["B.Laban", "بلبن", "ب لبن"], ["El Abd", "العبد"], ["La Poire", "لابوار", "لا بوار"], ["Etoile", "اتوال", "إتوال"], ["Tseppas", "تسيباس"], ["Sale Sucre", "سال سوكري", "سال سوكريه"], ["Dukes", "ديوكس"], ["Cinnabon", "سينابون"]];
+  var yBrandSeen = {};
+  function yBrandHit(t) {
+    var clean = ' ' + norm(t).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim() + ' ';
+    for (var i = 0; i < yBrands.length; i++) {
+      for (var j = 0; j < yBrands[i].length; j++) {
+        var k = norm(yBrands[i][j]).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim();
+        if (k && clean.indexOf(' ' + k + ' ') >= 0) return i;
+      }
+    }
+    return -1;
+  }
+  function yAnswerBrand(t) {
+    var b = yBrandHit(t);
+    if (b < 0) return false;
+    var n = yBrandSeen[b] || 0;
+    yBrandSeen[b] = n + 1;
+    var msg = "العلامة دي مش ضمن كتالوج الديمو الحالي. المعروض عندنا للاختيار: شوكولاتة فوندان، كنافة بالقشطة. دي اختيارات من قائمتنا، مش ادعاء إنها نفس المنتج أو بديل مطابق.";
+    if (n) msg = (n % 2 ? 'بالنسبة للاسم ده، ' : 'خليني أوضحلك، ') + msg;
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function route(text, action) {
+    window.__yousefResponseQuestion = text;
+    var t = norm(text);
+    if (action) {
+      runAction(action);
+      return;
+    }
+    yTurn++;
+    if (yRef(text)) return;
+    if (yQGuard(text, t)) return;
+    if (yOffDomain(text)) return;
+    if (yAnswerBrand(t)) return;
+    if (yAnswerFAQ(t)) return;
+    if (yProductDetail(t)) return;
+
+    /* in-order steps take priority */
+    switch (conv.step) {
+      case 'await-item':
+        {
+          var it = findItem(t);
+          if (it) {
+            addItemFlow(it);
+            return;
+          }
+          if (hasAny(t, ['منيو', 'المنيو'])) {
+            conv.step = 'idle';
+            runAction('menu');
+            return;
+          }
+          var hit1 = offMenuHit(t);
+          if (hit1) {
+            offMenuReply(hit1, 'تحب تجرب حاجة من دول بدلها ولا تشوف المنيو؟', function () {
+              return suggestChips(hit1, [{
+                label: 'تصفّح القائمة',
+                action: 'menu'
+              }]);
+            });
+            return;
+          }
+          botSay('مش لاقيها في المنيو عندنا. ممكن تختار من دول أو تقولي اسم صنف من المنيو؟', 600, function () {
+            setChips(popularChips());
+          });
+          return;
+        }
+      case 'await-size':
+        {
+          var sz = sizesFor(conv.tmp.item);
+          for (var i = 0; i < sz.length; i++) {
+            if (t.indexOf(norm(sz[i].n)) > -1 || t.indexOf(norm(sz[i].n.split(' ')[0])) > -1) {
+              conv.tmp.size = sz[i];
+              if (conv.tmp.item.sized === 'torte') {
+                askWriting();
+              } else {
+                conv.tmp.qty = 1;
+                confirmItem();
+              }
+              return;
+            }
+          }
+          if (hasAny(t, ['عادي', 'وسط', 'ميديوم', 'المعتاد'])) {
+            conv.tmp.size = sz[1];
+            if (conv.tmp.item.sized === 'torte') {
+              askWriting();
+            } else {
+              conv.tmp.qty = 1;
+              confirmItem();
+            }
+            return;
+          }
+          var other = findItem(t);
+          if (other && other !== conv.tmp.item) {
+            conv.tmp.next = other;
+            botSay('عايز ' + other.n + ' كمان؟ حاضر، هنضيفه بعد ما نخلص دي. الأول ' + conv.tmp.item.n + ':', 600, function () {
+              var sz2 = sizesFor(conv.tmp.item);
+              setChips(sz2.map(function (s) {
+                return {
+                  label: s.n + ' (' + priceOf(conv.tmp.item, s) + ' جنيه)',
+                  size: s.n
+                };
+              }));
+            });
+            return;
+          }
+          var hitS = offMenuHit(t);
+          if (hitS) {
+            offMenuReply(hitS, 'ونرجع نكمل ' + conv.tmp.item.n + ':', function () {
+              return sizesFor(conv.tmp.item).map(function (s) {
+                return {
+                  label: s.n + ' (' + priceOf(conv.tmp.item, s) + ' جنيه)'
+                };
+              });
+            });
+            return;
+          }
+          botSay('قولي بس: ' + sz.map(function (s) {
+            return s.n;
+          }).join('، ') + '؟', 500, function () {
+            setChips(sz.map(function (s) {
+              return {
+                label: s.n + ' (' + priceOf(conv.tmp.item, s) + ' جنيه)'
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-qty':
+        {
+          var q = parseQty(t);
+          if (q) {
+            conv.tmp.qty = Math.min(q, 12);
+            confirmItem();
+            return;
+          }
+          var other2 = findItem(t);
+          if (other2 && other2 !== conv.tmp.item) {
+            conv.tmp.next = other2;
+            botSay('حاضر، ' + other2.n + ' هيتسجل بعد دي. بس قولي الأول: كام قطعة من ' + conv.tmp.item.n + '؟', 600, function () {
+              setChips([{
+                label: '٤'
+              }, {
+                label: '٦'
+              }, {
+                label: '١٢'
+              }]);
+            });
+            return;
+          }
+          var hitQ = offMenuHit(t);
+          if (hitQ) {
+            offMenuReply(hitQ, 'ونكمل: كام قطعة من ' + conv.tmp.item.n + '؟', function () {
+              return [{
+                label: '٤'
+              }, {
+                label: '٦'
+              }, {
+                label: '١٢'
+              }];
+            });
+            return;
+          }
+          botSay('بس قولي الرقم: ٤، ٦، ١٢…', 500, function () {
+            setChips([{
+              label: '٤'
+            }, {
+              label: '٦'
+            }, {
+              label: '١٢'
+            }]);
+          });
+          return;
+        }
+      case 'await-writing':
+        {
+          if (hasAny(t, ['من غير', 'بلاش', 'لا', 'مش عايز', 'مفيش', 'بدون', 'فاضي', 'فاضيه'])) {
+            conv.tmp.writing = null;
+            askDate();
+            return;
+          }
+          var hitW = offMenuHit(t);
+          if (hitW) {
+            offMenuReply(hitW, 'ونرجع للتورتة: نكتب عليها إيه؟', function () {
+              return [{
+                label: 'بلا كتابة'
+              }, {
+                label: 'عيد ميلاد سعيد'
+              }, {
+                label: 'مبروك التخرج'
+              }, {
+                label: 'ألف مبروك'
+              }];
+            });
+            return;
+          }
+          if (text.trim().length < 2) {
+            botSay('اكتبلي العبارة اللي تحبها، أو قولي من غير كتابة.', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.tmp.writing = text.trim().slice(0, 60);
+          askDate();
+          return;
+        }
+      case 'await-date':
+        {
+          if (hasAny(t, ['من غير', 'مش مهم', 'أي وقت', 'اى وقت', 'بلاش'])) {
+            conv.tmp.date = null;
+            confirmItem();
+            return;
+          }
+          if (text.trim().length < 3) {
+            botSay('قولي إمتى بالظبط: النهارده، بكرة، يوم كذا…', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.tmp.date = text.trim().slice(0, 40);
+          confirmItem();
+          return;
+        }
+      case 'await-more':
+        {
+          var it2 = findItem(t);
+          if (it2) {
+            addItemFlow(it2);
+            return;
+          }
+          if (hasAny(t, ['تمام', 'كده', 'خلاص', 'خلص', 'كفايه', 'كفاية'])) {
+            askFulfillment();
+            return;
+          }
+          if (hasAny(t, ['اضف', 'أضف', 'اضيف', 'أضيف', 'تاني', 'تانية', 'كمان', 'ايوه', 'ايوا', 'أيوه', 'نعم'])) {
+            conv.step = 'await-item';
+            botSay('اتفضل، تقولي التالي؟', 500, function () {
+              setChips(popularChips());
+            });
+            return;
+          }
+          var hit2 = offMenuHit(t);
+          if (hit2) {
+            offMenuReply(hit2, 'تحب تضيف حاجة من دول ولا الطلب كده تمام؟', function () {
+              return suggestChips(hit2, [{
+                label: 'هكذا يكفي',
+                primary: true
+              }]);
+            });
+            return;
+          }
+          botSay('نضيف حاجة تانية ولا الطلب كده تمام؟', 500, function () {
+            setChips([{
+              label: 'هكذا يكفي',
+              primary: true
+            }, {
+              label: 'أضيف شيئًا'
+            }]);
+          });
+          return;
+        }
+      case 'await-fulfill':
+        {
+          if (hasAny(t, ['توصيل', 'دليفري', 'يوصل', 'عندي', 'البيت', 'الشقه', 'الشقة', 'delivery'])) {
+            conv.order.fulfillment = 'توصيل';
+            conv.step = 'await-address';
+            botSay('تمام، توصيل برسوم ' + DELIVERY_FEE + ' جنيه. ابعتلي العنوان أو المنطقة اللي نوصلهالها؟', 600, function () {
+              input.focus();
+            });
+            return;
+          }
+          if (hasAny(t, ['استلام', 'الفرع', 'استلم', 'هستلم', 'اجي', 'آجي', 'اعدي', 'أعدي', 'pickup'])) {
+            conv.order.fulfillment = 'استلام من الفرع';
+            askName();
+            return;
+          }
+          if (offMenuHit(t) || findItem(t)) {
+            botSay('وصلتك! بس خلينا نحدد الأول: استلام من الفرع ولا توصيل؟ وبعدها نكمل باقي التفاصيل.', 500, function () {
+              setChips([{
+                label: 'استلام من الفرع'
+              }, {
+                label: 'توصيل'
+              }]);
+            });
+            return;
+          }
+          conv.order.fulfillment = 'استلام من الفرع';
+          askName();
+          return;
+        }
+      case 'await-address':
+        {
+          if (text.trim().length < 3) {
+            botSay('اكتبلي العنوان أو اسم المنطقة كده في سطر واحد.', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.order.address = text.trim();
+          askName();
+          return;
+        }
+      case 'await-name':
+        {
+          var nm = widgetName(text);
+          conv.order.name = nm;
+          if (!nm) {
+            botSay('ولا يهمك، نكمل من غير اسم.', 400, function () {
+              askPhone();
+            });
+            return;
+          }
+          askPhone();
+          return;
+        }
+      case 'await-phone':
+        {
+          var digits = text.replace(/[^0-9٠-٩]/g, '');
+          if (digits.length < 8) {
+            botSay('الرقم ده ناقص. ابعتلي رقم موبايل صحيح من ١١ رقم.', 500, function () {
+              input.focus();
+            });
+            return;
+          }
+          conv.order.phone = text.trim();
+          summaryAndConfirm();
+          return;
+        }
+      case 'await-confirm':
+        {
+          if (hasAny(t, ['اكد', 'أكد', 'تمام', 'موافق', 'ايوه', 'أيوه', 'ايوا', 'yes', 'يلا', 'ابعت', 'اوكي', 'ok'])) {
+            finishOrder();
+            return;
+          }
+          if (hasAny(t, ['الغي', 'ألغي', 'الغاء', 'إلغاء', 'cancel', 'مش عايز'])) {
+            conv.step = 'idle';
+            conv.order = null;
+            botSay('اتلغى، ولا يهمك. لو جوعك للحلو رجع، أنا موجود.', 600, function () {
+              setChips(mainChips());
+            });
+            return;
+          }
+          var hitC = offMenuHit(t);
+          if (hitC) {
+            offMenuReply(hitC, 'ونرجع لطلبك الحالي: تأكده ولا نلغيه؟', function () {
+              return [{
+                label: 'أؤكد الطلب ✓',
+                primary: true
+              }, {
+                label: 'إلغاء'
+              }];
+            });
+            return;
+          }
+          var itC = findItem(t);
+          if (itC) {
+            botSay('حاضر، ' + itC.n + ' نسجله في طلب لوحده بعد ما نأكد ده. الأول: تأكد الطلب الحالي ولا نلغيه؟', 500, function () {
+              setChips([{
+                label: 'أؤكد الطلب ✓',
+                primary: true
+              }, {
+                label: 'إلغاء'
+              }]);
+            });
+            return;
+          }
+          botSay('تأكده ولا نلغيه؟', 500, function () {
+            setChips([{
+              label: 'أؤكد الطلب ✓',
+              primary: true
+            }, {
+              label: 'إلغاء'
+            }]);
+          });
+          return;
+        }
+    }
+
+    /* idle intents */
+    if (findItem(t)) {
+      var found = findItem(t);
+      if (hasAny(t, ['اطلب', 'عايز', 'عاوز', 'هات', 'جيب', 'order'])) {
+        startOrderSilent();
+        addItemFlow(found);
+        return;
+      }
+      var unit = found.sized === 'torte' ? 'صغيرة' : found.sized === 'kilo' ? 'الكيلو' : 'القطعة';
+      botSay(found.n + ' — ' + found.d + '\nبـ ' + found.p + ' جنيه (' + unit + '). تحب تطلبه؟', 600, function () {
+        setChips([{
+          label: 'اطلب ' + found.n,
+          primary: true
+        }, {
+          label: 'تصفّح القائمة',
+          action: 'menu'
+        }, {
+          label: 'الرئيسية',
+          action: 'home'
+        }]);
+      });
+      conv._pend = found;
+      return;
+    }
+    if (conv._pend && hasAny(t, ['اطلب', 'عايز', 'عاوز', 'ايوه', 'أيوه', 'ايوا', 'نعم', 'تمام', 'يلا'])) {
+      var p = conv._pend;
+      conv._pend = null;
+      startOrderSilent();
+      addItemFlow(p);
+      return;
+    }
+    if (hasAny(t, ['منيو', 'قائمه', 'قائمة', 'menu', 'الاصناف', 'الأصناف', 'اسعار', 'أسعار', 'بكام', 'عندكم ايه', 'عندكوا ايه'])) {
+      runAction('menu');
+      return;
+    }
+    if (hasAny(t, ['رشح', 'اقترح', 'اقتراح', 'محتار', 'مش عارف', 'توصيه', 'توصية', 'ايه احسن', 'إيه أحسن', 'انسب', 'أنسب'])) {
+      runAction('reco');
+      return;
+    }
+    if (hasAny(t, ['اطلب', 'اوردر', 'order', 'عايز اطلب', 'عاوز اطلب', 'طلب'])) {
+      runAction('order');
+      return;
+    }
+    var hitI = offMenuHit(t);
+    if (hitI) {
+      offMenuReply(hitI, 'تحب تجرب حاجة من دول؟', function () {
+        return suggestChips(hitI, [{
+          label: 'تصفّح القائمة',
+          action: 'menu'
+        }, {
+          label: 'أريد أن أطلب',
+          action: 'order',
+          primary: true
+        }]);
+      });
+      return;
+    }
+    if (hasAny(t, ['مواعيد', 'ساعات', 'بتقفلوا', 'بتفتحوا', 'مفتوحين', 'مفتوح', 'قفل', 'فتح', 'عنوان', 'فين', 'مكان', 'لوكيشن', 'الفرع', 'مدينه نصر', 'مدينة نصر', 'عباس العقاد'])) {
+      runAction('info');
+      return;
+    }
+    if (hasAny(t, ['شكرا', 'تسلم', 'متشكر', 'ممنون', 'thanks'])) {
+      botSay('العفو! ده واجبي. لو النفس عايزة حاجة حلوة تاني، أنا هنا.', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['اهلا', 'أهلا', 'هاي', 'ازيك', 'صباح', 'مساء', 'hello', 'hi', 'سلام'])) {
+      botSay('أهلًا وسهلًا! نورت قشطة. أقدر أساعدك في إيه النهارده؟', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    yLLMAsk(text, t, function () {
+      yTail(text, t);
+    });
+  }
+  function yTail(text, t) {
+    if (hasAny(t, ['حلو', 'حلويات', 'كنافه', 'كنافة', 'بقلاوه', 'بقلاوة', 'جلاش', 'بسبوسه', 'بسبوسة', 'جاتوه', 'جاتو', 'تورت', 'كيك', 'ايس كريم', 'آيس كريم', 'قشطه', 'قشطة', 'عسل', 'سكر', 'مناسبه', 'مناسبة', 'فرح', 'عيد', 'سبوع', 'مولود', 'خطوبه', 'خطوبة', 'علبه', 'علبة', 'ضيافه', 'ضيافة', 'شوكولاته', 'شوكولاتة', 'فوندان', 'اكلير', 'إكلير', 'تارت', 'فواكه', 'مانجا', 'مانجو', 'فراوله', 'فراولة', 'مكسرات', 'فستق', 'عين جمل', 'مشبك', 'زلابيه', 'زلابية', 'بلح الشام', 'لقمة القاضي', 'قطايف', 'قشطوطه', 'بف باستري', 'ميل في', 'سواريه', 'سوارية', 'مولد', 'رمضان', 'صيام', 'فطار', 'تمر'])) {
+      botSay('ده صنف مش على منيونا دلوقتي 🍮 بس قولي نفسك في إيه (كنافة، شوكولاتة، مكسرات...) وأرشحلك أقرب حاجة ليه.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["تشيزكيك", "تشيز كيك", "cheesecake", "كوكيز", "cookies", "براونيز", "brownies", "ماكرون", "macaron", "تيراميسو", "tiramisu", "قطايف", "كنافه"])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات والتشكيلة الحالية عندنا. قولي محتاج إيه فيه أو شوف الاختيارات المتاحة، وأساعدك تختار أقرب بديل.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['عندكم', 'عندكوا', 'بتبيع', 'بتقدموا', 'موجود عندك', 'متوفر عندك'])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات الحالية عندي. قولي اسمه أو نوعه بالتفصيل، أو نراجع الاختيارات الموجودة بدل ما أديك معلومة مش مؤكدة.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["دونات", "دونتس", "كوكي", "تريليتشا", "سينابون", "وافل", "بانكيك", "بروفترول", "غريبه", "بيتي فور", "بيتى فور", "كحك", "معمول", "حلاوه"])) {
+      botSay('الاسم ده مش متوفر بتفاصيل مؤكدة ضمن بيانات الديمو الحالية. قولي نوعه أو الاسم الكامل، وأراجع معاك الاختيارات المعروضة بدل ما أخمن.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yOfferSpelling(t)) return;
+    botSay("مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", 600, function () {
+      setChips(mainChips());
+    });
+  }
+  var Y_OFF = /(كابل|كابلات|شاحن|سلك|اسلاك|موبايل|تليفون|هاتف|سامسونج|samsung|ايفون|iphone|هونر|اونر|honor|شاومي|xiaomi|اوبو|لابتوب|لاب توب|laptop|سماعه|سماعة|سماعات|تلفزيون|شاشه|ثلاجه|غسالة|بنطلون|قميص|جزمه|حذاء|بيتزا|برجر|كشري|عطر|عطور|برفان|كرسي|شقه|شقة|قهوه|قهوة|لاتيه|كابتشينو|نسكافيه|ستاربكس)/i;
+  var Y_SCENT = /(تورت|حلو|حلويات|كنافه|كنافة|بسبوسه|شوكولات|كيك|قطايف)/i;
+  var __yb = botSay,
+    __ys = setChips;
+  try {
+    botSay = function (tx, d, a) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') {
+        conv._yP = tx;
+        conv._yC = null;
+      }
+      return __yb.apply(this, arguments);
+    };
+    setChips = function (c) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') conv._yC = c;
+      return __ys.apply(this, arguments);
+    };
+  } catch (e) {}
+  function yGSay(tx, chips) {
+    window.__yG = true;
+    botSay(tx, 500, function () {
+      setChips(chips);
+      window.__yG = false;
+    });
+  }
+  function yQGuard(text, t) {
+    if (!conv.step || conv.step === 'idle') return false;
+    var q = t.replace(/[؟?!.,،\s]/g, '');
+    if (conv._yQ) {
+      if (/^(نكمل|كمل|كمّل|نكملالحجز|اكمل|نكملالطلب)$/.test(q)) {
+        conv._yQ = false;
+        var P = conv._yP,
+          C = conv._yC;
+        if (P) {
+          window.__yG = true;
+          botSay(P, 300, function () {
+            window.__yG = false;
+            if (C) setChips(C);else setChips([]);
+          });
+        }
+        return true;
+      }
+      if (/^(الغاء|إلغاء|الغي|الغيه|cancel|الغاءالحجز|إلغاءالحجز)$/.test(q)) {
+        conv._yQ = false;
+        conv.step = 'idle';
+        yGSay('تمام، وقفنا اللي كنا فيه. تقدر تبدأ من جديد في أي وقت.', mainChips());
+        return true;
+      }
+      conv._yQ = false;
+    }
+    if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت', 'اختنق', 'تسمم'])) return false;
+    var words = text.trim().split(/\s+/).length;
+    var qm = /[؟?]/.test(text);
+    var qw = /(^|\s)(ينفع|هل|ازاي|إزاي|بديل|بدائل|بدل|ليه|الفرق|ايه الفرق|إيه الفرق)(\s|$)/.test(t);
+    if (!(qm && words >= 3 || qw)) return false;
+    conv._yQ = true;
+    var note = '';
+    yGSay('ده سؤال مش هسجله كإجابة في الحجز.' + note + ' تحب نكمل اللي كنا فيه ولا نلغيه؟', [{
+      label: 'نتابع الحجز',
+      primary: true
+    }, {
+      label: 'إلغاء'
+    }]);
+    return true;
+  }
+  function yOffDomain(text) {
+    if (/^(?:await-name|await-address|lead-name|book-name)$/.test(conv.step || '')) return false;
+    var q = norm(text);
+    if (!Y_OFF.test(q)) return false;
+    var mixed = Y_SCENT.test(q);
+    var tail = conv.step && conv.step !== 'idle' ? ' وطلبك الحالي زي ما هو، نكمله لما تحب.' : '';
+    if (/^(?:سلك|اسلاك|شاحن|اونر|هونر|honor|كرسي)$/i.test(q.replace(/[؟?!.,،\s]/g, ''))) {
+      botSay('قصدك ايه بالظبط؟ انا مساعد قشطة، لو بتدور على حاجة من المنيو قولي وأساعدك.' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (mixed) {
+      botSay('طلبك فيه حاجتين مختلفين. انا هساعدك في الحلويات والتورت بس، اما باقي الطلب فخارج تخصص قشطة. تحب نبدأ؟' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    botSay('ده خارج تخصصي، انا مساعد قشطة. لو عايز تسأل عن الحلويات والتورت انا معاك.' + tail, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yTurn = 0,
+    yLast = {
+      names: [],
+      turn: -9
+    };
+  function yRef(text) {
+    var q = norm(text).replace(/[؟?!.,،]/g, ' ');
+    var idx = /(^|\s)(الاول|الأول|الاولي|الاولى|اول واحد|اول وحده)(\s|$)/.test(q) ? 0 : /(^|\s)(التاني|الثاني|التانيه|الثانيه|تاني واحد)(\s|$)/.test(q) ? 1 : /(^|\s)(التالت|الثالث)(\s|$)/.test(q) ? 2 : -1;
+    if (idx < 0 || !/(سعر|بكام|كام|تفاصيل|ثمن)/.test(q)) return false;
+    var N = yLast.names;
+    if (!N.length) {
+      botSay('تقصد انهي منتج بالظبط؟ قولي اسمه وأقولك سعره.', 500, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (yTurn - yLast.turn > 1) {
+      botSay('بعد كلامنا الأخير مش متأكد تقصد انهي واحد. تقصد ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    var it = byName(N[idx]);
+    if (!it) {
+      botSay('تقصد انهي واحد بالظبط؟ ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    botSay(it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + ' جنيه' + (it.sized || typeof SIZES !== 'undefined' ? ' (بيتغير حسب الحجم)' : '') + '. بيانات وأسعار تجريبية للعرض.', 500, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var Y_LLM_URL = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/assist',
+    yHist = [];
+  function yCatalog() {
+    return ALL.map(function (it) {
+      return it.n + ': ' + it.d;
+    }).join('\n');
+  }
+  function yLLMAsk(text, t, fallback) {
+    if (window.__yLLMOff || !window.fetch || !text || text.trim().length < 2 || text.length > 300) {
+      fallback();
+      return;
+    }
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    var done = false,
+      ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (ctl) ctl.abort();
+    }, 10000);
+    function finish(fn) {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      typing.classList.remove('on');
+      busy = false;
+      fn();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }
+    fetch(Y_LLM_URL, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({
+        message: text,
+        history: yHist
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (!d || !d.ok || !d.reply) {
+        finish(function () {
+          fallback();
+        });
+        return;
+      }
+      var names = [];
+      (d.suggest || []).forEach(function (n) {
+        var it = byName(n);
+        if (it && names.indexOf(it.n) < 0) names.push(it.n);
+      });
+      yLast = {
+        names: names.slice(),
+        turn: yTurn
+      };
+      finish(function () {
+        var _n = addMsg(d.reply, 'bot');
+        if (_n) _n.dataset.yousefQuestion = window.__yousefResponseQuestion || text;
+        yHist.push({
+          r: 'u',
+          t: text
+        }, {
+          r: 'a',
+          t: d.reply
+        });
+        if (yHist.length > 6) yHist = yHist.slice(-6);
+        var c = d.intent === 'offdomain' || d.intent === 'ambiguous' ? [] : names.map(function (n) {
+          return {
+            label: n
+          };
+        });
+        setChips(c.length ? c.concat([{
+          label: 'تصفّح التشكيلة',
+          action: 'menu'
+        }]) : mainChips());
+        window.__yLastIntent = d.intent;
+      });
+    }).catch(function () {
+      finish(function () {
+        fallback();
+      });
+    });
+  }
+  function startOrderSilent() {
+    conv.order = {
+      items: [],
+      fulfillment: null,
+      name: null,
+      address: null,
+      phone: null
+    };
+    conv.step = 'await-item';
+  }
+  function runAction(action) {
+    switch (action) {
+      case 'menu':
+        botSay('دي قايمة قشطة كلها. اختار اللي يريحك:', 700, function () {
+          addMsg(menuText(), 'bot');
+          setChips([{
+            label: 'رشّح لي شيئًا',
+            action: 'reco'
+          }, {
+            label: 'أريد أن أطلب',
+            action: 'order',
+            primary: true
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        break;
+      case 'reco':
+        conv.step = 'reco-temp';
+        botSay('قولي الأول: المناسبة إيه؟', 600, function () {
+          setChips([{
+            label: 'عيد ميلاد'
+          }, {
+            label: 'خطوبة أو فرح'
+          }, {
+            label: 'جلسة عائلية'
+          }]);
+        });
+        break;
+      case 'order':
+        startOrder();
+        break;
+      case 'info':
+        botSay(hoursText(), 700, function () {
+          setChips([{
+            label: 'تصفّح القائمة',
+            action: 'menu'
+          }, {
+            label: 'أريد أن أطلب',
+            action: 'order',
+            primary: true
+          }, {
+            label: 'الرئيسية',
+            action: 'home'
+          }]);
+        });
+        break;
+      case 'home':
+        botSay('تحب أساعدك في إيه كمان؟', 500, function () {
+          setChips(mainChips());
+        });
+        break;
+      case 'close':
+        closePanel();
+        break;
+    }
+  }
+
+  /* recommendation follow-up handled in route() through step */
+  var _origRoute = route;
+  route = function (text, action) {
+    if (conv.step === 'reco-temp' && !action) {
+      var t = norm(text);
+      var pick = null;
+      if (hasAny(t, ['عيد ميلاد', 'ميلاد', 'عيد'])) {
+        pick = byName('شوكولاتة فوندان');
+      } else if (hasAny(t, ['خطوبه', 'خطوبة', 'فرح', 'جواز', 'شبكه', 'شبكة'])) {
+        pick = byName('ريد فيلفت');
+      } else if (hasAny(t, ['عيله', 'عيلة', 'قعده', 'قعدة', 'ضيوف', 'ضيافه', 'ضيافة'])) {
+        pick = byName('كنافة بالقشطة');
+      }
+      conv.step = 'idle';
+      if (pick) {
+        var unit = pick.sized === 'torte' ? 'صغيرة' : pick.sized === 'kilo' ? 'الكيلو' : 'القطعة';
+        botSay('للمناسبة دي، أرشحلك ' + pick.n + ' — ' + pick.d + '\nبـ ' + pick.p + ' جنيه (' + unit + '). أطلبهولك؟', 700, function () {
+          conv._pend = pick;
+          setChips([{
+            label: 'اطلب ' + pick.n,
+            primary: true
+          }, {
+            label: 'رشّح لي غيره',
+            action: 'reco'
+          }, {
+            label: 'تصفّح القائمة',
+            action: 'menu'
+          }]);
+        });
+        return;
+      }
+      botSay('قولي بس: عيد ميلاد، خطوبة أو فرح، ولا قعدة عيلة؟', 500, function () {
+        setChips([{
+          label: 'عيد ميلاد'
+        }, {
+          label: 'خطوبة أو فرح'
+        }, {
+          label: 'جلسة عائلية'
+        }]);
+      });
+      return;
+    }
+    _origRoute(text, action);
+  };
+
+  /* ---------- open/close ---------- */
+
+  // Keep the composer inside the *visible* viewport, not behind the soft keyboard.
+  var yPrefix = panel.id.replace(/-panel$/, ''),
+    yVV = window.visualViewport,
+    yFrame = 0;
+  var yStyle = document.createElement('style');
+  yStyle.textContent = '#' + yPrefix + '-panel{box-sizing:border-box;min-height:0;padding:0;margin:0;overscroll-behavior:contain}#' + yPrefix + '-head,#' + yPrefix + '-input,#' + yPrefix + '-typing{flex-shrink:0}#' + yPrefix + '-msgs{min-height:0;overscroll-behavior:contain;overflow-anchor:none}#' + yPrefix + '-input input{min-width:0;font-size:16px}#' + yPrefix + '-chips{flex-shrink:0;max-height:96px;overflow-y:auto}#' + yPrefix + '-chips button{flex-shrink:0;white-space:nowrap}#' + yPrefix + '-chips{scrollbar-width:none}#' + yPrefix + '-chips::-webkit-scrollbar{display:none}';
+  document.head.appendChild(yStyle);
+  function yFitViewport() {
+    cancelAnimationFrame(yFrame);
+    yFrame = requestAnimationFrame(function () {
+      if (!panel.classList.contains('open')) return;
+      if (window.matchMedia('(max-width:680px)').matches) {
+        var vh = yVV ? yVV.height : window.innerHeight,
+          vo = yVV ? yVV.offsetTop : 0;
+        var h = Math.min(620, Math.max(120, vh - 16));
+        panel.style.height = h + 'px';
+        panel.style.maxHeight = h + 'px';
+        panel.style.top = vo + vh - h - 8 + 'px';
+        panel.style.bottom = 'auto';
+        var yShort = vh < 500;
+        chips.style.display = '';
+        chips.style.maxHeight = (yShort ? 52 : 96) + 'px';
+        chips.style.flexWrap = yShort ? 'nowrap' : '';
+        chips.style.overflowX = yShort ? 'auto' : '';
+        chips.style.overflowY = yShort ? 'hidden' : 'auto';
+        chips.style.padding = yShort ? '6px 14px' : '';
+      } else {
+        ['height', 'max-height', 'top', 'bottom'].forEach(function (k) {
+          panel.style.removeProperty(k);
+        });
+        ['max-height', 'display', 'flex-wrap', 'overflow-x', 'overflow-y', 'padding'].forEach(function (k) {
+          chips.style.removeProperty(k);
+        });
+      }
+      scrollBottom();
+    });
+  }
+  if (yVV) {
+    yVV.addEventListener('resize', yFitViewport, {
+      passive: true
+    });
+    yVV.addEventListener('scroll', yFitViewport, {
+      passive: true
+    });
+  }
+  window.addEventListener('resize', yFitViewport, {
+    passive: true
+  });
+  input.addEventListener('focus', yFitViewport);
+  input.addEventListener('blur', yFitViewport);
+  function openPanel() {
+    panel.classList.add('open');
+    yFitViewport();
+    launcher.style.display = 'none';
+    if (G && !window.matchMedia('(max-width:680px)').matches) {
+      G.from(panel, {
+        y: 60,
+        opacity: 0,
+        duration: .45,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+    if (!conv.greeted) {
+      conv.greeted = true;
+      botSeq([{
+        text: 'أهلًا بك في قشطة.',
+        delay: 500
+      }, {
+        text: 'أنا مساعدك هنا. أعرّفك بالقائمة، وأرشّح لك ما يناسب مناسبتك، وآخذ طلبك كاملًا بالاسم والعبارة. كل ذلك من هنا.',
+        delay: 800,
+        chips: mainChips()
+      }]);
+    }
+    input.focus();
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    launcher.style.display = 'flex';
+    if (G) {
+      G.from(launcher, {
+        scale: .7,
+        opacity: 0,
+        duration: .35,
+        ease: 'back.out(2)',
+        clearProps: 'all'
+      });
+    }
+  }
+  window.__mzOpen = function (action, payload) {
+    openPanel();
+    if (action === 'order') {
+      if (payload) {
+        var it = byName(payload) || findItem(payload);
+        if (it) {
+          startOrderSilent();
+          addItemFlow(it);
+          return;
+        }
+      }
+      startOrder();
+    }
+  };
+  launcher.addEventListener('click', openPanel);
+  document.getElementById('mz-close').addEventListener('click', closePanel);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!v && !widgetNameStep(conv.step)) return;
+    input.value = '';
+    handleUser(v, null);
+  });
+
+  /* launcher entrance */
+  if (G) {
+    G.from(launcher, {
+      y: 30,
+      opacity: 0,
+      duration: .6,
+      delay: .9,
+      ease: 'back.out(1.8)',
+      clearProps: 'all'
+    });
+  }
+})();</script>
+<script id="portfolio-chat-recorder">
+(function () {
+  'use strict';
+  var dialog = Array.prototype.find.call(document.querySelectorAll('[role="dialog"]'), function(node){return node.querySelector('[aria-live]');});
+  if (!dialog || dialog.__portfolioChatLog) return;
+  var messagesNode = dialog.querySelector('[aria-live]');
+  if (!messagesNode) return;
+  dialog.__portfolioChatLog = true;
+
+  var apiUrl = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/chat';
+  var pageUrl = location.origin + location.pathname;
+  var idKey = 'ym-chat-conversation-id-v2';
+  var id;
+  var lastActive = 0;
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'ym' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  }
+  try {
+    var __chatStoredState = localStorage.getItem(idKey);
+    var __chatParsedState;
+    try { __chatParsedState = JSON.parse(__chatStoredState); } catch (_) {}
+    id = __chatParsedState && __chatParsedState.id || __chatStoredState;
+    lastActive = __chatParsedState && Number(__chatParsedState.lastActive) || 0;
+    if (!id || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
+      id = newId();
+      lastActive = Date.now();}
+    localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive}));
+  } catch (_) {
+    id = newId();
+  lastActive = Date.now();}
+
+  var startedKey = idKey + ':started';
+  var pendingKey = idKey + ':pending';
+  var started = false;
+  try { started = localStorage.getItem(startedKey) === '1'; } catch (_) {}
+  if (started && Date.now() - lastActive > 12 * 60 * 60 * 1000) {
+    started = false;
+    try { localStorage.setItem(startedKey, '0'); } catch (_) {}
+  }
+  var waiting = [];
+  var outbox = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem(pendingKey) || '[]');
+    if (Array.isArray(saved)) outbox = saved;
+  } catch (_) {}
+
+  function makeMessage(role, content) {
+    return {
+      role: role,
+      content: content,
+      ts: Date.now(),
+      id: newId()
+    };
+  }
+  function visitorInfo() {
+    return {
+      userAgent: navigator.userAgent || '',
+      lang: navigator.language || '',
+      referer: document.referrer || '',
+      page: pageUrl
+    };
+  }
+  function saveOutbox() {
+    try { localStorage.setItem(pendingKey, JSON.stringify(outbox)); } catch (_) {}
+  }
+  window.addEventListener('yousef-chat-event', function (event) {
+    var detail = event.detail || {};
+    if (!/^(demo_order|demo_booking|whatsapp_handoff)$/.test(detail.kind || '')) return;
+    enqueue({conversationId: id, events: [{id: newId(), kind: detail.kind, detail: detail.label || ''}], visitor: visitorInfo(), page: pageUrl});
+  });
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (link && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(link.href)) {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event',{detail:{kind:'whatsapp_handoff',label:'WhatsApp link clicked'}}));
+    }
+  }, true);
+  var sending = false;
+  var paused = false;
+  function pump() {
+    if (sending || paused || !outbox.length) return;
+    sending = true;
+    var payload = outbox[0];
+    var attempt = 0;
+    function transmit() {
+      fetch(apiUrl, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('chat log request failed');
+        outbox.shift();
+        saveOutbox();
+        sending = false;
+        pump();
+      }).catch(function () {
+        attempt += 1;
+        if (attempt < 3) {
+          setTimeout(transmit, attempt === 1 ? 1000 : 2500);
+        } else {
+          sending = false;
+          paused = true;
+          setTimeout(function () { paused = false; pump(); }, 30000);
+        }
+      });
+    }
+    transmit();
+  }
+  function enqueue(payload) {
+    outbox.push(payload);
+    if (outbox.length > 500) outbox.shift();
+    saveOutbox();
+    pump();
+  }
+  function record(node) {
+    function touchConversation() {
+      if (Date.now() - lastActive > 12 * 60 * 60 * 1000) id = newId();
+      lastActive = Date.now();
+      try { localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive})); } catch (_) {}
+    }
+
+    if (!node || node.nodeType !== 1 || node.__portfolioChatLogged) return;
+    node.__portfolioChatLogged = true;
+    var content = (node.innerText || node.textContent || '').trim();
+    if (!content) return;
+    var role = node.classList && node.classList.contains('user') ? 'visitor' : 'assistant';
+    var message = makeMessage(role, content);
+    if (role === 'assistant' && node.dataset && node.dataset.yousefQuestion) message.question = node.dataset.yousefQuestion;
+    if (!started) {
+      waiting.push(message);
+      if (role === 'visitor') {
+        started = true;
+        try { localStorage.setItem(startedKey, '1'); } catch (_) {}
+        
+        touchConversation();enqueue({ conversationId: id, messages: waiting.splice(0), visitor: visitorInfo(), page: pageUrl });
+      }
+      return;
+    }
+    
+        touchConversation();enqueue({ conversationId: id, message: message, visitor: visitorInfo(), page: pageUrl });
+  }
+
+  new MutationObserver(function (records) {
+    records.forEach(function (record) {
+      record.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && node.parentElement === messagesNode) recordNode(node);
+      });
+    });
+  }).observe(messagesNode, { childList: true });
+
+  function recordNode(node) { record(node); }
+  pump();
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1599 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" type="image/png" href="/icon-192.png"><link rel="apple-touch-icon" href="/icon-180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#111111"><meta name="description" content="مهارة، كورسات أونلاين بالعربية تعمل بها فعلًا: برمجة وتصميم وتسويق وإنجليزي. مجموعات صغيرة ومشاريع حقيقية."><title>مهارة | كورسات تعمل بها</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=optional" rel="stylesheet"><script id="portfolio-security-bootstrap">(function(){
+'use strict';if(window.__portfolioSecurity)return;window.__portfolioSecurity=true;
+var endpoint='https://portfolio-chat-backend.yousef-portfolio.workers.dev',nativeFetch=window.fetch.bind(window),session=null,pending=null,sitekey="0x4AAAAAAGO0I2tLsytslNSh";
+function verify(){if(session&&session.expires>Date.now()+30000)return Promise.resolve(session.token);if(pending)return pending;
+pending=new Promise(function(resolve,reject){var lang=document.documentElement.lang==='ar'?'ar':'en',box=document.createElement('section');box.id='portfolio-verification';box.setAttribute('role','status');box.style.cssText='position:fixed;left:50%;top:12px;transform:translateX(-50%);z-index:2147483647;max-width:calc(100vw - 24px);background:white;color:#111;border:1px solid #aaa;border-radius:10px;padding:12px;box-shadow:0 4px 24px #0003;font:14px Arial,sans-serif';var label=document.createElement('div');label.textContent=lang==='ar'?'جاري التحقق لحماية الشات...':'Verifying access to the chat...';box.appendChild(label);var target=document.createElement('div');box.appendChild(target);document.body.appendChild(box);var widget=null,settled=false,timer=setTimeout(function(){done(new Error('verification timeout'))},90000);
+function done(error,value){if(settled)return;settled=true;clearTimeout(timer);if(widget!==null&&window.turnstile)window.turnstile.remove(widget);box.remove();pending=null;if(error)reject(error);else resolve(value)}
+function render(){try{widget=window.turnstile.render(target,{sitekey:sitekey,action:'portfolio_chat',appearance:'interaction-only',language:lang,callback:function(token){nativeFetch(endpoint+'/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})}).then(function(r){if(!r.ok)throw Error('verification rejected');return r.json()}).then(function(data){if(!data.ok)throw Error('verification failed');session=data;done(null,data.token)}).catch(function(e){done(e)})},'error-callback':function(){done(new Error('verification unavailable'))},'timeout-callback':function(){done(new Error('verification timeout'))}})}catch(e){done(e)}}
+if(window.turnstile)render();else{var script=document.getElementById('portfolio-turnstile');if(!script){script=document.createElement('script');script.id='portfolio-turnstile';script.src='https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';script.async=true;document.head.appendChild(script)}script.addEventListener('load',render,{once:true});script.addEventListener('error',function(){done(new Error('verification unavailable'))},{once:true})}
+});return pending;}
+function conversationProof(){try{var key='ym-chat-owner-proof-v1',value=localStorage.getItem(key);if(!/^v1_[a-f0-9]{64}$/.test(value||'')){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);value='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('');localStorage.setItem(key,value)}return value}catch(e){if(!window.__ymChatOwnerProof){var bytes=new Uint8Array(32);window.crypto.getRandomValues(bytes);window.__ymChatOwnerProof='v1_'+Array.prototype.map.call(bytes,function(x){return x.toString(16).padStart(2,'0')}).join('')}return window.__ymChatOwnerProof}}
+window.fetch=function(resource,options){var url=typeof resource==='string'?resource:resource&&resource.url;if(!url||url.indexOf(endpoint+'/api/')!==0||!/\/api\/(assist|chat)$/.test(url))return nativeFetch(resource,options);return verify().then(function(token){var init=Object.assign({},options),body;try{body=JSON.parse(init.body||'{}')}catch(e){return nativeFetch(resource,options)}body.securityToken=token;if(/\/api\/chat$/.test(url))body.conversationProof=conversationProof();if(/\/api\/assist$/.test(url)){var area=document.querySelector('[id$="-msgs"],#yc-msgs');if(area){var turns=Array.prototype.slice.call(area.children).filter(function(n){return n.matches('.user,.bot,.yc-u,.yc-b,.u,.b')}).map(function(n){return {r:n.matches('.user,.yc-u,.u')?'u':'a',t:(n.textContent||'').slice(0,300)}}).filter(function(n){return n.t.trim()});if(turns.length&&turns[turns.length-1].r==='u'&&turns[turns.length-1].t===String(body.message||'').slice(0,300))turns.pop();if(turns.length)body.history=turns.slice(-6)}}init.body=JSON.stringify(body);var controller=window.AbortController?new AbortController():null,timer=controller?setTimeout(function(){controller.abort()},15000):null;init.signal=controller?controller.signal:undefined;return nativeFetch(resource,init).then(function(response){if(timer)clearTimeout(timer);if(response.status===403)session=null;return response},function(error){if(timer)clearTimeout(timer);throw error})})};
+})();
+</script>
+<style>:root{--paper:#ffffff;--card:#fff;--ink:#111111;--ink2:#2a2a2a;--mut:#6a6a6a;--acc:#e30613;--acc-d:#b00510;--line:#111111;--soft:#f2f2ef}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"IBM Plex Sans Arabic",Cairo,Tahoma,sans-serif;background:var(--paper);color:var(--ink);line-height:1.8;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,94%);margin-inline:auto}
+h1,h2,h3,.brand,.btn{font-family:"IBM Plex Sans Arabic",Cairo,sans-serif}
+/* ---- vertical nav rail (desktop) ---- */
+.nav{position:fixed;inset-inline-start:0;top:0;bottom:0;width:240px;z-index:60;background:#fff;border-inline-end:2px solid var(--ink)}
+.nav .wrap{width:auto;height:100%;display:flex;flex-direction:column;gap:0;padding:18px}
+.brand{font-size:24px;font-weight:700;background:var(--ink);color:#fff;padding:8px 14px;align-self:flex-start}
+.brand b{color:var(--acc)}
+.nav-links{display:flex;flex-direction:column;margin-top:22px;border-top:1px solid var(--soft)}
+.nav-links a{padding:11px 4px;font-size:14.5px;font-weight:600;border-bottom:1px solid var(--soft);display:flex;justify-content:space-between;align-items:center}
+.nav-links a::after{content:"↖";font-size:12px;color:var(--mut);opacity:0;transition:opacity .15s}
+.nav-links a:hover{color:var(--acc)}
+.nav-links a:hover::after{opacity:1}
+.rail-extra{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+.rail-promo{background:var(--ink);color:#fff;font-size:12px;font-weight:600;line-height:1.9;padding:12px 14px}
+.rail-promo b{color:#ff5964}
+.mini-stats{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink)}
+.mini-stats div{padding:9px 11px;font-size:12px;color:var(--mut);font-weight:600;line-height:1.5}
+.mini-stats div:nth-child(odd){border-inline-end:1px solid var(--soft)}
+.mini-stats div:nth-child(-n+2){border-bottom:1px solid var(--soft)}
+.mini-stats b{display:block;font-size:19px;font-weight:700;color:var(--ink)}
+.mini-stats div:first-child b{color:var(--acc)}
+.rail-tracks{font-size:12px;color:var(--mut);line-height:2}
+.rail-tracks b{display:block;color:var(--ink);font-size:12px;margin-bottom:2px}
+.rail-tracks span{display:inline-block;border:1px solid var(--ink);padding:0 8px;margin:2px 2px 0 0;font-weight:600;color:var(--ink);font-size:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:0;padding:11px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s}
+.btn:hover{background:var(--acc);border-color:var(--acc)}
+.btn.ghost{background:#fff;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.amber{background:var(--acc);border-color:var(--acc);margin-top:14px;width:100%}
+.btn.amber:hover{background:var(--acc-d);border-color:var(--acc-d)}
+.nav-toggle{display:none}
+/* ---- page offset for rail ---- */
+header.hero,section,footer,div.announce-strip{margin-inline-start:240px}
+@media(min-width:981px){
+header.hero,section,footer{margin-inline-start:240px}
+}
+/* ---- hero: dashboard panel ---- */
+.hero{padding:34px 0 0}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;border:2px solid var(--ink)}
+.hero .wrap>div:first-child{padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.5px;color:var(--mut)}
+.eyebrow i{width:8px;height:8px;background:var(--acc);display:inline-block}
+.hero h1{font-size:clamp(30px,3.6vw,46px);line-height:1.5;margin:16px 0 12px;font-weight:700}
+.hero h1 em{font-style:normal;color:inherit}
+.hero .sub{font-size:15.5px;color:var(--mut);max-width:52ch}
+.hero-cta{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+.hero-trust{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:13px;color:var(--mut);font-weight:600;border-top:1px solid var(--soft);padding-top:16px}
+.stars{color:var(--acc);letter-spacing:2px}
+.hero-media{position:relative;border-inline-start:2px solid var(--ink);min-height:340px}
+.hero-media img{width:100%;height:100%;max-height:46vh;object-fit:cover}
+.hero-badge{position:absolute;inset-inline-start:18px;bottom:18px;background:#fff;border:2px solid var(--ink);padding:12px 16px;max-width:220px}
+.hero-badge b{display:block;font-size:26px;font-weight:700;color:var(--acc);line-height:1.2}
+.hero-badge small{font-size:12px;color:var(--mut);font-weight:600;line-height:1.6;display:block}
+/* ---- sections ---- */
+section{padding:56px 0 0}
+.kicker{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--acc);text-transform:uppercase;margin-bottom:6px}
+.sec-head{margin-bottom:24px;max-width:64ch}
+.sec-head h2,.why h2{font-size:clamp(24px,2.8vw,32px);line-height:1.5}
+.sec-head p,.why .sub2{color:var(--mut);font-size:14.5px;margin-top:6px}
+/* why: dense modular 2x2 with hairlines */
+.why{border:2px solid var(--ink);padding:30px 32px}
+.why .row{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:1px solid var(--ink);border-inline-start:1px solid var(--ink)}
+.feat{padding:20px 22px;border-bottom:1px solid var(--ink);border-inline-end:1px solid var(--ink)}
+.feat .n{font-size:12px;font-weight:700;color:var(--acc);letter-spacing:1px}
+.feat b{display:block;font-size:16px;margin:4px 0}
+.feat p{font-size:13px;color:var(--mut)}
+/* courses table */
+.ctable{width:100%;border-collapse:collapse;border:2px solid var(--ink);font-size:14px}
+.ctable th{background:var(--ink);color:#fff;font-size:12px;font-weight:700;text-align:start;padding:10px 16px;letter-spacing:.5px}
+.ctable td{border-bottom:1px solid var(--soft);padding:16px;vertical-align:middle}
+.ctable tr:last-child td{border-bottom:none}
+.ctable tbody tr{transition:background .12s}
+.ctable tbody tr:hover{background:var(--soft)}
+.ctable .tag{display:inline-block;border:1.5px solid var(--ink);font-size:12px;font-weight:700;padding:1px 9px;margin-bottom:6px}
+.ctable h3{font-size:16.5px;margin-bottom:2px}
+.ctable td p{font-size:12.5px;color:var(--mut);line-height:1.7;max-width:46ch}
+.ctable .cmeta{font-size:12px;color:var(--mut);font-weight:600;white-space:nowrap;line-height:2}
+.ctable .cmeta b{color:var(--ink);display:block;font-size:13px}
+.ctable .price{font-size:18px;font-weight:700;white-space:nowrap}
+.ctable .price small{display:block;font-size:12px;color:var(--mut);text-decoration:line-through;font-weight:600}
+.enroll-btn{background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:0;padding:8px 20px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;transition:.12s}
+.enroll-btn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+/* instructors: dense modules */
+.grid.c3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:2px solid var(--ink)}
+.ins{border-inline-end:1px solid var(--ink);padding:18px}
+.ins:last-child{border-inline-end:none}
+.ins img{width:100%;height:210px;object-fit:cover;border:1px solid var(--soft);margin-bottom:12px}
+.ins h3{font-size:16.5px}
+.ins .role{font-size:12px;font-weight:700;color:var(--acc);margin-bottom:6px}
+.ins .body p{font-size:12.5px;color:var(--mut)}
+.ins .exp{font-size:12px;font-weight:700;margin-top:8px;border-top:1px solid var(--soft);padding-top:8px}
+/* stories: rows */
+.tst{display:flex;gap:18px;padding:20px 4px;border-bottom:1px solid var(--soft);align-items:flex-start}
+.tst:last-child{border-bottom:none}
+.tst .q{font-size:44px;font-weight:700;color:var(--acc);line-height:1;flex:none;font-family:"IBM Plex Sans Arabic"}
+.tst p{font-size:14.5px}
+.tst .who{display:flex;align-items:center;gap:10px;margin-top:10px}
+.tst .av{width:34px;height:34px;background:var(--ink);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px;flex:none}
+.tst .who small{display:block;color:var(--mut);font-size:12px}
+/* faq */
+.faq details{border:1.5px solid var(--ink);padding:14px 18px;margin-bottom:8px;background:#fff}
+.faq summary{font-weight:700;font-size:14.5px;cursor:pointer;list-style:none}
+.faq summary::after{content:"+";float:inline-end;color:var(--acc);font-weight:700}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin-top:8px;font-size:13px;color:var(--mut)}
+/* cta panel */
+.cta-band{border:2px solid var(--ink);padding:36px 38px;display:flex;justify-content:space-between;align-items:center;gap:26px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(22px,2.6vw,30px)}
+.cta-band p{color:var(--mut);font-size:14px;margin-top:6px;max-width:52ch}
+.cta-band .row{display:flex;gap:10px;flex-wrap:wrap}
+/* footer */
+footer{margin-top:56px;background:var(--ink);color:#d8d8d8;padding:46px 0 26px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+footer .brand{background:#fff;color:var(--ink)}
+footer p{font-size:13px;color:#a8a8a8;margin-top:10px}
+footer h4{font-size:14px;color:#fff;margin-bottom:8px}
+footer li{list-style:none;font-size:12.5px;padding-block:3px;color:#c2c2c2}
+footer li a:hover{color:#fff}
+footer .fine{grid-column:1/-1;border-top:1px solid #333;padding-top:16px;font-size:12px;color:#888}
+.reveal{opacity:0;transform:translateY(24px)}
+/* ---- mobile: rail becomes top bar ---- */
+@media(max-width:980px){
+.nav{position:sticky;top:0;width:auto;border-inline-end:none;border-bottom:2px solid var(--ink)}
+.nav .wrap{flex-direction:row;align-items:center;justify-content:space-between;padding:10px 16px;height:auto}
+.nav-links{display:none;position:absolute;top:100%;inset-inline:0;background:#fff;padding:10px 18px;border-bottom:2px solid var(--ink)}
+.nav-links.open{display:flex}
+.rail-extra,.btn.amber{display:none}
+.nav-toggle{display:flex;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.nav-toggle span{width:22px;height:2px;background:var(--ink);display:block}
+header.hero,section,footer{margin-inline-start:0}
+.hero .wrap{grid-template-columns:1fr}
+.hero-media{border-inline-start:none;border-top:2px solid var(--ink)}
+.hero-media img{max-height:300px}
+.grid.c3{grid-template-columns:1fr}
+.ins{border-inline-end:none;border-bottom:1px solid var(--ink)}
+.ins:last-child{border-bottom:none}
+.why .row{grid-template-columns:1fr}
+.ctable thead{display:none}
+.ctable,.ctable tbody,.ctable tr,.ctable td{display:block;width:100%}
+.ctable tr{border-bottom:2px solid var(--ink);padding:10px 0}
+.ctable td{border-bottom:none;padding:8px 16px}
+footer .wrap{grid-template-columns:1fr}
+.tst{flex-direction:column;gap:8px;padding:22px 18px}
+.tst .q{font-size:30px;line-height:.7}
+.tst .who{margin-top:6px}
+}
+
+#mh-launcher{position:fixed;left:18px;bottom:18px;z-index:9990;display:flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:2px solid var(--ink);border-radius:0;padding:12px 18px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s}
+#mh-launcher:hover{background:var(--acc);border-color:var(--acc)}
+#mh-launcher svg{width:18px;height:18px}
+#mh-panel{position:fixed;left:0;right:0;bottom:0;z-index:9991;background:var(--paper);border-top:2px solid var(--ink);border-radius:0;display:none;flex-direction:column;height:min(72dvh,620px);box-shadow:0 -12px 40px rgba(0,0,0,.25);overflow:hidden;font-family:inherit}
+#mh-panel.open{display:flex}
+#mh-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:2px solid var(--ink);background:var(--card)}
+#mh-head .mh-ava{width:38px;height:38px;border-radius:0;background:var(--acc);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px;flex:0 0 auto;font-family:"IBM Plex Sans Arabic"}
+#mh-head .mh-who{flex:1;min-width:0}
+#mh-head .mh-who b{display:block;font-size:15px}
+#mh-head .mh-who small{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--mut)}
+#mh-head .mh-who small i{width:8px;height:8px;border-radius:0;background:#0a0}
+#mh-close{background:none;border:2px solid var(--ink);border-radius:0;width:30px;height:30px;font-size:15px;cursor:pointer;color:var(--ink);flex:0 0 auto}
+#mh-msgs{flex:1;overflow-y:auto;padding:16px 14px 8px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.mh-msg{max-width:85%;padding:10px 13px;border-radius:0;font-size:14.5px;line-height:1.8;white-space:pre-line;word-break:break-word}
+.mh-msg.bot{align-self:flex-start;background:#fff;border:2px solid var(--ink)}
+.mh-msg.user{align-self:flex-end;background:var(--ink);color:#fff}
+.mh-card{align-self:stretch;background:#fff;border:2px solid var(--ink);border-radius:0;padding:12px 14px;font-size:14px}
+.mh-card .mh-t{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:8px}
+.mh-card .mh-t b{font-size:15px}
+.mh-card .mh-t small{color:var(--mut);font-size:12px;letter-spacing:1px}
+.mh-card .mh-r{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.mh-card .mh-r.total{border-top:1px solid #ccc;margin-top:7px;padding-top:8px;font-weight:700}
+.mh-card .mh-r.total span:last-child{color:var(--acc)}
+#mh-typing{align-self:flex-start;background:#fff;border:2px solid var(--ink);border-radius:0;padding:12px 16px;display:none;gap:5px}
+#mh-typing.on{display:flex}
+#mh-typing span{width:6px;height:6px;border-radius:0;background:var(--acc);animation:mhbnc 1.1s infinite}
+#mh-typing span:nth-child(2){animation-delay:.15s}
+#mh-typing span:nth-child(3){animation-delay:.3s}
+@keyframes mhbnc{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+#mh-chips{display:flex;gap:8px;flex-wrap:wrap;padding:8px 14px;border-top:2px solid var(--ink)}
+#mh-chips:empty{display:none}
+#mh-chips button{border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:0;padding:7px 14px;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;transition:.15s}
+#mh-chips button:hover{background:var(--ink);color:#fff}
+#mh-chips button.mh-primary{background:var(--acc);border-color:var(--acc);color:#fff}
+#mh-input{display:flex;gap:8px;padding:10px 14px calc(12px + env(safe-area-inset-bottom))}
+#mh-input input{flex:1;border:2px solid var(--ink);border-radius:0;padding:10px 16px;font-size:14.5px;font-family:inherit;background:#fff;color:var(--ink);outline:none;min-width:0}
+#mh-input input:focus{border-color:var(--acc)}
+#mh-input button{background:var(--ink);color:#fff;border:none;border-radius:0;width:44px;height:44px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+#mh-input button:hover{background:var(--acc)}
+#mh-input button svg{width:18px;height:18px;transform:scaleX(-1)}
+@media(min-width:720px){#mh-panel{left:24px;right:auto;bottom:86px;width:384px;height:min(70vh,600px);border:2px solid var(--ink);border-radius:0}#mh-launcher{left:24px;bottom:24px}}
+</style><style id="overlay-chat-safety">body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-launcher"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) [id$="-panel"],body:has(dialog[open],#cartDrawer.open,#authModal.open,#dra.on,#dra.open,#md.on,#md.open,#modal.open,#demoModal.open) #yc-fab{visibility:hidden!important;pointer-events:none!important}</style><meta id="arabic-practical-route" name="demo-practical-routing" content="1"><script id="portfolio-safe-summary">function yEscapeHTML(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]||c})}</script></head>
+<body>
+
+<nav class="nav"><div class="wrap"><a class="brand" href="#top">مهارة<b>.</b></a>
+<div class="nav-links" id="navLinks"><a href="#courses">الكورسات</a><a href="#why">طريقتنا</a><a href="#instructors">المدربين</a><a href="#stories">قصص الخريجين</a><a href="#faq">الأسئلة</a></div>
+<div class="rail-extra"><div class="rail-promo">فُتح باب دفعة ديسمبر: خصم ٢٥٪ على كل الكورسات للحجز المبكر، والأماكن محدودة</div><div class="mini-stats"><div><b>+٤٢٠٠</b>خريج وخريجة</div><div><b>٦</b>كورسات عملية</div><div><b>٩٣٪</b>يعملون بعد الكورس</div><div><b>٤.٨</b>تقييم الطلاب</div></div><div class="rail-tracks"><b>المسارات</b><span>برمجة ويب</span><span>تصميم جرافيك</span><span>تسويق رقمي</span><span>إنجليزي للشغل</span><span>إكسل وتحليل البيانات</span><span>UI/UX</span></div></div><a class="btn amber" href="#courses">سجّل الآن</a>
+<button class="nav-toggle" id="navToggle" aria-label="القائمة" aria-expanded="false"><span></span><span></span><span></span></button></div></nav>
+<header class="hero" id="top"><div class="wrap">
+<div>
+<span class="eyebrow"><i></i>منصة مهارة · كورسات أونلاين بالعربية</span>
+<h1>تعلّم مهارة <em>تعمل بها</em> بجد</h1>
+<p class="sub">لا محاضرات مسجلة وانتهى الأمر. كورسات مباشرة بمجموعات صغيرة، ومشاريع حقيقية، ومتابعة حتى تتقن السوق.</p>
+<div class="hero-cta"><a class="btn" href="#courses">تصفّح الكورسات</a><a class="btn ghost" href="#why">كيف نعلّم؟</a></div>
+<div class="hero-trust"><span class="stars">★★★★★</span><span>تقييم ٤.٨ من أكثر من ٤٢٠٠ خريج</span></div>
+</div>
+<div class="hero-media"><img src="/assets/media-d832171d6e985a36.webp" alt="طلاب يتعلمون معًا حول أجهزة محمولة" width="1280" height="853">
+<div class="hero-badge"><b>٩٣٪</b><small>من خريجينا يعملون بمهارتهم الجديدة</small></div>
+</div>
+</div></header>
+<section id="why"><div class="wrap"><div class="why reveal">
+<h2>طريقتنا ليست كغيرها</h2>
+<p class="sub2">لا علاقة لنا بالكورسات التي تُسجَّل وتُنسى. هذه القواعد التي نعمل بها منذ أول يوم.</p>
+<div class="row">
+<div class="feat"><div class="n">٠١</div><b>مباشر وبمجموعات صغيرة</b><p>١٢ طالبًا في المجموعة كحد أقصى. تسأل وتُجاب في الحصة نفسها، لا تسجيلات قديمة.</p></div>
+<div class="feat"><div class="n">٠٢</div><b>مشاريع لا واجبات</b><p>ينتهي كل كورس بمشروع حقيقي تضعه في معرض أعمالك وتتحدث عنه في المقابلة.</p></div>
+<div class="feat"><div class="n">٠٣</div><b>متابعة بعد الكورس</b><p>مجموعة الخريجين تبقى نشطة: فرص عمل، ومراجعة السيرة الذاتية، وأسئلة وأجوبة لمدة سنة.</p></div>
+<div class="feat"><div class="n">٠٤</div><b>ضمان الأسبوع الأول</b><p>حضرت أسبوعًا ولم يعجبك؟ يُردّ لك المبلغ كاملًا بلا أسئلة ولا إجراءات معقدة.</p></div>
+</div></div></div></section>
+<section id="courses"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">الكورسات</div><h2>اختر مهارة، وابدأ غدًا</h2><p>الأسعار قبل خصم الدفعة الجديدة، والتقسيط متاح على ٣ دفعات بلا فوائد.</p></div>
+<table class="ctable"><thead><tr><th>الكورس</th><th>المدة / المستوى</th><th>السعر</th><th></th></tr></thead><tbody><tr><td><span class="tag">برمجة</span><h3>برمجة الويب من الصفر</h3><p>HTML وCSS وجافاسكريبت من أول سطر حتى تخرج بموقعين يعملان في معرض أعمالك.</p></td><td class="cmeta"><b>٨ أسابيع</b>مبتدئ<br>مباشر + تسجيل</td><td class="price">١٨٠٠ ج<small>٢٤٠٠ ج</small></td><td><button class="enroll-btn" data-course="برمجة الويب من الصفر">سجّل</button></td></tr><tr><td><span class="tag">تصميم</span><h3>تصميم الجرافيك بالمشاريع</h3><p>فوتوشوب وإليستريتور ونظرية تصميم سليمة، ومشروع هوية بصرية كاملة تختم به.</p></td><td class="cmeta"><b>٦ أسابيع</b>مبتدئ<br>مباشر + تسجيل</td><td class="price">١٣٥٠ ج<small>١٨٠٠ ج</small></td><td><button class="enroll-btn" data-course="تصميم الجرافيك بالمشاريع">سجّل</button></td></tr><tr><td><span class="tag">تسويق</span><h3>تسويق رقمي عملي</h3><p>إعلانات ممولة وسوشيال وسيو بميزانية حقيقية، وتخرج بخطة تسويق جاهزة لأي نشاط تجاري.</p></td><td class="cmeta"><b>٦ أسابيع</b>مبتدئ ومتوسط<br>مباشر + تسجيل</td><td class="price">١٥٠٠ ج<small>٢٠٠٠ ج</small></td><td><button class="enroll-btn" data-course="تسويق رقمي عملي">سجّل</button></td></tr><tr><td><span class="tag">لغة</span><h3>محادثة إنجليزية للعمل</h3><p>إنجليزي المقابلات والاجتماعات والرسائل، بلا قواعد جامدة ولا حفظ.</p></td><td class="cmeta"><b>٨ أسابيع</b>كل المستويات<br>مباشر</td><td class="price">١١٢٥ ج<small>١٥٠٠ ج</small></td><td><button class="enroll-btn" data-course="محادثة إنجليزية للعمل">سجّل</button></td></tr><tr><td><span class="tag">بيانات</span><h3>إكسل وتحليل البيانات</h3><p>من الجداول إلى لوحات المتابعة. مهارة تصنع الفرق في أي وظيفة، بأمثلة من عمل حقيقي.</p></td><td class="cmeta"><b>٤ أسابيع</b>مبتدئ<br>مباشر + تسجيل</td><td class="price">٩٠٠ ج<small>١٢٠٠ ج</small></td><td><button class="enroll-btn" data-course="إكسل وتحليل البيانات">سجّل</button></td></tr><tr><td><span class="tag">منتج</span><h3>UI/UX بالتطبيق</h3><p>فيجما وتفكير منتج وأبحاث مستخدمين، ومعرض أعمال كامل في نهاية الكورس.</p></td><td class="cmeta"><b>٨ أسابيع</b>متوسط<br>مباشر + تسجيل</td><td class="price">٢١٠٠ ج<small>٢٨٠٠ ج</small></td><td><button class="enroll-btn" data-course="UI/UX بالتطبيق">سجّل</button></td></tr></tbody></table></div></div></section>
+<section id="instructors"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">المدربين</div><h2>ناس يعملون بما يعلّمونه</h2></div>
+<div class="grid c3">
+<div class="ins reveal"><img src="/assets/media-3d51d01f762339da.webp" alt="أستاذ عمر فاروق" width="1024" height="1024"><div class="body"><h3>أ. عمر فاروق</h3><div class="role">برمجة الويب</div><p>مهندس برمجيات يعمل منذ ١١ سنة على منتجات يستخدمها الملايين.</p><div class="exp">سابقًا: شركات ناشئة في القاهرة ودبي</div></div></div>
+<div class="ins reveal"><img src="/assets/media-f7f3d7765233191e.webp" alt="أستاذة مريم سامي" width="1024" height="1024"><div class="body"><h3>أ. مريم سامي</h3><div class="role">تسويق رقمي</div><p>أدارت حملات بملايين الجنيهات لعلامات مصرية وخليجية، وتحب الأرقام أكثر من الكلام.</p><div class="exp">+٨ سنوات في السوق المصري والخليجي</div></div></div>
+<div class="ins reveal"><img src="/assets/media-437331ae9e6cc230.webp" alt="أستاذ هاني رمزي" width="1024" height="1024"><div class="body"><h3>أ. هاني رمزي</h3><div class="role">تصميم الجرافيك</div><p>مصمم هويات بصرية منذ ١٥ سنة، ولا يزال يفرح حين يخرج الشعار جميلًا.</p><div class="exp">+٢٠٠ هوية بصرية لعلامات مصرية</div></div></div>
+</div></div></section>
+<section id="stories"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">قصص الخريجين</div><h2>ناس كانوا مكانك تمامًا</h2></div>
+<div class="grid c3">
+<div class="tst reveal"><div class="q">”</div><p>كنت أخشى أن أبدأ البرمجة وقد كبر سني. بعد ٨ أسابيع صار عندي موقعان يعملان، وبعد شهرين حصلت على أول عمل حر.</p><div class="who"><div class="av">هـ</div><div><b>هبة محمود</b><small>خريجة برمجة الويب</small></div></div></div>
+<div class="tst reveal"><div class="q">”</div><p>كورس التسويق غيّر عملي كله. طبّقت ما تعلمته على علامة عائلية، وزادت المبيعات ٤٠٪ في أول شهر.</p><div class="who"><div class="av">ي</div><div><b>يوسف عادل</b><small>خريج تسويق رقمي</small></div></div></div>
+<div class="tst reveal"><div class="q">”</div><p>أفضل ما في الأمر أنهم لا يتركونك بعد الكورس. راجعوا معي معرض أعمالي وسيرتي الذاتية حتى قُبلت في شركة تصميم.</p><div class="who"><div class="av">ن</div><div><b>نورهان سيد</b><small>خريجة تصميم الجرافيك</small></div></div></div>
+</div></div></section>
+<section id="faq" class="faq"><div class="wrap">
+<div class="sec-head reveal"><div class="kicker">الأسئلة الشائعة</div><h2>قبل أن تسجّل</h2></div>
+<details class="reveal"><summary>الكورسات مباشرة أم مسجلة؟</summary><p>الحصص مباشرة عبر زوم وبمجموعات صغيرة، وكل حصة تُسجَّل وتبقى متاحة لك سنة كاملة إن فاتتك أو أردت المراجعة.</p></details>
+<details class="reveal"><summary>هل توجد شهادة؟</summary><p>نعم، شهادة إتمام باسمك ورقم تحقق، لكن الأهم منها المشروع الذي تنهي به الكورس، فهو الذي يفتح الأبواب.</p></details>
+<details class="reveal"><summary>كيف يعمل التقسيط؟</summary><p>تدفع على ٣ دفعات بلا فوائد: عند التسجيل، ومنتصف الكورس، وآخر أسبوع. فودافون كاش وإنستاباي وبطاقة، كما يريحك.</p></details>
+<details class="reveal"><summary>ليست لدي أي خلفية، هل أستطيع أن أبدأ؟</summary><p>معظم كورساتنا مصممة لتأخذك من الصفر، ونذكر بوضوح متى يحتاج الكورس مستوى متوسطًا. وإن كنت محتارًا، فالمساعد في أسفل الصفحة سيرشّح لك أنسب بداية.</p></details>
+</div></section>
+<section><div class="wrap"><div class="cta-band reveal">
+<h2>مكانك في دفعة ديسمبر بانتظارك</h2>
+<p>الخصم متاح للحجز المبكر، وتُغلق المجموعات عند ١٢ طالبًا. سجّل عبر المساعد في دقيقة واحدة.</p>
+<div class="row"><button class="btn" style="background:var(--ink);border-color:var(--ink);box-shadow:none" id="ctaChat">سجّل عبر المساعد</button><a class="btn ghost" href="#courses">تصفّح الكورسات أولًا</a></div>
+</div></div></section>
+<footer><div class="wrap">
+<div><a class="brand" href="#top">مهارة<b>.</b></a><p>منصة كورسات أونلاين بالعربية، هدفها واحد: أن تتعلم ما تعمل به.</p><p dir="ltr" style="margin-top:6px;font-weight:700;color:#fff">0106 777 0228</p></div>
+<div><h4>الكورسات</h4><li><a href="#courses">برمجة الويب</a></li><li><a href="#courses">تصميم الجرافيك</a></li><li><a href="#courses">تسويق رقمي</a></li><li><a href="#courses">UI/UX</a></li></div>
+<div><h4>مهارة</h4><li><a href="#why">طريقتنا</a></li><li><a href="#instructors">المدربين</a></li><li><a href="#stories">قصص الخريجين</a></li><li><a href="#faq">الأسئلة الشائعة</a></li></div>
+<p class="fine">موقع تجريبي لعرض التصميم. الأسماء والصور والبيانات والأسعار توضيحية، وليست عرضًا تعليميًا حقيقيًا.</p>
+</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js" integrity="sha384-pEQB1h4Zmn9xhS6jotzltHSIQq6N0Oh3BXkCNOH5LKI81R2NRbb9efarAJYw9gTY" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js" integrity="sha384-TgZ1GoXcDnrw/czNfaiSZSFV1zgIRv8aQOevBA8ppS4SkNONmzYfjARpXsDfdnUE" crossorigin="anonymous"></script>
+<script>
+var navToggle=document.getElementById('navToggle'),navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',function(){var o=navLinks.classList.toggle('open');navToggle.setAttribute('aria-expanded',o)});
+navLinks.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){navLinks.classList.remove('open')})});
+var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(window.gsap&&!reduce){
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('.hero .eyebrow, .hero h1, .hero .sub, .hero-cta, .hero-trust',{y:34,opacity:0,duration:.8,stagger:.1,ease:'power3.out'});
+gsap.from('.hero-media',{y:44,opacity:0,rotate:2,duration:.9,delay:.25,ease:'power3.out'});
+document.querySelectorAll('.reveal').forEach(function(el){
+gsap.to(el,{y:0,opacity:1,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+});
+gsap.from('.hero-badge',{scale:.5,opacity:0,rotate:-12,duration:.55,delay:1,ease:'back.out(2)'});
+}else{document.querySelectorAll('.reveal').forEach(function(el){el.style.opacity=1;el.style.transform='none'})}
+</script>
+<script>(function () {
+  /* name-refusal-fix-v1 */
+  function widgetNameStep(step) {
+    return /^(lead-name|await-name|book-name)$/.test(step);
+  }
+  function widgetName(raw) {
+    var value = String(raw || '').normalize('NFKC').replace(/[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF]/g, '').trim();
+    value = value.replace(/^(?:(?:أنا|انا)\s+)?(?:اسمي|إسمي|اسم حضرتك)\s*[:：]?\s*/, '').replace(/^(?:أنا|انا)\s+/, '').replace(/^(?:my name is|i am|i'm)\s+/i, '').trim();
+    var t = value.toLowerCase().replace(/[\u064B-\u065F\u0670\u0640]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/[^\p{L}\s]/gu, ' ').replace(/\s+/g, ' ').trim();
+    if (!t || /^(?:لا|لاء|لا شكرا|لأ|مش مهم|مش مهم الاسم|الاسم مش مهم|مو مهم|مو مهم الاسم|مجهول|فاعل خير|بدون اسم|من غير اسم|اي اسم|اي حاجه|حد|فلان|فلان الفلاني|اسم|الاسم|اسمك|سري|سر|مش هقول|مش هقولك|مالكش دعوه|ملكش دعوه|خليك في حالك|لا يهم|لا يهم الاسم|مفيش اسم|محدش|انا مين|انت مالك|انت مين|باتمان|سبايدرمان|سوبرمان|no|no thanks|none|anonymous|anon|unknown|guest|test|testing|joke|batman|superman|n a|skip|pass|whatever|not important|doesn t matter|name doesn t matter|prefer not to say|rather not say|not telling|none of your business|null|undefined)$/u.test(t)) return null;
+    if (/(?:^|\s)(?:مش|مو|غير|مش حابب|مش حابه|مش عايز|مش عاوز|مش عايزه|مش عاوزه|مش هقول|مابحبش|ما بحبش|مبحبش|مش لازم|مش ضروري|مش فارق|مش هيفرق|مش هتفرق)(?:\s|$)/u.test(t) && /(?:اسم|اقول|اقلك|اعرف|اكتب|اذكر|مهم|حابب|عايز|عاوز|ضروري|فارق|هيفرق|هتفرق)/u.test(t)) return null;
+    if (/(?:نكمل|كمل|تخطي|تجاوز|بعدين|سيبك من|خلينا من غير|خصوصيه|سريه|بهزر|بهزار|هزار|ههه|هاها|لول|هههه|lol|haha|skip|prefer not|rather not|don t want|won t tell|not sharing|private|privacy|never mind|nevermind)/u.test(t)) return null;
+    if (value.length < 2 || value.length > 70 || value.split(/\s+/).length > 6 || !/^[\p{L}\p{M}][\p{L}\p{M}\s.'’\-]*$/u.test(value)) return null;
+    if (!/[\p{L}]{2}/u.test(value) || /^(.)\1{2,}$/u.test(t.replace(/\s/g, ''))) return null;
+    return value;
+  }
+  function widgetCall(name) {
+    return name ? ' يا ' + name : '';
+  }
+  function widgetTitle(name) {
+    return name ? ' ' + name : ' بدون اسم';
+  }
+  'use strict';
+  if (window.__mhAssistant) return;
+  window.__mhAssistant = true;
+  var COURSES = [{
+    n: 'برمجة الويب من الصفر',
+    p: '١٨٠٠ جنيه',
+    pm: 600,
+    w: '٨ أسابيع',
+    lvl: 'مبتدئ',
+    start: '١ ديسمبر',
+    d: 'HTML وCSS وجافاسكريبت، وتخرج بموقعين يعملان في معرض أعمالك.',
+    a: ['برمجه', 'برمجة', 'ويب', 'html', 'css', 'جافاسكريبت', 'كود', 'موقع', 'مواقع', 'web']
+  }, {
+    n: 'تصميم الجرافيك بالمشاريع',
+    p: '١٣٥٠ جنيه',
+    pm: 450,
+    w: '٦ أسابيع',
+    lvl: 'مبتدئ',
+    start: '١ ديسمبر',
+    d: 'فوتوشوب وإليستريتور ونظرية تصميم، ومشروع هوية بصرية كاملة في النهاية.',
+    a: ['جرافيك', 'تصميم', 'فوتوشوب', 'اليستريتور', 'ديزاين', 'لوجو', 'لوجوهات', 'هويه', 'graphic', 'photoshop']
+  }, {
+    n: 'ديجيتال ماركتنج عملي',
+    p: '١٥٠٠ جنيه',
+    pm: 500,
+    w: '٦ أسابيع',
+    lvl: 'مبتدئ ومتوسط',
+    start: '٣ ديسمبر',
+    d: 'إعلانات ممولة وسوشيال وسيو بميزانية حقيقية، وخطة تسويق جاهزة.',
+    a: ['ماركتنج', 'تسويق', 'اعلانات', 'إعلانات', 'سوشيال', 'سيو', 'seo', 'فيسبوك', 'انستجرام', 'ماركتينج', 'marketing']
+  }, {
+    n: 'محادثة إنجليزي للشغل',
+    p: '١١٢٥ جنيه',
+    pm: 375,
+    w: '٨ أسابيع',
+    lvl: 'كل المستويات',
+    start: '٢ ديسمبر',
+    d: 'إنجليزي المقابلات والاجتماعات والرسائل، بلا حفظ قواعد.',
+    a: ['انجليزي', 'إنجليزي', 'انجلش', 'انجليزيه', 'english', 'محادثه', 'محادثة', 'لغه', 'لغة']
+  }, {
+    n: 'إكسل وتحليل البيانات',
+    p: '٩٠٠ جنيه',
+    pm: 300,
+    w: '٤ أسابيع',
+    lvl: 'مبتدئ',
+    start: '٢ ديسمبر',
+    d: 'من الجداول إلى لوحات المتابعة، بمهارات مطلوبة في أي وظيفة.',
+    a: ['اكسل', 'إكسل', 'excel', 'بيانات', 'تحليل', 'داتا', 'جداول']
+  }, {
+    n: 'UI/UX بالتطبيق',
+    p: '٢١٠٠ جنيه',
+    pm: 700,
+    w: '٨ أسابيع',
+    lvl: 'متوسط',
+    start: '٤ ديسمبر',
+    d: 'فيجما وتفكير منتج وأبحاث مستخدمين، ومعرض أعمال كامل في النهاية.',
+    a: ['ui', 'ux', 'فيجما', 'figma', 'تجربه المستخدم', 'تجربة المستخدم', 'منتج', 'تطبيقات']
+  }];
+  function norm(s) {
+    return (s || '').toLowerCase().replace(/ـ/g, '').replace(/[\u200b-\u200f\u202a-\u202e]/g, '').replace(/\s+/g, ' ').replace(/[ً-ْٰ]/g, '').replace(/[أإآٱ]/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ؤ/g, 'و').replace(/ئ/g, 'ي').replace(/[٠-٩]/g, function (c) {
+      return '٠١٢٣٤٥٦٧٨٩'.indexOf(c);
+    }).trim();
+  }
+  function hasAny(t, arr) {
+    t = norm(t);
+    for (var i = 0; i < arr.length; i++) {
+      if (t.indexOf(norm(arr[i])) > -1) return true;
+    }
+    return false;
+  }
+  function findCourse(t) {
+    t = norm(t);
+    var best = null,
+      bl = 0;
+    COURSES.forEach(function (c) {
+      [c.n].concat(c.a).forEach(function (nm) {
+        nm = norm(nm);
+        if (nm.length > 1 && t.indexOf(nm) > -1 && nm.length > bl) {
+          bl = nm.length;
+          best = c;
+        }
+      });
+    });
+    return best;
+  }
+  var OFFSCOPE = [{
+    k: ['طبخ', 'اكل', 'مطبخ', 'حلويات'],
+    msg: 'كورس طبخ لسه مش عندنا، بس فكرة حلوة! شغلنا دلوقتي مركز على مهارات الشغل والفري لانس.'
+  }, {
+    k: ['قياده', 'سواقه', 'رخصه'],
+    msg: 'ده مش مجالنا للأسف، احنا كورسات شغل أونلاين بس: برمجة وتصميم وتسويق ولغة وبيانات.'
+  }, {
+    k: ['جامعه', 'كليه', 'مدرسه', 'ثانويه', 'منهج'],
+    msg: 'احنا مش بديل عن الدراسة، احنا بنعلم مهارات شغل عملية. بس لو عايز حاجة جنب الدراسة، عندنا اقتراحات مناسبة.'
+  }];
+  function offScopeHit(t) {
+    t = norm(t);
+    for (var i = 0; i < OFFSCOPE.length; i++) {
+      var e = OFFSCOPE[i];
+      for (var j = 0; j < e.k.length; j++) {
+        if (t.indexOf(norm(e.k[j])) > -1) return e;
+      }
+    }
+    return null;
+  }
+  var root = document.createElement('div');
+  root.innerHTML = '<button id="mh-launcher" aria-label="افتح محادثة مساعد مهارة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 1 1 16.1-3.8z"/></svg><span>اسأل مهارة</span></button>' + '<section id="mh-panel" role="dialog" aria-label="مساعد مهارة">' + '<header id="mh-head"><div class="mh-ava">م</div><div class="mh-who"><b>مساعد مهارة</b><small><i></i>متصل · يردّ فورًا</small></div><button id="mh-close" aria-label="إغلاق المحادثة">✕</button></header>' + '<div id="mh-msgs" aria-live="polite"></div><div id="mh-typing" aria-hidden="true"><span></span><span></span><span></span></div><div id="mh-chips"></div>' + '<form id="mh-input"><input type="text" id="mh-text" placeholder="اكتب رسالتك…" autocomplete="off" enterkeyhint="send"><button type="submit" aria-label="إرسال"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5c.8-.35.8-1.45 0-1.8L3.4 3.6c-.7-.3-1.4.35-1.3 1.05l.6 5.35c.05.45.4.8.85.9l8.95 1.1c.1 0 .1.2 0 .2l-8.95 1.1c-.45.1-.8.45-.85.9l-.6 5.35c-.1.7.6 1.35 1.3 1.05z"/></svg></button></form></section>';
+  document.body.appendChild(root);
+  var launcher = document.getElementById('mh-launcher'),
+    panel = document.getElementById('mh-panel'),
+    msgs = document.getElementById('mh-msgs'),
+    chips = document.getElementById('mh-chips'),
+    typing = document.getElementById('mh-typing'),
+    form = document.getElementById('mh-input'),
+    input = document.getElementById('mh-text');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var G = window.gsap && !reduce ? window.gsap : null;
+  function animIn(el) {
+    if (G) {
+      G.from(el, {
+        y: 14,
+        opacity: 0,
+        duration: .35,
+        ease: 'power2.out',
+        clearProps: 'all'
+      });
+    }
+  }
+  function scrollBottom() {
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+  function addMsg(text, who) {
+    var d = document.createElement('div');
+    d.className = 'mh-msg ' + who;
+    d.textContent = text;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function addCard(html) {
+    var d = document.createElement('div');
+    d.className = 'mh-card';
+    d.innerHTML = html;
+    msgs.appendChild(d);
+    animIn(d);
+    scrollBottom();
+    return d;
+  }
+  function setChips(list) {
+    chips.innerHTML = '';
+    (list || []).forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = c.label;
+      if (c.primary) b.className = 'mh-primary';
+      b.onclick = function () {
+        handleUser(c.label, c.action || null);
+      };
+      chips.appendChild(b);
+    });
+    scrollBottom();
+  }
+  var busy = false,
+    pending = null;
+  var _yrSeen = {};
+  function yVaryReply(text) {
+    var n = (_yrSeen[text] || 0) % 3;
+    _yrSeen[text] = n + 1;
+    if (/مش (?:ضمن|متوفر|موجود|من تشكيلتنا|في تشكيلتنا|على منيو)|للأسف/.test(text)) {
+      if (n === 1) text = text.replace(/^للأسف\s*/, 'بص، ').replace(/^الطلب ده/, 'الحاجة دي').replace(/بس أقرب حاجة ليه عندنا:/, 'ولو بتدور على بديل، عندنا:');
+      if (n === 2) text = text.replace(/^للأسف\s*/, 'خليني أوضحلك، ').replace(/^الطلب ده/, 'الاختيار ده').replace(/بس أقرب حاجة ليه عندنا:/, 'ممكن بدل كده تشوف:');
+      if (n === 1 && !/^(بص|الحاجة|بالنسبة|خليني)/.test(text)) text = 'بص، ' + text;
+      if (n === 2 && !/^(خليني|الاختيار|بالنسبة|بص)/.test(text)) text = 'خليني أوضحلك، ' + text;
+    }
+    return text;
+  }
+  function botSay(text, delay, after) {
+    if (text.indexOf('مش واضحلي قصدك بالكامل') === 0) {
+      var bi = (window.__yClarifyCount || 0) % 3;
+      window.__yClarifyCount = bi + 1;
+      text = ["مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", "محتاج منك توضيح صغير. تقصد منتج معين ولا خدمة؟ المعلومة دي مش متوفرة عندي بشكل أقدر أأكد عليه.", "خليني أفهمك صح المعلومة دي مش متوفرة عندي من الكلام ده لوحده. قولّي بتدور على إيه بالظبط؟"][bi];
+    }
+    text = yVaryReply(text);
+    var _yq = window.__yousefResponseQuestion || '';
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      var _yn = addMsg(text, 'bot');
+      if (_yn) _yn.dataset.yousefQuestion = _yq;
+      busy = false;
+      if (after) after();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }, delay != null ? delay : 700 + Math.min(text.length * 8, 900));
+  }
+  function botSeq(list, i, done) {
+    i = i || 0;
+    if (i >= list.length) {
+      if (done) done();
+      return;
+    }
+    var item = list[i];
+    botSay(item.text, item.delay, function () {
+      if (item.card) addCard(item.card);
+      if (item.chips) setChips(item.chips);
+      botSeq(list, i + 1, done);
+    });
+  }
+  var conv = {
+    step: 'idle',
+    en: null,
+    greeted: false,
+    _pend: null
+  };
+  function mainChips() {
+    return [{
+      label: 'تصفّح الكورسات',
+      action: 'catalog'
+    }, {
+      label: 'رشّح لي كورسًا',
+      action: 'reco'
+    }, {
+      label: 'أريد أن أسجّل',
+      action: 'enroll',
+      primary: true
+    }, {
+      label: 'الأسعار والتقسيط',
+      action: 'prices'
+    }];
+  }
+  function catalogText() {
+    var s = 'كورسات دفعة ديسمبر (بعد خصم ٢٥٪):\n';
+    COURSES.forEach(function (c) {
+      s += '• ' + c.n + ' — ' + c.p + ' · ' + c.w + '\n';
+    });
+    return s + '\nكل الكورسات لايف بمجموعات صغيرة، وفي تقسيط على ٣ دفعات بدون فوائد.';
+  }
+  function courseCard(c) {
+    return '<div class="mh-t"><b>' + c.n + '</b><small>MAHARA COURSE</small></div>' + '<div class="mh-r"><span>المدة</span><span>' + c.w + '</span></div>' + '<div class="mh-r"><span>المستوى</span><span>' + c.lvl + '</span></div>' + '<div class="mh-r"><span>البداية</span><span>' + c.start + '</span></div>' + '<div class="mh-r"><span>التقسيط</span><span>٣ × ' + c.pm + ' ج</span></div>' + '<div class="mh-r total"><span>السعر بعد الخصم</span><span>' + c.p + '</span></div>';
+  }
+  function startEnroll(course) {
+    conv.en = {
+      course: course || null,
+      name: null,
+      phone: null
+    };
+    if (course) {
+      askName();
+    } else {
+      conv.step = 'await-course';
+      botSay('يلا بينا! أنهي كورس عاجبك؟', 550, function () {
+        setChips(COURSES.map(function (c) {
+          return {
+            label: c.n
+          };
+        }));
+      });
+    }
+  }
+  function askName() {
+    conv.step = 'await-name';
+    botSay('اختيار جامد: ' + conv.en.course.n + '. اسمك الأول واسم العيلة؟', 550, function () {
+      setChips([{
+        label: 'نتابع دون اسم'
+      }]);
+      input.focus();
+    });
+  }
+  function askPhone() {
+    conv.step = 'await-phone';
+    botSay((conv.en.name ? 'يا هلا يا ' + conv.en.name.split(' ')[0] + '. ' : '') + 'رقم موبايلك (يفضل يكون عليه واتساب) عشان نبعتلك تفاصيل الدفعة ولينك الدفع؟', 600, function () {
+      input.focus();
+    });
+  }
+  function summaryAndConfirm() {
+    conv.step = 'await-confirm';
+    var e = conv.en;
+    var card = '<div class="mh-t"><b>تسجيل' + yEscapeHTML(widgetTitle(e.name ? e.name.split(' ')[0] : null)) + '</b><small>MAHARA ENROLL</small></div>' + '<div class="mh-r"><span>الكورس</span><span>' + e.course.n + '</span></div>' + '<div class="mh-r"><span>البداية</span><span>' + e.course.start + '</span></div>' + '<div class="mh-r"><span>المدة</span><span>' + e.course.w + '</span></div>' + '<div class="mh-r"><span>الموبايل</span><span dir="ltr">' + yEscapeHTML(e.phone) + '</span></div>' + '<div class="mh-r"><span>التقسيط المتاح</span><span>٣ × ' + e.course.pm + ' ج</span></div>' + '<div class="mh-r total"><span>السعر بعد الخصم</span><span>' + e.course.p + '</span></div>';
+    typing.classList.add('on');
+    scrollBottom();
+    setTimeout(function () {
+      typing.classList.remove('on');
+      addCard(card);
+      addMsg('كده مكانك اتحجز مبدئيًا في دفعة ' + e.course.start + '. تدفع كاش أو تقسّط على ٣ دفعات، والدفع الأول بيثبت مكانك. أكد التسجيل؟', 'bot');
+      setChips([{
+        label: 'أؤكد التسجيل ✓',
+        primary: true
+      }, {
+        label: 'إلغاء'
+      }]);
+    }, 900);
+  }
+  function finishEnroll() {
+    window.dispatchEvent(new CustomEvent('yousef-chat-event', {
+      detail: {
+        kind: 'demo_booking',
+        label: 'finishEnroll'
+      }
+    }));
+    conv.step = 'done';
+    var e = conv.en;
+    var num = 'MH-' + Math.floor(1000 + Math.random() * 9000);
+    setChips([]);
+    botSay('مبروك' + widgetCall(e.name ? e.name.split(' ')[0] : null) + '! اتسجلت في ' + e.course.n + '، ورقم تسجيلك ' + num + '.\nهنكلمك على ' + e.phone + ' خلال ٢٤ ساعة نكمل الدفع ونضيفك لجروب الدفعة. نورت مهارة!', 850, function () {
+      setChips([{
+        label: 'تصفّح الكورسات',
+        action: 'catalog'
+      }, {
+        label: 'أغلق المحادثة',
+        action: 'close'
+      }]);
+      conv.step = 'idle';
+      conv.en = null;
+    });
+  }
+  window.__CHIPALIAS={"أضيف شيئًا": "أضيف حاجة", "أؤكد الطلب ✓": "أكد الطلب ✓", "أؤكد الحجز ✓": "أكد الحجز ✓", "أؤكد الزيارة ✓": "أكد الزيارة ✓", "أؤكد التسجيل ✓": "أكد التسجيل ✓", "أغلق المحادثة": "اقفل الشات", "رشّح لي شيئًا": "رشحلي حاجة", "رشّح لي غيره": "رشحلي غيره", "أريد أن أطلب": "عايز أطلب", "هكذا يكفي": "كده تمام", "نتابع الحجز": "نكمل الحجز", "نتابع دون اسم": "نكمل من غير اسم", "شيء آخر": "حاجة تانية", "تصفّح القائمة": "شوف المنيو", "تصفّح التشكيلة": "شوف التشكيلة", "القائمة كاملة": "المنيو كله", "اليوم": "النهارده", "غدًا": "بكرة", "بعد غد": "بعد بكرة", "يوم آخر": "يوم تاني", "أتطوّر في وظيفتي": "أتحسن في وظيفتي", "رشّح لي كورسًا": "رشحلي كورس", "سجّلني فيه": "سجلني فيه", "أريد أن أسجّل": "عايز أسجل", "عمل حر ودخل مستقل": "فري لانس ودخل لوحدي", "ما زلت أستكشف": "لسه بستكشف", "تصفّح الكورسات": "شوف الكورسات"};
+  function handleUser(text, action) {
+      var shown = text; if (!action && window.__CHIPALIAS && window.__CHIPALIAS[text]) text = window.__CHIPALIAS[text];
+    if (!action && (!conv.step || conv.step === 'idle') && /(?:عنوان|عناوين|فين.{0,12}(?:فرع|فروع|محل|مكتب|عياد|مكان)|(?:فرع|فروع).{0,12}فين|مواعيد.{0,8}(?:العمل|الفتح|الغلق)|ساعات العمل|بتفتح|بتقفل|(?:branch|address|opening hours|office hours))/i.test(text)) {
+      if (text.trim()) addMsg(shown, 'user');
+      botSay("مهارة موقع تجريبي لكورسات أونلاين. مفيش عنوان فرع فعلي أو مواعيد عمل مكتب منشورة. مواعيد الدفعات والتسجيل المعروضة للتجربة بس، مش خدمة تدريب حقيقية.", 150, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (text.trim()) addMsg(shown, 'user');
+    setChips([]);
+    if (busy) {
+      pending = {
+        text: text,
+        action: action
+      };
+      return;
+    }
+    route(text, action);
+  }
+  var yFAQ = [[["مبتدي", "مبتدئ", "مستوي", "متطلبات", "خبره"], ["لو بتبدأ من الصفر، الويب والجرافيك والإكسل مستواهم مبتدئ. الماركتنج مبتدئ ومتوسط، والإنجليزي لكل المستويات، وUI/UX متوسط. قولي هدفك ونختار بداية تناسبك."]], [["شهاده", "معتمده", "توظيف", "شغل مضمون", "تسجيل المحاضرات", "مدي الحياه", "استرجاع"], ["حسب الديمو فيه شهادة إتمام باسمك ورقم تحقق، والحصص المسجلة متاحة سنة. وفيه ضمان استرجاع خلال الأسبوع الأول. ده مش معناه اعتماد أكاديمي أو ضمان وظيفة، التفاصيل دي مش متوفرة كتأكيد."]], [["اونلاين", "اوفلاين", "حضوري", "ميعاد", "مواعيد"], ["الكورسات أونلاين لايف على زوم، بحد أقصى 12 طالب في المجموعة، والتسجيلات متاحة سنة. قولي اسم الكورس أقولك مدته وبداية دفعته من بيانات الديمو."]], [["كود خصم", "كوبون", "خصومات", "عروض", "عرض النهارده"], ["فيه خصم حجز مبكر 25٪ لدفعة ديسمبر حسب الديمو، والأسعار المعروضة للكورسات بالفعل بعد الخصم. وفيه تقسيط 3 دفعات من غير فوائد. كود إضافي مش متوفر كتأكيد."]], [["واتساب", "رقم تليفون", "رقمكم"], ["بيانات التواصل المعروضة هنا خاصة بالديمو وقد تكون تجريبية. ما تبعتش معلومات حساسة أو تدفع فلوس على أساس إن ده نشاط حقيقي. أقدر أساعدك تستعرض الخدمة هنا."]]];
+  var yFAQSeen = {};
+  var yLastFAQ = -1,
+    yLastFAQAt = 0;
+  function yAnswerFAQ(t) {
+    var yArea = document.querySelector('[id$="-msgs"],#yc-msgs');
+    var yBots = yArea ? yArea.querySelectorAll('.bot,.yc-b,.b') : [];
+    var yPrev = yBots.length ? yBots[yBots.length - 1].textContent : '';
+    var yFollow = /(?:^|\s)(?:هو|هي|ده|دي|دا|فيه|فيها|سعره|سعرها|طيب|طب|هال|it|its|that|this|does|what about)(?:\s|[؟?]|$)/i.test(t);
+    var ySafety = /(حساسي|طوار|نزيف|جرع|تشخيص|allerg|emergen|dosage|diagnos)/i.test(t);
+    if (!ySafety && /(?:^|[\s،؟?!.])(?:وش|وشو|شلون|ابي|أبي|ابغى|أبغى|بغيت|شو|بدي|بدّي|عندكن|قديش)(?=$|[\s،؟?!.])/.test(t)) return false;
+    if (yFollow && yPrev && !ySafety) {
+      var yWasFAQ = yFAQ.some(function (row) {
+        return row[1].some(function (a) {
+          return yPrev.indexOf(a) >= 0;
+        });
+      });
+      if (!yWasFAQ) return false;
+    }
+    var short = t.replace(/[؟?!.,،]/g, '').trim();
+    if (yLastFAQ >= 0 && Date.now() - yLastFAQAt < 300000 && /^(?:هو|هي|ده|دي|دا|نفسه|نفسها|قصدي ده|اقصد ده|يعني ده|وريني|بكام|كام|سعره|سعرها|وضح|وضحلي|وضح لي|تفاصيله|تفاصيلها)$/.test(short)) {
+      return yGiveFAQ(yLastFAQ);
+    }
+    for (var i = 0; i < yFAQ.length; i++) {
+      if (yFAQ[i][0].some(function (k) {
+        var w = norm(k),
+          q = ' ' + norm(t).replace(/[؟?!.,،]/g, ' ') + ' ';
+        return /[a-z]/i.test(w) ? q.indexOf(' ' + w + ' ') >= 0 : w.length > 4 ? q.indexOf(w) >= 0 : q.indexOf(' ' + w + ' ') >= 0 || q.indexOf(' ال' + w + ' ') >= 0;
+      })) return yGiveFAQ(i);
+    }
+    return false;
+  }
+  function yGiveFAQ(i) {
+    var r = yFAQ[i];
+    yLastFAQ = i;
+    yLastFAQAt = Date.now();
+    var n = yFAQSeen[i] || 0;
+    yFAQSeen[i] = n + 1;
+    var a = r[1][n % r[1].length];
+    if (n && r[1].length === 1) a = (n % 2 ? 'خليني أوضحلك، ' : 'بالنسبة لسؤالك، ') + a;
+    botSay(a, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function yProductDetail(t) {
+    if (!hasAny(t, ['بكام', 'سعر', 'تفاصيل', 'مكونات', 'لون', 'الوان', 'خامه', 'نوتات', 'اسابيع', 'مستوي', 'بيشمل'])) return false;
+    var it = findCourse(t);
+    if (!it) return false;
+    var msg = it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + (typeof it.p === 'number' ? ' جنيه' : '') + '.';
+    msg += ' · ' + it.w + ' · ' + it.lvl + ' · بداية الدفعة ' + it.start;
+    msg += '\nبيانات وأسعار تجريبية للعرض.';
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yLex = ["بايثون", "جافاسكريبت", "برمجة", "فوتوشوب", "جرافيك", "مونتاج", "ماركتنج", "اكسل", "انجليزي"];
+  function yOneEdit(a, b) {
+    if (a === b || Math.abs(a.length - b.length) > 1) return false;
+    var i = 0,
+      j = 0,
+      n = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i++;
+        j++;
+        continue;
+      }
+      if (++n > 1) return false;
+      if (a.length >= b.length) i++;
+      if (b.length >= a.length) j++;
+    }
+    return n + (i < a.length || j < b.length ? 1 : 0) === 1;
+  }
+  function yOfferSpelling(t) {
+    var tokens = t.split(/\s+/),
+      hits = [];
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokens[i].length < 4) continue;
+      for (var j = 0; j < yLex.length; j++) {
+        var w = norm(yLex[j]);
+        if (yOneEdit(tokens[i], w) && hits.indexOf(yLex[j]) < 0) hits.push(yLex[j]);
+      }
+    }
+    if (hits.length && hits.length <= 3) {
+      botSay('تقصد ' + hits.join(' ولا ') + '؟ المعلومة مش متوفرة عندي بشكل مؤكد من الكتابة دي، اختار الاسم أو وضحهولي.', 500, function () {
+        setChips(hits.map(function (x) {
+          return {
+            label: x
+          };
+        }));
+      });
+      return true;
+    }
+    return false;
+  }
+  var yBrands = [["Udemy", "يوديمي"], ["Coursera", "كورسيرا"], ["Edraak", "ادراك", "إدراك"], ["Udacity", "يوداسيتي"], ["Almentor", "المنتور"], ["LinkedIn Learning", "لينكد ان ليرننج"], ["Skillshare", "سكيل شير"]];
+  var yBrandSeen = {};
+  function yBrandHit(t) {
+    var clean = ' ' + norm(t).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim() + ' ';
+    for (var i = 0; i < yBrands.length; i++) {
+      for (var j = 0; j < yBrands[i].length; j++) {
+        var k = norm(yBrands[i][j]).replace(/[^a-z0-9\u0600-\u06ff&]+/g, ' ').trim();
+        if (k && clean.indexOf(' ' + k + ' ') >= 0) return i;
+      }
+    }
+    return -1;
+  }
+  function yAnswerBrand(t) {
+    var b = yBrandHit(t);
+    if (b < 0) return false;
+    var n = yBrandSeen[b] || 0;
+    yBrandSeen[b] = n + 1;
+    var msg = "دي منصة تانية، ومش جهة شريكة أو مصدر اعتماد لكورسات الديمو. المعروض عندنا للاختيار: برمجة الويب من الصفر، تصميم الجرافيك بالمشاريع. دي اختيارات من قائمتنا، مش ادعاء إنها نفس المنتج أو بديل مطابق.";
+    if (n) msg = (n % 2 ? 'بالنسبة للاسم ده، ' : 'خليني أوضحلك، ') + msg;
+    botSay(msg, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  function byName(n) {
+    for (var i = 0; i < COURSES.length; i++) {
+      if (COURSES[i].n === n) return COURSES[i];
+    }
+    return null;
+  }
+  function route(text, action) {
+    window.__yousefResponseQuestion = text;
+    var t = norm(text);
+    if (action) {
+      runAction(action);
+      return;
+    }
+    yTurn++;
+    if (yRef(text)) return;
+    if (yQGuard(text, t)) return;
+    if (yOffDomain(text)) return;
+    if (yAnswerBrand(t)) return;
+    if (["بايثون", "python"].indexOf(t.replace(/[؟?!.,،]/g, '').trim()) >= 0) {
+      botSay("كورس الويب هنا HTML وCSS وجافاسكريبت. بايثون مش ضمن محتواه المعروض، فمش هسجلك فيه على إنه بايثون. تحب تشوف الكورسات المتاحة؟", 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yAnswerFAQ(t)) return;
+    if (yProductDetail(t)) return;
+    switch (conv.step) {
+      case 'await-course':
+        {
+          var c = findCourse(t);
+          if (c) {
+            conv.en.course = c;
+            askName();
+            return;
+          }
+          var e0 = offScopeHit(t);
+          if (e0) {
+            botSay(e0.msg, 600, function () {
+              botSay('نكمل التسجيل؟ اختار كورس من دول:', 400, function () {
+                setChips(COURSES.map(function (c2) {
+                  return {
+                    label: c2.n
+                  };
+                }));
+              });
+            });
+            return;
+          }
+          botSay('مش لاقي الكورس ده عندنا. دي الكورسات المتاحة في دفعة ديسمبر:', 500, function () {
+            setChips(COURSES.map(function (c3) {
+              return {
+                label: c3.n
+              };
+            }));
+          });
+          return;
+        }
+      case 'await-name':
+        {
+          var nm = widgetName(text);
+          conv.en.name = nm;
+          if (!nm) {
+            botSay('ولا يهمك، نكمل من غير اسم.', 400, function () {
+              askPhone();
+            });
+            return;
+          }
+          askPhone();
+          return;
+        }
+      case 'await-phone':
+        {
+          var ph = norm(text).replace(/[^0-9]/g, '');
+          if (ph.length === 11 && ph.indexOf('01') === 0) {
+            conv.en.phone = ph;
+            summaryAndConfirm();
+            return;
+          }
+          botSay('الرقم ده مش مظبوط عندي. ابعت رقم موبايل مصري من ١١ رقم يبدأ بـ 01؟', 500, function () {
+            input.focus();
+          });
+          return;
+        }
+      case 'await-confirm':
+        {
+          if (hasAny(t, ['اكد', 'أكد', 'تمام', 'موافق', 'ايوه', 'أيوه', 'ايوا', 'يلا', 'ابعت', 'اوكي', 'ok', 'ماشي'])) {
+            finishEnroll();
+            return;
+          }
+          if (hasAny(t, ['الغي', 'ألغي', 'الغاء', 'إلغاء', 'cancel', 'مش عايز'])) {
+            conv.step = 'idle';
+            conv.en = null;
+            botSay('اتلغى، مفيش مشكلة خالص. لو غيرت رأيك الخصم لسه شغال.', 550, function () {
+              setChips(mainChips());
+            });
+            return;
+          }
+          botSay('نأكد التسجيل ولا نلغيه؟', 400, function () {
+            setChips([{
+              label: 'أؤكد التسجيل ✓',
+              primary: true
+            }, {
+              label: 'إلغاء'
+            }]);
+          });
+          return;
+        }
+      case 'reco-goal':
+        {
+          conv.step = 'idle';
+          var pick = null;
+          if (hasAny(t, ['فري لانس', 'فريلانس', 'مش شغال', 'اشتغل من البيت', 'دخل', 'فلوس'])) pick = COURSES[0];else if (hasAny(t, ['وظيفه', 'وظيفة', 'ترقيه', 'شغلانه', 'شغلانة', 'شركه', 'شركة'])) pick = COURSES[4];else if (hasAny(t, ['بستكشف', 'مش متأكد', 'لسه', 'محتار', 'مش عارف'])) pick = COURSES[2];
+          if (!pick) pick = COURSES[0];
+          conv._pend = pick;
+          typing.classList.add('on');
+          scrollBottom();
+          setTimeout(function () {
+            typing.classList.remove('on');
+            addMsg('على هدفك ده، أنسب بداية ليك:', 'bot');
+            addCard(courseCard(pick));
+            addMsg(pick.d + '\nأظبطلك التسجيل فيه؟', 'bot');
+            setChips([{
+              label: 'سجّلني فيه',
+              primary: true
+            }, {
+              label: 'رشّح لي غيره',
+              action: 'reco'
+            }, {
+              label: 'تصفّح الكورسات',
+              action: 'catalog'
+            }]);
+          }, 800);
+          return;
+        }
+    }
+    var c2 = findCourse(t);
+    if (c2) {
+      if (hasAny(t, ['سجل', 'أسجل', 'احجز', 'عايز', 'عاوز', 'اشترك', 'enroll', 'دفع'])) {
+        startEnroll(c2);
+        return;
+      }
+      typing.classList.add('on');
+      scrollBottom();
+      setTimeout(function () {
+        typing.classList.remove('on');
+        addCard(courseCard(c2));
+        addMsg(c2.n + ': ' + c2.d + '\nتحب تسجل فيه؟', 'bot');
+        conv._pend = c2;
+        setChips([{
+          label: 'سجّلني فيه',
+          primary: true
+        }, {
+          label: 'تصفّح الكورسات',
+          action: 'catalog'
+        }, {
+          label: 'رشّح لي كورسًا',
+          action: 'reco'
+        }]);
+      }, 700);
+      return;
+    }
+    if (conv._pend && hasAny(t, ['سجل', 'عايز', 'عاوز', 'ايوه', 'أيوه', 'ايوا', 'نعم', 'تمام', 'يلا', 'ماشي'])) {
+      var pc = conv._pend;
+      conv._pend = null;
+      startEnroll(pc);
+      return;
+    }
+    if (hasAny(t, ['كورسات', 'الكورسات', 'عندكم ايه', 'المحتوي', 'كتالوج'])) {
+      runAction('catalog');
+      return;
+    }
+    if (hasAny(t, ['رشح', 'اقترح', 'محتار', 'مش عارف', 'توصيه', 'توصية', 'انسب', 'أنسب', 'ابدا ازاي', 'أبدأ إزاي', 'ابدا منين'])) {
+      runAction('reco');
+      return;
+    }
+    if (hasAny(t, ['سجل', 'أسجل', 'التسجيل', 'اشترك', 'احجز مكاني', 'enroll'])) {
+      runAction('enroll');
+      return;
+    }
+    if (hasAny(t, ['اسعار', 'أسعار', 'بكام', 'تقسيط', 'الدفع', 'فلوس', 'خصم'])) {
+      runAction('prices');
+      return;
+    }
+    if (hasAny(t, ['شهاده', 'شهادة', 'معتمده'])) {
+      botSay('أيوه، في شهادة إتمام باسمك ورقم تحقق بعد كل كورس. بس الصراحة؟ اللي بيفتح شغل هو المشروع اللي هتطلع بيه، الشهادة تحصيل حاصل.', 650, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['لايف', 'مسجل', 'اونلاين', 'أونلاين', 'حضور', 'زوم', 'مواعيد الحصص'])) {
+      botSay('كل الحصص لايف على زوم، مرتين في الأسبوع من ٨ لـ ١٠ بالليل، وبتتسجل وتفضل معاك سنة كاملة. مفيش حضور في مكان، كله أونلاين من مكانك.', 700, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['مدرب', 'محاضر', 'المدربين', 'مين بيعلم'])) {
+      botSay('مدربينا ناس شغالة في السوق دلوقتي: أ. عمر فاروق للبرمجة، أ. مريم سامي للماركتنج، وأ. هاني رمزي للجرافيك. مش محاضرين نظري، ناس بتطبق اللي بتقوله كل يوم.', 650, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['شكرا', 'تسلم', 'متشكر', 'ممنون', 'thanks'])) {
+      botSay('العفو يا صديقي! أي وقت تحب تبدأ، أنا هنا.', 450, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['اهلا', 'أهلا', 'هاي', 'ازيك', 'صباح', 'مساء', 'hello', 'hi', 'سلام'])) {
+      botSay('أهلًا بك في مهارة! مستعد تتعلم حاجة جديدة النهارده؟', 500, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    yLLMAsk(text, t, function () {
+      yTail(text, t);
+    });
+  }
+  function yTail(text, t) {
+    var e3 = offScopeHit(t);
+    if (e3) {
+      botSay(e3.msg, 600, function () {
+        botSay('تحب أوريك كورساتنا المتاحة؟', 400, function () {
+          setChips([{
+            label: 'تصفّح الكورسات',
+            action: 'catalog',
+            primary: true
+          }, {
+            label: 'رشّح لي كورسًا',
+            action: 'reco'
+          }]);
+        });
+      });
+      return;
+    }
+    if (hasAny(t, ['كورس', 'كورسات', 'اتعلم', 'أتعلم', 'تعلم', 'مهاره', 'مهارة', 'مهارات', 'شغل', 'وظيفه', 'وظيفة', 'فري لانس', 'فريلانس', 'برمجه', 'برمجة', 'جرافيك', 'تصميم', 'تسويق', 'ماركتنج', 'ديجيتال', 'لغه', 'لغة', 'انجليزي', 'إنجليزي', 'بيانات', 'اكسل', 'إكسل', 'مونتاج', 'محتوي', 'محتوى', 'اعلانات', 'إعلانات', 'سوشيال', 'بايثون', 'ويب', 'ذكاء اصطناعي', 'ai', 'شهاده', 'شهادة', 'دبلومه', 'دبلومة', 'تدريب', 'محاضره', 'محاضرة', 'حصص', 'لايف', 'اونلاين', 'أونلاين', 'زوم', 'مشروع', 'تطبيق', 'محفظه', 'محفظة', 'بورتفوليو', 'سيره', 'سيرة', 'انترفيو', 'مقابله', 'مقابلة', 'مرتب', 'دخل', 'فلوس من النت'])) {
+      botSay('ده مجال مش موجود في كورساتنا دلوقتي 🎓 بس قولي عايز تتعلم إيه بالظبط وأرشحلك أقرب كورس ليه.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["python", "بايثون", "جافاسكريبت", "javascript", "react", "رياكت", "photoshop", "فوتوشوب", "ui ux", "اكسيل", "excel", "english", "انجليزي", "برمجه", "جرافيك"])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات والتشكيلة الحالية عندنا. قولي محتاج إيه فيه أو شوف الاختيارات المتاحة، وأساعدك تختار أقرب بديل.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ['عندكم', 'عندكوا', 'بتبيع', 'بتقدموا', 'موجود عندك', 'متوفر عندك'])) {
+      botSay('الطلب ده مش متوفر ضمن البيانات الحالية عندي. قولي اسمه أو نوعه بالتفصيل، أو نراجع الاختيارات الموجودة بدل ما أديك معلومة مش مؤكدة.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (hasAny(t, ["كودينج", "coding", "جافا", "java", "سي شارب", "c#", "سي بلس", "c++", "سيبر", "cyber", "امن سيبراني", "مونتاج", "افترافكت", "افتر افكت", "بلندر", "اوتوكاد", "autocad", "الماني", "فرنساوي"])) {
+      botSay('الاسم ده مش متوفر بتفاصيل مؤكدة ضمن بيانات الديمو الحالية. قولي نوعه أو الاسم الكامل، وأراجع معاك الاختيارات المعروضة بدل ما أخمن.', 600, function () {
+        setChips(mainChips());
+      });
+      return;
+    }
+    if (yOfferSpelling(t)) return;
+    botSay("مش واضحلي قصدك بالكامل، والمعلومة دي مش متوفرة عندي بصيغتها دي. ممكن تقول اسم المنتج أو الخدمة بكلمتين؟", 600, function () {
+      setChips(mainChips());
+    });
+  }
+  var Y_OFF = /(كابل|كابلات|شاحن|سلك|اسلاك|موبايل|تليفون|هاتف|سامسونج|samsung|ايفون|iphone|هونر|اونر|honor|شاومي|xiaomi|اوبو|لابتوب|لاب توب|laptop|سماعه|سماعة|سماعات|تلفزيون|شاشه|ثلاجه|غسالة|بنطلون|قميص|جزمه|حذاء|بيتزا|برجر|كشري|عطر|عطور|برفان|كرسي|شقه|شقة|قهوه|قهوة|بيتزا)/i;
+  var Y_SCENT = /(كورس|دورة|تعلم|برمجه|برمجة|تصميم|لغه|لغة)/i;
+  var __yb = botSay,
+    __ys = setChips;
+  try {
+    botSay = function (tx, d, a) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') {
+        conv._yP = tx;
+        conv._yC = null;
+      }
+      return __yb.apply(this, arguments);
+    };
+    setChips = function (c) {
+      if (!window.__yG && conv.step && conv.step !== 'idle') conv._yC = c;
+      return __ys.apply(this, arguments);
+    };
+  } catch (e) {}
+  function yGSay(tx, chips) {
+    window.__yG = true;
+    botSay(tx, 500, function () {
+      setChips(chips);
+      window.__yG = false;
+    });
+  }
+  function yQGuard(text, t) {
+    if (!conv.step || conv.step === 'idle') return false;
+    var q = t.replace(/[؟?!.,،\s]/g, '');
+    if (conv._yQ) {
+      if (/^(نكمل|كمل|كمّل|نكملالحجز|اكمل|نكملالطلب)$/.test(q)) {
+        conv._yQ = false;
+        var P = conv._yP,
+          C = conv._yC;
+        if (P) {
+          window.__yG = true;
+          botSay(P, 300, function () {
+            window.__yG = false;
+            if (C) setChips(C);else setChips([]);
+          });
+        }
+        return true;
+      }
+      if (/^(الغاء|إلغاء|الغي|الغيه|cancel|الغاءالحجز|إلغاءالحجز)$/.test(q)) {
+        conv._yQ = false;
+        conv.step = 'idle';
+        yGSay('تمام، وقفنا اللي كنا فيه. تقدر تبدأ من جديد في أي وقت.', mainChips());
+        return true;
+      }
+      conv._yQ = false;
+    }
+    if (hasAny(t, ['طوارئ', 'طارئ', 'مستعجل', 'بينزف', 'بيموت', 'اختنق', 'تسمم'])) return false;
+    var words = text.trim().split(/\s+/).length;
+    var qm = /[؟?]/.test(text);
+    var qw = /(^|\s)(ينفع|هل|ازاي|إزاي|بديل|بدائل|بدل|ليه|الفرق|ايه الفرق|إيه الفرق)(\s|$)/.test(t);
+    if (!(qm && words >= 3 || qw)) return false;
+    conv._yQ = true;
+    var note = '';
+    yGSay('ده سؤال مش هسجله كإجابة في الحجز.' + note + ' تحب نكمل اللي كنا فيه ولا نلغيه؟', [{
+      label: 'نتابع الحجز',
+      primary: true
+    }, {
+      label: 'إلغاء'
+    }]);
+    return true;
+  }
+  function yOffDomain(text) {
+    if (/^(?:await-name|await-address|lead-name|book-name)$/.test(conv.step || '')) return false;
+    var q = norm(text);
+    if (!Y_OFF.test(q)) return false;
+    var mixed = Y_SCENT.test(q);
+    var tail = conv.step && conv.step !== 'idle' ? ' وطلبك الحالي زي ما هو، نكمله لما تحب.' : '';
+    if (/^(?:سلك|اسلاك|شاحن|اونر|هونر|honor|كرسي)$/i.test(q.replace(/[؟?!.,،\s]/g, ''))) {
+      botSay('قصدك ايه بالظبط؟ انا مساعد مهارة، لو بتدور على كورس معين قولي وأساعدك.' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (mixed) {
+      botSay('طلبك فيه حاجتين مختلفين. انا هساعدك في الكورسات والتدريب بس، اما باقي الطلب فخارج تخصص مهارة. تحب نبدأ؟' + tail, 600, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    botSay('ده خارج تخصصي، انا مساعد مهارة. لو عايز تسأل عن الكورسات والتدريب انا معاك.' + tail, 600, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var yTurn = 0,
+    yLast = {
+      names: [],
+      turn: -9
+    };
+  function yRef(text) {
+    var q = norm(text).replace(/[؟?!.,،]/g, ' ');
+    var idx = /(^|\s)(الاول|الأول|الاولي|الاولى|اول واحد|اول وحده)(\s|$)/.test(q) ? 0 : /(^|\s)(التاني|الثاني|التانيه|الثانيه|تاني واحد)(\s|$)/.test(q) ? 1 : /(^|\s)(التالت|الثالث)(\s|$)/.test(q) ? 2 : -1;
+    if (idx < 0 || !/(سعر|بكام|كام|تفاصيل|ثمن)/.test(q)) return false;
+    var N = yLast.names;
+    if (!N.length) {
+      botSay('تقصد انهي منتج بالظبط؟ قولي اسمه وأقولك سعره.', 500, function () {
+        setChips(mainChips());
+      });
+      return true;
+    }
+    if (yTurn - yLast.turn > 1) {
+      botSay('بعد كلامنا الأخير مش متأكد تقصد انهي واحد. تقصد ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    var it = byName(N[idx]);
+    if (!it) {
+      botSay('تقصد انهي واحد بالظبط؟ ' + N.slice(0, 3).join(' ولا ') + '؟', 500, function () {
+        setChips(N.slice(0, 3).map(function (n) {
+          return {
+            label: n
+          };
+        }));
+      });
+      return true;
+    }
+    botSay(it.n + '\n' + (it.d || '') + '\nالسعر المعروض: ' + it.p + ' جنيه' + (it.sized || typeof SIZES !== 'undefined' ? ' (بيتغير حسب الحجم)' : '') + '. بيانات وأسعار تجريبية للعرض.', 500, function () {
+      setChips(mainChips());
+    });
+    return true;
+  }
+  var Y_LLM_URL = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/assist',
+    yHist = [];
+  function yCatalog() {
+    return ALL.map(function (it) {
+      return it.n + ': ' + it.d;
+    }).join('\n');
+  }
+  function yLLMAsk(text, t, fallback) {
+    if (window.__yLLMOff || !window.fetch || !text || text.trim().length < 2 || text.length > 300) {
+      fallback();
+      return;
+    }
+    busy = true;
+    typing.classList.add('on');
+    scrollBottom();
+    var done = false,
+      ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () {
+      if (ctl) ctl.abort();
+    }, 10000);
+    function finish(fn) {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      typing.classList.remove('on');
+      busy = false;
+      fn();
+      if (pending) {
+        var _p = pending;
+        pending = null;
+        route(_p.text, _p.action);
+      }
+    }
+    fetch(Y_LLM_URL, {
+      method: 'POST',
+      mode: 'cors',
+      credentials: 'omit',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({
+        message: text,
+        history: yHist
+      })
+    }).then(function (r) {
+      return r.json();
+    }).then(function (d) {
+      if (!d || !d.ok || !d.reply) {
+        finish(function () {
+          fallback();
+        });
+        return;
+      }
+      var names = [];
+      (d.suggest || []).forEach(function (n) {
+        var it = byName(n);
+        if (it && names.indexOf(it.n) < 0) names.push(it.n);
+      });
+      window.yLast = {
+        names: names.slice(),
+        turn: window.yTurn || 0
+      };
+      yLast = {
+        names: names.slice(),
+        turn: yTurn
+      };
+      finish(function () {
+        var _n = addMsg(d.reply, 'bot');
+        if (_n) _n.dataset.yousefQuestion = window.__yousefResponseQuestion || text;
+        yHist.push({
+          r: 'u',
+          t: text
+        }, {
+          r: 'a',
+          t: d.reply
+        });
+        if (yHist.length > 6) yHist = yHist.slice(-6);
+        var c = d.intent === 'offdomain' || d.intent === 'ambiguous' ? [] : names.map(function (n) {
+          return {
+            label: n
+          };
+        });
+        setChips(c.length ? c.concat([{
+          label: 'تصفّح التشكيلة',
+          action: 'menu'
+        }]) : mainChips());
+        window.__yLastIntent = d.intent;
+      });
+    }).catch(function () {
+      finish(function () {
+        fallback();
+      });
+    });
+  }
+  function runAction(action) {
+    switch (action) {
+      case 'catalog':
+        botSay(catalogText(), 700, function () {
+          setChips([{
+            label: 'رشّح لي كورسًا',
+            action: 'reco'
+          }, {
+            label: 'أريد أن أسجّل',
+            action: 'enroll',
+            primary: true
+          }, {
+            label: 'الأسعار والتقسيط',
+            action: 'prices'
+          }]);
+        });
+        break;
+      case 'reco':
+        conv.step = 'reco-goal';
+        botSay('قولي هدفك الأول عشان أرشح صح: عايز تشتغل فري لانس وتجيب دخل لوحدك؟ ولا تتحسن في وظيفتك؟ ولا لسه بتستكشف؟', 600, function () {
+          setChips([{
+            label: 'عمل حر ودخل مستقل'
+          }, {
+            label: 'أتطوّر في وظيفتي'
+          }, {
+            label: 'ما زلت أستكشف'
+          }]);
+        });
+        break;
+      case 'enroll':
+        startEnroll();
+        break;
+      case 'prices':
+        botSay('الأسعار بعد خصم الدفعة الجديدة:\nبرمجة الويب: ١٨٠٠ ج · الجرافيك: ١٣٥٠ ج · الماركتنج: ١٥٠٠ ج\nالإنجليزي: ١١٢٥ ج · الإكسل: ٩٠٠ ج · UI/UX: ٢١٠٠ ج\n\nوالكل ممكن يتقسط على ٣ دفعات بدون فوائد، والدفع فودافون كاش أو انستاباي أو كارت.', 750, function () {
+          setChips([{
+            label: 'أريد أن أسجّل',
+            action: 'enroll',
+            primary: true
+          }, {
+            label: 'تصفّح الكورسات',
+            action: 'catalog'
+          }]);
+        });
+        break;
+      case 'home':
+        botSay('تحب أساعدك في إيه كمان؟', 400, function () {
+          setChips(mainChips());
+        });
+        break;
+      case 'close':
+        closePanel();
+        break;
+    }
+  }
+
+  // Keep the composer inside the *visible* viewport, not behind the soft keyboard.
+  var yPrefix = panel.id.replace(/-panel$/, ''),
+    yVV = window.visualViewport,
+    yFrame = 0;
+  var yStyle = document.createElement('style');
+  yStyle.textContent = '#' + yPrefix + '-panel{box-sizing:border-box;min-height:0;padding:0;margin:0;overscroll-behavior:contain}#' + yPrefix + '-head,#' + yPrefix + '-input,#' + yPrefix + '-typing{flex-shrink:0}#' + yPrefix + '-msgs{min-height:0;overscroll-behavior:contain;overflow-anchor:none}#' + yPrefix + '-input input{min-width:0;font-size:16px}#' + yPrefix + '-chips{flex-shrink:0;max-height:96px;overflow-y:auto}#' + yPrefix + '-chips button{flex-shrink:0;white-space:nowrap}#' + yPrefix + '-chips{scrollbar-width:none}#' + yPrefix + '-chips::-webkit-scrollbar{display:none}';
+  document.head.appendChild(yStyle);
+  function yFitViewport() {
+    cancelAnimationFrame(yFrame);
+    yFrame = requestAnimationFrame(function () {
+      if (!panel.classList.contains('open')) return;
+      if (window.matchMedia('(max-width:680px)').matches) {
+        var vh = yVV ? yVV.height : window.innerHeight,
+          vo = yVV ? yVV.offsetTop : 0;
+        var h = Math.min(620, Math.max(120, vh - 16));
+        panel.style.height = h + 'px';
+        panel.style.maxHeight = h + 'px';
+        panel.style.top = vo + vh - h - 8 + 'px';
+        panel.style.bottom = 'auto';
+        var yShort = vh < 500;
+        chips.style.display = '';
+        chips.style.maxHeight = (yShort ? 52 : 96) + 'px';
+        chips.style.flexWrap = yShort ? 'nowrap' : '';
+        chips.style.overflowX = yShort ? 'auto' : '';
+        chips.style.overflowY = yShort ? 'hidden' : 'auto';
+        chips.style.padding = yShort ? '6px 14px' : '';
+      } else {
+        ['height', 'max-height', 'top', 'bottom'].forEach(function (k) {
+          panel.style.removeProperty(k);
+        });
+        ['max-height', 'display', 'flex-wrap', 'overflow-x', 'overflow-y', 'padding'].forEach(function (k) {
+          chips.style.removeProperty(k);
+        });
+      }
+      scrollBottom();
+    });
+  }
+  if (yVV) {
+    yVV.addEventListener('resize', yFitViewport, {
+      passive: true
+    });
+    yVV.addEventListener('scroll', yFitViewport, {
+      passive: true
+    });
+  }
+  window.addEventListener('resize', yFitViewport, {
+    passive: true
+  });
+  input.addEventListener('focus', yFitViewport);
+  input.addEventListener('blur', yFitViewport);
+  function openPanel() {
+    panel.classList.add('open');
+    yFitViewport();
+    launcher.style.display = 'none';
+    if (G && !window.matchMedia('(max-width:680px)').matches) {
+      G.from(panel, {
+        y: 60,
+        opacity: 0,
+        duration: .45,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+    if (!conv.greeted) {
+      conv.greeted = true;
+      botSeq([{
+        text: 'أهلًا بك في مهارة',
+        delay: 450
+      }, {
+        text: 'أنا مساعدك هنا: أعرض عليك الكورسات والأسعار، وأرشّح لك أنسب كورس لهدفك، وأسجّلك في دفعة ديسمبر في دقيقة واحدة.',
+        delay: 750,
+        chips: mainChips()
+      }]);
+    }
+    input.focus();
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    launcher.style.display = 'flex';
+    if (G) {
+      G.from(launcher, {
+        scale: .7,
+        opacity: 0,
+        duration: .35,
+        ease: 'back.out(2)',
+        clearProps: 'all'
+      });
+    }
+  }
+  launcher.addEventListener('click', openPanel);
+  document.getElementById('ctaChat').addEventListener('click', function () {
+    openPanel();
+  });
+  document.querySelectorAll('.enroll-btn').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var c = findCourse(b.getAttribute('data-course'));
+      openPanel();
+      if (conv.greeted || true) {
+        setTimeout(function () {
+          if (!busy) {
+            handleUser(b.getAttribute('data-course'), null);
+          }
+        }, conv.greeted ? 200 : 1800);
+      }
+    });
+  });
+  document.getElementById('mh-close').addEventListener('click', closePanel);
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = input.value.trim();
+    if (!v && !widgetNameStep(conv.step)) return;
+    input.value = '';
+    handleUser(v, null);
+  });
+  if (G) {
+    G.from(launcher, {
+      y: 30,
+      opacity: 0,
+      duration: .6,
+      delay: .9,
+      ease: 'back.out(1.8)',
+      clearProps: 'all'
+    });
+  }
+})();</script>
+<script id="portfolio-chat-recorder">
+(function () {
+  'use strict';
+  var dialog = Array.prototype.find.call(document.querySelectorAll('[role="dialog"]'), function(node){return node.querySelector('[aria-live]');});
+  if (!dialog || dialog.__portfolioChatLog) return;
+  var messagesNode = dialog.querySelector('[aria-live]');
+  if (!messagesNode) return;
+  dialog.__portfolioChatLog = true;
+
+  var apiUrl = 'https://portfolio-chat-backend.yousef-portfolio.workers.dev/api/chat';
+  var pageUrl = location.origin + location.pathname;
+  var idKey = 'ym-chat-conversation-id-v2';
+  var id;
+  var lastActive = 0;
+  function newId() {
+    if (window.crypto && typeof window.crypto.randomUUID === 'function') return window.crypto.randomUUID();
+    return 'ym' + Date.now().toString(36) + Math.random().toString(36).slice(2, 12);
+  }
+  try {
+    var __chatStoredState = localStorage.getItem(idKey);
+    var __chatParsedState;
+    try { __chatParsedState = JSON.parse(__chatStoredState); } catch (_) {}
+    id = __chatParsedState && __chatParsedState.id || __chatStoredState;
+    lastActive = __chatParsedState && Number(__chatParsedState.lastActive) || 0;
+    if (!id || !/^[A-Za-z0-9_-]{8,100}$/.test(id)) {
+      id = newId();
+      lastActive = Date.now();}
+    localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive}));
+  } catch (_) {
+    id = newId();
+  lastActive = Date.now();}
+
+  var startedKey = idKey + ':started';
+  var pendingKey = idKey + ':pending';
+  var started = false;
+  try { started = localStorage.getItem(startedKey) === '1'; } catch (_) {}
+  if (started && Date.now() - lastActive > 12 * 60 * 60 * 1000) {
+    started = false;
+    try { localStorage.setItem(startedKey, '0'); } catch (_) {}
+  }
+  var waiting = [];
+  var outbox = [];
+  try {
+    var saved = JSON.parse(localStorage.getItem(pendingKey) || '[]');
+    if (Array.isArray(saved)) outbox = saved;
+  } catch (_) {}
+
+  function makeMessage(role, content) {
+    return {
+      role: role,
+      content: content,
+      ts: Date.now(),
+      id: newId()
+    };
+  }
+  function visitorInfo() {
+    return {
+      userAgent: navigator.userAgent || '',
+      lang: navigator.language || '',
+      referer: document.referrer || '',
+      page: pageUrl
+    };
+  }
+  function saveOutbox() {
+    try { localStorage.setItem(pendingKey, JSON.stringify(outbox)); } catch (_) {}
+  }
+  window.addEventListener('yousef-chat-event', function (event) {
+    var detail = event.detail || {};
+    if (!/^(demo_order|demo_booking|whatsapp_handoff)$/.test(detail.kind || '')) return;
+    enqueue({conversationId: id, events: [{id: newId(), kind: detail.kind, detail: detail.label || ''}], visitor: visitorInfo(), page: pageUrl});
+  });
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (link && /^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(link.href)) {
+      window.dispatchEvent(new CustomEvent('yousef-chat-event',{detail:{kind:'whatsapp_handoff',label:'WhatsApp link clicked'}}));
+    }
+  }, true);
+  var sending = false;
+  var paused = false;
+  function pump() {
+    if (sending || paused || !outbox.length) return;
+    sending = true;
+    var payload = outbox[0];
+    var attempt = 0;
+    function transmit() {
+      fetch(apiUrl, {
+        method: 'POST',
+        mode: 'cors',
+        credentials: 'omit',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function (response) {
+        if (!response.ok) throw new Error('chat log request failed');
+        outbox.shift();
+        saveOutbox();
+        sending = false;
+        pump();
+      }).catch(function () {
+        attempt += 1;
+        if (attempt < 3) {
+          setTimeout(transmit, attempt === 1 ? 1000 : 2500);
+        } else {
+          sending = false;
+          paused = true;
+          setTimeout(function () { paused = false; pump(); }, 30000);
+        }
+      });
+    }
+    transmit();
+  }
+  function enqueue(payload) {
+    outbox.push(payload);
+    if (outbox.length > 500) outbox.shift();
+    saveOutbox();
+    pump();
+  }
+  function record(node) {
+    function touchConversation() {
+      if (Date.now() - lastActive > 12 * 60 * 60 * 1000) id = newId();
+      lastActive = Date.now();
+      try { localStorage.setItem(idKey, JSON.stringify({id: id, lastActive: lastActive})); } catch (_) {}
+    }
+
+    if (!node || node.nodeType !== 1 || node.__portfolioChatLogged) return;
+    node.__portfolioChatLogged = true;
+    var content = (node.innerText || node.textContent || '').trim();
+    if (!content) return;
+    var role = node.classList && node.classList.contains('user') ? 'visitor' : 'assistant';
+    var message = makeMessage(role, content);
+    if (role === 'assistant' && node.dataset && node.dataset.yousefQuestion) message.question = node.dataset.yousefQuestion;
+    if (!started) {
+      waiting.push(message);
+      if (role === 'visitor') {
+        started = true;
+        try { localStorage.setItem(startedKey, '1'); } catch (_) {}
+        
+        touchConversation();enqueue({ conversationId: id, messages: waiting.splice(0), visitor: visitorInfo(), page: pageUrl });
+      }
+      return;
+    }
+    
+        touchConversation();enqueue({ conversationId: id, message: message, visitor: visitorInfo(), page: pageUrl });
+  }
+
+  new MutationObserver(function (records) {
+    records.forEach(function (record) {
+      record.addedNodes.forEach(function (node) {
+        if (node.nodeType === 1 && node.parentElement === messagesNode) recordNode(node);
+      });
+    });
+  }).observe(messagesNode, { childList: true });
+
+  function recordNode(node) { record(node); }
+  pump();
+})();
+
+</script>
+</body></html>
