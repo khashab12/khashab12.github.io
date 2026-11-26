@@ -188,7 +188,7 @@ export function HowIWork() {
 
   if (staticMode)
     return (
-      <section id="how" aria-labelledby="how-title" className="border-y border-line bg-surface py-20 text-ink">
+      <section id="how" aria-labelledby="how-title" className="py-20 text-ink">
         <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
           <h2 id="how-title" className="text-[clamp(1.7rem,6vw,2.5rem)] font-bold text-ink">
             {t.how.title}
@@ -197,7 +197,7 @@ export function HowIWork() {
             {t.how.steps.map((_, i) => (
               <li key={i} className="grid items-center gap-6 md:grid-cols-2">
                 <StepText step={i} total={total} />
-                <div className="h-56">
+                <div className="glass h-56 rounded-[2rem]">
                   <StepVisual step={i} />
                 </div>
               </li>
@@ -212,18 +212,18 @@ export function HowIWork() {
       ref={section}
       id="how"
       aria-labelledby="how-title"
-      className="border-y border-line bg-surface text-ink"
+      className="text-ink"
       // One screen for the panel plus 85% of a screen of scrolling per remaining step, reserved from the first render.
       style={{ height: `calc(100svh + ${(total - 1) * 85}svh)` }}
     >
-      <div className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pt-16">
+      <div className="sticky top-0 flex h-[100svh] flex-col overflow-hidden pt-20">
         <div className="mx-auto flex w-full max-w-[1240px] flex-1 flex-col px-4 py-6 sm:px-6 md:py-10">
           <div className="flex items-center gap-4">
-            <h2 id="how-title" className="shrink-0 font-display text-lg font-bold text-ink/90">
+            <h2 id="how-title" className="shrink-0 font-display text-xl font-bold text-ink">
               {t.how.title}
             </h2>
             <div className="h-1 flex-1 overflow-hidden rounded-full bg-ink/10">
-              <div ref={bar} className="h-full origin-left rounded-full bg-saffron rtl:origin-right" style={{ transform: 'scaleX(0)' }} />
+              <div ref={bar} className="h-full origin-left rounded-full bg-accent-strong rtl:origin-right" style={{ transform: 'scaleX(0)' }} />
             </div>
           </div>
 
@@ -235,7 +235,7 @@ export function HowIWork() {
                 </m.div>
               </AnimatePresence>
             </div>
-            <div className="order-1 h-[34svh] min-h-52 md:order-2 md:h-[22rem]" aria-hidden>
+            <div className="glass order-1 h-[34svh] min-h-52 rounded-[2rem] md:order-2 md:h-[24rem]" aria-hidden>
               <AnimatePresence mode="wait" initial={false}>
                 <m.div key={step} className="h-full" exit={{ opacity: 0, transition: { duration: 0.15 } }}>
                   <StepVisual step={step} />

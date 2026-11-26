@@ -5,7 +5,7 @@ import { formatNumber } from '../i18n'
 import { asset, concepts, demoPreview, demoUrl, demos, type Demo } from '../lib/projects'
 import { prefersCalm } from '../lib/fx'
 import { PhoneFrame } from './PhoneFrame'
-import { Reveal } from './Reveal'
+import { Reveal, SectionHead } from './Reveal'
 import { External } from './Icons'
 import { Marquee } from './Marquee'
 
@@ -16,11 +16,11 @@ type Featured = { id: FeaturedId; by: 'mohamed' | 'yousef'; real: boolean; url?:
 
 /** Best first. Each card stacks over the previous one while scrolling. */
 const FEATURED: Featured[] = [
-  { id: 'tiffany', by: 'mohamed', real: true, url: 'https://khashab12.github.io/menus/tiffany-t4c8/', tags: ['Clinic', 'Multi-branch', 'AR / EN', 'WhatsApp booking'], tone: 'from-[#2a221b] to-[#14100c]' },
-  { id: 'volt', by: 'yousef', real: false, url: demoUrl('volt'), tags: ['E-commerce', 'Cart', 'Wishlist', 'Accounts'], tone: 'from-[#0d1b2a] to-[#08111a]' },
-  { id: 'damas', by: 'mohamed', real: true, url: 'https://www.ksadamas.com/', tags: ['Next.js', 'TypeScript', 'react-pageflip', 'RTL'], tone: 'from-[#3a0b0d] to-[#1a0506]' },
-  { id: 'rukn', by: 'yousef', real: false, url: demoUrl('rukn'), tags: ['Real estate', 'Installment calculator'], tone: 'from-[#1f1c16] to-[#0f0e0b]' },
-  { id: 'lion', by: 'mohamed', real: true, tags: ['Shopify', 'Horizon theme', 'Liquid'], tone: 'from-[#0f2a2b] to-[#081617]' },
+  { id: 'tiffany', by: 'mohamed', real: true, url: 'https://khashab12.github.io/menus/tiffany-t4c8/', tags: ['Clinic', 'Multi-branch', 'AR / EN', 'WhatsApp booking'], tone: '#b89b67' },
+  { id: 'volt', by: 'yousef', real: false, url: demoUrl('volt'), tags: ['E-commerce', 'Cart', 'Wishlist', 'Accounts'], tone: '#e8553a' },
+  { id: 'damas', by: 'mohamed', real: true, url: 'https://www.ksadamas.com/', tags: ['Next.js', 'TypeScript', 'react-pageflip', 'RTL'], tone: '#a60e16' },
+  { id: 'rukn', by: 'yousef', real: false, url: demoUrl('rukn'), tags: ['Real estate', 'Installment calculator'], tone: '#c2702e' },
+  { id: 'lion', by: 'mohamed', real: true, tags: ['Shopify', 'Horizon theme', 'Liquid'], tone: '#1d4a46' },
 ]
 const MORE: { id: FeaturedId; url: string; img: string; tags: string[] }[] = [
   { id: 'bot', url: 'https://khashab12.github.io/menus/demo-bot/', img: 'work/bot.webp', tags: ['WhatsApp', 'Automation'] },
@@ -44,7 +44,7 @@ const BY_TONE: Record<string, string> = { mohamed: 'bg-accent text-paper', youse
 function ByChip({ by }: { by: string }) {
   const { t } = useLang()
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 py-0.5 pe-2.5 ps-0.5 text-xs text-ink-2">
+    <span className="glass-soft inline-flex items-center gap-1.5 rounded-full py-0.5 pe-2.5 ps-0.5 text-xs text-ink-2">
       <span aria-hidden className={`grid size-5 place-items-center rounded-full text-[10px] font-bold ${BY_TONE[by]}`}>{t.work.by[by]?.[0]}</span>
       {t.work.by[by]}
     </span>
@@ -155,15 +155,16 @@ function StackCard({ f, i, total, progress }: { f: Featured; i: number; total: n
   const body = (
     <m.article
       style={desk ? { scale } : undefined}
-      className={`edge relative grid h-full origin-top overflow-hidden rounded-[2rem] bg-gradient-to-br ${f.tone} md:grid-cols-[0.9fr_1.1fr]`}
+      className="glass relative grid h-full origin-top overflow-hidden rounded-[2rem] md:grid-cols-[0.9fr_1.1fr]"
     >
+      <div aria-hidden className="pointer-events-none absolute -start-24 -top-24 size-80 rounded-full opacity-35 blur-3xl" style={{ background: f.tone }} />
       <div className="relative z-10 flex flex-col justify-between gap-6 p-6 sm:p-9">
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-display text-sm text-muted tabular-nums" dir="ltr">
               {String(i + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
             </span>
-            {i === 0 && <span className="rounded-full bg-saffron px-2.5 py-0.5 text-xs font-bold text-paper">★ {t.work.tagBest}</span>}
+            {i === 0 && <span className="rounded-full bg-ink px-2.5 py-0.5 text-xs font-bold text-paper">★ {t.work.tagBest}</span>}
             <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${f.real ? 'bg-accent/20 text-accent-strong' : 'bg-white/10 text-ink-2'}`}>
               {f.real ? t.work.tagReal : t.work.tagDemo}
             </span>
@@ -175,7 +176,7 @@ function StackCard({ f, i, total, progress }: { f: Featured; i: number; total: n
         <div>
           <ul className="flex flex-wrap gap-1.5" dir="ltr">
             {f.tags.map((tag) => (
-              <li key={tag} className="rounded-full border border-white/10 px-3 py-1 text-xs text-ink-2">{tag}</li>
+              <li key={tag} className="glass-soft rounded-full px-3 py-1 text-xs text-ink-2">{tag}</li>
             ))}
           </ul>
           {f.url && (
@@ -186,10 +187,10 @@ function StackCard({ f, i, total, progress }: { f: Featured; i: number; total: n
           )}
         </div>
       </div>
-      <div className="relative order-first h-[300px] overflow-hidden md:order-none md:h-auto">
+      <div className="relative order-first m-2 h-[300px] overflow-hidden rounded-[1.6rem] md:order-none md:m-3 md:h-auto">
         <Visual f={f} />
       </div>
-      <m.div aria-hidden style={desk ? { opacity: dim } : { opacity: 0 }} className="pointer-events-none absolute inset-0 bg-paper" />
+      <m.div aria-hidden style={desk ? { opacity: dim } : { opacity: 0 }} className="pointer-events-none absolute inset-0 rounded-[2rem] bg-paper" />
     </m.article>
   )
   return (
@@ -213,13 +214,13 @@ function DemoCard({ d }: { d: Demo }) {
       target="_blank"
       rel="noopener"
       data-cursor={t.work.cursorTry}
-      className="spotlight group flex h-full w-[min(82vw,440px)] shrink-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-surface transition-colors duration-300 hover:border-accent/50"
+      className="glass group flex h-full w-[min(82vw,420px)] shrink-0 flex-col overflow-hidden rounded-[1.75rem] p-2 transition-transform duration-500 hover:-translate-y-1.5"
     >
-      <span className="relative block aspect-[1365/918] overflow-hidden">
+      <span className="relative block aspect-[1365/918] overflow-hidden rounded-[1.25rem]">
         <img src={demoPreview(d.img)} alt="" width={1365} height={918} loading="lazy" decoding="async" className="h-full w-full object-cover object-top transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.06]" />
-        <span className="absolute start-3 top-3 rounded-full bg-paper/80 px-2.5 py-0.5 text-xs text-ink backdrop-blur">{t.work.filters[d.cat]}</span>
+        <span className="glass-nav absolute start-3 top-3 rounded-full px-2.5 py-0.5 text-xs text-ink">{t.work.filters[d.cat]}</span>
       </span>
-      <span className="flex flex-1 flex-col p-5">
+      <span className="flex flex-1 flex-col px-3 pb-3 pt-4">
         <span className="text-sm font-medium text-accent-strong">{d.hook[lang]}</span>
         <span className="mt-1.5 font-display text-xl font-bold">{d.name[lang]}</span>
         <span className="mt-1.5 text-sm text-ink-2">{d.body[lang]}</span>
@@ -277,40 +278,33 @@ function DemoRail() {
   return (
     <div ref={pin} className={pinned ? 'flex min-h-svh flex-col justify-center overflow-hidden py-10' : 'py-10'}>
       <div className="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-xl">
-            <h3 className="text-[clamp(1.6rem,4.5vw,2.6rem)] font-bold">
-              {t.work.demosTitle} <span className="font-display text-muted tabular-nums">({formatNumber(demos.length, lang)})</span>
-            </h3>
-            <p className="mt-2 text-ink-2">{t.work.demosNote}</p>
-          </div>
-          <div role="group" aria-label={t.work.demosTitle} className="flex flex-wrap gap-2">
-            {FILTERS.map((k) => (
-              <button
-                key={k}
-                type="button"
-                aria-pressed={filter === k}
-                onClick={() => setFilter(k)}
-                className={`min-h-11 rounded-full px-4 font-display text-sm font-medium transition-colors ${filter === k ? 'bg-ink text-paper' : 'border border-white/10 text-ink-2 hover:border-accent hover:text-ink'}`}
-              >
-                {t.work.filters[k]}
-              </button>
-            ))}
-          </div>
+        <SectionHead label={t.work.by.yousef + ' × ' + t.work.by.mohamed} title={<>{t.work.demosTitle} <span className="text-muted tabular-nums">{formatNumber(demos.length, lang)}</span></>} sub={t.work.demosNote} />
+        <div role="group" aria-label={t.work.demosTitle} className="glass-soft rail mx-auto mt-8 flex w-fit max-w-full gap-1 overflow-x-auto rounded-full p-1">
+          {FILTERS.map((k) => (
+            <button
+              key={k}
+              type="button"
+              aria-pressed={filter === k}
+              onClick={() => setFilter(k)}
+              className={`min-h-10 shrink-0 whitespace-nowrap rounded-full px-4 font-display text-sm transition-colors ${filter === k ? 'bg-ink font-medium text-paper' : 'text-ink-2 hover:text-ink'}`}
+            >
+              {t.work.filters[k]}
+            </button>
+          ))}
         </div>
       </div>
-      <div className={pinned ? 'mt-10' : 'rail mt-8 overflow-x-auto'}>
-        <div ref={track} className="flex w-max gap-5 px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-1240px)/2+1.5rem))]">
+      <div className={pinned ? 'mt-12' : 'rail mt-10 overflow-x-auto pb-4'}>
+        <div ref={track} className="flex w-max gap-4 sm:gap-5 px-4 sm:px-6 lg:px-[max(1.5rem,calc((100vw-1240px)/2+1.5rem))]">
           <AnimatePresence mode="popLayout">
             {list.map((d) => (
-              <m.div key={d.id} layout initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
+              <m.div key={d.id} className="rail-item" layout initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}>
                 <DemoCard d={d} />
               </m.div>
             ))}
           </AnimatePresence>
         </div>
       </div>
-      <p className="mx-auto mt-6 w-full max-w-[1240px] px-4 text-sm text-muted sm:px-6">{t.work.demoNote}</p>
+      <p className="mx-auto mt-6 w-full max-w-[1240px] px-4 text-center text-xs text-muted sm:px-6">{t.work.demoNote}</p>
     </div>
   )
 }
@@ -325,16 +319,10 @@ export function Work() {
 
   return (
     <section id="work" aria-labelledby="work-title" className="relative">
-      <div className="mx-auto max-w-[1240px] px-4 pt-24 sm:px-6 md:pt-32">
-        <Reveal>
-          <p className="font-display text-sm font-medium text-accent-strong">{t.work.kicker}</p>
-          <h2 id="work-title" className="mt-3 text-[clamp(2.2rem,7vw,4.4rem)] font-bold leading-[1.05] tracking-tight">
-            {t.work.headline}
-          </h2>
-          <p className="mt-4 max-w-xl text-lg text-ink-2">{t.work.featuredNote}</p>
-        </Reveal>
+      <div className="mx-auto max-w-[1180px] px-4 pt-24 sm:px-6 md:pt-36">
+        <SectionHead id="work-title" label={t.work.kicker} title={t.work.headline} sub={t.work.featuredNote} />
 
-        <ul ref={stack} className="mt-12 flex flex-col gap-6 pb-[6vh] md:gap-[12vh]">
+        <ul ref={stack} className="mt-14 flex flex-col gap-6 pb-[6vh] md:gap-[12vh]">
           {FEATURED.map((f, i) => (
             <StackCard key={f.id} f={f} i={i} total={FEATURED.length} progress={scrollYProgress} />
           ))}
@@ -346,8 +334,8 @@ export function Work() {
             return (
               <li key={x.id}>
                 <Reveal className="h-full">
-                  <a href={x.url} target="_blank" rel="noopener" data-cursor={t.work.cursorTry} className="spotlight group grid h-full grid-cols-[0.9fr_1.1fr] overflow-hidden rounded-3xl border border-white/10 bg-surface transition-colors hover:border-accent/50">
-                    <span className="relative overflow-hidden">
+                  <a href={x.url} target="_blank" rel="noopener" data-cursor={t.work.cursorTry} className="glass group grid h-full grid-cols-[0.9fr_1.1fr] gap-1 overflow-hidden rounded-[1.75rem] p-2 transition-transform duration-500 hover:-translate-y-1">
+                    <span className="relative overflow-hidden rounded-[1.25rem]">
                       <img src={asset(x.img)} alt="" width={600} height={450} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                     </span>
                     <span className="flex flex-col p-5">
@@ -377,12 +365,7 @@ export function Work() {
       {concepts.length > 0 && (
         <div className="py-20">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal className="max-w-2xl">
-              <h3 className="text-[clamp(1.6rem,4.5vw,2.6rem)] font-bold">
-                {t.work.conceptsTitle} <span className="font-display text-muted tabular-nums">({formatNumber(concepts.length, lang)})</span>
-              </h3>
-              <p className="mt-2 text-ink-2">{t.work.conceptsNote}</p>
-            </Reveal>
+            <SectionHead label={t.work.by.mohamed} title={<>{t.work.conceptsTitle} <span className="text-muted tabular-nums">{formatNumber(concepts.length, lang)}</span></>} sub={t.work.conceptsNote} />
           </div>
           <div className="mt-10 flex flex-col gap-5">
             {rows.map((row, r) => (
@@ -396,9 +379,9 @@ export function Work() {
                       onClick={() => setOpen(idx)}
                       aria-label={`${t.work.open}: ${t.work.concept(c.concept)}`}
                       data-cursor={t.work.cursorTry}
-                      className="group w-[170px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-surface text-start transition-[transform,border-color] duration-500 hover:-translate-y-2 hover:border-accent/60 sm:w-[210px]"
+                      className="glass group w-[170px] shrink-0 overflow-hidden rounded-[1.5rem] p-1.5 text-start transition-transform duration-500 hover:-translate-y-2 sm:w-[210px]"
                     >
-                      <span className="block aspect-[4/5] overflow-hidden">
+                      <span className="block aspect-[4/5] overflow-hidden rounded-[1.1rem]">
                         <img src={asset(`concepts/${c.concept}/cover-320.webp`)} alt="" width={320} height={575} loading="lazy" decoding="async" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
                       </span>
                       <span className="flex items-center justify-between gap-2 px-3 py-2.5">

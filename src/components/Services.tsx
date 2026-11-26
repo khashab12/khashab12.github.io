@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../lib/lang'
-import { Reveal } from './Reveal'
+import { Reveal, SectionHead } from './Reveal'
 import { Cart, Check, Globe, Mobile, Pin, Plus, Spark, Target, WhatsApp } from './Icons'
 
 // Sample palettes for the live preview (taken from the concept designs).
@@ -54,15 +54,13 @@ export function Services() {
   const s = t.services
 
   return (
-    <section id="services" aria-labelledby="services-title" className="mx-auto max-w-[1240px] px-4 py-24 sm:px-6 md:py-32">
-      <Reveal>
-        <h2 id="services-title" className="text-[clamp(2.2rem,7vw,4.4rem)] font-bold leading-[1.05] tracking-tight">{s.title}</h2>
-      </Reveal>
+    <section id="services" aria-labelledby="services-title" className="mx-auto max-w-[1180px] px-4 py-24 sm:px-6 md:py-36">
+      <SectionHead id="services-title" title={s.title} sub={s.menu.body} />
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3 md:grid-rows-[auto_auto]">
+      <div className="mt-14 grid gap-4 md:grid-cols-3 md:grid-rows-[auto_auto]">
         {/* Website + menu: the main offer, largest tile */}
         <Reveal className="md:col-span-2 md:row-span-2">
-          <article className="edge spotlight grid h-full gap-6 rounded-[2rem] p-6 sm:grid-cols-[1fr_minmax(0,15rem)] sm:p-8">
+          <article className="glass grid h-full gap-6 rounded-[2rem] p-6 sm:grid-cols-[1fr_minmax(0,15rem)] sm:p-8">
             <div>
               <h3 className="text-2xl font-bold">{s.menu.title}</h3>
               <p className="mt-2 text-ink-2">{s.menu.body}</p>
@@ -95,7 +93,7 @@ export function Services() {
                     className="grid size-11 place-items-center rounded-full"
                   >
                     <span
-                      className={`block size-7 rounded-full ring-offset-2 ring-offset-surface transition-shadow ${palette === i ? 'ring-2 ring-ink' : 'ring-1 ring-line'}`}
+                      className={`block size-7 rounded-full ring-offset-2 ring-offset-paper transition-shadow ${palette === i ? 'ring-2 ring-ink' : 'ring-1 ring-line'}`}
                       style={{ background: `linear-gradient(135deg, ${p.primary} 50%, ${p.accent} 50%)` }}
                     />
                   </button>
@@ -132,8 +130,8 @@ export function Services() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <article className="spotlight flex h-full flex-col rounded-[2rem] border border-accent/25 bg-accent-soft p-6 sm:p-8">
-            <span className="grid size-11 place-items-center rounded-2xl bg-paper/60 text-accent-strong">
+          <article className="glass flex h-full flex-col rounded-[2rem] p-6 sm:p-8">
+            <span className="glass-soft grid size-11 place-items-center rounded-2xl text-accent-strong">
               <Cart />
             </span>
             <h3 className="mt-4 text-xl font-bold">{s.shopify.title}</h3>
@@ -150,7 +148,7 @@ export function Services() {
         ] as const).map(({ k, Icon }, i) => (
           <li key={k}>
             <Reveal delay={i * 0.06} className="h-full">
-              <article className="spotlight flex h-full flex-col rounded-[2rem] border border-white/10 bg-surface p-6 transition-colors hover:border-accent/40 sm:p-8">
+              <article className="glass flex h-full flex-col rounded-[2rem] p-6 sm:p-8">
                 <span className="grid size-11 place-items-center rounded-2xl bg-accent-soft text-accent-strong">
                   <Icon />
                 </span>
