@@ -26,6 +26,13 @@ jobs:
       - run: npm ci
       # Concepts in public/concepts are committed pre-anonymized; the brand map stays local.
       - run: npm run build
+      # Joint portfolio (Mohamed × Yousef) from the `team` branch, served at /team/
+      - uses: actions/checkout@v4
+        with:
+          ref: team
+          path: team-src
+      - run: npm ci && BASE=/team/ npm run build && cp -r dist ../dist/team
+        working-directory: team-src
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
