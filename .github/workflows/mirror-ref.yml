@@ -1,0 +1,46 @@
+name: Mirror reference site
+
+on:
+  push:
+    branches: [team]
+    paths: [.github/workflows/mirror-ref.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: team
+      - run: |
+          set -e
+          host=https://two-tabs.surge.sh
+          dir=ref/two-tabs
+          rm -rf "$dir"; mkdir -p "$dir"
+          curl -fsSL "$host/" -o "$dir/index.html"
+          fetch_refs() {
+            grep -oE '["'"'"'(`]\.?/?([A-Za-z0-9_@.-]+/)*[A-Za-z0-9_.@-]+\.(png|jpe?g|gif|webp|avif|svg|ico|webmanifest|json|woff2?|mp4|webm|css|js|mjs|html)' "$1" \
+              | sed -E 's/^["'"'"'(`]//; s#^\./##; s#^/##' | grep -v '^http' | sort -u
+          }
+          # two passes so CSS/JS files' own references are fetched too
+          for pass in 1 2; do
+            for src in $(find "$dir" -type f \( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.mjs' \)); do
+              for f in $(fetch_refs "$src"); do
+                [ -f "$dir/$f" ] && continue
+                mkdir -p "$dir/$(dirname "$f")"
+                curl -fsSL "$host/$f" -o "$dir/$f" 2>/dev/null || rm -f "$dir/$f"
+              done
+            done
+          done
+          find "$dir" -type f | sort
+          du -sh "$dir"
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add ref
+          git commit -m "Mirror two-tabs.surge.sh for reference" || echo "nothing to commit"
+          git push
